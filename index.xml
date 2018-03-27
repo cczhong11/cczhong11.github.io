@@ -12,13 +12,34 @@
     
     
     <item>
+      <title>GCP for Spark</title>
+      <link>https://cczhong11.github.io/posts/cc/gcp-spark/</link>
+      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cczhong11.github.io/posts/cc/gcp-spark/</guid>
+      <description> GCP is very cheap compared with AWS and Azure. However, it did not have enough documentation and I met some problems that did not even on StackOverflow. That&amp;rsquo;s why I want to write this blog.
+Start your cluster Install external Python package on Spark Begin your job &amp;lsquo;~/&amp;rsquo;
+Download your result </description>
+    </item>
+    
+    <item>
       <title>My first blog</title>
       <link>https://cczhong11.github.io/posts/hello/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://cczhong11.github.io/posts/hello/</guid>
-      <description>hello world This is my first blog and I want to express something I learned in my graduate year. CMU is a very great place and I could meet many clever and hard-working students in this place. I learn the latest technology and skills in this school, and I also gain many precious experiences here.
+      <description>Hello World This is my first blog and I want to express something I learned in my graduate year. CMU is a very great place and I could meet many clever and hard-working students in this place. I learn the latest technology and skills in this school, and I also gain many precious experiences here.
 Spend time wisely I believe I have a good time management skill and I could handle 4 courses in CMU in one semester.</description>
+    </item>
+    
+    <item>
+      <title>Spark for ETL</title>
+      <link>https://cczhong11.github.io/posts/cc/spark-etl/</link>
+      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cczhong11.github.io/posts/cc/spark-etl/</guid>
+      <description> There is not much information about how could we perform complex operation on pySpark. I summary some tips from stackoverflow and my experience. Hope it will be helpful for you.
+How to Read JSON to DataFrame How to Select Nested entities from DataFrame How to filter Array object with length in Dataframe How to Drop NA How to change Dataframe to RDD How to perform array concat with ReduceByKey </description>
     </item>
     
   </channel>

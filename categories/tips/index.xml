@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tips on </title>
+    <link>https://cczhong11.github.io/categories/tips/</link>
+    <description>Recent content in Tips on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 27 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cczhong11.github.io/categories/tips/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spark for ETL</title>
+      <link>https://cczhong11.github.io/posts/cc/spark-etl/</link>
+      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cczhong11.github.io/posts/cc/spark-etl/</guid>
+      <description> There is not much information about how could we perform complex operation on pySpark. I summary some tips from stackoverflow and my experience. Hope it will be helpful for you.
+How to Read JSON to DataFrame How to Select Nested entities from DataFrame How to filter Array object with length in Dataframe How to Drop NA How to change Dataframe to RDD How to perform array concat with ReduceByKey </description>
+    </item>
+    
+  </channel>
+</rss>

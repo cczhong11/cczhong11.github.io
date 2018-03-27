@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gcp on </title>
+    <link>https://cczhong11.github.io/categories/gcp/</link>
+    <description>Recent content in Gcp on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 27 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cczhong11.github.io/categories/gcp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GCP for Spark</title>
+      <link>https://cczhong11.github.io/posts/cc/gcp-spark/</link>
+      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cczhong11.github.io/posts/cc/gcp-spark/</guid>
+      <description> GCP is very cheap compared with AWS and Azure. However, it did not have enough documentation and I met some problems that did not even on StackOverflow. That&amp;rsquo;s why I want to write this blog.
+Start your cluster Install external Python package on Spark Begin your job &amp;lsquo;~/&amp;rsquo;
+Download your result </description>
+    </item>
+    
+  </channel>
+</rss>
