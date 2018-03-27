@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fun on </title>
-    <link>https://example.com/categories/fun/</link>
+    <link>https://cczhong11.github.io/categories/fun/</link>
     <description>Recent content in Fun on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 29 Mar 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://example.com/categories/fun/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cczhong11.github.io/categories/fun/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Just another sample post</title>
-      <link>https://example.com/posts/hello/</link>
+      <link>https://cczhong11.github.io/posts/hello/</link>
       <pubDate>Sat, 29 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/hello/</guid>
+      <guid>https://cczhong11.github.io/posts/hello/</guid>
       <description>hello world asdasd
 asdasda
 asdasd a a sda sd as da asdad</description>

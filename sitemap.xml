@@ -3,46 +3,46 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://example.com/posts/hello/</loc>
+    <loc>https://cczhong11.github.io/posts/hello/</loc>
     <lastmod>2014-03-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/</loc>
-    <lastmod>2014-03-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://example.com/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://example.com/categories/fun/</loc>
+    <loc>https://cczhong11.github.io/</loc>
     <lastmod>2014-03-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/categories/hugo/</loc>
+    <loc>https://cczhong11.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/categories/fun/</loc>
     <lastmod>2014-03-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/posts/</loc>
+    <loc>https://cczhong11.github.io/categories/hugo/</loc>
     <lastmod>2014-03-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/tags/</loc>
+    <loc>https://cczhong11.github.io/posts/</loc>
+    <lastmod>2014-03-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/categories/test/</loc>
+    <loc>https://cczhong11.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/categories/test/</loc>
     <lastmod>2014-03-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
