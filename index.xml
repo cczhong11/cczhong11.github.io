@@ -39,7 +39,7 @@ Spend time wisely I believe I have a good time management skill and I could hand
       
       <guid>https://cczhong11.github.io/posts/cc/spark-etl/</guid>
       <description> There is not much information about how could we perform complex operation on pySpark. I summary some tips from stackoverflow and my experience. Hope it will be helpful for you.
-How to Read JSON to DataFrame How to Select Nested entities from DataFrame How to filter Array object with length in Dataframe How to Drop NA How to change Dataframe to RDD How to perform array concat with ReduceByKey </description>
+How to Read JSON to DataFrame print(&amp;quot;hello&amp;quot;)  How to Select Nested entities from DataFrame How to filter Array object with length in Dataframe How to Drop NA How to change Dataframe to RDD How to perform array concat with ReduceByKey </description>
     </item>
     
   </channel>
