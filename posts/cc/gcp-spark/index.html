@@ -126,13 +126,83 @@
 
 <h1 id="start-your-cluster">Start your cluster</h1>
 
+<p>We could use command line with GCP CLI to start cluster.</p>
+
+<pre><code class="language-bash">
+gcloud dataproc clusters create cluster-name --project=project-id --bucket outputbucket --initialization-actions gs://xxx/jupyter.sh --master-machine-type=n1-standard-2 --worker-machine-type=n1-standard-1 --zone=xxxx
+
+</code></pre>
+
 <h1 id="install-external-python-package-on-spark">Install external Python package on Spark</h1>
+
+<p>If we want to use your own package and Juypter NoteBook on Spark, you need to contain an initialization step for your cluster.</p>
+
+<p>** Please Noticed that you do not have permission to install python package after start your cluster! **</p>
+
+<pre><code class="language-bash">
+#!/usr/bin/env bash
+set -e
+
+ROLE=$(curl -f -s -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+INIT_ACTIONS_REPO=$(curl -f -s -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/INIT_ACTIONS_REPO || true)
+INIT_ACTIONS_REPO=&quot;${INIT_ACTIONS_REPO:-https://github.com/GoogleCloudPlatform/dataproc-initialization-actions.git}&quot;
+INIT_ACTIONS_BRANCH=$(curl -f -s -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/INIT_ACTIONS_BRANCH || true)
+INIT_ACTIONS_BRANCH=&quot;${INIT_ACTIONS_BRANCH:-master}&quot;
+
+JUPYTER_CONDA_CHANNELS=$(curl -f -s -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/JUPYTER_CONDA_CHANNELS || true)
+JUPYTER_CONDA_PACKAGES=$(curl -f -s -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/JUPYTER_CONDA_PACKAGES || true)
+
+echo &quot;Cloning fresh dataproc-initialization-actions from repo $INIT_ACTIONS_REPO and branch $INIT_ACTIONS_BRANCH...&quot;
+git clone -b &quot;$INIT_ACTIONS_BRANCH&quot; --single-branch $INIT_ACTIONS_REPO
+./dataproc-initialization-actions/conda/bootstrap-conda.sh
+
+source /etc/profile.d/conda.sh
+
+if [ -n &quot;${JUPYTER_CONDA_CHANNELS}&quot; ]; then
+  echo &quot;Adding custom conda channels '$(echo ${JUPYTER_CONDA_CHANNELS} | tr ':' ' ')'&quot;
+  conda config --add channels $(echo ${JUPYTER_CONDA_CHANNELS} | tr ':' ',')
+fi
+
+if [ -n &quot;${JUPYTER_CONDA_PACKAGES}&quot; ]; then
+  echo &quot;Installing custom conda packages '$(echo ${JUPYTER_CONDA_PACKAGES} | tr ':' ' ')'&quot;
+  conda install $(echo ${JUPYTER_CONDA_PACKAGES} | tr ':' ' ')
+fi
+
+if [[ &quot;${ROLE}&quot; == 'Master' ]]; then
+    conda install jupyter
+    conda install xxxxx  # install your package here!!
+    pip install jgscm==0.1.7
+
+    ./dataproc-initialization-actions/jupyter/internal/setup-jupyter-kernel.sh
+    ./dataproc-initialization-actions/jupyter/internal/launch-jupyter-kernel.sh
+fi
+if [[ &quot;${ROLE}&quot; == 'Worker' ]]; then
+    conda install xxxx # install your package here!!
+    pip install jgscm==0.1.7
+fi
+echo &quot;Completed installing Jupyter!&quot;
+
+if [[ ! -v $INSTALL_JUPYTER_EXT ]]
+    then
+    INSTALL_JUPYTER_EXT=false
+fi
+if [[ &quot;$INSTALL_JUPYTER_EXT&quot; = true ]]
+then
+    echo &quot;Installing Jupyter Notebook extensions...&quot;
+    ./dataproc-initialization-actions/jupyter/internal/bootstrap-jupyter-ext.sh
+    echo &quot;Jupyter Notebook extensions installed!&quot;
+fi
+
+</code></pre>
 
 <h1 id="begin-your-job">Begin your job</h1>
 
-<p>&lsquo;~/&rsquo;</p>
+<p>You could submit python file from your local machine.</p>
 
-<h1 id="download-your-result">Download your result</h1>
+<pre><code class="language-bash">gcloud beta dataproc jobs submit pyspark --cluster cluster-name python-file
+</code></pre>
+
+<p>You can also use Jupyter. You need to first build a ssh tunnel. You could find more information from <a href="https://cloud.google.com/dataproc/docs/tutorials/jupyter-notebook">here</a></p>
 
 </div>
             <div class="footer">

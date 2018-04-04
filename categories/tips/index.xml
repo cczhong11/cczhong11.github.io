@@ -17,8 +17,8 @@
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://cczhong11.github.io/posts/cc/spark-etl/</guid>
-      <description> There is not much information about how could we perform complex operation on pySpark. I summary some tips from stackoverflow and my experience. Hope it will be helpful for you.
-How to Read JSON to DataFrame print(&amp;quot;hello&amp;quot;)  How to Select Nested entities from DataFrame How to filter Array object with length in Dataframe How to Drop NA How to change Dataframe to RDD How to perform array concat with ReduceByKey </description>
+      <description>There is not much information about how could we perform complex operation on pySpark. I summary some tips from stackoverflow and my experience. Hope it will be helpful for you.
+How to Read JSON to DataFrame There are serveral ways to read json in Spark. The most common way is to load json in a DataFrame. Why not rdd? Because json contains some hierachy information and it could not represent well in RDD.</description>
     </item>
     
   </channel>

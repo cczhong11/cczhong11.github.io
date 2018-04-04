@@ -126,18 +126,72 @@
 
 <h1 id="how-to-read-json-to-dataframe">How to Read JSON to DataFrame</h1>
 
-<pre><code class="language-python">print(&quot;hello&quot;)
+<p>There are serveral ways to read json in Spark. The most common way is to load json in a DataFrame. Why not rdd? Because json contains some hierachy information and it could not represent well in RDD. We could use <code>df.printSchema()</code> to see json file schema.</p>
+
+<pre><code class="language-python">from pyspark.sql import SQLContext
+sqlContext = SQLContext(sc)
+
+df = sqlContext.read.json(&quot;demo.json&quot;)
+
+df.printSchema()
+
+# a
+#--b
+#--c
+#-----d
+
 </code></pre>
 
 <h1 id="how-to-select-nested-entities-from-dataframe">How to Select Nested entities from DataFrame</h1>
 
-<h1 id="how-to-filter-array-object-with-length-in-dataframe">How to filter Array object with length in Dataframe</h1>
+<p>It is very easy to select element from DataFrame to extract important elements, as well as nested entities. We could use <code>a.b</code> to get that nested one.</p>
+
+<pre><code class="language-python">df = df.select(&quot;a.b&quot;,&quot;a.c.d&quot;)
+
+# we could rename col in select
+df = df.select(&quot;a.b&quot;,col(&quot;a.c.d&quot;).alias(&quot;new_d&quot;)）
+</code></pre>
+
+<h1 id="how-to-filter-in-dataframe">How to filter in Dataframe</h1>
+
+<p>Fileter is a very powerful function in Spark, we not only could filter word, but also filter length of words and filter elements from a list.</p>
+
+<pre><code class="language-python">df = df.filter(size(col(&quot;a&quot;)) &gt; 0)
+# check column c value in list [&quot;a&quot;,&quot;b&quot;]
+df = df.filter(col(&quot;c&quot;).isin([&quot;a&quot;,&quot;b&quot;]))
+</code></pre>
 
 <h1 id="how-to-drop-na">How to Drop NA</h1>
 
+<p>It is also very easy for us to drop NA value in DataFrame. We can drop a list of subsets in DataFrame.</p>
+
+<pre><code class="language-python">df.na.drop(subset=[&quot;a&quot;,&quot;b&quot;])
+</code></pre>
+
 <h1 id="how-to-change-dataframe-to-rdd">How to change Dataframe to RDD</h1>
 
+<p>When we get a RDD format schema, we could use <code>rdd= df.rdd</code> to change DataFrame to RDD. RDD has some function that DataFrame does not provide, like <code>groupByKey</code>,<code>reduceByKey</code>.</p>
+
 <h1 id="how-to-perform-array-concat-with-reducebykey">How to perform array concat with ReduceByKey</h1>
+
+<p>As we know, we could use ReduceByKey to count number, like word count. However, it is not easy to concat value into a list.</p>
+
+<p>When we have one record (a,1) and another (a,1). We would like to have (a,[1,1]). We could use the following code.</p>
+
+<pre><code class="language-python">rdd.map(lambda x:x[0],[x[1]])
+rdd.reduceByKey(schema2.reduceByKey(lambda x, y: (x[0] + y[0]))
+</code></pre>
+
+<h1 id="save-rdd-to-csv-file">Save RDD to csv file</h1>
+
+<p>We could use map to get a whole line string with all columns data for one line. Then we use saveAsTextFile to save.</p>
+
+<pre><code class="language-python">def toCSVLine2(data):
+    return ','.join(str(d) for d in data)
+
+
+rdd.map(toCSVLine2).saveAsTextFile(&quot;xxxx&quot;)
+</code></pre>
 
 </div>
             <div class="footer">
