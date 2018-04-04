@@ -1,58 +1,47 @@
 html,
-body
-{
+body {
     font-family: 'Fira Sans', sans-serif;
     font-size: 18px;
     font-weight: 300;
     line-height: 1.5;
 }
 
-.img-circle
-{
+.img-circle {
     border-radius: 50%;
 }
 
-.headshot
-{
+.headshot {
     width: 115px;
     height: 115px;
 }
 
-.brand
-{
+.brand {
     font-size: 2.6em;
-
     margin-bottom: 0;
 }
 
-.text-center
-{
+.text-center {
     text-align: center;
 }
 
-.meta
-{
+.meta {
     font-size: .8rem !important;
     font-weight: 300;
 }
 
-pre
-{
+pre {
     padding: 1px;
-
     tab-size: 2;
 }
 
-
 .hljs {
     white-space: pre;
-    
-    overflow-x: auto; /* no line wrapping */
+    overflow-x: auto;
+    /* no line wrapping */
 }
 
 pre,
-code
-{
+code {
     font-family: monospace;
     border-radius: 4px;
     width: 100%;
@@ -60,25 +49,21 @@ code
 }
 
 code {
-	padding:.15em .3em;
-	background: #272932!important;
-	color: #ececec!important;
-	box-sizing: border-box;
-	margin: 0 .25em;
+    padding: .15em .3em;
+    background: #ffffff !important;
+    color: #ececec !important;
+    box-sizing: border-box;
+    margin: 0 .25em;
 }
 
-
-.copyright, 
-.poweredby
-{
+.copyright,
+.poweredby {
     font-size: 13px !important;
     font-weight: 300;
 }
 
-img.center
-{
+img.center {
     display: block;
-
     margin-right: auto;
     margin-left: auto;
 }
