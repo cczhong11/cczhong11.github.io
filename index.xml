@@ -24,10 +24,10 @@ gcloud dataproc clusters create cluster-name --project=project-id --bucket outpu
     
     <item>
       <title>My first blog</title>
-      <link>https://cczhong11.github.io/posts/hello/</link>
+      <link>https://cczhong11.github.io/about/hello/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/hello/</guid>
+      <guid>https://cczhong11.github.io/about/hello/</guid>
       <description>Hello World This is my first blog and I want to express something I learned in my graduate year. CMU is a very great place and I could meet many clever and hard-working students in this place. I learn the latest technology and skills in this school, and I also gain many precious experiences here.
 Spend time wisely I believe I have a good time management skill and I could handle 4 courses in CMU in one semester.</description>
     </item>
