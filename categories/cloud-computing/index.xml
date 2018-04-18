@@ -17,8 +17,8 @@
       <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://cczhong11.github.io/posts/cc/hbase-reading/</guid>
-      <description> Tips on improving reading performance In some scenario, we need to have high RPS in HBase reading.Therefore, we could change some configuration in HBase to meet this requirement. I found this blog very helpful. HBase official guide is also great.
- Increase hfile.block.cache.size and decrease hbase.regionserver.global.memstore.size  </description>
+      <description>Tips on improving reading performance In some scenario, we need to have high RPS in HBase reading.Therefore, we could change some configuration in HBase to meet this requirement. I found this blog very helpful. HBase official guide is also great.
+ Increase hfile.block.cache.size and decrease hbase.regionserver.global.memstore.size.The first configuration is for reading cache and the second one is writing cache. The sum of two value should be 0.8 Decrease BLOCKSIZE in HBase table.</description>
     </item>
     
     <item>

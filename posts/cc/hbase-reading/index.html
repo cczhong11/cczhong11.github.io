@@ -127,7 +127,10 @@
 <p>In some scenario, we need to have high RPS in HBase reading.Therefore, we could change some configuration in HBase to meet this requirement. I found this <a href="http://blog.asquareb.com/blog/2014/11/21/leverage-hbase-cache-and-improve-read-performance/">blog</a> very helpful. HBase official <a href="http://hbase.apache.org/0.94/book/perf.reading.html">guide</a> is also great.</p>
 
 <ul>
-<li>Increase <code>hfile.block.cache.size</code> and decrease <code>hbase.regionserver.global.memstore.size</code></li>
+<li>Increase <code>hfile.block.cache.size</code> and decrease <code>hbase.regionserver.global.memstore.size</code>.The first configuration is for reading cache and the second one is writing cache. The sum of two value should be 0.8</li>
+<li>Decrease <code>BLOCKSIZE</code> in HBase table. When we get one block and save it in the cache, if we did not read it in the future, the rest of block is wasted. Therefore, we are supposed to reduce blocksize from 64M to an appropriate value.</li>
+<li>Increase <code>hbase.regionserver.handler.count</code> to handler more threads requests.</li>
+<li>Split data and make sure each region server gets similar amount requests.</li>
 </ul>
 
 </div>
