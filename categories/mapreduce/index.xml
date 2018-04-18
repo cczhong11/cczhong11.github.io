@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mapreduce on </title>
+    <link>https://cczhong11.github.io/categories/mapreduce/</link>
+    <description>Recent content in Mapreduce on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cczhong11.github.io/categories/mapreduce/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mapreduce custom output</title>
+      <link>https://cczhong11.github.io/posts/cc/mapreduce/</link>
+      <pubDate>Tue, 10 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cczhong11.github.io/posts/cc/mapreduce/</guid>
+      <description>Introduction Mapreduce is a very strong computing framework and we could use it to transform data to HDFS. Acutally, we could use Mapreduce to write data to any databse.
+Basic input and output The key thing in Mapreduce is Mapper and Reducer. We use the following code snippets to build a mapper. Here, Mapper&amp;lt;Object, Text, Text, Text&amp;gt; means input key and value class and ouput key and value class. Please notice that we could not use string and int here, since it is not fit the requirement in HDFS.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://cczhong11.github.io/posts/cc/hbase-reading/</loc>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/posts/cc/mapreduce/</loc>
+    <lastmod>2018-04-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cczhong11.github.io/posts/cc/gcp-spark/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
   </url>
@@ -19,7 +29,7 @@
   
   <url>
     <loc>https://cczhong11.github.io/</loc>
-    <lastmod>2018-03-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -36,7 +46,7 @@
   
   <url>
     <loc>https://cczhong11.github.io/categories/cloud-computing/</loc>
-    <lastmod>2018-03-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -47,8 +57,26 @@
   </url>
   
   <url>
+    <loc>https://cczhong11.github.io/categories/hadoop/</loc>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/categories/hbase/</loc>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cczhong11.github.io/categories/idea/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/categories/mapreduce/</loc>
+    <lastmod>2018-04-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -66,7 +94,7 @@
   
   <url>
     <loc>https://cczhong11.github.io/posts/</loc>
-    <lastmod>2018-03-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

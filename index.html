@@ -95,6 +95,26 @@
     
     <div class="post">
         <h1 class="post-title">
+            <a href="https://cczhong11.github.io/posts/cc/hbase-reading/">Improve performance on HBase</a>
+        </h1>
+        <span class="post-date">Tue, Apr 17, 2018</span>
+         Tips on improving reading performance In some scenario, we need to have high RPS in HBase reading.Therefore, we could change some configuration in HBase to meet this requirement. I found this blog very helpful. HBase official guide is also great.
+ Increase hfile.block.cache.size and decrease hbase.regionserver.global.memstore.size   
+    </div>
+    <div class="post">
+        <h1 class="post-title">
+            <a href="https://cczhong11.github.io/posts/cc/mapreduce/">Mapreduce custom output</a>
+        </h1>
+        <span class="post-date">Tue, Apr 10, 2018</span>
+        Introduction Mapreduce is a very strong computing framework and we could use it to transform data to HDFS. Acutally, we could use Mapreduce to write data to any databse.
+Basic input and output The key thing in Mapreduce is Mapper and Reducer. We use the following code snippets to build a mapper. Here, Mapper&lt;Object, Text, Text, Text&gt; means input key and value class and ouput key and value class. Please notice that we could not use string and int here, since it is not fit the requirement in HDFS. 
+        <div class="read-more-link">
+            <a href="https://cczhong11.github.io/posts/cc/mapreduce/">Read More…</a>
+        </div>
+        
+    </div>
+    <div class="post">
+        <h1 class="post-title">
             <a href="https://cczhong11.github.io/posts/cc/gcp-spark/">GCP for Spark</a>
         </h1>
         <span class="post-date">Tue, Mar 27, 2018</span>

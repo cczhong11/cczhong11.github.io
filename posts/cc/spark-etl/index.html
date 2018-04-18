@@ -193,6 +193,36 @@ rdd.reduceByKey(schema2.reduceByKey(lambda x, y: (x[0] + y[0]))
 rdd.map(toCSVLine2).saveAsTextFile(&quot;xxxx&quot;)
 </code></pre>
 
+<h1 id="how-to-sortbykey">How to sortByKey</h1>
+
+<p>We could use <code>sortByKey</code> and <code>sortBy</code> to sort, but we need to pay attention to parameters.</p>
+
+<ul>
+<li><code>sortByKey(self, ascending=True, numPartitions=None, keyfunc=lambda x: x)</code></li>
+<li><code>sortBy(self, keyfunc, ascending=True, numPartitions=None)</code></li>
+</ul>
+
+<p>Here, what is numPartitions? It will do sort in the number of partition, which will increase sort speed.</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; tmp = [('a', 1), ('b', 2), ('1', 3), ('d', 4), ('2', 5)]
+&gt;&gt;&gt; sc.parallelize(tmp).sortByKey().first()
+('1', 3)
+&gt;&gt;&gt; sc.parallelize(tmp).sortByKey(True, 1).collect()
+[('1', 3), ('2', 5), ('a', 1), ('b', 2), ('d', 4)]
+&gt;&gt;&gt; sc.parallelize(tmp).sortByKey(True, 2).collect()
+[('1', 3), ('2', 5), ('a', 1), ('b', 2), ('d', 4)]
+&gt;&gt;&gt; tmp2 = [('Mary', 1), ('had', 2), ('a', 3), ('little', 4), ('lamb', 5)]
+&gt;&gt;&gt; tmp2.extend([('whose', 6), ('fleece', 7), ('was', 8), ('white', 9)])
+&gt;&gt;&gt; sc.parallelize(tmp2).sortByKey(True, 3, keyfunc=lambda k: k.lower()).collect()
+[('a', 3), ('fleece', 7), ('had', 2), ('lamb', 5),...('white', 9), ('whose', 6)]
+
+&gt;&gt;&gt; tmp = [('a', 1), ('b', 2), ('1', 3), ('d', 4), ('2', 5)]
+&gt;&gt;&gt; sc.parallelize(tmp).sortBy(lambda x: x[0]).collect()
+[('1', 3), ('2', 5), ('a', 1), ('b', 2), ('d', 4)]
+&gt;&gt;&gt; sc.parallelize(tmp).sortBy(lambda x: x[1]).collect()
+[('a', 1), ('b', 2), ('1', 3), ('d', 4), ('2', 5)]
+</code></pre>
+
 </div>
             <div class="footer">
                 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
