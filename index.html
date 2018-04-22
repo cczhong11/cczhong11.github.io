@@ -82,7 +82,7 @@
 </section>
 
         </p>
-		<p class="copyright">&copy; 2018 Tianchen Zhong.
+		<p class="copyright">&copy; 2018 Tc Zhong.
         <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
         </p>
 	</div>
@@ -93,6 +93,18 @@
         <div class="content container">
             <div class="posts">
     
+    <div class="post">
+        <h1 class="post-title">
+            <a href="https://cczhong11.github.io/posts/cc/scala-spark-join/">Scala join RDD tips</a>
+        </h1>
+        <span class="post-date">Sat, Apr 21, 2018</span>
+        Why Spark RDD join is expensive As we know, Join is the most expensive operation on rdd. The reason is when we join two rdd, it requires corresponding keys from each RDD are located at the same partition so that they can be combined locally. Therefore, we will shuffle keys from each rdd to make sure they are in the same partition.
+You could learn more about rdd join from here 
+        <div class="read-more-link">
+            <a href="https://cczhong11.github.io/posts/cc/scala-spark-join/">Read More…</a>
+        </div>
+        
+    </div>
     <div class="post">
         <h1 class="post-title">
             <a href="https://cczhong11.github.io/posts/cc/hbase-reading/">Improve performance on HBase</a>
