@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tips on </title>
-    <link>https://cczhong11.github.io/categories/tips/</link>
-    <description>Recent content in Tips on </description>
+    <title>Web Services on </title>
+    <link>https://cczhong11.github.io/categories/web-services/</link>
+    <description>Recent content in Web Services on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 27 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://cczhong11.github.io/categories/tips/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cczhong11.github.io/categories/web-services/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,16 +19,6 @@
       <guid>https://cczhong11.github.io/posts/cc/undertow/</guid>
       <description>Undertow This is a very fast Java web server. When using this web server, I met some problems but I could not find enough answers even on the stackOverflow. Therefore, I decided to write my experience down.
 How to set parameters to each Servlet? It is necessary for us to pass some parameters to Serlet functions. One way to do this is to use addInitParam when adding Servlet. Like the following code.</description>
-    </item>
-    
-    <item>
-      <title>Spark for ETL</title>
-      <link>https://cczhong11.github.io/posts/cc/spark-etl/</link>
-      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://cczhong11.github.io/posts/cc/spark-etl/</guid>
-      <description>There is not much information about how could we perform complex operation on pySpark. I summary some tips from stackoverflow and my experience. Hope it will be helpful for you.
-How to Read JSON to DataFrame There are serveral ways to read json in Spark. The most common way is to load json in a DataFrame. Why not rdd? Because json contains some hierachy information and it could not represent well in RDD.</description>
     </item>
     
   </channel>
