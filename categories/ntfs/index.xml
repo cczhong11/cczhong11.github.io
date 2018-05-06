@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ntfs on </title>
+    <link>https://cczhong11.github.io/categories/ntfs/</link>
+    <description>Recent content in Ntfs on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://cczhong11.github.io/categories/ntfs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to mount NTFS in Mac</title>
+      <link>https://cczhong11.github.io/posts/mac/ntfs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cczhong11.github.io/posts/mac/ntfs/</guid>
+      <description>Install FUSE FUSE for macOS allows you to extend macOS&amp;rsquo;s native file handling capabilities via third-party file systems. You could install it here.
+Install ntfs-3g Use
+brew install ntfs-3g  If you run into error, Error: Could not symlink sbin/mkntfs. You need to use the absolute path to run the following function.
+Next, we need to umount our driver, since it only has read permission. And create an endpoint for it.</description>
+    </item>
+    
+  </channel>
+</rss>
