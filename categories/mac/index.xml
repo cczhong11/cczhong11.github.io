@@ -6,6 +6,7 @@
     <description>Recent content in Mac on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Sat, 05 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cczhong11.github.io/categories/mac/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +14,7 @@
     <item>
       <title>How to mount NTFS in Mac</title>
       <link>https://cczhong11.github.io/posts/mac/ntfs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://cczhong11.github.io/posts/mac/ntfs/</guid>
       <description>Install FUSE FUSE for macOS allows you to extend macOS&amp;rsquo;s native file handling capabilities via third-party file systems. You could install it here.
