@@ -6,10 +6,21 @@
     <description>Recent content in Machine Learning on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 08 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cczhong11.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Anomaly and Mixture of Gaussian and </title>
+      <link>https://cczhong11.github.io/posts/machinelearning/anomaly-and-multivariate-gaussia-distribution/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cczhong11.github.io/posts/machinelearning/anomaly-and-multivariate-gaussia-distribution/</guid>
+      <description>What is Anomaly In supervised view, we could think these points are with some labels. In unsupervised view, there are outliers, which means they have very low probability.
+When we could model a dataset with a distribution, we could find which point&amp;rsquo;s probability is very low, then we could think them as a outlier.
+Multivariate Gaussian distribution $$P(x) = \frac{1}{{\Sigma \sqrt {2\pi}}} e^{-({x - \mu } )^2/{2\Sigma ^2 } }$$</description>
+    </item>
     
     <item>
       <title>Decision Tree</title>
