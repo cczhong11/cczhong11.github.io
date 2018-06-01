@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" class="wf-firasans-n4-active wf-active">
+	<head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Enable responsiveness on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    
+    
+    <meta name="generator" content="Hugo 0.37" />
+    
+    <title>Hypothesis testing &middot; </title>
+    <meta content="Hypothesis testing - " property="og:title">
+    <meta content=" - Basic idea for Hypothesis testing" property="og:description">
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
+    <link rel="stylesheet" href="https://cczhong11.github.io/css/print.css" media="print">
+    <link rel="stylesheet" href="https://cczhong11.github.io/css/poole.css">
+    <link rel="stylesheet" href="https://cczhong11.github.io/css/hyde.css">
+    <!-- Font-Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+    <!-- highlight.js-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css">
+    <!-- Customised CSS -->
+    <link rel="stylesheet" href="https://cczhong11.github.io/css/custom.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://cczhong11.github.io/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="https://cczhong11.github.io/favicon.png">
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-1279783853013476",
+        enable_page_level_ads: true
+    });
+	</script>
+	</head>
+    <body>
+        <div class="sidebar">
+	<div class="container text-center sidebar-sticky">
+		<div class="sidebar-about text-center">
+			<a href="https://cczhong11.github.io/"><h1 class="brand"></h1></a>
+			 <img src="https://cczhong11.github.io/img/kirby.png" alt="Author Image" class="img-circle headshot center"> 
+			<p class="lead">
+				 I am who I am. Love Cloud and Data science 
+			</p>
+		</div>
+		
+<div>
+	<ul class="sidebar-nav">
+		
+		
+				<li>
+					<a href="https://cczhong11.github.io/posts/"> <span>Posts</span></a>
+				</li>
+				<li>
+					<a href="https://cczhong11.github.io/about/"> <span>About</span></a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+        <p>
+		<section class="row text-center">
+	
+	
+	
+	&nbsp;<a href="https://github.com/cczhong11"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/tianchen-zhong"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:tczhong24@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+        </p>
+		<p class="copyright">&copy; 2018 Tc Zhong.
+        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+        </p>
+	</div>
+	<div>
+	</div>
+</div>
+
+        <div class="content container">
+            <div class="post">
+  <h1>Hypothesis testing</h1>
+  
+  <div class="col-sm-12 col-md-12">
+    <span class="text-left post-date meta">
+            
+       <i class="fa fa-calendar" aria-hidden="true"></i> May 5, 2018 
+      
+      
+        
+        
+            in
+            
+            
+                <a class="meta" href="https://cczhong11.github.io/categories/machine-learning">MACHINE LEARNING</a>
+                
+            
+        
+      
+      
+      
+      </span>  
+  </div>    
+  
+  
+
+<h1 id="hypothesis-testing">Hypothesis testing</h1>
+
+<h2 id="sample-statistics-and-central-limit-theorem">sample statistics and central limit theorem</h2>
+
+<p>When we have a dataset, we could sample data from this set. And we could use sample result to estimate statistics for total set.
+For example, in total we have 10000 data points, but we could not get them all. Therefore, we sampled 100 data points to guess the original dataset expectation and variance.
+<img src="pic/sample.png" alt="" /></p>
+
+<p>We also could know the sample mean&rsquo;s expectation and variance.
+$E(\bar x) = E(\frac{1}{m}\sum x^{i})=\frac{1}{m}E(\sum x^{i})=\mu$</p>
+
+<p>$Var[\bar x]=Var(\frac{1}{m}\sum x^{i})=\frac{1}{m^2}Var(X)=\frac{\sigma^2}{m}$</p>
+
+<p>Central limit theorem discovered <strong>whatever</strong> the distribution is for the $X$, we could find the $\bar x$ for samples having a <strong>Gaussian distribution</strong>.</p>
+
+<p>$$\bar x -&gt; \mathcal{N} (\mu,\frac{\sigma^2}{m})$$</p>
+
+<p>By the way, for m&lt;30, and we could use Student&rsquo;s t-distribution with m-1 degrees of freedom.</p>
+
+<p>$$\frac{\bar x - \mu}{s/m^{<sup>1</sup>&frasl;<sub>2</sub>}} -&gt; T_{m-1}$$</p>
+
+<h2 id="basic-hypothesis-testing">Basic hypothesis testing</h2>
+
+<p>In the beginning, we should have two hypothesis, one is null hypothesis $H_0$ and an alternative hypothesis $H_1$. Given some data x, we want to accept or <strong>reject</strong> the null hypothesis in
+favor of the alternative hypothesis.</p>
+
+<p>| $H_0$ true   | $H_1$ true   |
+| &mdash;&mdash;&mdash;&mdash; | &mdash;&mdash;&mdash;&mdash; | &mdash;&mdash;&mdash;&mdash;- |
+| Accept $H_0$ | Correct      | Type II error |
+| Reject $H_0$ | Type I error | Correct       |</p>
+
+<p>$p(reject H_0|H_0 true)$ is &ldquo;significance of test&rdquo;</p>
+
+<p>$p(reject H_0|H_1 true)$ is &ldquo;power of test&rdquo;</p>
+
+<p>The basic approach is to calculate the probability of observing data under null hypothesis.</p>
+
+<p>$$P = p(data|H_0 true)$$</p>
+
+<p>It is not $p(H_0 true|data)$, therefore p value should not so important.</p>
+
+<p>Confidence intervals. We can use t statistic to create confidence intervals for the mean. Because $\bar x$ has mean $\mu$ and variance $s^2/m$, we know that $1-\alpha$ of its probability mass must lie within the range.
+$$\bar x = \mu \pm \frac{s}{\sqrt m} F^{-1}(1-\alpha/2)$$</p>
+
+<h3 id="example">Example</h3>
+
+<p>Given a sample, $x_1,x_2,&hellip;x_m$,</p>
+
+<p>$H_0:\mu=0$,$H_1:\mu!=0$.</p>
+
+<p>Using central limit theorem, we know $$\frac{\bar x - \mu}{s/m^{<sup>1</sup>&frasl;<sub>2</sub>}} -&gt; T_{m-1}$$. Here, $\mu=0$, therefore, we could use a $t=\frac{\bar x}{s/m^{<sup>1</sup>&frasl;<sub>2</sub>}}$ and compute $p=p(x&gt;|t|)+p(x&lt;-|t|)=2F(-|t|)$</p>
+
+<p><img src="pic/t.png" alt="" /></p>
+
+<h2 id="experiment">Experiment</h2>
+
+<p>A/B testing, we could get result from two settings: control group($\mu_1$) and treatment group($\mu_2$)
+$$H_0: \mu_1=\mu_2$$
+$$H_1: \mu_1!=\mu_2$$
+ So, t is $\frac{\bar x_1 - \bar x_2}{(s_1^2/m_1+s_2^2/m_2)^{<sup>1</sup>&frasl;<sub>2</sub>}}$</p>
+
+</div>
+            <div class="footer">
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+
+            </div>
+        </div>
+        
+                
+    </body>
+</html>

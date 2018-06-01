@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" class="wf-firasans-n4-active wf-active">
+	<head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Enable responsiveness on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    
+    
+    <meta name="generator" content="Hugo 0.37" />
+    
+    <title>Probability &middot; </title>
+    <meta content="Probability - " property="og:title">
+    <meta content=" - Basic idea for Probability" property="og:description">
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
+    <link rel="stylesheet" href="https://cczhong11.github.io/css/print.css" media="print">
+    <link rel="stylesheet" href="https://cczhong11.github.io/css/poole.css">
+    <link rel="stylesheet" href="https://cczhong11.github.io/css/hyde.css">
+    <!-- Font-Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+    <!-- highlight.js-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css">
+    <!-- Customised CSS -->
+    <link rel="stylesheet" href="https://cczhong11.github.io/css/custom.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://cczhong11.github.io/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="https://cczhong11.github.io/favicon.png">
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-1279783853013476",
+        enable_page_level_ads: true
+    });
+	</script>
+	</head>
+    <body>
+        <div class="sidebar">
+	<div class="container text-center sidebar-sticky">
+		<div class="sidebar-about text-center">
+			<a href="https://cczhong11.github.io/"><h1 class="brand"></h1></a>
+			 <img src="https://cczhong11.github.io/img/kirby.png" alt="Author Image" class="img-circle headshot center"> 
+			<p class="lead">
+				 I am who I am. Love Cloud and Data science 
+			</p>
+		</div>
+		
+<div>
+	<ul class="sidebar-nav">
+		
+		
+				<li>
+					<a href="https://cczhong11.github.io/posts/"> <span>Posts</span></a>
+				</li>
+				<li>
+					<a href="https://cczhong11.github.io/about/"> <span>About</span></a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+        <p>
+		<section class="row text-center">
+	
+	
+	
+	&nbsp;<a href="https://github.com/cczhong11"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/tianchen-zhong"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:tczhong24@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+        </p>
+		<p class="copyright">&copy; 2018 Tc Zhong.
+        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+        </p>
+	</div>
+	<div>
+	</div>
+</div>
+
+        <div class="content container">
+            <div class="post">
+  <h1>Probability</h1>
+  
+  <div class="col-sm-12 col-md-12">
+    <span class="text-left post-date meta">
+            
+       <i class="fa fa-calendar" aria-hidden="true"></i> May 5, 2018 
+      
+      
+        
+        
+            in
+            
+            
+                <a class="meta" href="https://cczhong11.github.io/categories/machine-learning">MACHINE LEARNING</a>
+                
+            
+        
+      
+      
+      
+      </span>  
+  </div>    
+  
+  
+
+<h1 id="probability">Probability</h1>
+
+<p>Here we want to talk about some basic knowledges of probability. In the beginning, we need to understand some notations in probability and they are confused in some times.</p>
+
+<p>$p(x),p_x$ here, $x$ is an exact number and we could have an exact number for this value from 0 to 1. For exmaple, $p(1)=0.5,p(0)=0.5$</p>
+
+<p>$p(X)$ here, $X$ is a random variable, it represents all the possible value. We could use $p(X=1)$ to represent the exact value. $p(X)$ is a distribution for $X$</p>
+
+<p>$p(X;\theta)$ means there is a parameter $\theta$ could control the distribution $X$</p>
+
+<p>There are also two important measurements for any distribution of data.</p>
+
+<h2 id="expection">Expection</h2>
+
+<p>$\mathbf{E}[X] = \sum_x x \cdot p(x).$ The expectation of a random variable is defined as the product between the value the random variable takes on and its probability, summed over all the values that the variable. One of the most important properties of expectations is the <strong>linearity</strong>. We could say $\mathbf{E}[X_1 + X_2] = \mathbf{E}[X_1] + \mathbf{E}[X_2]$. Additional, the expectation of a product of random variable is equal to the expectation of the product, $\mathbf{E}[X_1X_2] = \mathbf{E}[X_1]\mathbf{E}[X_2]$</p>
+
+<h2 id="variance">Variance</h2>
+
+<p>It is defined as $\mathbf{Var}[X] = \mathbf{E}[(X - \mathbf{E}[X])^2]$.
+$$ \begin{aligned}
+\mathbf{Var}[X] &amp; = \mathbf{E}[(X - \mathbf{E}[X])^2] <br />
+&amp; = \mathbf{E}[X^2 - 2 X \mathbf{E}[X] + \mathbf{E}[X]^2]  <br />
+&amp; = \mathbf{E}[X^2] - 2\mathbf{E}[X \mathbf{E}[X]] + \mathbf{E}[\mathbf{E}[X]^2] <br />
+&amp; = \mathbf{E}[X^2] - 2\mathbf{E}[X] \mathbf{E}[X] + \mathbf{E}[X]^2 <br />
+&amp; = \mathbf{E}[X^2] - \mathbf{E}[X]^2
+\end{aligned}
+$$</p>
+
+<h2 id="common-distribution">common distribution</h2>
+
+<h3 id="bernoulli-distribution">Bernoulli distribution</h3>
+
+<p>A simple distribution over binary {0,1} random variables</p>
+
+<p>$p(X=1;\phi)=\phi$, $p(X=0;\phi)=1-\phi$</p>
+
+<h3 id="categorical-distribution">Categorical distribution</h3>
+
+<p>It is mulitple categories version for Bernoulli distribution.</p>
+
+<p>$p(X=i;\phi) = \phi_i$</p>
+
+<h3 id="geometric-distribution">Geometric distribution</h3>
+
+<p>The geometric distribution is an distribution over the positive integers, can be viewed as the number of Bernoulli trials needed before we get a “1”</p>
+
+<p>$p(X=i;\phi)=(1-\phi)^{i-1}\phi$</p>
+
+<h3 id="poisson-distribution">Poisson distribution</h3>
+
+<p>Distribution over non-negative integers, popular for <strong>modeling number of times an event occurs within some interval</strong></p>
+
+<p>$p(X=i;\lambda) = \frac{\lambda^ie^{-\lambda}}{i!}$</p>
+
+<h3 id="gaussian-distribution">Gaussian distribution</h3>
+
+<p>It is the most important distribution in the world.</p>
+
+<p>$P(x) = \frac{1}{{\sigma \sqrt {2\pi } }}e^{ - ( {x - \mu } )^2/{2\sigma ^2 } }$</p>
+
+<h3 id="multivariate-gaussians">Multivariate Gaussians</h3>
+
+<p>$f_Y(x)=\frac{1}{\sqrt{(2\pi)^n|\boldsymbol\Sigma|}}
+\exp\left(-\frac{1}{2}({x}-{m})^T{\boldsymbol\Sigma}^{-1}({x}-{m})
+\right)$</p>
+
+<p>Here, $\Sigma$ is covariance matrix.</p>
+
+</div>
+            <div class="footer">
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+
+            </div>
+        </div>
+        
+                
+    </body>
+</html>

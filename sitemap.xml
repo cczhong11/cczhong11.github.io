@@ -8,8 +8,63 @@
   </url>
   
   <url>
+    <loc>https://cczhong11.github.io/posts/machinelearning/decision-tree/</loc>
+    <lastmod>2018-05-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/posts/machinelearning/dimension_reduction/</loc>
+    <lastmod>2018-05-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cczhong11.github.io/posts/mac/ntfs/</loc>
     <lastmod>2018-05-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/posts/machinelearning/cluster/</loc>
+    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/posts/machinelearning/validation/</loc>
+    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/posts/machinelearning/hypothesis-testing/</loc>
+    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/posts/machinelearning/logistic-regression/</loc>
+    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/posts/machinelearning/maximum-likelihood-estimation/</loc>
+    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/posts/machinelearning/neuralnetwork/</loc>
+    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/posts/machinelearning/probaility/</loc>
+    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/posts/machinelearning/probability_modeling/</loc>
+    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/posts/machinelearning/recommender/</loc>
+    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -103,6 +158,12 @@
   <url>
     <loc>https://cczhong11.github.io/categories/mac/</loc>
     <lastmod>2018-05-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/categories/machine-learning/</loc>
+    <lastmod>2018-05-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

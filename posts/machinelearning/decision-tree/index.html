@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" class="wf-firasans-n4-active wf-active">
+	<head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Enable responsiveness on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    
+    
+    <meta name="generator" content="Hugo 0.37" />
+    
+    <title>Decision Tree &middot; </title>
+    <meta content="Decision Tree - " property="og:title">
+    <meta content=" - Basic idea for decision tree" property="og:description">
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
+    <link rel="stylesheet" href="https://cczhong11.github.io/css/print.css" media="print">
+    <link rel="stylesheet" href="https://cczhong11.github.io/css/poole.css">
+    <link rel="stylesheet" href="https://cczhong11.github.io/css/hyde.css">
+    <!-- Font-Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+    <!-- highlight.js-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css">
+    <!-- Customised CSS -->
+    <link rel="stylesheet" href="https://cczhong11.github.io/css/custom.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://cczhong11.github.io/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="https://cczhong11.github.io/favicon.png">
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-1279783853013476",
+        enable_page_level_ads: true
+    });
+	</script>
+	</head>
+    <body>
+        <div class="sidebar">
+	<div class="container text-center sidebar-sticky">
+		<div class="sidebar-about text-center">
+			<a href="https://cczhong11.github.io/"><h1 class="brand"></h1></a>
+			 <img src="https://cczhong11.github.io/img/kirby.png" alt="Author Image" class="img-circle headshot center"> 
+			<p class="lead">
+				 I am who I am. Love Cloud and Data science 
+			</p>
+		</div>
+		
+<div>
+	<ul class="sidebar-nav">
+		
+		
+				<li>
+					<a href="https://cczhong11.github.io/posts/"> <span>Posts</span></a>
+				</li>
+				<li>
+					<a href="https://cczhong11.github.io/about/"> <span>About</span></a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+        <p>
+		<section class="row text-center">
+	
+	
+	
+	&nbsp;<a href="https://github.com/cczhong11"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/tianchen-zhong"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:tczhong24@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+        </p>
+		<p class="copyright">&copy; 2018 Tc Zhong.
+        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+        </p>
+	</div>
+	<div>
+	</div>
+</div>
+
+        <div class="content container">
+            <div class="post">
+  <h1>Decision Tree</h1>
+  
+  <div class="col-sm-12 col-md-12">
+    <span class="text-left post-date meta">
+            
+       <i class="fa fa-calendar" aria-hidden="true"></i> May 5, 2018 
+      
+      
+        
+        
+            in
+            
+            
+                <a class="meta" href="https://cczhong11.github.io/categories/machine-learning">MACHINE LEARNING</a>
+                
+            
+        
+      
+      
+      
+      </span>  
+  </div>    
+  
+  
+
+<h1 id="what-is-desicion-tree">what is desicion tree</h1>
+
+<p>Decision tree is tree-based algorithm and it has two type: regression tree and classification tree.</p>
+
+<p>The main idea for decision tree is to choose one place to cut the whole sample space at one time to get two branches and cut recurisively. In ID3 algorithm, we only consider one demension to cut the space. <strong>You can think of the hypothesis function of decision trees as partitioning the input space with axis-aligned boundaries</strong>. In each partition, predict a constant value.</p>
+
+<p>The pesudo code for desicion tree is like this</p>
+
+<pre><code>id3(datasets, target, attributes):
+    '''
+    datasets is training data
+    target is what we want to use to cut the tree
+    attributes is all possible labels
+    '''
+    node = treenode(datasets)
+    dictionary = summarize(datasets,targetAttributes)# datasets predict target
+    for k in dictionary:
+        if dictionary[k]=len(datasets):
+            node.label = k
+            return node
+    if attributes is None or len(datasets) &lt; min allowed per branch:
+        node.label = most common label
+        return node
+    bestA = the attribute with most information gain
+    node.decision = bestA
+    for v in bestA:
+        subset = the subset of datasets that have v in bestA
+        if subset is not None:
+            node.addBranch(id3(subset,target,attributes-bestA))
+        return node
+</code></pre>
+
+<h2 id="what-is-hypothesis-function">what is hypothesis function</h2>
+
+<p>$h_\theta(x)$ is a decision tree ($\theta$ is shorthand for all the parameters that define the tree: tree structure, values to split on, leaf predictions, etc)</p>
+
+<h2 id="what-is-the-loss-function">What is the loss function</h2>
+
+<p>Let’s assume the output is binary for now (classification task, we will deal with regression shortly), and assume $y \in {0,1}$.</p>
+
+<p>The typical decision tree algorithm using a probabilistic loss function that considers $y$ to be a Bernoulli random variable with probability.
+$$p(y|h<em>\theta(x))=h</em>\theta(x)^y(1-h_\theta(x))^{1-y}$$</p>
+
+<p>$$\ell(h<em>\theta(x),y) = - log(p(y|h</em>\theta(x))) = -y log h<em>\theta(x)-(1-y)log(1-h</em>\theta(x))$$</p>
+
+<h2 id="how-to-minimize-loss-function">how to minimize loss function</h2>
+
+<p>We will use greedy method to incrementally build the
+tree (i.e., minimize the loss function) one node at a time.</p>
+
+<p>Consider a single leaf in a decision tree (could be root of initial tree)</p>
+
+<p>Let $\mathcal{X}$ denote the examples at this leaf (e.g., in this partition), where $\mathcal{X^+}$ denotes the positive examples and $\mathcal{X^-}$ denotes negative (zero) examples. It is known by us now.</p>
+
+<p>What should we choose as the (constant) prediction $h$ at this leaf?</p>
+
+<p>$$minimize_h \sum \ell(h,y) = -\frac{\mathcal{X^+}}{\mathcal{X}}log h&ndash;\frac{\mathcal{X^-}}{\mathcal{X}}log (1-h)$$ Here we could know that $h = \frac{\mathcal{X^+}}{\mathcal{X}}$. Which achieves loss: $\ell = -hlogh-(1-h)log(1-h)$.</p>
+
+<p>Suppose we will split this left to two part $\mathcal{X_0}$ and $\mathcal{X_1}$ and we will get two prediction $h_0=\frac{\mathcal{X_0^+}}{\mathcal{X_0}}$ and $h_1=\frac{\mathcal{X_1^+}}{\mathcal{X_1}}$.</p>
+
+<p><img src="pic/dt.png" alt="" /></p>
+
+<p>The new leafs will each now suffer loss $$\ell_0 = -h_0logh_0-(1-h_0)log(1-h_0)$$
+$$\ell_1 = -h_1logh_1-(1-h_1)log(1-h_1)$$</p>
+
+<p>Thus, if we split the original leaf on feature $\ell$, we no longer suffer our original loss $\ell$, but we do suffer losses $\ell_1$ + $\ell_2$, i.e., we have decreased the overall loss function by $\ell-\ell_0-\ell_1$ (this quantity is called
+information gain)</p>
+
+<p>Greedy decision tree learning – repeat:</p>
+
+<ul>
+<li>For all leaf nodes, evaluate information gain (i.e., decrease in loss) when splitting on each feature $j$</li>
+<li>Split the node/feature that minimizes loss the most</li>
+<li>(Run cross-validation to determine when to stop, or after N nodes)</li>
+</ul>
+
+<p>For Regression trees are the same, except that the hypothesis $h$ are realvalued instead of probabilities, and we use squared loss
+$$\ell(h,y)=(h-y)^2$$
+Therefore,
+$h = \frac{1}{|\mathcal{X}|}y$, and and suffers loss $\ell=\frac{1}{|\mathcal{X}|}\sum (h-y)^2$</p>
+
+<h1 id="how-to-choose-the-right-attribute-to-split">how to choose the right attribute to split</h1>
+
+<p>We can use information entroy gain to see how to split the datasets. Information Gain is the expected reduction in entropy
+of target variable Y for data sample S, due to sorting
+on variable A.</p>
+
+<p>It is also common to use variance reduction and gini index to split datasets.</p>
+
+<p>$Gain(S,A) = H_s(Y)-H_s(Y|A)$</p>
+
+<pre><code>Information Gain Pseudocode
+infoGain(examples, attribute, entropyOfSet)
+   gain = entropyOfSet
+   for value in attributeValues(examples, attribute):
+       sub = subset(examples, attribute, value)
+       gain -=  (number in sub)/(total number of examples) * entropy(sub)
+   return gain
+
+Entropy Pseudocode
+
+entropy(examples)
+   result = 0
+   # handle target attributes with arbitrary labels
+   dictionary = summarizeExamples(examples, targetAttribute)
+   for key in dictionary:
+       proportion = dictionary[key]/total number of examples
+       result -= proportion * log2(proportion)
+   return result
+</code></pre>
+
+<h1 id="what-is-problem">what is problem</h1>
+
+<p>The problem is overfitting for decision tree. It is possible for us to have so many branches and overfit the training datasets.</p>
+
+<h1 id="how-to-solve-it">how to solve it</h1>
+
+<ol>
+<li>pruning on the tree, Pruning of the decision tree is done by replacing a whole subtree by a leaf node.</li>
+<li>K-fold validation</li>
+<li>TODO:</li>
+</ol>
+
+<h1 id="why-we-need-random-forest">why we need random forest</h1>
+
+<p>Because we want to use Bootstrap aggregating to handle overfitting problem.  Given a training set X = x1, &hellip;, xn with responses Y = y1, &hellip;, yn, bagging repeatedly (B times) selects a random sample with replacement of the training set and fits trees to these samples:</p>
+
+<p>For b = 1, &hellip;, B:
+1. Sample, with replacement, n training examples from X, Y; call these Xb, Yb.
+2. Train a classification or regression tree fb on Xb, Yb.</p>
+
+<p>After training, predictions for unseen samples x&rsquo; can be made by averaging the predictions from all the individual regression trees on x&rsquo; or by taking the majority vote in the case of classification trees.</p>
+
+<h1 id="how-to-implement-a-decision-tree">how to implement a decision tree</h1>
+
+<h1 id="boosting">boosting</h1>
+
+<p>Decision trees have notable advantages (they are relatively easy to interpret, usually fast to train, insensitive to scale of input features)</p>
+
+<p>But, they are also quite limited in their representation power (require axisaligned splits, don’t model probabilities very smoothly)</p>
+
+<p>Basic idea of tree ensemble methods is to combine multiple tree models together to form a better predictor. Two of the most popular ensemble methods: random forests and boosting.</p>
+
+<p>Boosting originated as an idea in theoretical machine learning, for “boosting” the performance of weak classifiers (i.e., combining many classifiers that each had modest accuracy to one that had high accuracy). We will introduce Gradient Boosted Regression Trees (GBRT) algorithm.</p>
+
+<p><img src="pic/GBRT.png" alt="" /></p>
+
+</div>
+            <div class="footer">
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+
+            </div>
+        </div>
+        
+                
+    </body>
+</html>

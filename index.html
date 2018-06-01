@@ -114,6 +114,34 @@ You could create a file with the following code.
     </div>
     <div class="post">
         <h1 class="post-title">
+            <a href="https://cczhong11.github.io/posts/machinelearning/decision-tree/">Decision Tree</a>
+        </h1>
+        <span class="post-date">Tue, May 8, 2018</span>
+        what is desicion tree Decision tree is tree-based algorithm and it has two type: regression tree and classification tree.
+The main idea for decision tree is to choose one place to cut the whole sample space at one time to get two branches and cut recurisively. In ID3 algorithm, we only consider one demension to cut the space. You can think of the hypothesis function of decision trees as partitioning the input space with axis-aligned boundaries. 
+        <div class="read-more-link">
+            <a href="https://cczhong11.github.io/posts/machinelearning/decision-tree/">Read More…</a>
+        </div>
+        
+    </div>
+    <div class="post">
+        <h1 class="post-title">
+            <a href="https://cczhong11.github.io/posts/machinelearning/dimension_reduction/"> Dimension Rerduction</a>
+        </h1>
+        <span class="post-date">Sat, May 5, 2018</span>
+        Dimension Rerduction PCA Principal component analysis (PCA) looks at “simplifying” the data in another manner, by preserving the axes of major variation in the data.
+Hypothesis function $h_\theta (x) = UWx, \theta={U \in R^{n*k},W\in R^{k*n}}$. We are compressing input by multiplying by a low rank matriex.
+Loss function $$\ell(h_\theta(x), x)=|\mu - x|_2^2$$
+Optimization problem. $$minimize{U,W} = \sum{I=1}^m | UWx^{(i)}-x^{(i)}|^2_2$$
+procedure Given: normalized data matrix X, k components
+ Compute singular value decomposition $USV^T = X$, where $U,V$ is orthogonal and $S$ is diagonal matrix of singular values. 
+        <div class="read-more-link">
+            <a href="https://cczhong11.github.io/posts/machinelearning/dimension_reduction/">Read More…</a>
+        </div>
+        
+    </div>
+    <div class="post">
+        <h1 class="post-title">
             <a href="https://cczhong11.github.io/posts/mac/ntfs/">How to mount NTFS in Mac</a>
         </h1>
         <span class="post-date">Sat, May 5, 2018</span>
@@ -123,6 +151,120 @@ brew install ntfs-3g  If you run into error, Error: Could not symlink sbin/mkntf
 Next, we need to umount our driver, since it only has read permission. And create an endpoint for it. 
         <div class="read-more-link">
             <a href="https://cczhong11.github.io/posts/mac/ntfs/">Read More…</a>
+        </div>
+        
+    </div>
+    <div class="post">
+        <h1 class="post-title">
+            <a href="https://cczhong11.github.io/posts/machinelearning/cluster/">Clustering</a>
+        </h1>
+        <span class="post-date">Tue, May 1, 2018</span>
+        unsupervised learning the general philosophy of unsupervised learning is that we want to discover some kind of structure in the data. Different unsupervised learning methods work in very different ways, and discover very different kinds of structure, but they all have this similar element.
+Recall from our presentations on supervised learnign that the three aspects of a supervised learning algorithm are: 1. a hypothesis function;($R^n -&gt; R^n$). Mapping input back to this input space. 
+        <div class="read-more-link">
+            <a href="https://cczhong11.github.io/posts/machinelearning/cluster/">Read More…</a>
+        </div>
+        
+    </div>
+    <div class="post">
+        <h1 class="post-title">
+            <a href="https://cczhong11.github.io/posts/machinelearning/validation/">Cross-validation</a>
+        </h1>
+        <span class="post-date">Tue, May 1, 2018</span>
+        Cross-validation Hold - out validation In this method, we will have 70% training data and 30% validation data. When we do the training, we will only use the training data, then we will use the validation data to test our model and tuning the hyperparameters
+ parameters:$\theta$ hypermeters: degree of polynominal, amount of regulazation&hellip;  K-hold validation In this method, we will divide the data into k part, then we will use k-1 data to train the model and have the rest one validate the model. 
+        <div class="read-more-link">
+            <a href="https://cczhong11.github.io/posts/machinelearning/validation/">Read More…</a>
+        </div>
+        
+    </div>
+    <div class="post">
+        <h1 class="post-title">
+            <a href="https://cczhong11.github.io/posts/machinelearning/hypothesis-testing/">Hypothesis testing</a>
+        </h1>
+        <span class="post-date">Tue, May 1, 2018</span>
+        Hypothesis testing sample statistics and central limit theorem When we have a dataset, we could sample data from this set. And we could use sample result to estimate statistics for total set. For example, in total we have 10000 data points, but we could not get them all. Therefore, we sampled 100 data points to guess the original dataset expectation and variance. We also could know the sample mean&rsquo;s expectation and variance. 
+        <div class="read-more-link">
+            <a href="https://cczhong11.github.io/posts/machinelearning/hypothesis-testing/">Read More…</a>
+        </div>
+        
+    </div>
+    <div class="post">
+        <h1 class="post-title">
+            <a href="https://cczhong11.github.io/posts/machinelearning/logistic-regression/">Logistic regression</a>
+        </h1>
+        <span class="post-date">Tue, May 1, 2018</span>
+        Logistic regression This method is a varanice of a linear classier. The key this is we want to use $sigmod(\theta X)$ to classifer value.
+Gradient descent This method like linear regression, it needs Least square minimization for error. Because there is only 0 and 1. Therefore we could use probability to identify the error. $g(z) = \frac{1}{1+e^{-z}}$
+$P(y=0|x,\theta) = sigmod(\theta X)$
+$P(y=1|x,\theta) = 1-sigmod(\theta X)$
+这里使用最大似然估计，目的是得到在已知样本的情况下最有可能的$\theta$ 的值。
+$L(\theta) = \prod p(y^i|x^i;\theta)$ 
+        <div class="read-more-link">
+            <a href="https://cczhong11.github.io/posts/machinelearning/logistic-regression/">Read More…</a>
+        </div>
+        
+    </div>
+    <div class="post">
+        <h1 class="post-title">
+            <a href="https://cczhong11.github.io/posts/machinelearning/maximum-likelihood-estimation/">Maximum likelihood estimation</a>
+        </h1>
+        <span class="post-date">Tue, May 1, 2018</span>
+        Maximum likelihood estimation In the beginning, we could get a sample set $x_1,x_2,&hellip;$, and we assume these points are independent with each other. Then we could get the possibility for us to get these points. $p(x_1,x_2,x_3&hellip;,xm;\theta) = \prod{i=1}^m p(x_i;\theta)$
+So, what&rsquo;s the most possible $\theta$ under this circumstance, it is when this possibility get its maximum value. Therefore, we want to maximize $\theta$, to calculate $$maximize\theta \; \prod{i=1}^m p(x^{(i)};\theta)$$ If we take the log to $p(x)$, we could get the log likelihood of the data, which is also equivalent to that value. 
+        <div class="read-more-link">
+            <a href="https://cczhong11.github.io/posts/machinelearning/maximum-likelihood-estimation/">Read More…</a>
+        </div>
+        
+    </div>
+    <div class="post">
+        <h1 class="post-title">
+            <a href="https://cczhong11.github.io/posts/machinelearning/neuralnetwork/">Neural network</a>
+        </h1>
+        <span class="post-date">Tue, May 1, 2018</span>
+        Neural network The key difference is it combines non-linear function with linear function. It could implement any function by using enough neural.
+Before, we could learn $h_\theta(x)=\theta^T\phi(x)$, if we still set $\phi(x)$ to be a linear function, which we think it should be a two-stage function, but in the end it is still a one stage linear function.
+Hypothesis function Neural networks are a simple extension of this idea, where we additionally apply a non-linear function after each linear transformation. 
+        <div class="read-more-link">
+            <a href="https://cczhong11.github.io/posts/machinelearning/neuralnetwork/">Read More…</a>
+        </div>
+        
+    </div>
+    <div class="post">
+        <h1 class="post-title">
+            <a href="https://cczhong11.github.io/posts/machinelearning/probaility/">Probability</a>
+        </h1>
+        <span class="post-date">Tue, May 1, 2018</span>
+        Probability Here we want to talk about some basic knowledges of probability. In the beginning, we need to understand some notations in probability and they are confused in some times.
+$p(x),p_x$ here, $x$ is an exact number and we could have an exact number for this value from 0 to 1. For exmaple, $p(1)=0.5,p(0)=0.5$
+$p(X)$ here, $X$ is a random variable, it represents all the possible value. We could use $p(X=1)$ to represent the exact value. 
+        <div class="read-more-link">
+            <a href="https://cczhong11.github.io/posts/machinelearning/probaility/">Read More…</a>
+        </div>
+        
+    </div>
+    <div class="post">
+        <h1 class="post-title">
+            <a href="https://cczhong11.github.io/posts/machinelearning/probability_modeling/">Probability modeling</a>
+        </h1>
+        <span class="post-date">Tue, May 1, 2018</span>
+        Probability modeling What is probability modeling? It is a high dimension distribution for p(X). It represents distribution more compactly by exploiting conditional independencies.
+Bayesian Network The main idea is to represent $P(X)$ with $\prod P(X_i|parents(X_i))$. It is also a generative model, which means it construct distribution as a &lsquo;sequential story&rsquo;.
+Markov chain Monte Carlo Markov chain Monte Carlo (MCMC) refers to a class of methods that approximately draw samples from over the hidden variables 
+        <div class="read-more-link">
+            <a href="https://cczhong11.github.io/posts/machinelearning/probability_modeling/">Read More…</a>
+        </div>
+        
+    </div>
+    <div class="post">
+        <h1 class="post-title">
+            <a href="https://cczhong11.github.io/posts/machinelearning/recommender/">Recommendation</a>
+        </h1>
+        <span class="post-date">Tue, May 1, 2018</span>
+        Recommendation Collaborative filtering Solely upon the preferences that other users have indicated for these items.(rating for items): row -&gt; users column-&gt; items
+The task of collaborative filtering, then, is to “fill in” the remaining entries of this matrix given the observed matrix. This X matrix that we observed is sparse but the unknown entries do not correspond to actual zeros in the matrix, but are rather just truly unknown. 
+        <div class="read-more-link">
+            <a href="https://cczhong11.github.io/posts/machinelearning/recommender/">Read More…</a>
         </div>
         
     </div>
