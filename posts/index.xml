@@ -6,19 +6,10 @@
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 05 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cczhong11.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Resume</title>
-      <link>https://cczhong11.github.io/posts/resume/a/</link>
-      <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://cczhong11.github.io/posts/resume/a/</guid>
-      <description>resume</description>
-    </item>
     
     <item>
       <title>How to draw graph in code</title>
