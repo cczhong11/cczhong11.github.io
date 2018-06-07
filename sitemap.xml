@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://cczhong11.github.io/posts/resume/a/</loc>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cczhong11.github.io/posts/mac/graphvis/</loc>
     <lastmod>2018-05-24T00:00:00+00:00</lastmod>
   </url>
@@ -109,12 +114,8 @@
   
   <url>
     <loc>https://cczhong11.github.io/</loc>
-    <lastmod>2018-05-24T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://cczhong11.github.io/posts/resume/a/</loc>
   </url>
   
   <url>
@@ -208,7 +209,13 @@
   
   <url>
     <loc>https://cczhong11.github.io/posts/</loc>
-    <lastmod>2018-05-24T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/categories/resume/</loc>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

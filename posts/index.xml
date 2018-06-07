@@ -6,10 +6,19 @@
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 24 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cczhong11.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Resume</title>
+      <link>https://cczhong11.github.io/posts/resume/a/</link>
+      <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cczhong11.github.io/posts/resume/a/</guid>
+      <description>[](Tianchen_Zhong.pdf)</description>
+    </item>
     
     <item>
       <title>How to draw graph in code</title>
@@ -225,15 +234,6 @@ gcloud dataproc clusters create cluster-name --project=project-id --bucket outpu
       <guid>https://cczhong11.github.io/posts/cc/spark-etl/</guid>
       <description>There is not much information about how could we perform complex operation on pySpark. I summary some tips from stackoverflow and my experience. Hope it will be helpful for you.
 How to Read JSON to DataFrame There are serveral ways to read json in Spark. The most common way is to load json in a DataFrame. Why not rdd? Because json contains some hierachy information and it could not represent well in RDD.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://cczhong11.github.io/posts/resume/a/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cczhong11.github.io/posts/resume/a/</guid>
-      <description>[](Tianchen_Zhong.pdf)</description>
     </item>
     
   </channel>
