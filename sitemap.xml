@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://cczhong11.github.io/posts/java/createthumbnail/</loc>
+    <lastmod>2018-06-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/posts/java/spring_mvc/</loc>
+    <lastmod>2018-06-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cczhong11.github.io/posts/mac/graphvis/</loc>
     <lastmod>2018-05-24T00:00:00+00:00</lastmod>
   </url>
@@ -109,7 +119,7 @@
   
   <url>
     <loc>https://cczhong11.github.io/</loc>
-    <lastmod>2018-05-24T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -126,7 +136,7 @@
   
   <url>
     <loc>https://cczhong11.github.io/categories/cloud-computing/</loc>
-    <lastmod>2018-04-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -161,6 +171,24 @@
   </url>
   
   <url>
+    <loc>https://cczhong11.github.io/categories/image/</loc>
+    <lastmod>2018-06-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/categories/java/</loc>
+    <lastmod>2018-06-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/categories/jave/</loc>
+    <lastmod>2018-06-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cczhong11.github.io/categories/mac/</loc>
     <lastmod>2018-05-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -185,6 +213,12 @@
   </url>
   
   <url>
+    <loc>https://cczhong11.github.io/categories/mvc/</loc>
+    <lastmod>2018-06-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cczhong11.github.io/categories/note/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -204,7 +238,7 @@
   
   <url>
     <loc>https://cczhong11.github.io/posts/</loc>
-    <lastmod>2018-05-24T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -223,6 +257,12 @@
   <url>
     <loc>https://cczhong11.github.io/categories/spark/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cczhong11.github.io/categories/spring/</loc>
+    <lastmod>2018-06-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

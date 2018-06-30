@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="wf-firasans-n4-active wf-active">
+	<head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.37" /> 
+<title>Create a thumbnail of photo using Java &middot; </title>
+<meta content="Create a thumbnail of photo using Java - "
+    property="og:title">
+<meta content=" - This blog will teach you how to create thumbnail in Java."
+    property="og:description"> <!-- CSS -->
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
+<link rel="stylesheet" href="https://cczhong11.github.io/css/print.css" media="print">
+<link rel="stylesheet" href="https://cczhong11.github.io/css/poole.css">
+<link rel="stylesheet" href="https://cczhong11.github.io/css/hyde.css"> <!-- Font-Awesome -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+    crossorigin="anonymous"></script> <!-- highlight.js-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css"> <!-- Customised CSS -->
+<link rel="stylesheet" href="https://cczhong11.github.io/css/custom.css"> <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]--> <!-- Icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://cczhong11.github.io/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://cczhong11.github.io/favicon.png"> 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120924697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120924697-1');
+</script>
+
+
+	</head>
+    <body>
+        <div class="sidebar">
+	<div class="container text-center sidebar-sticky">
+		<div class="sidebar-about text-center">
+			<a href="https://cczhong11.github.io/"><h1 class="brand"></h1></a>
+			 <img src="https://cczhong11.github.io/img/kirby.png" alt="Author Image" class="img-circle headshot center"> 
+			<p class="lead">
+				 I am who I am. Love Cloud and Data science 
+			</p>
+		</div>
+		
+<div>
+	<ul class="sidebar-nav">
+		
+		
+				<li>
+					<a href="https://cczhong11.github.io/posts/"> <span>Posts</span></a>
+				</li>
+				<li>
+					<a href="https://cczhong11.github.io/about/"> <span>About</span></a>
+				</li>
+				<li>
+					<a href="https://cczhong11.github.io/tianchen_zhong.pdf"> <span>My Resume</span></a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+        <p>
+		<section class="row text-center">
+	
+	
+	
+	&nbsp;<a href="https://github.com/cczhong11"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/tianchen-zhong"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:tczhong24@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+        </p>
+		<p class="copyright">&copy; 2018 Tc Zhong.
+        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+        </p>
+	</div>
+	<div>
+	</div>
+</div>
+
+        <div class="content container">
+            <div class="post">
+  <h1>Create a thumbnail of photo using Java</h1>
+  
+  <div class="col-sm-12 col-md-12">
+    <span class="text-left post-date meta">
+            
+       <i class="fa fa-calendar" aria-hidden="true"></i> Jun 6, 2018 
+      
+      
+        
+        
+            in
+            
+            
+                <a class="meta" href="https://cczhong11.github.io/categories/cloud-computing">CLOUD COMPUTING</a>
+                ,
+            
+                <a class="meta" href="https://cczhong11.github.io/categories/image">IMAGE</a>
+                ,
+            
+                <a class="meta" href="https://cczhong11.github.io/categories/jave">JAVE</a>
+                
+            
+        
+      
+      
+      
+      </span>  
+  </div>    
+  
+  
+
+<h1 id="create-a-thumbnail-of-photo-using-java">Create a thumbnail of photo using Java</h1>
+
+<h2 id="why-we-need-a-thumbnail">Why we need a thumbnail</h2>
+
+<p>In the mobile application, if we want to show a picture quickly and we do not care the clarity of that image. We could create a thumbnail of that image, which is a smaller version of this image. The original image captured by iPhone X could be 10 MB, but the thumbnail only have 50 kb, which is much more handy to use when you need to show them quickly.</p>
+
+<h2 id="how-to-create-a-thumbnail-and-integrate-with-a-moblie-app-in-java-servlet">How to create a thumbnail and integrate with a moblie app in Java Servlet</h2>
+
+<p>In our hackathon project, we use ionic 3 to create a native iOS app. What we could get from the phone camera is a Base64 encoded string data. Then, I need to create a thumbnail for it and save it as records in cosmosDB.</p>
+
+<p>In the front end, we posted photo data as RAW to the backend. Therefore, we needed to read data from <code>HttpServletRequest</code> in the first place. Then we need to parse data to <code>BufferedImage</code> format, after that, using <code>org.imgscalr.Scalr</code> to get a resized photo. Next, encoding it back to Base64 since it is easier to show in the front end.</p>
+
+<pre><code class="language-java">
+BufferedReader r = request.getReader()
+String data = r.lines().collect(Collectors.joining(System.lineSeparator()));
+
+
+BufferedImage image = ImageIO.read(new ByteArrayInputStream(javax.xml.bind.DatatypeConverter.parseBase64Binary(data)));
+BufferedImage thumbImg = Scalr.resize(image, Method.ULTRA_QUALITY,
+                    Mode.AUTOMATIC, 200, 200);
+
+ByteArrayOutputStream baos = new ByteArrayOutputStream();
+ImageIO.write(thumbImg, &quot;PNG&quot;, baos);
+byte[] encodeBase64 = Base64.encodeBase64(baos.toByteArray());
+
+String base64Encoded = new String(encodeBase64);
+base64Encoded = &quot;data:image/jpeg;base64,&quot;+base64Encoded;
+baos.close();
+
+</code></pre>
+
+<p>Adding <code>data:image/jpeg;base64,</code> is to show the image in the html. If you do not need this, just delete it.</p>
+
+<h2 id="trouble-shooting">Trouble shooting</h2>
+
+<p>In the beginning, we thought iOS could capture a JPEG file, therefore we put <code>ImageIO.write(thumbImg, &quot;PNG&quot;, baos);</code> as JPEG file format. But we saw the color for images were all wrong and it was pink. We could understand why it happened. After searched around, we found this <a href="https://stackoverflow.com/questions/26115851/pink-reddish-tint-while-resizing-jpeg-images-using-java-thumbnailator-or-imgscal">answer</a>.
+&gt; The problem is almost always that you are reading/writing out different file formats and the ALPHA channel is causing one of your color channels (R/G/B) to be culled from the resulting file.
+For example, if you read in a file that was ARGB (4 channel) and wrote it out as a JPG (3 channel) - unless you purposefully manipulate the image types yourself and render the old image to the new one directly, you will get a file with a &ldquo;ARG&rdquo; channels&hellip; or more specifically, just Red and Green - no Blue.
+PNG supports an alpha channel and JPG does not, so be aware of that.</p>
+
+<p>Therefore, when we changed file type to PNG, it finally showed the right image!</p>
+
+</div>
+            <div class="footer">
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+
+            </div>
+        </div>
+        
+                
+    </body>
+</html>

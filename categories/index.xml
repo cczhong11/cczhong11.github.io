@@ -13,7 +13,7 @@
     <item>
       <title>Cloud Computing</title>
       <link>https://cczhong11.github.io/categories/cloud-computing/</link>
-      <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://cczhong11.github.io/categories/cloud-computing/</guid>
       <description></description>
@@ -65,6 +65,33 @@
     </item>
     
     <item>
+      <title>Image</title>
+      <link>https://cczhong11.github.io/categories/image/</link>
+      <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cczhong11.github.io/categories/image/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://cczhong11.github.io/categories/java/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cczhong11.github.io/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jave</title>
+      <link>https://cczhong11.github.io/categories/jave/</link>
+      <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cczhong11.github.io/categories/jave/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Mac</title>
       <link>https://cczhong11.github.io/categories/mac/</link>
       <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
@@ -97,6 +124,15 @@
       <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://cczhong11.github.io/categories/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mvc</title>
+      <link>https://cczhong11.github.io/categories/mvc/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cczhong11.github.io/categories/mvc/</guid>
       <description></description>
     </item>
     
@@ -151,6 +187,15 @@
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://cczhong11.github.io/categories/spark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring</title>
+      <link>https://cczhong11.github.io/categories/spring/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cczhong11.github.io/categories/spring/</guid>
       <description></description>
     </item>
     
