@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="wf-firasans-n4-active wf-active">
+	<head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.37" /> 
+<title>Maximum likelihood estimation &middot; TC blog</title>
+<meta content="Maximum likelihood estimation - TC blog"
+    property="og:title">
+<meta content=" - Basic idea for Maximum likelihood estimation"
+    property="og:description"> <!-- CSS -->
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
+<link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
+<link rel="stylesheet" href="http://www.tczhong.com/css/poole.css">
+<link rel="stylesheet" href="http://www.tczhong.com/css/hyde.css"> <!-- Font-Awesome -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+    crossorigin="anonymous"></script> <!-- highlight.js-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css"> <!-- Customised CSS -->
+<link rel="stylesheet" href="http://www.tczhong.com/css/custom.css"> <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]--> <!-- Icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.tczhong.com/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="http://www.tczhong.com/favicon.png"> 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120924697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120924697-1');
+</script>
+
+
+	</head>
+    <body>
+        <div class="sidebar">
+	<div class="container text-center sidebar-sticky">
+		<div class="sidebar-about text-center">
+			<a href="http://www.tczhong.com/"><h1 class="brand">TC blog</h1>
+			 <img src="http://www.tczhong.com/img/kirby.png" alt="Author Image" class="img-circle headshot center"> </a>
+			<p class="lead">
+				 I am who I am. Love Cloud and Data science 
+			</p>
+		</div>
+		
+<div>
+	<ul class="sidebar-nav">
+		
+		
+				<li>
+					<a href="http://www.tczhong.com/posts/"> <span>Posts</span></a>
+				</li>
+				<li>
+					<a href="http://www.tczhong.com/about/hello"> <span>About</span></a>
+				</li>
+				<li>
+					<a href="http://www.tczhong.com/tianchen_zhong.pdf"> <span>My Resume</span></a>
+				</li>
+				<li>
+					<a href="http://www.tczhong.com/project/"> <span>Project</span></a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+        <p>
+		<section class="row text-center">
+	
+	
+	
+	&nbsp;<a href="https://github.com/cczhong11"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/tianchen-zhong"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:tczhong24@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+        </p>
+		<p class="copyright">&copy; 2018 Tc Zhong.
+        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+        </p>
+	</div>
+	<div>
+	</div>
+</div>
+
+        <div class="content container">
+            <div class="post">
+  <h1>Maximum likelihood estimation</h1>
+  
+  <div class="col-sm-12 col-md-12">
+    <span class="text-left post-date meta">
+            
+       <i class="fa fa-calendar" aria-hidden="true"></i> May 5, 2018 
+      
+      
+        
+        
+            in
+            
+            
+                <a class="meta" href="http://www.tczhong.com/categories/machine-learning">MACHINE LEARNING</a>
+                
+            
+        
+      
+      
+      
+      </span>  
+  </div>    
+  
+  
+
+<h1 id="maximum-likelihood-estimation">Maximum likelihood estimation</h1>
+
+<p>In the beginning, we could get a sample set $x_1,x_2,&hellip;$, and we assume these points are independent with each other. Then we could get the possibility for us to get these points.
+$p(x_1,x_2,x_3&hellip;,x<em>m;\theta) = \prod</em>{i=1}^m p(x_i;\theta)$</p>
+
+<p>So, what&rsquo;s the most possible $\theta$ under this circumstance, it is when this possibility get its maximum value. Therefore, we want to maximize $\theta$, to calculate
+$$maximize<em>\theta \; \prod</em>{i=1}^m p(x^{(i)};\theta)$$
+If we take the log to $p(x)$, we could get the <strong>log likelihood</strong> of the data, which is also equivalent to that value.
+$$maximize<em>\theta \; \frac{1}{m} \sum</em>{i=1}^m \log p(x^{(i)};\theta)$$</p>
+
+<p>Therefore, when we need to calculate $\phi$ in Bernoulli distribution, we could use $p(X = x; \phi) = \phi^x (1-\phi)^{(1-x)}$ to capture $x=1$ and $x=0$ at the same time. Then we could rewrite it to $maximize<em>{\phi} \sum</em>{i=1}^m (x^{(i)}\log\phi + (1-x^{(i)}) \log (1-\phi))$</p>
+
+<p>In order to maximize this equation, let&rsquo;s take the derivative and set it equal to 0. So, we could know why we could estimate $\phi$ just like this.
+$$\begin{split}
+\frac{d}{d \phi} \sum<em>{i=1}^m \left (x^{(i)}\log\phi + (1-x^{(i)}) \log (1-\phi) \right )
+&amp; = \sum</em>{i=1}^m \frac{d}{d \phi} \left ( x^{(i)}\log\phi + (1-x^{(i)}) \log (1-\phi) \right )  <br />
+&amp; = \sum_{i=1}^m \left ( \frac{x^{(i)}}{\phi} - \frac{1-x^{(i)}}{1-\phi} \right )
+\end{split}$$</p>
+
+<p>$$\begin{split}
+&amp; \sum<em>{i=1}^m \left ( \frac{x^{(i)}}{\phi} - \frac{1-x^{(i)}}{1-\phi} \right ) = 0 <br />
+\Longrightarrow \;\; &amp; \frac{\sum</em>{i=1}^m x^{(i)}}{\phi} - \frac{\sum<em>{i=1}^m (1-x^{(i)})} {1-\phi} = 0 <br />
+\Longrightarrow \;\; &amp; (1-\phi) \sum</em>{i=1}^m x^{(i)}  - \phi \sum<em>{i=1}^m (1-x^{(i)}) = 0 <br />
+\Longrightarrow \;\; &amp; \sum</em>{i=1}^m x^{(i)} = \phi \sum<em>{i=1}^m (x^{(i)} + (1-x^{(i)})) <br />
+\Longrightarrow \;\; &amp; \sum</em>{i=1}^m x^{(i)} = \phi m <br />
+\Longrightarrow \;\; &amp; \phi = \frac{\sum_{i=1}^m x^{(i)}}{m}.
+\end{split}$$</p>
+
+<h2 id="naive-bayes">Naive bayes</h2>
+
+<p>Naive bayes is an easy method, the key is to calculate $$p(Y \mid X) = \frac{p(X \mid Y)p(Y)}{\sum_y p(X \mid y) p(y)}$$. We could calculate $P(X \ mid Y)$ and $P(Y)$ respectively.</p>
+
+<p>The naive Bayes approach, however, is to make the additional assumption that the individual features  $X<em>i$  are conditionally independent given  $Y$ . This lets us represent the condition $p(X \mid Y) = \prod</em>{i=1}^n p(X_i \mid Y)$.</p>
+
+<p>For example, we need to detect spam mail. We need to training the classifier. The training data tells us $P(words|spam)$ and $P(words&rsquo;|not spam)$, then we could get the $P(spam)$, we could use $P(spam|words&rdquo;) = \frac{p(words|spam)P(spam)}{p(words|spam)P(spam)+p(words|not spam)P(not spam)}$</p>
+
+<p>We could use log to avoid too small value yield from $\prod$, like $\log p(y) + \sum_{i=1}^n \log p(x_i \mid y)$.</p>
+
+<p>We also could use laplace smoothing to avoid zero. $\phi<em>i^y = \frac{\sum</em>{j=1}^m x<em>i^{(j)} \mathrm{1}{y^{(j)} = y} + 1}{\sum</em>{j=1}^m \mathrm{1}{y^{(j)} = y} + 2}$</p>
+
+<h2 id="logistic-regression">logistic regression</h2>
+
+<p>We could get this formula from logistic regression and we also could think it using MLE.</p>
+
+<p>$minimize<em>\theta \sum</em>{i=1}^m \ell<em>{\mathrm{logistic}}(h</em>\theta(x^{(i)}),y^{(i)}) \; \equiv \; minimize<em>\theta \;\; \sum</em>{i=1}^m \log(1+\exp(-h_\theta(x^{(i)})\cdot y^{(i)})$</p>
+
+</div>
+            <div class="footer">
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+
+            </div>
+        </div>
+        
+                
+    </body>
+</html>

@@ -28,17 +28,17 @@
   </url>
   
   <url>
-    <loc>http://www.tczhong.com/posts/machinelearning/anomaly-and-multivariate-gaussia-distribution/</loc>
+    <loc>http://www.tczhong.com/machinelearning/anomaly-and-multivariate-gaussia-distribution/</loc>
     <lastmod>2018-05-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.tczhong.com/posts/machinelearning/decision-tree/</loc>
+    <loc>http://www.tczhong.com/machinelearning/decision-tree/</loc>
     <lastmod>2018-05-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.tczhong.com/posts/machinelearning/dimension_reduction/</loc>
+    <loc>http://www.tczhong.com/machinelearning/dimension_reduction/</loc>
     <lastmod>2018-05-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -48,47 +48,47 @@
   </url>
   
   <url>
-    <loc>http://www.tczhong.com/posts/machinelearning/cluster/</loc>
+    <loc>http://www.tczhong.com/machinelearning/cluster/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.tczhong.com/posts/machinelearning/validation/</loc>
+    <loc>http://www.tczhong.com/machinelearning/validation/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.tczhong.com/posts/machinelearning/hypothesis-testing/</loc>
+    <loc>http://www.tczhong.com/machinelearning/hypothesis-testing/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.tczhong.com/posts/machinelearning/logistic-regression/</loc>
+    <loc>http://www.tczhong.com/machinelearning/logistic-regression/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.tczhong.com/posts/machinelearning/maximum-likelihood-estimation/</loc>
+    <loc>http://www.tczhong.com/machinelearning/maximum-likelihood-estimation/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.tczhong.com/posts/machinelearning/neuralnetwork/</loc>
+    <loc>http://www.tczhong.com/machinelearning/neuralnetwork/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.tczhong.com/posts/machinelearning/probaility/</loc>
+    <loc>http://www.tczhong.com/machinelearning/probaility/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.tczhong.com/posts/machinelearning/probability_modeling/</loc>
+    <loc>http://www.tczhong.com/machinelearning/probability_modeling/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.tczhong.com/posts/machinelearning/recommender/</loc>
+    <loc>http://www.tczhong.com/machinelearning/recommender/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -219,6 +219,12 @@
   
   <url>
     <loc>http://www.tczhong.com/categories/machine-learning/</loc>
+    <lastmod>2018-05-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.tczhong.com/machinelearning/</loc>
     <lastmod>2018-05-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

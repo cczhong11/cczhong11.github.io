@@ -5,10 +5,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.37" /> 
-<title>Machine Learning &middot; TC blog</title>
-<meta content="Machine Learning - TC blog"
+<title>Probability modeling &middot; TC blog</title>
+<meta content="Probability modeling - TC blog"
     property="og:title">
-<meta content=" - "
+<meta content=" - Basic idea for Probability modeling"
     property="og:description"> <!-- CSS -->
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
 <link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
@@ -23,9 +23,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]--> <!-- Icons -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.tczhong.com/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="http://www.tczhong.com/favicon.png"> <!-- RSS -->
-<link href="http://www.tczhong.com/categories/machine-learning/index.xml" rel="alternate" type="application/rss+xml" title="TC blog" />
-<link href="http://www.tczhong.com/categories/machine-learning/index.xml" rel="feed" type="application/rss+xml" title="TC blog" />
+<link rel="shortcut icon" href="http://www.tczhong.com/favicon.png"> 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120924697-1"></script>
 <script>
@@ -99,73 +97,62 @@
 </div>
 
         <div class="content container">
-            <h1 class="title">Machine Learning</h1>
-<ul class="posts">
-    <li>
-        <span>
-            <a href="http://www.tczhong.com/machinelearning/anomaly-and-multivariate-gaussia-distribution/">Anomaly and Mixture of Gaussian and </a>
-            <time class="pull-right post-list"> May 10, 2018</time>
-        </span>
-    </li><li>
-        <span>
-            <a href="http://www.tczhong.com/machinelearning/decision-tree/">Decision Tree</a>
-            <time class="pull-right post-list"> May 8, 2018</time>
-        </span>
-    </li><li>
-        <span>
-            <a href="http://www.tczhong.com/machinelearning/dimension_reduction/"> Dimension Rerduction</a>
-            <time class="pull-right post-list"> May 5, 2018</time>
-        </span>
-    </li><li>
-        <span>
-            <a href="http://www.tczhong.com/machinelearning/cluster/">Clustering</a>
-            <time class="pull-right post-list"> May 1, 2018</time>
-        </span>
-    </li><li>
-        <span>
-            <a href="http://www.tczhong.com/machinelearning/validation/">Cross-validation</a>
-            <time class="pull-right post-list"> May 1, 2018</time>
-        </span>
-    </li><li>
-        <span>
-            <a href="http://www.tczhong.com/machinelearning/hypothesis-testing/">Hypothesis testing</a>
-            <time class="pull-right post-list"> May 1, 2018</time>
-        </span>
-    </li><li>
-        <span>
-            <a href="http://www.tczhong.com/machinelearning/logistic-regression/">Logistic regression</a>
-            <time class="pull-right post-list"> May 1, 2018</time>
-        </span>
-    </li><li>
-        <span>
-            <a href="http://www.tczhong.com/machinelearning/maximum-likelihood-estimation/">Maximum likelihood estimation</a>
-            <time class="pull-right post-list"> May 1, 2018</time>
-        </span>
-    </li><li>
-        <span>
-            <a href="http://www.tczhong.com/machinelearning/neuralnetwork/">Neural network</a>
-            <time class="pull-right post-list"> May 1, 2018</time>
-        </span>
-    </li><li>
-        <span>
-            <a href="http://www.tczhong.com/machinelearning/probaility/">Probability</a>
-            <time class="pull-right post-list"> May 1, 2018</time>
-        </span>
-    </li><li>
-        <span>
-            <a href="http://www.tczhong.com/machinelearning/probability_modeling/">Probability modeling</a>
-            <time class="pull-right post-list"> May 1, 2018</time>
-        </span>
-    </li><li>
-        <span>
-            <a href="http://www.tczhong.com/machinelearning/recommender/">Recommendation</a>
-            <time class="pull-right post-list"> May 1, 2018</time>
-        </span>
-    </li>
-</ul>
-
-            <div class="footer">
+            <div class="post">
+  <h1>Probability modeling</h1>
+  
+  <div class="col-sm-12 col-md-12">
+    <span class="text-left post-date meta">
+            
+       <i class="fa fa-calendar" aria-hidden="true"></i> May 5, 2018 
+      
+      
+        
+        
+            in
+            
+            
+                <a class="meta" href="http://www.tczhong.com/categories/machine-learning">MACHINE LEARNING</a>
                 
+            
+        
+      
+      
+      
+      </span>  
+  </div>    
+  
+  
+
+<h1 id="probability-modeling">Probability modeling</h1>
+
+<p>What is probability modeling? It is a high dimension distribution for p(X). It represents distribution more compactly by exploiting conditional independencies.</p>
+
+<h2 id="bayesian-network">Bayesian Network</h2>
+
+<p>The main idea is to represent $P(X)$ with $\prod P(X_i|parents(X_i))$. It is also a generative model, <strong>which means it construct distribution as a &lsquo;sequential story&rsquo;</strong>.</p>
+
+<p><img src="pic/bayesian.png" alt="" /></p>
+
+<p><img src="pic/generative.png" alt="" /></p>
+
+<h2 id="markov-chain-monte-carlo">Markov chain Monte Carlo</h2>
+
+<p>Markov chain Monte Carlo (MCMC) refers to a class of methods that approximately draw samples from over the hidden variables</p>
+
+<p>The techniques work by iteratively sampling from some of the hidden variables (we’ll denote them $Z_i$) conditioned on others (both other hidden variables $Z_i$ and observed variables $X$)</p>
+
+<p><img src="pic/mcmc.md" alt="" /></p>
+
+</div>
+            <div class="footer">
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+
             </div>
         </div>
         
