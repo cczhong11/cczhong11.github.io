@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Soark on </title>
-    <link>https://cczhong11.github.io/categories/soark/</link>
-    <description>Recent content in Soark on </description>
+    <title>Soark on TC blog</title>
+    <link>http://www.tczhong.com/categories/soark/</link>
+    <description>Recent content in Soark on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 21 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://cczhong11.github.io/categories/soark/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.tczhong.com/categories/soark/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Scala join RDD tips</title>
-      <link>https://cczhong11.github.io/posts/cc/scala-spark-join/</link>
+      <link>http://www.tczhong.com/posts/cc/scala-spark-join/</link>
       <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/cc/scala-spark-join/</guid>
+      <guid>http://www.tczhong.com/posts/cc/scala-spark-join/</guid>
       <description>Why Spark RDD join is expensive As we know, Join is the most expensive operation on rdd. The reason is when we join two rdd, it requires corresponding keys from each RDD are located at the same partition so that they can be combined locally. Therefore, we will shuffle keys from each rdd to make sure they are in the same partition.
 You could learn more about rdd join from here</description>
     </item>

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tips on </title>
-    <link>https://cczhong11.github.io/categories/tips/</link>
-    <description>Recent content in Tips on </description>
+    <title>Tips on TC blog</title>
+    <link>http://www.tczhong.com/categories/tips/</link>
+    <description>Recent content in Tips on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 05 May 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://cczhong11.github.io/categories/tips/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.tczhong.com/categories/tips/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to mount NTFS in Mac</title>
-      <link>https://cczhong11.github.io/posts/mac/ntfs/</link>
+      <link>http://www.tczhong.com/posts/mac/ntfs/</link>
       <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/mac/ntfs/</guid>
+      <guid>http://www.tczhong.com/posts/mac/ntfs/</guid>
       <description>Install FUSE FUSE for macOS allows you to extend macOS&amp;rsquo;s native file handling capabilities via third-party file systems. You could install it here.
 Install ntfs-3g Use
 brew install ntfs-3g  If you run into error, Error: Could not symlink sbin/mkntfs. You need to use the absolute path to run the following function.
@@ -25,20 +25,20 @@ Next, we need to umount our driver, since it only has read permission. And creat
     
     <item>
       <title>Undertow configuration</title>
-      <link>https://cczhong11.github.io/posts/cc/undertow/</link>
+      <link>http://www.tczhong.com/posts/cc/undertow/</link>
       <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/cc/undertow/</guid>
+      <guid>http://www.tczhong.com/posts/cc/undertow/</guid>
       <description>Undertow This is a very fast Java web server. When using this web server, I met some problems but I could not find enough answers even on the stackOverflow. Therefore, I decided to write my experience down.
 How to set parameters to each Servlet? It is necessary for us to pass some parameters to Serlet functions. One way to do this is to use addInitParam when adding Servlet. Like the following code.</description>
     </item>
     
     <item>
       <title>Spark for ETL</title>
-      <link>https://cczhong11.github.io/posts/cc/spark-etl/</link>
+      <link>http://www.tczhong.com/posts/cc/spark-etl/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/cc/spark-etl/</guid>
+      <guid>http://www.tczhong.com/posts/cc/spark-etl/</guid>
       <description>There is not much information about how could we perform complex operation on pySpark. I summary some tips from stackoverflow and my experience. Hope it will be helpful for you.
 How to Read JSON to DataFrame There are serveral ways to read json in Spark. The most common way is to load json in a DataFrame. Why not rdd? Because json contains some hierachy information and it could not represent well in RDD.</description>
     </item>

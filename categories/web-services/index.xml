@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Web Services on </title>
-    <link>https://cczhong11.github.io/categories/web-services/</link>
-    <description>Recent content in Web Services on </description>
+    <title>Web Services on TC blog</title>
+    <link>http://www.tczhong.com/categories/web-services/</link>
+    <description>Recent content in Web Services on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 27 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://cczhong11.github.io/categories/web-services/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.tczhong.com/categories/web-services/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Undertow configuration</title>
-      <link>https://cczhong11.github.io/posts/cc/undertow/</link>
+      <link>http://www.tczhong.com/posts/cc/undertow/</link>
       <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/cc/undertow/</guid>
+      <guid>http://www.tczhong.com/posts/cc/undertow/</guid>
       <description>Undertow This is a very fast Java web server. When using this web server, I met some problems but I could not find enough answers even on the stackOverflow. Therefore, I decided to write my experience down.
 How to set parameters to each Servlet? It is necessary for us to pass some parameters to Serlet functions. One way to do this is to use addInitParam when adding Servlet. Like the following code.</description>
     </item>

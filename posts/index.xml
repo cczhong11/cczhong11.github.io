@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on </title>
-    <link>https://cczhong11.github.io/posts/</link>
-    <description>Recent content in Posts on </description>
+    <title>Posts on TC blog</title>
+    <link>http://www.tczhong.com/posts/</link>
+    <description>Recent content in Posts on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 05 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://cczhong11.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.tczhong.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Solve NoSuchMethodError in Azure JAVA SDK </title>
-      <link>https://cczhong11.github.io/posts/cc/azure-error/</link>
+      <link>http://www.tczhong.com/posts/cc/azure-error/</link>
       <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/cc/azure-error/</guid>
+      <guid>http://www.tczhong.com/posts/cc/azure-error/</guid>
       <description>Problem I met a NoSuchMethodError in Azure Java SDK. The error message is like the following:
 Exception in thread &amp;quot;main&amp;quot; java.lang.NoSuchMethodError: com.microsoft.azure.credentials.ApplicationTokenCredentials.proxy()Ljava/net/Proxy;  It was very strange and I searched on the stackoverflow. And it shows the problem could be confliction in package version. Therefore I looked into the code to find the reason.
 Solution In the beginning, I needed to go into the source code to see what happened there.</description>
@@ -24,19 +24,19 @@ Solution In the beginning, I needed to go into the source code to see what happe
     
     <item>
       <title>Create a thumbnail of photo using Java</title>
-      <link>https://cczhong11.github.io/posts/java/createthumbnail/</link>
+      <link>http://www.tczhong.com/posts/java/createthumbnail/</link>
       <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/java/createthumbnail/</guid>
+      <guid>http://www.tczhong.com/posts/java/createthumbnail/</guid>
       <description>Create a thumbnail of photo using Java Why we need a thumbnail In the mobile application, if we want to show a picture quickly and we do not care the clarity of that image. We could create a thumbnail of that image, which is a smaller version of this image. The original image captured by iPhone X could be 10 MB, but the thumbnail only have 50 kb, which is much more handy to use when you need to show them quickly.</description>
     </item>
     
     <item>
       <title>Spring MVC model</title>
-      <link>https://cczhong11.github.io/posts/java/spring_mvc/</link>
+      <link>http://www.tczhong.com/posts/java/spring_mvc/</link>
       <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/java/spring_mvc/</guid>
+      <guid>http://www.tczhong.com/posts/java/spring_mvc/</guid>
       <description>Spring boot Framework Spring boot framework is a strong framework helps you build a MVC model web service quickly. So in the first place, we need to understand what is MVC model
 Model-View-Controller  Model  Model represent knowledge. It represents how basic items interact with each other.
  Views  A view is a (visual) representation of its model. A view is attached to its model (or model part) and gets the data necessary for the presentation from the model by asking questions.</description>
@@ -44,10 +44,10 @@ Model-View-Controller  Model  Model represent knowledge. It represents how basic
     
     <item>
       <title>How to draw graph in code</title>
-      <link>https://cczhong11.github.io/posts/mac/graphvis/</link>
+      <link>http://www.tczhong.com/posts/mac/graphvis/</link>
       <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/mac/graphvis/</guid>
+      <guid>http://www.tczhong.com/posts/mac/graphvis/</guid>
       <description>Basic Drawing We could use Graphviz to draw a graph in code and it is also easily to used in Markdown file. In this blog, I will focus on dot tool.
 In the beginning, we need to install it. If you are a Mac user, we could use brew install graphvis. For other user, you could download file from the official website.
 You could create a file with the following code.</description>
@@ -55,10 +55,10 @@ You could create a file with the following code.</description>
     
     <item>
       <title>Anomaly and Mixture of Gaussian and </title>
-      <link>https://cczhong11.github.io/posts/machinelearning/anomaly-and-multivariate-gaussia-distribution/</link>
+      <link>http://www.tczhong.com/posts/machinelearning/anomaly-and-multivariate-gaussia-distribution/</link>
       <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/machinelearning/anomaly-and-multivariate-gaussia-distribution/</guid>
+      <guid>http://www.tczhong.com/posts/machinelearning/anomaly-and-multivariate-gaussia-distribution/</guid>
       <description>What is Anomaly In supervised view, we could think these points are with some labels. In unsupervised view, there are outliers, which means they have very low probability.
 When we could model a dataset with a distribution, we could find which point&amp;rsquo;s probability is very low, then we could think them as a outlier.
 Multivariate Gaussian distribution $$P(x) = \frac{1}{\Sigma \sqrt {2\pi}} e^{-({x - \mu } )^2/{2\Sigma ^2}}$$
@@ -67,20 +67,20 @@ In this distribution, we could prove $E[X] = \mu$, $Cov[X]=\Sigma$</description>
     
     <item>
       <title>Decision Tree</title>
-      <link>https://cczhong11.github.io/posts/machinelearning/decision-tree/</link>
+      <link>http://www.tczhong.com/posts/machinelearning/decision-tree/</link>
       <pubDate>Tue, 08 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/machinelearning/decision-tree/</guid>
+      <guid>http://www.tczhong.com/posts/machinelearning/decision-tree/</guid>
       <description>what is desicion tree Decision tree is tree-based algorithm and it has two type: regression tree and classification tree.
 The main idea for decision tree is to choose one place to cut the whole sample space at one time to get two branches and cut recurisively. In ID3 algorithm, we only consider one demension to cut the space. You can think of the hypothesis function of decision trees as partitioning the input space with axis-aligned boundaries.</description>
     </item>
     
     <item>
       <title> Dimension Rerduction</title>
-      <link>https://cczhong11.github.io/posts/machinelearning/dimension_reduction/</link>
+      <link>http://www.tczhong.com/posts/machinelearning/dimension_reduction/</link>
       <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/machinelearning/dimension_reduction/</guid>
+      <guid>http://www.tczhong.com/posts/machinelearning/dimension_reduction/</guid>
       <description>Dimension Rerduction PCA Principal component analysis (PCA) looks at “simplifying” the data in another manner, by preserving the axes of major variation in the data.
 Hypothesis function $h_\theta (x) = UWx, \theta={U \in R^{n*k},W\in R^{k*n}}$. We are compressing input by multiplying by a low rank matriex.
 Loss function $$\ell(h_\theta(x), x)=|\mu - x|_2^2$$
@@ -91,10 +91,10 @@ procedure Given: normalized data matrix X, k components
     
     <item>
       <title>How to mount NTFS in Mac</title>
-      <link>https://cczhong11.github.io/posts/mac/ntfs/</link>
+      <link>http://www.tczhong.com/posts/mac/ntfs/</link>
       <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/mac/ntfs/</guid>
+      <guid>http://www.tczhong.com/posts/mac/ntfs/</guid>
       <description>Install FUSE FUSE for macOS allows you to extend macOS&amp;rsquo;s native file handling capabilities via third-party file systems. You could install it here.
 Install ntfs-3g Use
 brew install ntfs-3g  If you run into error, Error: Could not symlink sbin/mkntfs. You need to use the absolute path to run the following function.
@@ -103,39 +103,39 @@ Next, we need to umount our driver, since it only has read permission. And creat
     
     <item>
       <title>Clustering</title>
-      <link>https://cczhong11.github.io/posts/machinelearning/cluster/</link>
+      <link>http://www.tczhong.com/posts/machinelearning/cluster/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/machinelearning/cluster/</guid>
+      <guid>http://www.tczhong.com/posts/machinelearning/cluster/</guid>
       <description>unsupervised learning the general philosophy of unsupervised learning is that we want to discover some kind of structure in the data. Different unsupervised learning methods work in very different ways, and discover very different kinds of structure, but they all have this similar element.
 Recall from our presentations on supervised learnign that the three aspects of a supervised learning algorithm are: 1. a hypothesis function;($R^n -&amp;gt; R^n$). Mapping input back to this input space.</description>
     </item>
     
     <item>
       <title>Cross-validation</title>
-      <link>https://cczhong11.github.io/posts/machinelearning/validation/</link>
+      <link>http://www.tczhong.com/posts/machinelearning/validation/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/machinelearning/validation/</guid>
+      <guid>http://www.tczhong.com/posts/machinelearning/validation/</guid>
       <description>Cross-validation Hold - out validation In this method, we will have 70% training data and 30% validation data. When we do the training, we will only use the training data, then we will use the validation data to test our model and tuning the hyperparameters
  parameters:$\theta$ hypermeters: degree of polynominal, amount of regulazation&amp;hellip;  K-hold validation In this method, we will divide the data into k part, then we will use k-1 data to train the model and have the rest one validate the model.</description>
     </item>
     
     <item>
       <title>Hypothesis testing</title>
-      <link>https://cczhong11.github.io/posts/machinelearning/hypothesis-testing/</link>
+      <link>http://www.tczhong.com/posts/machinelearning/hypothesis-testing/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/machinelearning/hypothesis-testing/</guid>
+      <guid>http://www.tczhong.com/posts/machinelearning/hypothesis-testing/</guid>
       <description>Hypothesis testing sample statistics and central limit theorem When we have a dataset, we could sample data from this set. And we could use sample result to estimate statistics for total set. For example, in total we have 10000 data points, but we could not get them all. Therefore, we sampled 100 data points to guess the original dataset expectation and variance. We also could know the sample mean&amp;rsquo;s expectation and variance.</description>
     </item>
     
     <item>
       <title>Logistic regression</title>
-      <link>https://cczhong11.github.io/posts/machinelearning/logistic-regression/</link>
+      <link>http://www.tczhong.com/posts/machinelearning/logistic-regression/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/machinelearning/logistic-regression/</guid>
+      <guid>http://www.tczhong.com/posts/machinelearning/logistic-regression/</guid>
       <description>Logistic regression This method is a varanice of a linear classier. The key this is we want to use $sigmod(\theta X)$ to classifer value.
 Gradient descent This method like linear regression, it needs Least square minimization for error. Because there is only 0 and 1. Therefore we could use probability to identify the error. $g(z) = \frac{1}{1+e^{-z}}$
 $P(y=0|x,\theta) = sigmod(\theta X)$
@@ -146,20 +146,20 @@ $L(\theta) = \prod p(y^i|x^i;\theta)$</description>
     
     <item>
       <title>Maximum likelihood estimation</title>
-      <link>https://cczhong11.github.io/posts/machinelearning/maximum-likelihood-estimation/</link>
+      <link>http://www.tczhong.com/posts/machinelearning/maximum-likelihood-estimation/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/machinelearning/maximum-likelihood-estimation/</guid>
+      <guid>http://www.tczhong.com/posts/machinelearning/maximum-likelihood-estimation/</guid>
       <description>Maximum likelihood estimation In the beginning, we could get a sample set $x_1,x_2,&amp;hellip;$, and we assume these points are independent with each other. Then we could get the possibility for us to get these points. $p(x_1,x_2,x_3&amp;hellip;,xm;\theta) = \prod{i=1}^m p(x_i;\theta)$
 So, what&amp;rsquo;s the most possible $\theta$ under this circumstance, it is when this possibility get its maximum value. Therefore, we want to maximize $\theta$, to calculate $$maximize\theta \; \prod{i=1}^m p(x^{(i)};\theta)$$ If we take the log to $p(x)$, we could get the log likelihood of the data, which is also equivalent to that value.</description>
     </item>
     
     <item>
       <title>Neural network</title>
-      <link>https://cczhong11.github.io/posts/machinelearning/neuralnetwork/</link>
+      <link>http://www.tczhong.com/posts/machinelearning/neuralnetwork/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/machinelearning/neuralnetwork/</guid>
+      <guid>http://www.tczhong.com/posts/machinelearning/neuralnetwork/</guid>
       <description>Neural network The key difference is it combines non-linear function with linear function. It could implement any function by using enough neural.
 Before, we could learn $h_\theta(x)=\theta^T\phi(x)$, if we still set $\phi(x)$ to be a linear function, which we think it should be a two-stage function, but in the end it is still a one stage linear function.
 Hypothesis function Neural networks are a simple extension of this idea, where we additionally apply a non-linear function after each linear transformation.</description>
@@ -167,10 +167,10 @@ Hypothesis function Neural networks are a simple extension of this idea, where w
     
     <item>
       <title>Probability</title>
-      <link>https://cczhong11.github.io/posts/machinelearning/probaility/</link>
+      <link>http://www.tczhong.com/posts/machinelearning/probaility/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/machinelearning/probaility/</guid>
+      <guid>http://www.tczhong.com/posts/machinelearning/probaility/</guid>
       <description>Probability Here we want to talk about some basic knowledges of probability. In the beginning, we need to understand some notations in probability and they are confused in some times.
 $p(x),p_x$ here, $x$ is an exact number and we could have an exact number for this value from 0 to 1. For exmaple, $p(1)=0.5,p(0)=0.5$
 $p(X)$ here, $X$ is a random variable, it represents all the possible value. We could use $p(X=1)$ to represent the exact value.</description>
@@ -178,10 +178,10 @@ $p(X)$ here, $X$ is a random variable, it represents all the possible value. We 
     
     <item>
       <title>Probability modeling</title>
-      <link>https://cczhong11.github.io/posts/machinelearning/probability_modeling/</link>
+      <link>http://www.tczhong.com/posts/machinelearning/probability_modeling/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/machinelearning/probability_modeling/</guid>
+      <guid>http://www.tczhong.com/posts/machinelearning/probability_modeling/</guid>
       <description>Probability modeling What is probability modeling? It is a high dimension distribution for p(X). It represents distribution more compactly by exploiting conditional independencies.
 Bayesian Network The main idea is to represent $P(X)$ with $\prod P(X_i|parents(X_i))$. It is also a generative model, which means it construct distribution as a &amp;lsquo;sequential story&amp;rsquo;.
 Markov chain Monte Carlo Markov chain Monte Carlo (MCMC) refers to a class of methods that approximately draw samples from over the hidden variables</description>
@@ -189,60 +189,60 @@ Markov chain Monte Carlo Markov chain Monte Carlo (MCMC) refers to a class of me
     
     <item>
       <title>Recommendation</title>
-      <link>https://cczhong11.github.io/posts/machinelearning/recommender/</link>
+      <link>http://www.tczhong.com/posts/machinelearning/recommender/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/machinelearning/recommender/</guid>
+      <guid>http://www.tczhong.com/posts/machinelearning/recommender/</guid>
       <description>Recommendation Collaborative filtering Solely upon the preferences that other users have indicated for these items.(rating for items): row -&amp;gt; users column-&amp;gt; items
 The task of collaborative filtering, then, is to “fill in” the remaining entries of this matrix given the observed matrix. This X matrix that we observed is sparse but the unknown entries do not correspond to actual zeros in the matrix, but are rather just truly unknown.</description>
     </item>
     
     <item>
       <title>Undertow configuration</title>
-      <link>https://cczhong11.github.io/posts/cc/undertow/</link>
+      <link>http://www.tczhong.com/posts/cc/undertow/</link>
       <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/cc/undertow/</guid>
+      <guid>http://www.tczhong.com/posts/cc/undertow/</guid>
       <description>Undertow This is a very fast Java web server. When using this web server, I met some problems but I could not find enough answers even on the stackOverflow. Therefore, I decided to write my experience down.
 How to set parameters to each Servlet? It is necessary for us to pass some parameters to Serlet functions. One way to do this is to use addInitParam when adding Servlet. Like the following code.</description>
     </item>
     
     <item>
       <title>Scala join RDD tips</title>
-      <link>https://cczhong11.github.io/posts/cc/scala-spark-join/</link>
+      <link>http://www.tczhong.com/posts/cc/scala-spark-join/</link>
       <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/cc/scala-spark-join/</guid>
+      <guid>http://www.tczhong.com/posts/cc/scala-spark-join/</guid>
       <description>Why Spark RDD join is expensive As we know, Join is the most expensive operation on rdd. The reason is when we join two rdd, it requires corresponding keys from each RDD are located at the same partition so that they can be combined locally. Therefore, we will shuffle keys from each rdd to make sure they are in the same partition.
 You could learn more about rdd join from here</description>
     </item>
     
     <item>
       <title>Improve performance on HBase</title>
-      <link>https://cczhong11.github.io/posts/cc/hbase-reading/</link>
+      <link>http://www.tczhong.com/posts/cc/hbase-reading/</link>
       <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/cc/hbase-reading/</guid>
+      <guid>http://www.tczhong.com/posts/cc/hbase-reading/</guid>
       <description>Tips on improving reading performance In some scenario, we need to have high RPS in HBase reading.Therefore, we could change some configuration in HBase to meet this requirement. I found this blog very helpful. HBase official guide is also great.
  Increase hfile.block.cache.size and decrease hbase.regionserver.global.memstore.size. The first configuration is for reading cache and the second one is writing cache. The sum of two value should be 0.8 Decrease BLOCKSIZE in HBase table.</description>
     </item>
     
     <item>
       <title>Mapreduce custom output</title>
-      <link>https://cczhong11.github.io/posts/cc/mapreduce/</link>
+      <link>http://www.tczhong.com/posts/cc/mapreduce/</link>
       <pubDate>Tue, 10 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/cc/mapreduce/</guid>
+      <guid>http://www.tczhong.com/posts/cc/mapreduce/</guid>
       <description>Introduction Mapreduce is a very strong computing framework and we could use it to transform data to HDFS. Acutally, we could use Mapreduce to write data to any databse.
 Basic input and output The key thing in Mapreduce is Mapper and Reducer. We use the following code snippets to build a mapper. Here, Mapper&amp;lt;Object, Text, Text, Text&amp;gt; means input key and value class and ouput key and value class. Please notice that we could not use string and int here, since it is not fit the requirement in HDFS.</description>
     </item>
     
     <item>
       <title>GCP for Spark</title>
-      <link>https://cczhong11.github.io/posts/cc/gcp-spark/</link>
+      <link>http://www.tczhong.com/posts/cc/gcp-spark/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/cc/gcp-spark/</guid>
+      <guid>http://www.tczhong.com/posts/cc/gcp-spark/</guid>
       <description>GCP is very cheap compared with AWS and Azure. However, it did not have enough documentation and I met some problems that did not even on StackOverflow. That&amp;rsquo;s why I want to write this blog.
 Start your cluster We could use command line with GCP CLI to start cluster.
 gcloud dataproc clusters create cluster-name --project=project-id --bucket outputbucket --initialization-actions gs://xxx/jupyter.sh --master-machine-type=n1-standard-2 --worker-machine-type=n1-standard-1 --zone=xxxx  Install external Python package on Spark If we want to use your own package and Juypter NoteBook on Spark, you need to contain an initialization step for your cluster.</description>
@@ -250,10 +250,10 @@ gcloud dataproc clusters create cluster-name --project=project-id --bucket outpu
     
     <item>
       <title>Spark for ETL</title>
-      <link>https://cczhong11.github.io/posts/cc/spark-etl/</link>
+      <link>http://www.tczhong.com/posts/cc/spark-etl/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/posts/cc/spark-etl/</guid>
+      <guid>http://www.tczhong.com/posts/cc/spark-etl/</guid>
       <description>There is not much information about how could we perform complex operation on pySpark. I summary some tips from stackoverflow and my experience. Hope it will be helpful for you.
 How to Read JSON to DataFrame There are serveral ways to read json in Spark. The most common way is to load json in a DataFrame. Why not rdd? Because json contains some hierachy information and it could not represent well in RDD.</description>
     </item>

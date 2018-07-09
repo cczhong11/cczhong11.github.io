@@ -1,247 +1,247 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on </title>
-    <link>https://cczhong11.github.io/categories/</link>
-    <description>Recent content in Categories on </description>
+    <title>Categories on TC blog</title>
+    <link>http://www.tczhong.com/categories/</link>
+    <description>Recent content in Categories on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 05 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://cczhong11.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.tczhong.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Azure</title>
-      <link>https://cczhong11.github.io/categories/azure/</link>
+      <link>http://www.tczhong.com/categories/azure/</link>
       <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/azure/</guid>
+      <guid>http://www.tczhong.com/categories/azure/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cloud Computing</title>
-      <link>https://cczhong11.github.io/categories/cloud-computing/</link>
+      <link>http://www.tczhong.com/categories/cloud-computing/</link>
       <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/cloud-computing/</guid>
+      <guid>http://www.tczhong.com/categories/cloud-computing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gcp</title>
-      <link>https://cczhong11.github.io/categories/gcp/</link>
+      <link>http://www.tczhong.com/categories/gcp/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/gcp/</guid>
+      <guid>http://www.tczhong.com/categories/gcp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Github</title>
-      <link>https://cczhong11.github.io/categories/github/</link>
+      <link>http://www.tczhong.com/categories/github/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/github/</guid>
+      <guid>http://www.tczhong.com/categories/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Graph</title>
-      <link>https://cczhong11.github.io/categories/graph/</link>
+      <link>http://www.tczhong.com/categories/graph/</link>
       <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/graph/</guid>
+      <guid>http://www.tczhong.com/categories/graph/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hadoop</title>
-      <link>https://cczhong11.github.io/categories/hadoop/</link>
+      <link>http://www.tczhong.com/categories/hadoop/</link>
       <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/hadoop/</guid>
+      <guid>http://www.tczhong.com/categories/hadoop/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hbase</title>
-      <link>https://cczhong11.github.io/categories/hbase/</link>
+      <link>http://www.tczhong.com/categories/hbase/</link>
       <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/hbase/</guid>
+      <guid>http://www.tczhong.com/categories/hbase/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Idea</title>
-      <link>https://cczhong11.github.io/categories/idea/</link>
+      <link>http://www.tczhong.com/categories/idea/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/idea/</guid>
+      <guid>http://www.tczhong.com/categories/idea/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Image</title>
-      <link>https://cczhong11.github.io/categories/image/</link>
+      <link>http://www.tczhong.com/categories/image/</link>
       <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/image/</guid>
+      <guid>http://www.tczhong.com/categories/image/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>https://cczhong11.github.io/categories/java/</link>
+      <link>http://www.tczhong.com/categories/java/</link>
       <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/java/</guid>
+      <guid>http://www.tczhong.com/categories/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jave</title>
-      <link>https://cczhong11.github.io/categories/jave/</link>
+      <link>http://www.tczhong.com/categories/jave/</link>
       <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/jave/</guid>
+      <guid>http://www.tczhong.com/categories/jave/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Leetcode</title>
-      <link>https://cczhong11.github.io/categories/leetcode/</link>
+      <link>http://www.tczhong.com/categories/leetcode/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/leetcode/</guid>
+      <guid>http://www.tczhong.com/categories/leetcode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mac</title>
-      <link>https://cczhong11.github.io/categories/mac/</link>
+      <link>http://www.tczhong.com/categories/mac/</link>
       <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/mac/</guid>
+      <guid>http://www.tczhong.com/categories/mac/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Machine Learning</title>
-      <link>https://cczhong11.github.io/categories/machine-learning/</link>
+      <link>http://www.tczhong.com/categories/machine-learning/</link>
       <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/machine-learning/</guid>
+      <guid>http://www.tczhong.com/categories/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mapreduce</title>
-      <link>https://cczhong11.github.io/categories/mapreduce/</link>
+      <link>http://www.tczhong.com/categories/mapreduce/</link>
       <pubDate>Tue, 10 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/mapreduce/</guid>
+      <guid>http://www.tczhong.com/categories/mapreduce/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Markdown</title>
-      <link>https://cczhong11.github.io/categories/markdown/</link>
+      <link>http://www.tczhong.com/categories/markdown/</link>
       <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/markdown/</guid>
+      <guid>http://www.tczhong.com/categories/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mvc</title>
-      <link>https://cczhong11.github.io/categories/mvc/</link>
+      <link>http://www.tczhong.com/categories/mvc/</link>
       <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/mvc/</guid>
+      <guid>http://www.tczhong.com/categories/mvc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Note</title>
-      <link>https://cczhong11.github.io/categories/note/</link>
+      <link>http://www.tczhong.com/categories/note/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/note/</guid>
+      <guid>http://www.tczhong.com/categories/note/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ntfs</title>
-      <link>https://cczhong11.github.io/categories/ntfs/</link>
+      <link>http://www.tczhong.com/categories/ntfs/</link>
       <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/ntfs/</guid>
+      <guid>http://www.tczhong.com/categories/ntfs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Other</title>
-      <link>https://cczhong11.github.io/categories/other/</link>
+      <link>http://www.tczhong.com/categories/other/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/other/</guid>
+      <guid>http://www.tczhong.com/categories/other/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scala</title>
-      <link>https://cczhong11.github.io/categories/scala/</link>
+      <link>http://www.tczhong.com/categories/scala/</link>
       <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/scala/</guid>
+      <guid>http://www.tczhong.com/categories/scala/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Soark</title>
-      <link>https://cczhong11.github.io/categories/soark/</link>
+      <link>http://www.tczhong.com/categories/soark/</link>
       <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/soark/</guid>
+      <guid>http://www.tczhong.com/categories/soark/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Spark</title>
-      <link>https://cczhong11.github.io/categories/spark/</link>
+      <link>http://www.tczhong.com/categories/spark/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/spark/</guid>
+      <guid>http://www.tczhong.com/categories/spark/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Spring</title>
-      <link>https://cczhong11.github.io/categories/spring/</link>
+      <link>http://www.tczhong.com/categories/spring/</link>
       <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/spring/</guid>
+      <guid>http://www.tczhong.com/categories/spring/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tips</title>
-      <link>https://cczhong11.github.io/categories/tips/</link>
+      <link>http://www.tczhong.com/categories/tips/</link>
       <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/tips/</guid>
+      <guid>http://www.tczhong.com/categories/tips/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web Services</title>
-      <link>https://cczhong11.github.io/categories/web-services/</link>
+      <link>http://www.tczhong.com/categories/web-services/</link>
       <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://cczhong11.github.io/categories/web-services/</guid>
+      <guid>http://www.tczhong.com/categories/web-services/</guid>
       <description></description>
     </item>
     
