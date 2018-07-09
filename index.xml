@@ -6,10 +6,21 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cczhong11.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Solve NoSuchMethodError in Azure JAVA SDK </title>
+      <link>https://cczhong11.github.io/posts/cc/azure-error/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cczhong11.github.io/posts/cc/azure-error/</guid>
+      <description>Problem I met a NoSuchMethodError in Azure Java SDK. The error message is like the following:
+Exception in thread &amp;quot;main&amp;quot; java.lang.NoSuchMethodError: com.microsoft.azure.credentials.ApplicationTokenCredentials.proxy()Ljava/net/Proxy;  It was very strange and I searched on the stackoverflow. And it shows the problem could be confliction in package version. Therefore I looked into the code to find the reason.
+Solution In the beginning, I needed to go into the source code to see what happened there.</description>
+    </item>
     
     <item>
       <title>Create a thumbnail of photo using Java</title>

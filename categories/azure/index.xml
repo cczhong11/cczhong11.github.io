@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Java on </title>
-    <link>https://cczhong11.github.io/categories/java/</link>
-    <description>Recent content in Java on </description>
+    <title>Azure on </title>
+    <link>https://cczhong11.github.io/categories/azure/</link>
+    <description>Recent content in Azure on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 05 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://cczhong11.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cczhong11.github.io/categories/azure/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,17 +20,6 @@
       <description>Problem I met a NoSuchMethodError in Azure Java SDK. The error message is like the following:
 Exception in thread &amp;quot;main&amp;quot; java.lang.NoSuchMethodError: com.microsoft.azure.credentials.ApplicationTokenCredentials.proxy()Ljava/net/Proxy;  It was very strange and I searched on the stackoverflow. And it shows the problem could be confliction in package version. Therefore I looked into the code to find the reason.
 Solution In the beginning, I needed to go into the source code to see what happened there.</description>
-    </item>
-    
-    <item>
-      <title>Spring MVC model</title>
-      <link>https://cczhong11.github.io/posts/java/spring_mvc/</link>
-      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://cczhong11.github.io/posts/java/spring_mvc/</guid>
-      <description>Spring boot Framework Spring boot framework is a strong framework helps you build a MVC model web service quickly. So in the first place, we need to understand what is MVC model
-Model-View-Controller  Model  Model represent knowledge. It represents how basic items interact with each other.
- Views  A view is a (visual) representation of its model. A view is attached to its model (or model part) and gets the data necessary for the presentation from the model by asking questions.</description>
     </item>
     
   </channel>
