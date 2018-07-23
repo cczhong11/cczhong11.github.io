@@ -6,10 +6,19 @@
     <description>Recent content in Categories on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.tczhong.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Aws</title>
+      <link>http://www.tczhong.com/categories/aws/</link>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/aws/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Azure</title>
@@ -53,6 +62,15 @@
       <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/graph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hackathon</title>
+      <link>http://www.tczhong.com/categories/hackathon/</link>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/hackathon/</guid>
       <description></description>
     </item>
     
@@ -242,6 +260,15 @@
       <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/web-services/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wifi</title>
+      <link>http://www.tczhong.com/categories/wifi/</link>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/wifi/</guid>
       <description></description>
     </item>
     

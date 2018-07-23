@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="wf-firasans-n4-active wf-active">
+	<head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.37" /> 
+<title>HackMidwest -- Sonder &middot; TC blog</title>
+<meta content="HackMidwest -- Sonder - TC blog"
+    property="og:title">
+<meta content=" - An app used wifi probe request to do authentication."
+    property="og:description"> <!-- CSS -->
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
+<link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
+<link rel="stylesheet" href="http://www.tczhong.com/css/poole.css">
+<link rel="stylesheet" href="http://www.tczhong.com/css/hyde.css"> <!-- Font-Awesome -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+    crossorigin="anonymous"></script> <!-- highlight.js-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css"> <!-- Customised CSS -->
+<link rel="stylesheet" href="http://www.tczhong.com/css/custom.css"> <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]--> <!-- Icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.tczhong.com/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="http://www.tczhong.com/favicon.png"> 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120924697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120924697-1');
+</script>
+
+
+	</head>
+    <body>
+        <div class="sidebar">
+	<div class="container text-center sidebar-sticky">
+		<div class="sidebar-about text-center">
+			<a href="http://www.tczhong.com/"><h1 class="brand">TC blog</h1>
+			 <img src="http://www.tczhong.com/img/kirby.png" alt="Author Image" class="img-circle headshot center"> </a>
+			<p class="lead">
+				 I am who I am. Love Cloud and Data science 
+			</p>
+		</div>
+		
+<div>
+	<ul class="sidebar-nav">
+		
+		
+				<li>
+					<a href="http://www.tczhong.com/posts/"> <span>Posts</span></a>
+				</li>
+				<li>
+					<a href="http://www.tczhong.com/about/hello"> <span>About</span></a>
+				</li>
+				<li>
+					<a href="http://www.tczhong.com/tianchen_zhong.pdf"> <span>My Resume</span></a>
+				</li>
+				<li>
+					<a href="http://www.tczhong.com/posts/project/"> <span>Project</span></a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+        <p>
+		<section class="row text-center">
+	
+	
+	
+	&nbsp;<a href="https://github.com/cczhong11"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/tianchen-zhong"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:tczhong24@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+        </p>
+		<p class="copyright">&copy; 2018 Tc Zhong.
+        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+        </p>
+	</div>
+	<div>
+	</div>
+</div>
+
+        <div class="content container">
+            <div class="post">
+  <h1>HackMidwest -- Sonder</h1>
+  
+  <div class="col-sm-12 col-md-12">
+    <span class="text-left post-date meta">
+            
+       <i class="fa fa-calendar" aria-hidden="true"></i> Jul 7, 2018 
+      
+      
+        
+        
+            in
+            
+            
+                <a class="meta" href="http://www.tczhong.com/categories/aws">AWS</a>
+                ,
+            
+                <a class="meta" href="http://www.tczhong.com/categories/hackathon">HACKATHON</a>
+                ,
+            
+                <a class="meta" href="http://www.tczhong.com/categories/wifi">WIFI</a>
+                
+            
+        
+      
+      
+      
+      </span>  
+  </div>    
+  
+  
+
+<h1 id="hack-midwest-team-sonder">Hack Midwest &ndash; Team Sonder</h1>
+
+<p><img src="../hackathon.png" alt="" /></p>
+
+<p>Sonder is a <strong>proximity-based multi-purpose private network</strong> with applications in home automation, event planning and anonymous communication, enabled through text-based (SMS) virtual assistant. It allows user to anonymously interact with authorized peers.</p>
+
+<p>The problem is every virtual automation assistance needs wifi to communicate with each other, we want to make a AP-less virtual automation. The main idea is to use cellular services to interact with a central hub to process information in areas such as home/office, social gatherings and hackathons. We want to communicate in a shared space with single text message authentication and ensure anonymity. In addition, we wanted a more fool-proof way to determine user proximity.</p>
+
+<p>The coolest part in our hack is using the wifi probe request to get nearby device MAC address for user authentication. We have two QR codes and they help us to combine phone and MAC address. We use AWS EC2 as a backend server and DynamonDB as database to save records for each user. After user authenticated into our system, we will use Twilio API to interact with users. In our hack, we allow users to do announcements, send private message, find places of interest around us, identify people or objects in a scene or photos. We also developed an Alexa Skill to use Alexa for querying the backend database.</p>
+
+<p>We won Sprint Prize and Cloudinary Prize.</p>
+
+<h2 id="wifi-probe-request">Wifi probe request</h2>
+
+<p>We used <code>tcpdump</code> to get all package and filter WIFI probe request in the air. Your phone will send probe request to all wifi in the area and try to connect them. The information contains your device MAC address and wifi signal power. We want to use this to authenticate people. We came up with two step idea:</p>
+
+<ol>
+<li>Give user a QR code and it will let user to connect a FAKE wifi. Since it is fake, no one should connect to it except the user we want to get authenticated.</li>
+<li>Get their MAC address and send a <code>create</code> request to backend. The backend will save the MAC address and return an unique id.</li>
+<li>Python code will generate a <strong>NEW</strong> QR code to let user to scan.</li>
+<li>This QR code will let user send a <strong>TEXT</strong> message with <strong>unique</strong> id to Twillio phone number.</li>
+<li>Twillio phone get this message&rsquo;s sender phone number and send unique id and phone number to backend.</li>
+<li>Backend will find the unique id and update database record&rsquo;s phone number.</li>
+</ol>
+
+<p>In this way, we could combine <strong>MAC address and phone number</strong>.</p>
+
+<h2 id="backend">Backend</h2>
+
+<p>In this project, I focused on Backend. The whole architecture is on AWS. We used EC2 instance to host <strong>Nodejs</strong> backend. Then we used DynamoDB to save data.</p>
+
+<p>When the backend got request to create a new record, it will create a record with the following information:</p>
+
+<ul>
+<li>MAC address</li>
+<li>phone number(not set)</li>
+<li>create time</li>
+<li>expiration time</li>
+<li>unique id</li>
+<li>mute (false)</li>
+<li>info</li>
+</ul>
+
+<p>We needed expiration time to make sure only people nearby could get service we provided. When your phone connected to a wifi, it will not always send probe request, and we did not understand its mechanism. Therefore, when new probe request got from Python, it will update expiration time and allows this phone to get connect in 5 minutes.</p>
+
+<p>When a registered phone get into our area, it will send probe request to any wifi, then backend will send all registered MAC address to Python. Python will only send already registered and nearby MAC address to backend. Backend will update its expiration time.</p>
+
+<p>For Twilio and other service, it will only provided for people registered, not muted and nearby.</p>
+
+<p>There are some screenshots to let you know more about our service.</p>
+
+<p><img src="../pic/ING_1942.png" alt="" />
+<img src="../pic/ING_1943.png" alt="" />
+<img src="../pic/ING_1944.png" alt="" />
+<img src="../pic/ING_1946.png" alt="" />
+<img src="../pic/ING_1947.png" alt="" /></p>
+
+<h2 id="alexa">Alexa</h2>
+
+<p>In this project, we also tried to use Alexa skill. Because we only had 24 hour to develop, we just did a POC to prove we could  get backend data from DynamoDB.</p>
+
+<p><img src="../pic/alexa.png" alt="" /></p>
+
+<p>The source code could find here.
+<a href="https://github.com/cczhong11/hackmidwest2018/">GitHub</a></p>
+
+</div>
+            <div class="footer">
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+
+            </div>
+        </div>
+        
+                
+    </body>
+</html>
