@@ -5,10 +5,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.37" /> 
-<title>Logistic regression &middot; TC blog</title>
-<meta content="Logistic regression - TC blog"
+<title>Project List &middot; TC blog</title>
+<meta content="Project List - TC blog"
     property="og:title">
-<meta content=" - Basic idea for Logistic regression"
+<meta content=" - A website show all my project "
     property="og:description"> <!-- CSS -->
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
 <link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
@@ -98,12 +98,12 @@
 
         <div class="content container">
             <div class="post">
-  <h1>Logistic regression</h1>
+  <h1>Project List</h1>
   
   <div class="col-sm-12 col-md-12">
     <span class="text-left post-date meta">
             
-       <i class="fa fa-calendar" aria-hidden="true"></i> May 5, 2018 
+       <i class="fa fa-calendar" aria-hidden="true"></i> Jul 7, 2018 
       
       
         
@@ -111,7 +111,7 @@
             in
             
             
-                <a class="meta" href="http://www.tczhong.com/categories/machine-learning">MACHINE LEARNING</a>
+                <a class="meta" href="http://www.tczhong.com/categories/personal">PERSONAL</a>
                 
             
         
@@ -123,49 +123,13 @@
   
   
 
-<h1 id="logistic-regression">Logistic regression</h1>
+<h1 id="2018">2018</h1>
 
-<p>This method is a varanice of a linear classier. The key this is we want to use $sigmod(\theta X)$ to classifer value.</p>
+<h2 id="hackmidwest-project-hackmidwest"><a href="http://www.tczhong.com/project/hackmidwest">Hackmidwest</a></h2>
 
-<h2 id="gradient-descent">Gradient descent</h2>
+<h1 id="2017">2017</h1>
 
-<p>This method like linear regression, it needs Least square minimization for error. Because there is only 0 and 1. Therefore we could use probability to identify the error. $g(z) = \frac{1}{1+e^{-z}}$</p>
-
-<p>$P(y=0|x,\theta) = sigmod(\theta X)$</p>
-
-<p>$P(y=1|x,\theta) = 1-sigmod(\theta X)$</p>
-
-<p>这里使用最大似然估计，目的是得到在已知样本的情况下最有可能的$\theta$ 的值。</p>
-
-<p>$L(\theta) = \prod p(y^i|x^i;\theta)$</p>
-
-<p>然后我们对其log求导，每次下降为 $(y^i - g(\theta x^i))x_j^i$</p>
-
-<p>所以只需要每次将参数进行下降即可</p>
-
-<h2 id="persudo-code">Persudo code</h2>
-
-<p>Pseudocode: given α, ${(x^i, y^i)}$</p>
-
-<ul>
-<li><p>Initialize $\theta = <1, .., 1>^T$</p></li>
-
-<li><p>Perform <strong>feature scaling</strong> on the examples’ attributes</p></li>
-
-<li><p>Repeat until convergence</p></li>
-
-<li><p>for each j = 0, .., n:</p>
-
-<ul>
-<li>$\theta_j&rsquo; = \theta - \alpha \sum_i (y^i-h_a(X^i))x_j^i$</li>
-</ul></li>
-
-<li><p>for each j = 0, .., n:</p>
-
-<ul>
-<li>$a_j = a_j&rsquo;$</li>
-</ul></li>
-</ul>
+<h1 id="2016">2016</h1>
 
 </div>
             <div class="footer">
