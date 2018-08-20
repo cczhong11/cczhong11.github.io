@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>http://www.tczhong.com/posts/cc/azure-timezone/</loc>
+    <lastmod>2018-07-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.tczhong.com/posts/project/leetcodeanswer/</loc>
     <lastmod>2018-07-08T00:00:00+00:00</lastmod>
   </url>
@@ -151,7 +156,7 @@
   
   <url>
     <loc>http://www.tczhong.com/categories/azure/</loc>
-    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -163,7 +168,7 @@
   
   <url>
     <loc>http://www.tczhong.com/categories/cloud-computing/</loc>
-    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -217,7 +222,13 @@
   
   <url>
     <loc>http://www.tczhong.com/categories/java/</loc>
-    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.tczhong.com/categories/javascript/</loc>
+    <lastmod>2018-07-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

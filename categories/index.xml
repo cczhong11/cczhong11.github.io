@@ -23,7 +23,7 @@
     <item>
       <title>Azure</title>
       <link>http://www.tczhong.com/categories/azure/</link>
-      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/azure/</guid>
       <description></description>
@@ -32,7 +32,7 @@
     <item>
       <title>Cloud Computing</title>
       <link>http://www.tczhong.com/categories/cloud-computing/</link>
-      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/cloud-computing/</guid>
       <description></description>
@@ -113,9 +113,18 @@
     <item>
       <title>Java</title>
       <link>http://www.tczhong.com/categories/java/</link>
-      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>http://www.tczhong.com/categories/javascript/</link>
+      <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/javascript/</guid>
       <description></description>
     </item>
     

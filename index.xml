@@ -31,6 +31,15 @@ The problem is every virtual automation assistance needs wifi to communicate wit
     </item>
     
     <item>
+      <title>Solve TimeZone in Azure Web App</title>
+      <link>http://www.tczhong.com/posts/cc/azure-timezone/</link>
+      <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/posts/cc/azure-timezone/</guid>
+      <description>TimeZone&amp;rsquo;s Problem In my intern project, I need to handle timezone problem. Because in US, there is Daylight time saving and 5 diffferent timezone. My code should provide service for people in different timezones. Therefore, in the front end, I could allow user input time in their own timezone, but I should save date and time in GMT+0. Then I could make sure all time in database is saved in the same timezone.</description>
+    </item>
+    
+    <item>
       <title>Leetcode Answer websites</title>
       <link>http://www.tczhong.com/posts/project/leetcodeanswer/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>

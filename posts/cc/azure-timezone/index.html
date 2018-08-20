@@ -5,10 +5,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.47" /> 
-<title>How to draw graph in code &middot; TC blog</title>
-<meta content="How to draw graph in code - TC blog"
+<title>Solve TimeZone in Azure Web App &middot; TC blog</title>
+<meta content="Solve TimeZone in Azure Web App - TC blog"
     property="og:title">
-<meta content=" - This blog tells you how to use graphVis and plantUML"
+<meta content=" - This blog will tell you how to handle time zone problem in Azure and Java"
     property="og:description"> <!-- CSS -->
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
 <link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
@@ -100,12 +100,12 @@
 
         <div class="content container">
             <div class="post">
-  <h1>How to draw graph in code</h1>
+  <h1>Solve TimeZone in Azure Web App</h1>
   
   <div class="col-sm-12 col-md-12">
     <span class="text-left post-date meta">
             
-       <i class="fa fa-calendar" aria-hidden="true"></i> May 5, 2018 
+       <i class="fa fa-calendar" aria-hidden="true"></i> Jul 7, 2018 
       
       
         
@@ -113,13 +113,16 @@
             in
             
             
-                <a class="meta" href="http://www.tczhong.com/categories/graph">GRAPH</a>
+                <a class="meta" href="http://www.tczhong.com/categories/azure">AZURE</a>
                 ,
             
-                <a class="meta" href="http://www.tczhong.com/categories/mac">MAC</a>
+                <a class="meta" href="http://www.tczhong.com/categories/cloud-computing">CLOUD COMPUTING</a>
                 ,
             
-                <a class="meta" href="http://www.tczhong.com/categories/markdown">MARKDOWN</a>
+                <a class="meta" href="http://www.tczhong.com/categories/java">JAVA</a>
+                ,
+            
+                <a class="meta" href="http://www.tczhong.com/categories/javascript">JAVASCRIPT</a>
                 
             
         
@@ -131,228 +134,68 @@
   
   
 
-<h1 id="basic-drawing">Basic Drawing</h1>
+<h1 id="timezone-s-problem">TimeZone&rsquo;s Problem</h1>
 
-<p>We could use <a href="http://graphviz.org/">Graphviz</a> to draw a graph in code and it is also easily to used in Markdown file. In this blog, I will focus on <code>dot</code> tool.</p>
+<p>In my intern project, I need to handle timezone problem. Because in US, there is Daylight time saving and 5 diffferent timezone. My code should provide service for people in different timezones. Therefore, in the front end, I could allow user input time in their own timezone, but I should save date and time in <strong>GMT+0</strong>. Then I could make sure all time in database is saved in the same timezone. So, it is much easier to perform schedule.</p>
 
-<p>In the beginning, we need to install it. If you are a Mac user, we could use <code>brew install graphvis</code>. For other user, you could download file from the official <a href="https://graphviz.gitlab.io/download/">website</a>.</p>
+<h2 id="idea-and-problem">Idea and problem</h2>
 
-<p>You could create a file with the following code.</p>
-
-<pre><code>digraph{
-a-&gt;b
-a-&gt;c
-}
-</code></pre>
-
-<p>And then you need to save it as <code>demo.gv</code>. Next, run the code</p>
-
-<pre><code>	dot -Tpng demo.gv demo.png
-</code></pre>
-
-<p>You could get the following pic.</p>
-
-<p><img src="pic/demo.png" alt="" /></p>
-
-<p>In this command, you could change <code>-Tpng</code> to <code>-Tjpg</code> or <code>-Tpdf</code>, <code>-Tsvg</code>.</p>
-
-<p>To add them to markdown, we could use service from <code>gravizo</code>.</p>
-
-<pre><code>&lt;img src='https://g.gravizo.com/svg?
- digraph G {
-a-&gt;b,
-a-&gt;c
- }
-'/&gt;
-</code></pre>
-
-<h2 id="edge-parameters">edge parameters</h2>
-
-<p>You could change edge parameters to get different appearance.</p>
-
-<table>
-<thead>
-<tr>
-<th>parameters</th>
-<th>comment</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>label</td>
-<td>add text on the line</td>
-</tr>
-
-<tr>
-<td>style</td>
-<td>bold, dotted, filled;</td>
-</tr>
-
-<tr>
-<td>dir</td>
-<td>forward, back, both, or none</td>
-</tr>
-
-<tr>
-<td>color</td>
-<td><a href="http://www.graphviz.org/doc/info/colors.html">ref</a></td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="node-parameters">Node parameters</h2>
-
-<p>You could define the node in the beginning and then refer it in the following part.</p>
-
-<table>
-<thead>
-<tr>
-<th>parameters</th>
-<th>comment</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>color</td>
-<td><a href="http://www.graphviz.org/doc/info/colors.html">ref</a></td>
-</tr>
-
-<tr>
-<td>fillcolor</td>
-<td>..</td>
-</tr>
-
-<tr>
-<td>height</td>
-<td>.5 inch default</td>
-</tr>
-
-<tr>
-<td>image</td>
-<td>image filename</td>
-</tr>
-
-<tr>
-<td>shape</td>
-<td><a href="http://www.graphviz.org/doc/info/shapes.html">ref</a></td>
-</tr>
-
-<tr>
-<td>width</td>
-<td>.75 inch</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="principal-graph-attributes">Principal Graph Attributes</h2>
-
-<p>Here I just want to mention <code>rank</code>.</p>
-
-<p>Using the following code we could get multiple node in the same level.</p>
-
-<pre><code>digraph G {
-     A [label=&quot;Teacher&quot;],
-    A -&gt; B,
-    A -&gt; C,
-    C -&gt; D,
-    X -&gt; Y,
-    {rank = same; A; X;},
-    {rank = same; B; D; Y;},
-}
-</code></pre>
+<p>The idea is quite straight forward.</p>
 
 <p><img src='https://g.gravizo.com/svg?
 digraph G { 
-    A [label="Teacher"],
-  A -> B,
-    A -&gt; C,
-    C -&gt; D,
-    X -&gt; Y,
-    {rank = same; A; X;},
-    {rank = same; B; D; Y;},
-}
+    rankdir=LR;
+    A [label="User TimeZone Input"],
+    B [label="GMT+0 TimeZone"],
+    C [label="User TimeZone Output"],
+    A -> B,
+    B -&gt; C,
+    }
 &lsquo;/&gt;</p>
 
-<p>There is also one could change direction of graph. <code>rankdir=LR;</code></p>
+<p>There is one thing should mentioned. The default timezone of all Azure Virtual machine is <code>GMT+0</code>. You could change that in <a href="https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/app-service/app-service-web-configuration-and-management-faq.md#how-do-i-set-the-server-time-zone-for-my-web-app"><code>APPLICATION_SETTING</code></a></p>
 
-<h1 id="flow-chart">Flow chart</h1>
+<p>But here, since user could from different timezone, we did not set this value here.</p>
 
-<p>Actually, we could still use <code>dot</code> to generate flow chart. But it will spend lots of time to change shape to express exact idea. One good tool is <a href="http://plantuml.com/">plantUML</a></p>
+<h2 id="java-code-implementation">Java Code implementation</h2>
 
-<p>We could use <code>startuml</code> to begin the chart. The basic chart could generate use following chart. More info could find <a href="http://plantuml.com/activity-diagram-beta">here</a>.</p>
+<p>You could find lots of code on StackOverflow telling you how to change timezone, but they all could not use here. The reason is they all assume the input time&rsquo;s timezone is the same as the local machine time. For example, after parsing datetime from user input, it will use system timezone to understand this time and then you could set timezone id to change it. However, in my case, I want my web application to receive time and parse it to UTC. Because when my RESTful server receive that time, it thought it is <strong>GMT+0</strong>. Therefore, when I just set it to GMT+0 timezone, it would not change.</p>
 
-<pre><code>@startuml
+<pre><code class="language-java">
+// WRONG WAY in THIS CASE!
+String dateInString = &quot;22-1-2015 10:15:55 AM&quot;;
+LocalDateTime ldt = LocalDateTime.parse(dateInString, DateTimeFormatter.ofPattern(DATE_FORMAT));
 
-start
+ZoneId singaporeZoneId = ZoneId.of(&quot;Asia/Singapore&quot;);
+System.out.println(&quot;TimeZone : &quot; singaporeZoneId)
+//LocalDateTime + ZoneId = ZonedDateTime
+ZonedDateTime asiaZonedDateTime = ldt.atZo(singaporeZoneId);
+System.out.println(&quot;Date (Singapore) : &quot; asiaZonedDateTime)
+ZoneId newYokZoneId = ZoneId.(&quot;America/New_York&quot;);
+System.out.println(&quot;TimeZone : &quot; + newYokZoneId);
 
-if (Graphviz installed?) then (yes)
-  :process all\ndiagrams;
-else (no)
-  :process only
-  __sequence__ and __activity__ diagrams;
-endif
-
-stop
-
-@enduml
-----
-@startuml
-
-start
-
-repeat
-  :read data;
-  :generate diagrams;
-repeat while (more data?)
-
-stop
-
-@enduml
 </code></pre>
 
-<p>We can save them in a <code>demo.txt</code> file. Then download plantUML jar <a href="http://sourceforge.net/projects/plantuml/files/plantuml.jar/download">file</a> to generate png.</p>
+<p>So the right method is to parse time in custom timezone. Then you could just put that in GMT+0 timezone.</p>
 
-<pre><code>java -jar plantuml.jar demo.txt
+<pre><code class="language-java">
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;MM/dd/yyyy HH:mm:ss&quot;);
+
+ZonedDateTime time = LocalDateTime.parse(end, formatter).atZone(ZoneId.of(&quot;America/New_York&quot;));
+time.format(DateTimeFormatter.ISO_INSTANT).toString());
+
 </code></pre>
 
-<p><img src="pic/demo2.png" alt="" /></p>
+<h2 id="javascript-implementation">JavaScript implementation</h2>
 
-<h1 id="uml">UML</h1>
+<p>For Javascript part, we could use <code>Moment</code> <a href="https://momentjs.com/">package</a>. In my case, I need to change timezone from GMT+0 to user local timezone. It is quite easy, because it is only one line.</p>
 
-<p>You can also use this tool to get UML graph. There are lots of usage in the official <a href="http://plantuml.com/class-diagram">website</a>.</p>
-
-<p>I just list some basic code here.</p>
-
-<pre><code>@startuml
-class Foo1 {
-  You can use
-  several lines
-  ..
-  as you want
-  and group
-  ==
-  things together.
-  __
-  You can have as many groups
-  as you want
-  --
-  End of class
-}
-
-class User {
-  .. Simple Getter ..
-  + getName()
-  + getAddress()
-  .. Some setter ..
-  + setName()
-  __ private data __
-  int age
-  -- encrypted --
-  String password
-}
+<pre><code class="language-javascript">moment(UTCTimeString).format('MM/DD/YYYY HH:mm:ss')
 </code></pre>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The function seems very easy, but I actually spent lots of time on it. The reason is I did not get that the machine&rsquo;s timezone was &ldquo;GMT+0&rdquo; in the beginning, therefore I could not change it.</p>
 
 </div>
             <div class="footer">
