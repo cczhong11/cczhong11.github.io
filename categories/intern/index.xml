@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Azure on TC blog</title>
-    <link>http://www.tczhong.com/categories/azure/</link>
-    <description>Recent content in Azure on TC blog</description>
+    <title>Intern on TC blog</title>
+    <link>http://www.tczhong.com/categories/intern/</link>
+    <description>Recent content in Intern on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 08 Aug 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.tczhong.com/categories/azure/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.tczhong.com/categories/intern/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -28,17 +28,6 @@ Background and Problem I want to talk about some background information about my
       
       <guid>http://www.tczhong.com/posts/cc/azure-timezone/</guid>
       <description>TimeZone&amp;rsquo;s Problem In my intern project, I need to handle timezone problem. Because in US, there is Daylight time saving and 5 diffferent timezone. My code should provide service for people in different timezones. Therefore, in the front end, I could allow user input time in their own timezone, but I should save date and time in GMT+0. Then I could make sure all time in database is saved in the same timezone.</description>
-    </item>
-    
-    <item>
-      <title>Solve NoSuchMethodError in Azure JAVA SDK </title>
-      <link>http://www.tczhong.com/posts/cc/azure-error/</link>
-      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/posts/cc/azure-error/</guid>
-      <description>Problem I met a NoSuchMethodError in Azure Java SDK. The error message is like the following:
-Exception in thread &amp;quot;main&amp;quot; java.lang.NoSuchMethodError: com.microsoft.azure.credentials.ApplicationTokenCredentials.proxy()Ljava/net/Proxy;  It was very strange and I searched on the stackoverflow. And it shows the problem could be confliction in package version. Therefore I looked into the code to find the reason.
-Solution In the beginning, I needed to go into the source code to see what happened there.</description>
     </item>
     
   </channel>

@@ -5,10 +5,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.47" /> 
-<title>Solve TimeZone in Azure Web App &middot; TC blog</title>
-<meta content="Solve TimeZone in Azure Web App - TC blog"
+<title>Leetcode Answer websites &middot; TC blog</title>
+<meta content="Leetcode Answer websites - TC blog"
     property="og:title">
-<meta content=" - This blog will tell you how to handle time zone problem in Azure and Java"
+<meta content=" - A website helps you get answers for leetcode "
     property="og:description"> <!-- CSS -->
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
 <link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
@@ -100,12 +100,12 @@
 
         <div class="content container">
             <div class="post">
-  <h1>Solve TimeZone in Azure Web App</h1>
+  <h1>Leetcode Answer websites</h1>
   
   <div class="col-sm-12 col-md-12">
     <span class="text-left post-date meta">
             
-       <i class="fa fa-calendar" aria-hidden="true"></i> Jul 7, 2018 
+       <i class="fa fa-calendar" aria-hidden="true"></i> Aug 8, 2018 
       
       
         
@@ -116,16 +116,7 @@
                 <a class="meta" href="http://www.tczhong.com/categories/azure">AZURE</a>
                 ,
             
-                <a class="meta" href="http://www.tczhong.com/categories/cloud-computing">CLOUD COMPUTING</a>
-                ,
-            
                 <a class="meta" href="http://www.tczhong.com/categories/intern">INTERN</a>
-                ,
-            
-                <a class="meta" href="http://www.tczhong.com/categories/java">JAVA</a>
-                ,
-            
-                <a class="meta" href="http://www.tczhong.com/categories/javascript">JAVASCRIPT</a>
                 
             
         
@@ -137,68 +128,39 @@
   
   
 
-<h1 id="timezone-s-problem">TimeZone&rsquo;s Problem</h1>
+<h1 id="intern-project">Intern Project</h1>
 
-<p>In my intern project, I need to handle timezone problem. Because in US, there is Daylight time saving and 5 diffferent timezone. My code should provide service for people in different timezones. Therefore, in the front end, I could allow user input time in their own timezone, but I should save date and time in <strong>GMT+0</strong>. Then I could make sure all time in database is saved in the same timezone. So, it is much easier to perform schedule.</p>
+<p>In this summer, I am the intern from the Cloud infrastructure team in Walmart Sam&rsquo;s Club and my manager is Ciby. My project is to design a scheduler to help developers to dynamically scale CosmosDB resource based on time.</p>
 
-<h2 id="idea-and-problem">Idea and problem</h2>
+<h2 id="background-and-problem">Background and Problem</h2>
 
-<p>The idea is quite straight forward.</p>
+<p>I want to talk about some background information about my project. Azure Cosmos DB is a popular database among all application development teams in Sams. The billing of usage is based on Resource Unit configuration. Higher RU correlates to better performance and also greater cost. The problem now is for many developer, they just set RU to the peak usage in the beginning and never change it again. In order to save money by only setting high RU at specific time, I have built a scheduler system to make developers much easier to change RU in the time they want automatically.</p>
 
-<p><img src='https://g.gravizo.com/svg?
-digraph G { 
-    rankdir=LR;
-    A [label="User TimeZone Input"],
-    B [label="GMT+0 TimeZone"],
-    C [label="User TimeZone Output"],
-    A -> B,
-    B -&gt; C,
-    }
-&lsquo;/&gt;</p>
+<p><img src="pic/pic.png" alt="" /></p>
 
-<p>There is one thing should mentioned. The default timezone of all Azure Virtual machine is <code>GMT+0</code>. You could change that in <a href="https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/app-service/app-service-web-configuration-and-management-faq.md#how-do-i-set-the-server-time-zone-for-my-web-app"><code>APPLICATION_SETTING</code></a></p>
+<h2 id="project-implementation">Project Implementation</h2>
 
-<p>But here, since user could from different timezone, we did not set this value here.</p>
+<p>To begin with my project implementation, I would like to show you the whole system graph. The whole system is host on Azure. You may wonder why this simple tool looks so complex. It is because we want it become scalable. Every part of my system only do one job and all states are saved in database.</p>
 
-<h2 id="java-code-implementation">Java Code implementation</h2>
+<p><img src="pic/component digram.png" alt="" /></p>
 
-<p>You could find lots of code on StackOverflow telling you how to change timezone, but they all could not use here. The reason is they all assume the input time&rsquo;s timezone is the same as the local machine time. For example, after parsing datetime from user input, it will use system timezone to understand this time and then you could set timezone id to change it. However, in my case, I want my web application to receive time and parse it to UTC. Because when my RESTful server receive that time, it thought it is <strong>GMT+0</strong>. Therefore, when I just set it to GMT+0 timezone, it would not change.</p>
+<p>The front end is written in React.IS. The front end provides the following function for users:</p>
 
-<pre><code class="language-java">
-// WRONG WAY in THIS CASE!
-String dateInString = &quot;22-1-2015 10:15:55 AM&quot;;
-LocalDateTime ldt = LocalDateTime.parse(dateInString, DateTimeFormatter.ofPattern(DATE_FORMAT));
+<ul>
+<li>Login in from Azure portal and could only see database policies he has the access.</li>
+<li>Create, Update, read and delete policies for specific collections. It only allow user input valid data.</li>
+<li>Show current MAX provision RU for this collection. And user do not need to go to portal to check that value.</li>
+</ul>
 
-ZoneId singaporeZoneId = ZoneId.of(&quot;Asia/Singapore&quot;);
-System.out.println(&quot;TimeZone : &quot; singaporeZoneId)
-//LocalDateTime + ZoneId = ZonedDateTime
-ZonedDateTime asiaZonedDateTime = ldt.atZo(singaporeZoneId);
-System.out.println(&quot;Date (Singapore) : &quot; asiaZonedDateTime)
-ZoneId newYokZoneId = ZoneId.(&quot;America/New_York&quot;);
-System.out.println(&quot;TimeZone : &quot; + newYokZoneId);
+<p>The backend is implemented with Java Spring Framework. It offers <strong>11 RESTful API</strong> to provide data used in frontend and they also provide possibility for developers to set policies programmatically. For example, when developer want to do batch, they just need to call my RESTful API and they could change the RU in that time without using portal. Next, I will go through all the other component in my system. After we Iogin and set policies in the first part, the system will save all policies in a CosmosDB collection. There is a function will pull the executable policies every 2 minutes and send it to a EventHub. There is an another container instance will listen to the eventhub messages and when it receive the new event, it will change the target collection RU and it will send message to slack channel and update status of policies in the database. There is some screenshots for my system.</p>
 
-</code></pre>
+<p><img src="pic/screen.png" alt="" /></p>
 
-<p>So the right method is to parse time in custom timezone. Then you could just put that in GMT+0 timezone.</p>
+<h2 id="learning">Learning</h2>
 
-<pre><code class="language-java">
-DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;MM/dd/yyyy HH:mm:ss&quot;);
+<p>The biggest challenge I met is to make the whole system work on Azure. In the beginning, I thought it is an easy project and I built a work program that could run on single machine in 3 weeks. However, making it scalable and running all parts on Azure is not easy. There are lots of problems and bugs I met during the rest of my intern weeks. For example, Iogin process works fine locally, but it will get into infinite loop after putting all the code in web app, it could not redirect to the page I want. I stuck on that problem for 3 days, there is no workable solution online because they all used C#, not Java. I dug into the code and read error message carefully. It is because of https and http, I solved this problem by changing all https to http to avoid infinite loop. There is also other problems, like Timezone problem, React.IS table bugs, could not have enough log information from Function. Code itself did not have many problems, but Azure is challenging.</p>
 
-ZonedDateTime time = LocalDateTime.parse(end, formatter).atZone(ZoneId.of(&quot;America/New_York&quot;));
-time.format(DateTimeFormatter.ISO_INSTANT).toString());
-
-</code></pre>
-
-<h2 id="javascript-implementation">JavaScript implementation</h2>
-
-<p>For Javascript part, we could use <code>Moment</code> <a href="https://momentjs.com/">package</a>. In my case, I need to change timezone from GMT+0 to user local timezone. It is quite easy, because it is only one line.</p>
-
-<pre><code class="language-javascript">moment(UTCTimeString).format('MM/DD/YYYY HH:mm:ss')
-</code></pre>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>The function seems very easy, but I actually spent lots of time on it. The reason is I did not get that the machine&rsquo;s timezone was &ldquo;GMT+0&rdquo; in the beginning, therefore I could not change it.</p>
+<p>The second one is the difference between industries and school. In school, I only need to build a program that works, but in industry, I always need to think about how to make my program robust enough to serve more people. There also could be many bugs and problems not solved by anyone on the Internet, I need to do investigation by myself. The third one is to build connection in the company. In the past, I am an introverted person and I did not talk a lot during the work. After mid-term review, Ciby told me my problem and I decided to change it. I talked with teammates during the day and chatted with people in other team to learn more about the company. When I met problem, I also taught with colleagues and got some suggestions to help me solve them. As Sams Walton said: We&rsquo;re all working together; that&rsquo;s the secret. Team always could do more than one person. The last but not least is leadership. It is great honor for us to meet almost all leaders in Sams and Walmart. In those panel, we have a more deep understanding in Merchandise and this great company. During those panels, we knew more about the experience and failure they had in their career. I have a more reliable and clear expectation for my future life and career.</p>
 
 </div>
             <div class="footer">
