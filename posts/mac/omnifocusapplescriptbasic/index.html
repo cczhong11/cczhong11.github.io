@@ -5,10 +5,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.47" /> 
-<title>HackMidwest -- Sonder &middot; TC blog</title>
-<meta content="HackMidwest -- Sonder - TC blog"
+<title>How to build your own apple script for omnifocus &middot; TC blog</title>
+<meta content="How to build your own apple script for omnifocus - TC blog"
     property="og:title">
-<meta content=" - An app used wifi probe request to do authentication."
+<meta content=" - This blog tells you some basic usage for apple script  for omnifocus"
     property="og:description"> <!-- CSS -->
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
 <link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
@@ -100,12 +100,12 @@
 
         <div class="content container">
             <div class="post">
-  <h1>HackMidwest -- Sonder</h1>
+  <h1>How to build your own apple script for omnifocus</h1>
   
   <div class="col-sm-12 col-md-12">
     <span class="text-left post-date meta">
             
-       <i class="fa fa-calendar" aria-hidden="true"></i> Jul 7, 2018 
+       <i class="fa fa-calendar" aria-hidden="true"></i> Sep 9, 2018 
       
       
         
@@ -113,10 +113,13 @@
             in
             
             
-                <a class="meta" href="http://www.tczhong.com/categories/aws">AWS</a>
+                <a class="meta" href="http://www.tczhong.com/categories/gtd">GTD</a>
                 ,
             
-                <a class="meta" href="http://www.tczhong.com/categories/hackathon">HACKATHON</a>
+                <a class="meta" href="http://www.tczhong.com/categories/mac">MAC</a>
+                ,
+            
+                <a class="meta" href="http://www.tczhong.com/categories/omnifocus">OMNIFOCUS</a>
                 
             
         
@@ -128,71 +131,81 @@
   
   
 
-<h1 id="hack-midwest-team-sonder">Hack Midwest &ndash; Team Sonder</h1>
+<h1 id="how-to-use-apple-script-with-omnifocus">How to use apple script with Omnifocus</h1>
 
-<p>We won Sprint Prize and Cloudinary Prize.</p>
+<p>Omnifocus is a very great to-do list app in Mac and iPhone. It is expensive and very good to use. We could also use apple script to make it become more powerful.</p>
 
-<p><img src="../hackathon.png" alt="" /></p>
+<h2 id="list-all-done-tasks">List all done tasks</h2>
 
-<p>Sonder is a <strong>proximity-based multi-purpose private network</strong> with applications in home automation, event planning and anonymous communication, enabled through text-based (SMS) virtual assistant. It allows user to anonymously interact with authorized peers.</p>
+<p>In many cases, we need to do summary on how many tasks we have done that day or week. Therefore, we could just log out all completed tasks and send to notebook/Day one.</p>
 
-<p>The problem is every virtual automation assistance needs wifi to communicate with each other, we want to make a AP-less virtual automation. The main idea is to use cellular services to interact with a central hub to process information in areas such as home/office, social gatherings and hackathons. We want to communicate in a shared space with single text message authentication and ensure anonymity. In addition, we wanted a more fool-proof way to determine user proximity.</p>
+<p>The general idea is to get all modified project and then get all tasks inside, if we saw any tasks with completion date during that day, we just log that tasks out.</p>
 
-<p>The coolest part in our hack is using the wifi probe request to get nearby device MAC address for user authentication. We have two QR codes and they help us to combine phone and MAC address. We use AWS EC2 as a backend server and DynamonDB as database to save records for each user. After user authenticated into our system, we will use Twilio API to interact with users. In our hack, we allow users to do announcements, send private message, find places of interest around us, identify people or objects in a scene or photos. We also developed an Alexa Skill to use Alexa for querying the backend database.</p>
+<p>The code could see here:</p>
 
-<h2 id="wifi-probe-request">Wifi probe request</h2>
+<pre><code class="language-applescript">tell application &quot;OmniFocus&quot;
+	tell front document
+		-- Get the list of projects that were modified within thedate span
+		set theProjects to every flattened project where its modification date is greater than startDate and modification date is less than endDate
+		-- Loop through the matching project list
+		repeat with a from 1 to length of theProjects
+			-- Get the current project to work with
+			set currentProj to item a of theProjects
+			-- Get the tasks that were completed within the datespan
+			set theTasks to (every flattened task of currentProj where its completed = true and completion date is greater than startDate and completion date is less than endDate)
+			-- If there are tasks that meet the criteria
+			if theTasks is not equal to {} then
+				-- Add a dividing line and then enter the projectname
+				set reportText to reportText &amp; return &amp; return &amp; &quot;# &quot; &amp; name of currentProj &amp; return
+				-- Loop through the tasks
+				repeat with b from 1 to length of theTasks
+					-- Get the current task to work with
+					set currentTask to item b of theTasks
+					-- Save the completed date to a variable
+					set completedDate to completion date of currentTask
+					-- Get the time of the completed date
+					set completedTime to time string of completedDate
+					-- Add the task to the report text with thecompleted time
+					set reportText to reportText &amp; return &amp; &quot; - &quot; &amp; name of currentTask &amp; &quot; ----- &quot; &amp; completedTime
+				end repeat
+			end if
+		end repeat
+    end tell -- end tell front document
+end tell -- end tell application &quot;OmniFocus&quot;
+</code></pre>
 
-<p>We used <code>tcpdump</code> to get all package and filter WIFI probe request in the air. Your phone will send probe request to all wifi in the area and try to connect them. The information contains your device MAC address and wifi signal power. We want to use this to authenticate people. We came up with two step idea:</p>
+<h2 id="add-new-template-tasks">Add new template tasks</h2>
+
+<p>We could use <code>dialog</code> to input some common things, for example, if we want to read book, using following code could get all important elements.</p>
+
+<pre><code class="language-script">set bookTitle to text returned of (display dialog &quot;What's the title of the book?&quot; default answer &quot;&quot;)
+set numPages to text returned of (display dialog &quot;How many pages are in the book?&quot; default answer 0) as integer
+set startDate to text returned of (display dialog &quot;When should this start?&quot; default answer &quot;yyyymmdd&quot;)
+set endDate to text returned of (display dialog &quot;When should this end?&quot; default answer &quot;yyyymmdd&quot;)
+</code></pre>
+
+<p>Then we could perform some calculation and add tasks to omnifocus.</p>
+
+<pre><code class="language-script">tell application &quot;OmniFocus&quot;
+	tell document of front window
+        .....
+        set newTask to make new inbox task with properties {name:taskTitle, defer date:deferDate, context:theContext}
+    end tell
+end tell
+</code></pre>
+
+<h2 id="tips">Tips</h2>
 
 <ol>
-<li>Give user a QR code and it will let user to connect a FAKE wifi. Since it is fake, no one should connect to it except the user we want to get authenticated.</li>
-<li>Get their MAC address and send a <code>create</code> request to backend. The backend will save the MAC address and return an unique id.</li>
-<li>Python code will generate a <strong>NEW</strong> QR code to let user to scan.</li>
-<li>This QR code will let user send a <strong>TEXT</strong> message with <strong>unique</strong> id to Twillio phone number.</li>
-<li>Twillio phone get this message&rsquo;s sender phone number and send unique id and phone number to backend.</li>
-<li>Backend will find the unique id and update database record&rsquo;s phone number.</li>
-</ol>
-
-<p>In this way, we could combine <strong>MAC address and phone number</strong>.</p>
-
-<h2 id="backend">Backend</h2>
-
-<p>In this project, I focused on Backend. The whole architecture is on AWS. We used EC2 instance to host <strong>Nodejs</strong> backend. Then we used DynamoDB to save data.</p>
-
-<p>When the backend got request to create a new record, it will create a record with the following information:</p>
+<li><p>if you want to learn more, there are some repo</p>
 
 <ul>
-<li>MAC address</li>
-<li>phone number(not set)</li>
-<li>create time</li>
-<li>expiration time</li>
-<li>unique id</li>
-<li>mute (false)</li>
-<li>info</li>
-</ul>
+<li><a href="https://github.com/joebuhlig/OFScripts">OFscripts</a></li>
+<li><a href="https://github.com/dbyler/omnifocus-scripts">omnifocus-scripts</a></li>
+</ul></li>
 
-<p>We needed expiration time to make sure only people nearby could get service we provided. When your phone connected to a wifi, it will not always send probe request, and we did not understand its mechanism. Therefore, when new probe request got from Python, it will update expiration time and allows this phone to get connect in 5 minutes.</p>
-
-<p>When a registered phone get into our area, it will send probe request to any wifi, then backend will send all registered MAC address to Python. Python will only send already registered and nearby MAC address to backend. Backend will update its expiration time.</p>
-
-<p>For Twilio and other service, it will only provided for people registered, not muted and nearby.</p>
-
-<p>There are some screenshots to let you know more about our service.</p>
-
-<p><img src="../pic/IMG_1942.PNG" alt="" />
-<img src="../pic/IMG_1943.PNG" alt="" />
-<img src="../pic/IMG_1944.PNG" alt="" />
-<img src="../pic/IMG_1946.PNG" alt="" />
-<img src="../pic/IMG_1947.PNG" alt="" /></p>
-
-<h2 id="alexa">Alexa</h2>
-
-<p>In this project, we also tried to use Alexa skill. Because we only had 24 hour to develop, we just did a POC to prove we could  get backend data from DynamoDB.</p>
-
-<p><img src="../pic/alexa.png" alt="" /></p>
-
-<p>The source code could find here.
-<a href="https://github.com/cczhong11/hackmidwest2018/">GitHub</a></p>
+<li><p>Open Apple script app, then choose open dictionary and open Omnifocus, you could see more commands.</p></li>
+</ol>
 
 </div>
             <div class="footer">

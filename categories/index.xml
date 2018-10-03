@@ -6,15 +6,24 @@
     <description>Recent content in Categories on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 23 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.tczhong.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Alexa</title>
+      <link>http://www.tczhong.com/categories/alexa/</link>
+      <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/alexa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Aws</title>
       <link>http://www.tczhong.com/categories/aws/</link>
-      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/aws/</guid>
       <description></description>
@@ -62,6 +71,15 @@
       <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/graph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gtd</title>
+      <link>http://www.tczhong.com/categories/gtd/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/gtd/</guid>
       <description></description>
     </item>
     
@@ -158,7 +176,7 @@
     <item>
       <title>Mac</title>
       <link>http://www.tczhong.com/categories/mac/</link>
-      <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/mac/</guid>
       <description></description>
@@ -215,6 +233,15 @@
       <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/ntfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Omnifocus</title>
+      <link>http://www.tczhong.com/categories/omnifocus/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/omnifocus/</guid>
       <description></description>
     </item>
     
@@ -287,15 +314,6 @@
       <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/web-services/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Wifi</title>
-      <link>http://www.tczhong.com/categories/wifi/</link>
-      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/wifi/</guid>
       <description></description>
     </item>
     
