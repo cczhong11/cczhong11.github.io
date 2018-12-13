@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.tczhong.com/posts/ml/machinelearningreview/</loc>
+    <lastmod>2018-12-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.tczhong.com/posts/project/alexamusic/</loc>
     <lastmod>2018-09-03T00:00:00+00:00</lastmod>
   </url>
@@ -158,10 +163,6 @@
   </url>
   
   <url>
-    <loc>http://www.tczhong.com/posts/ml/machinelearningreview/</loc>
-  </url>
-  
-  <url>
     <loc>http://www.tczhong.com/about/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -312,6 +313,12 @@
   </url>
   
   <url>
+    <loc>http://www.tczhong.com/categories/ml/</loc>
+    <lastmod>2018-12-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.tczhong.com/categories/mvc/</loc>
     <lastmod>2018-06-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -349,7 +356,7 @@
   
   <url>
     <loc>http://www.tczhong.com/posts/</loc>
-    <lastmod>2018-09-03T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -379,7 +386,7 @@
   
   <url>
     <loc>http://www.tczhong.com/</loc>
-    <lastmod>2018-09-03T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
