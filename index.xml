@@ -337,5 +337,14 @@ Spend time wisely I believe I have a good time management skill and I could hand
 How to Read JSON to DataFrame There are serveral ways to read json in Spark. The most common way is to load json in a DataFrame. Why not rdd? Because json contains some hierachy information and it could not represent well in RDD.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>http://www.tczhong.com/posts/ml/machinelearningreview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/posts/ml/machinelearningreview/</guid>
+      <description>Deep Neural Networks Neural Networks In general, neural networks have lots of node and each node will perform a transformation. In the easiest way, a linear transmission could be viewed as $\sum w_i x_i$. It is the hard bias for this neural network, it is how each neuron could do. Neural Networks are also built as a layered Feedforward network, and the hard bias is the topology and activation function, they represent the expressive power for the network.</description>
+    </item>
+    
   </channel>
 </rss>

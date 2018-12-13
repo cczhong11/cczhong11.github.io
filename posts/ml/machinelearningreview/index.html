@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" class="wf-firasans-n4-active wf-active">
+	<head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.47" /> 
+<title> &middot; TC blog</title>
+<meta content=" - TC blog"
+    property="og:title">
+<meta content=" - "
+    property="og:description"> <!-- CSS -->
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
+<link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
+<link rel="stylesheet" href="http://www.tczhong.com/css/poole.css">
+<link rel="stylesheet" href="http://www.tczhong.com/css/hyde.css"> <!-- Font-Awesome -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+    crossorigin="anonymous"></script> <!-- highlight.js-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css"> <!-- Customised CSS -->
+<link rel="stylesheet" href="http://www.tczhong.com/css/custom.css"> <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]--> <!-- Icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.tczhong.com/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="http://www.tczhong.com/favicon.png"> 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120924697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120924697-1');
+</script>
+
+
+	</head>
+    <body>
+        <div class="sidebar">
+	<div class="container text-center sidebar-sticky">
+		<div class="sidebar-about text-center">
+			<a href="http://www.tczhong.com/"><h1 class="brand">TC blog</h1>
+			 <img src="https://avatars2.githubusercontent.com/u/7358252?s=460&amp;v=4" alt="Author Image" class="img-circle headshot center"> </a>
+			<p class="lead">
+				 I am who I am. Love Cloud and Data science 
+			</p>
+		</div>
+		
+<div>
+	<ul class="sidebar-nav">
+		
+		
+				<li>
+					<a href="http://www.tczhong.com/posts/"> <span>Posts</span></a>
+				</li>
+				<li>
+					<a href="http://www.tczhong.com/about/hello"> <span>About</span></a>
+				</li>
+				<li>
+					<a href="http://www.tczhong.com/tianchen_zhong.pdf"> <span>My Resume</span></a>
+				</li>
+				<li>
+					<a href="http://www.tczhong.com/posts/project/index.html"> <span>Project</span></a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+        <p>
+		<section class="row text-center">
+	
+	
+	
+	&nbsp;<a href="https://github.com/cczhong11"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/tianchen-zhong"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	&nbsp;<a href="https://stackoverflow.com/users/7112540"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="mailto:tczhong24@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+        </p>
+		<p class="copyright">&copy; 2018 Tc Zhong.
+        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+        </p>
+	</div>
+	<div>
+	</div>
+</div>
+
+        <div class="content container">
+            <div class="post">
+  <h1></h1>
+  
+  <div class="col-sm-12 col-md-12">
+    <span class="text-left post-date meta">
+            
+      
+      
+      
+      
+      
+      </span>  
+  </div>    
+  
+  
+
+<h1 id="deep-neural-networks">Deep Neural Networks</h1>
+
+<h2 id="neural-networks">Neural Networks</h2>
+
+<p>In general, neural networks have lots of node and each node will perform a transformation. In the easiest way, a linear transmission could be viewed as  $\sum w_i x_i$. It is the hard bias for this neural network, it is how each neuron could do. Neural Networks are also built as a layered Feedforward network, and the hard bias is the topology and activation function, they represent the expressive power for the network. The soft bias is the weight in the neuron.</p>
+
+<p>The transformation function is called activation function. When we use liner unit, it represent all linear function. And we could use MSE( $w* = argmin_w \sum (f_w(x_i)-y_i)^2$) to optimize the network. If we want to represent binary function or linear separator, we could use perceptron function( $\sigma(net) = 1 (wx&gt;0) -1 (wx&lt;=0)$) and it could perform AND and OR easily. We could use two layer of AND OR to perform any bool functions, but this function could not be differentiated, therefore in the most case, we use sigmoid function( $\sigma(net) = \frac{1}{1+e^{-net}}$) as activation function.</p>
+
+<h2 id="optimization-methods">Optimization methods</h2>
+
+<p>We use gradient descent to optimize the neuron networks. We first use linear unit as an example, it is represented as following:</p>
+
+<p>$$o=w<em>{0}+w</em>{1}x<em>{1}+\cdots+w</em>{n}x_{n}$$</p>
+
+<p>Then we could get loss function: $E[\vec{w}]=frac{1}{2}\sum<em>{d \in D} (t</em>{d}-o_{d})^{2}$, then we could get the gradient, which is $\nabla E [\vec{w} ]$, we need to use $w<em>i$ to partial derivative the E. Next we could get the difference for each w. $\Delta w</em>{i}=-\eta \frac{\partial E}{\partial w<em>{I}}$. In linear unit, we could get $\frac{\partial E}{\partial w</em>{i}}=\sum<em>{d}(t</em>{d}-o<em>{d})(-x</em>{i,d})$.</p>
+
+<p>The general steps for gradient descent is:</p>
+
+<ol>
+<li>In Initialize each $w_{I}$ to some small random value.</li>
+<li>Until the termination condition is met, Do</li>
+<li>Initialize each $\Delta w_i$ to zero.</li>
+<li>For each (x,t) in training_examples, Do
+
+<ul>
+<li>Input the instance x to the unit and
+compute the output o</li>
+<li>For each linear unit weight $w<em>i$, Do $\Delta w</em>{i}=\Delta w<em>{i}+\eta(t-o)x</em>{i}$</li>
+</ul></li>
+<li>For each linear unit weight $w<em>i$, Do $w</em>{i}= w<em>{i}+\Delta w</em>{i}$</li>
+</ol>
+
+<p>For stochastic gradient decent, it will update the weight based on every training data. A compromise between computing the true gradient and the gradient at a single example is to compute the gradient against more than one training example (called a &ldquo;mini-batch&rdquo;) at each step. The advantages for sgd is it doesn&rsquo;t require storing all training data in memory and it allows adding new data in an &ldquo;online&rdquo; setting. Stochastic gradient descent does not have faster convergence rate compared to the gradient descent.</p>
+
+<p>For back propagation, it is a multi-layer gradient descent. For the output layer, it uses normal function to calculate the gradient, then in each hidden layer, it will use next layer&rsquo;s result to calculate the difference. In sigmoid network, we could use the following procedures. It will update all weights after getting all weight difference.</p>
+
+<p><img src="pic/1.png" alt="" /></p>
+
+<h2 id="representation-learning">Representation learning</h2>
+
+<p>The goal of representation learning or feature learning is to find an appropriate representation of data in order to perform a machine learning task.</p>
+
+<p>In particular, deep learning exploits this concept by its very nature. In a neural network, each hidden layer maps its input data to an inner representation that tends to capture a higher level of abstraction. These learnt features are increasingly more informative through layers towards the machine learning task that we intend to perform (e.g. classification).</p>
+
+<p>In Classical prediction pipeline, we use Hand-engineer features and they need prior knowledge. In Deep learning pipeline, we could learn the features and the classifier jointly, also discover interactions and nonlinear
+relationships. We could map data to space where data is separable.</p>
+
+<h2 id="convolution-neural-networks">Convolution Neural Networks</h2>
+
+<p>It is powerful feature extractor (hard bias) to learn features in images but it needs lots of training data. It uses convolution kernels to learn features, using subsampling(pooling max filter) to reduce intermediated result.</p>
+
+<h2 id="recurrent-neural-networks">Recurrent Neural Networks</h2>
+
+<p>RNNs can use their internal state (memory) to process sequences of inputs. The idea behind RNNs is to make use of sequential information. In a traditional neural network we assume that all inputs (and outputs) are independent of each other. But for many tasks that’s a very bad idea. If you want to predict the next word in a sentence you better know which words came before it. RNNs are called recurrent because they perform the same task for every element of a sequence, with the output being depended on the previous computations.</p>
+
+<p>The Vanishing / exploding gradients could be solved by Long Short-Term Memory.</p>
+
+<h2 id="autoencoders">AutoEncoders</h2>
+
+<p>An autoencoder neural network is an unsupervised learning algorithm that applies backpropagation, setting the target values to be equal to the inputs.</p>
+
+<p>The autoencoder tries to learn a function $h_{W,b}(x) \approx x$. In other words, it is trying to learn an approximation to the identity function, so as to output $\hat x$ that is similar to x. The identity function seems a particularly trivial function to be trying to learn; but by placing constraints on the network, such as by limiting the number of hidden units, we can discover interesting structure about the data.</p>
+
+<ol>
+<li>Map the input to a compact representation z</li>
+<li>Use the representation z to reconstruct the input</li>
+<li>Can learn encoder &amp; decoder mappings without any labels</li>
+<li>Learned z picks up the most important factors of variation</li>
+</ol>
+
+<h2 id="gans">GANs</h2>
+
+<p>Discriminative algorithms try to classify input data; that is, given the features of a data instance, they predict a label or category to which that data belongs. Generative algorithms do the opposite. Instead of predicting a label given certain features, they attempt to predict features given a certain label.</p>
+
+<p>One neural network, called the generator, generates new data instances, while the other, the discriminator, evaluates them for authenticity; i.e. the discriminator decides whether each instance of data it reviews belongs to the actual training dataset or not.</p>
+
+<p><img src="https://skymind.ai/images/wiki/gan_schema.png" alt="" /></p>
+
+<p>Variational autoencoders are generative algorithm that add an additional constraint to encoding the input data, namely that the hidden representations are normalized. Variational autoencoders are capable of both compressing data like an autoencoder and synthesizing data like a GAN. However, while GANs generate data in fine, granular detail, images generated by VAEs tend to be more blurred.</p>
+
+<h1 id="bayesian-models">Bayesian Models</h1>
+
+<p>Prior is an important concept in Bayes&rsquo; thinking. It captures the belief for the right answer before seeing the data. In uniform distribution, prior is $\pi(h) = 1/|H|$ if h in H.</p>
+
+<p>The posterior is the probability of reason after seeing the data. It is $p(h|D)$.</p>
+
+<p>Likelihood is another important concept. It will tell you under the given the parameters, what is the probability for data, expressing as $L(D|h)$.</p>
+
+<p>We could express bayes rule as $p(h|D)=(\Pi(h)L(D|h)/P(D)$ = prior * likelihood/evidence. Here evidence is $\sum_{h&rsquo;}\Pi(h&rsquo;)L(D|h&rsquo;)$.</p>
+
+<p>For prior odds, it is equal to  $\frac{\pi(h)}{1-\pi(h)}$, the likelihood ratio is equal to $\frac{L(D|h)}{L(D|!h)}$</p>
+
+<h2 id="map-and-mle">MAP and MLE</h2>
+
+<p>From the Bayes rule, we know $$P(\theta|X)=\frac{P(X|\theta)P(\theta)}{P(X)}$$. Because $P(X)$ is the same, we could omit this value. $P(\theta|X) \propto P(X|\theta)P(\theta)$ If we want to find the most likely $\theta$, we need to have $\theta<em>{MAP}=\underset{\theta}{\arg\max}P(X|\theta)P(\theta)$. If data point is independent, we can use $\underset{\theta}{\arg\max}\log\prod</em>{i}P(x_{i}|\theta)P(\theta)$ to calculate the result. To make it easier to calculate, we use log in most cases. It is called as Maximum A Posteriori.</p>
+
+<p>For Maximum Likelihood Estimation, we want to maximize the likelihood function, which is $P(X|\theta)$. We want to know which theta could result in the given data.</p>
+
+<p>$$\begin{aligned}\theta<em>{MLE} &amp;= \underset{\theta}{\arg\max}P(X|\theta)\&amp;=\underset{\theta}{\arg\max}\prod</em>{i}P\left(x_{i}|\theta\right)\end{aligned}$$</p>
+
+<p>The difference between MLE and MAP is $P(\theta)$, if all possible reasons we need to consider is the same, MLE is equal to MAP.</p>
+
+<h2 id="naive-bayes">Naive Bayes</h2>
+
+<p>Naive Bayes is the extension for MAP algorithm. We could use $$j_{NB} = argmax_j p(cat=j)\prod p(a_i|j)$$ to calculate the most possible labels for the given data.</p>
+
+<p>In the text field, we could assume the probability for given label is based on the frequency of labels in the whole dataset. Then using the frequency of $a_i$ in the given label to calculate $P(a_i|j)$</p>
+
+<p>Sometimes, if there is no data under some labels in the training data, we need to use Laplace smoothing, adding 1 to both fraction side. $$P(w|c)=\frac{\operatorname{count}(w,c)+1}{\operatorname{count}&copy;+|V|}$$</p>
+
+<h2 id="dag">DAG</h2>
+
+<p>A Bayesian network is a probabilistic graphical model that represents a set of variables and their conditional dependencies via a directed acyclic graph (DAG).</p>
+
+<p>The main problem it want to solve is to learn join distribution over some variable set. If there is p binary variables, we will need $2^p - 1$ free parameters to represent the whole possibilities. It is very hard for computation. If we could know $x_i$ and $x_j$ conditional independent on any subsets, we only need O(p) parameters.</p>
+
+<p>That&rsquo;s why we need a graph to represent the relationship between variables. It can reduce the free parameters. If we want to calculate P(A|B,C) without any independence information, we need |A| * |B| * |C| to represent it. If B is independent with A, it is P(A|B).</p>
+
+<p>The key idea in Bayesian network.</p>
+
+<ul>
+<li>nodes : propositional variables</li>
+<li>edges : local dependences</li>
+<li>connected: dependent</li>
+<li>not connected: may dependent</li>
+</ul>
+
+<p>We could use the graph to discover new dependency. The probability of joint distribution in the graph is $p(x_1,..x_p) = \prod p(x_i|parents(x_i)$. We also know $X_i$ is independent with all non-descendants if given the parents of $x_i$.</p>
+
+<p>DGM is a language for expressing condition - hard bias, but it is not a completed language, it could not represent all bias.</p>
+
+<h2 id="conditional-marginal-independence">Conditional/Marginal Independence</h2>
+
+<p>Conditional independence is x and y are independent with each other if we know some variables. Random variable X is conditionally independent of random variable Y given random variable Z if $P(X|Y,Z) = P(X|Z)$. The knowledge of Y doesn&rsquo;t affect your belief in the value of X, given a value of Z.</p>
+
+<p>Marginal Independence is when your knowledge of Y’s value doesn’t affect your belief in the value of X. If $P(X=x<em>{i}|Y=y</em>{k})=P(X=x_{i})$.</p>
+
+<p>D-speration is one way to decide the dependency between variables.</p>
+
+<p><img src="pic/2.png" alt="" /> In this scenario, if E is evidence, we could know this path is blocked..</p>
+
+<p><img src="pic/3.png" alt="" /> If E is evidence, we could know this path is blocked.</p>
+
+<p><img src="pic/4.png" alt="" /> If E is not evidence and neither are any of its descendants. It is blocked.</p>
+
+<p>Another way to solve the problem is to use the following steps:</p>
+
+<ol>
+<li>Draw the ancestral graph. Construct the “ancestral graph” of all variables mentioned in the probability expression. This is a reduced version of the original net, consisting only of the variables mentioned and all of their ancestors</li>
+<li>“Moralize” the ancestral graph by “marrying” the parents. For each pair of variables with a common child, draw an undirected edge</li>
+<li>&ldquo;Disorient&rdquo; the graph by replacing the directed edges (arrows) with undirected edges (lines).</li>
+<li>Delete the givens and their edges. If the independence question had any given variables, erase those variables from the graph and erase all of their connections, too</li>
+<li>If the variables are disconnected in this graph, they are guaranteed to be independent.</li>
+</ol>
+
+<h2 id="hidden-markov-models">Hidden Markov Models</h2>
+
+<p>In Markov random field, it is an undirected graphical model, which is a set of random variables having a Markov property described by an undirected graph. There may be a cyclic dependencies. The Markov blanket for a node is simply its adjacent nodes.</p>
+
+<ol>
+<li>$x_i$ is independent with others given $MB(x_i)$</li>
+<li>any subset is independent with any other subsets given any separating subset.</li>
+<li>$x_i$ is independent $x_j$ given everybody else if $x_i$ and $x_j$ is not neighbor.</li>
+</ol>
+
+<p>In Markov Models, it is assumed that future states depend only on the current state, not on the events that occurred before it. We could use a matrix to represent the probability from one state to another state.</p>
+
+<p>In hidden Markov Models, there are some hidden variables that are not observed. Each node conditional depends on its parents.</p>
+
+<p>$$p(x_1,&hellip;x_n) = p(z_1)p(x_1|z<em>1)\prod</em>{x=2} P(Z<em>t|Z</em>{t-1})P(X_t|Z_t)$$</p>
+
+<p><img src="pic/model.png" alt="" /></p>
+
+<h1 id="reinforcement-learning">Reinforcement Learning</h1>
+
+<p>Reinforcement learning is concerned with how software agents ought to take actions in an environment so as to maximize some notion of cumulative reward.</p>
+
+<h2 id="mdp">MDP</h2>
+
+<p>In a Markov decision processes, it has following parameters.</p>
+
+<ul>
+<li>States S</li>
+<li>Actions A</li>
+<li>Transitions T(s,a,s&rsquo;) aka. P(s&rsquo;|s,a)</li>
+<li>Rewards R(s,a,s&rsquo;) and discount factor $\gamma$</li>
+<li>Start state $s_0$</li>
+</ul>
+
+<h2 id="bellman-backup">Bellman backup</h2>
+
+<p>Bellman function is $V^{ * }(s)=\max<em>{a}Q^{ * }(s,a)$,$$Q^{ * }(a,s)=\sum</em>{s^{\prime}\in\mathcal{S}}\mathcal{P}r(s^{\prime}|s,a)[\mathcal{R}(s,a,s^{\prime})+\gamma V^{*}(s^{\prime})]$$, Q(a,s) is the reward that agent starts from state s0 and execute action a. $V(s)$ is state value. Q is the expectation of reward after choosing a.</p>
+
+<p>It will choose the max Q to update the V. It is expected discounted future reward.</p>
+
+<h2 id="value-iteration">value iteration</h2>
+
+<p>In value iteration, it will update V based on max value of Q.</p>
+
+<p><img src="pic/value.png" alt="" /></p>
+
+<h2 id="policy-iteration">policy iteration</h2>
+
+<p>There are several steps in policy iteration.</p>
+
+<ol>
+<li>Start with some policy $\pi_0(s_i)$</li>
+<li>Compute the values of the all states according to current policy. Policy is not changed here. V is just $\sum_{s^{\prime}}p(s^{\prime}|s,\pi(s))[r(s,\pi(s),s^{\prime})+\gamma v(s^{\prime})]$</li>
+<li>Update policy: $\pi<em>{1}(s</em>{i})=\operatorname{argmax}<em>{a}{r</em>{i}+\gamma\sum<em>{j}p</em>{ij}^{a}V^{\pi<em>{0}}(s</em>{j})}$</li>
+<li>Stop when $\pi<em>{k+1}=\pi</em>{k}$</li>
+</ol>
+
+<p><img src="pic/policy" alt="" /></p>
+
+<h2 id="sarsa">SARSA</h2>
+
+<p>It means State–action–reward–state–action. The main function for updating the Q-value depends on the current state of the agent &ldquo;S1&rdquo;, the action the agent chooses &ldquo;A1&rdquo;, the reward &ldquo;R&rdquo; the agent gets for choosing this action, the state &ldquo;S2&rdquo; that the agent enters after taking that action, and finally the next action &ldquo;A2&rdquo; the agent choose in its new state. The acronym for the quintuple ($s_t$, $a_t$, $r<em>t$, $s</em>{t+1}$, $a_{t+1}$) is SARSA. In SARSA, you update estimates based on and take the same action.</p>
+
+<p>$$Q(s<em>{t},a</em>{t})= Q(s<em>{t},a</em>{t})+\alpha[r<em>{t}+\gamma Q(s</em>{t+1},a<em>{t+1})-Q(s</em>{t},a_{t})]$$</p>
+
+<p>A SARSA agent interacts with the environment and updates the policy based on actions taken, hence this is known as an <strong>on-policy</strong> learning algorithm. SARSA will approach convergence allowing for possible penalties from exploratory moves, whilst Q-learning will ignore them.</p>
+
+<h2 id="q-learning">Q-learning</h2>
+
+<p>In Q learning, it will update Q with max action it could take. Q-learning directly learns the optimal policy, whilst SARSA learns a near-optimal policy whilst exploring. Q-learning (and off-policy learning in general) has higher per-sample variance than SARSA, and may suffer from problems converging as a result. In Q learning, you update the estimate from the maximum estimate of possible next actions, regardless of which action you took.
+$$Q(s_t,a_t)←Q(s_t,a<em>t)+α[r</em>{t+1}+γ\max<em>{a&rsquo;}Q(s</em>{t+1},a&rsquo;)−Q(s_t,a_t)]$$</p>
+
+<h1 id="em-algorithm">EM Algorithm</h1>
+
+<h2 id="gaussian-mixture-models">Gaussian Mixture Models</h2>
+
+<p>If there are many gaussian models mixing with each other, we could get sampled data from this model. How could we estimate the $\mu_i$ for these value?</p>
+
+<p>Follow the MLE idea, we could get likelihood function with $\prod<em>{i} e^{-\frac{(x</em>{i}-\mu_{j})^{2}}{2\sigma^{2}}}$ with $\mu_j$. If we consider the prior $\lambda<em>j$ for model j. The most possible for $\mu$ is
+$$\boldsymbol{\mu}</em>{ML}=\arg\max<em>{\mu</em>{1},\mu<em>{2}}\prod</em>{i}\sum<em>{j}\lambda</em>{j}e^{-\frac{(x<em>{i}-\mu</em>{j})^{2}}{2\sigma^{2}}}$$. But there is no analytical solution for this function, EM algorithm could give a local maximum, not necessary to be global maximum.</p>
+
+<p>If we could get a table Z, when $x<em>i$ from Gaussian j,$Z</em>{i,j}=1$,otherwise 0. The $\hat \mu_j = \sum<em>i Z</em>{i,j}X<em>i / \sum Z</em>{i,j}$. If we don&rsquo;t know it, we could estimate it with $\hat \mu<em>j = \sum E[Z</em>{i,j}|\bar \mu] X<em>i / \sum E[Z</em>{i,j}|\bar \mu]$.</p>
+
+<p>The basic idea for EM is:
+1. Assume the $\mu_j$ in the model
+2. Classify data point to each model
+3. Re-estimate the $\mu_j$
+4. Repeat</p>
+
+<p>In GMM:</p>
+
+<ol>
+<li>E steps: $$E \left[z<em>{i,j}|\mu^{[k]}\right]=\frac{\lambda</em>{j}L\left(x<em>{i}|\mu=\mu</em>{j}^{[k]}\right)}{\sum<em>{j^{\prime}}\lambda</em>{j^{\prime}}L\left(x<em>{i}|\mu=\mu</em>{j^{\prime}}^{[k]}\right)}$$
+ In this step, it could classify data point to each cluster.</li>
+<li>M step: $$\mu<em>{j}^{[k+1]}=\frac{\sum</em>{i}E\left[z<em>{i,j}|\mu^{[k]}\right]\cdot x</em>{i}}{\sum<em>{i}E\left[z</em>{i,j}|\mu^{[k]}\right]}$$ In this step, it could re-estimate the $\mu_j$</li>
+</ol>
+
+<p>if L is bounded, then it can coverage to a (not nesseary global) local minimum.</p>
+
+<h2 id="latent-variables">latent variables</h2>
+
+<p>Latent variables, as opposed to observable variables, are variables that are <strong>not directly observed</strong> but are rather inferred from other variables that are observed (directly measured).</p>
+
+<h1 id="non-parametric-models">Non-parametric Models</h1>
+
+<h2 id="k-nearest-neighbors">K-nearest Neighbors</h2>
+
+<p>In edger learning, it will choose a hypothesis space H and it is the hard bias. Then given the training data, it can find a member of H, h, that best fits in it.(soft bias). Then h could be apply to any data.</p>
+
+<p>The lazy learning is doing nothing in training step, just saving all data. In test step, it will do prediction based on data in this step.</p>
+
+<p>For K-nearest Neighbors, it finds K nearest neighbors in the training data. Then average the label or find the most labels to predict this data&rsquo;s label. If K=1, it always finds itself. There is no hard bias for KNN, the soft bias is nearby point should have the same label.</p>
+
+<p>The problem for KNN is: it is possible that different dimension will have different meaning, it is not wise just treat them as same. We could use $w_i$ to deal with different dimension problem.$f(q) = \frac{\sum K(dist(x_i,q))y_i}{\sum K(dist(x_i,q))}$</p>
+
+<p>Kernel function is any positive semidefinite function of any two inputs. We could use kernel to estimate small dataset and aggregate them to estimate whole dataset. We can also use kernel smoothing.</p>
+
+<p>For kernel function:  K(x,y) = K(y,x) and it is always positive.</p>
+
+<h2 id="support-vector-machines">Support Vector Machines</h2>
+
+<p>SVM wants to classify data using a boundary. Take 2d graph as example, there are + and - in it. We can see if for all x+, wx+b&gt;=1, for all x-, wx+b&lt;=-1. Think about value $y_i$, it could combine two function, if x+,$y_i=1$,else $y_i=-1$. Then the result is $y_i (w^T x+b)&gt;=1$. For equal situation, it is boundary. $y_i (w^T x + b)-1=0$.</p>
+
+<p>To make the boundary width bigger, we need to max $\frac{(x+ - x- )w}{||w||_{2}}$, equally  min $<sup>1</sup>&frasl;<sub>2</sub> ||w||^2_2$  sub y_i(x^T x<em>i + b)&gt;=1. Hard margin is to make sure separate data, soft margin introduce the hinge loss, useful when data is not linearly separable. $\max\left(0,1-y</em>{i}\left(\vec{w}\cdot\vec{x}_{i}-b\right)\right)$</p>
+
+<p>By solving for the Lagrangian dual of the problem, we could get $x_i x_i$ in the function, here we could apply different kernel function to get different boundary.</p>
+
+</div>
+            <div class="footer">
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+      (function () {
+            
+            
+            
+            if (location.hostname === "localhost" || 
+            	location.hostname === "127.0.0.1" || 
+            	location.hostname === "") {
+                return;
+			}
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'tczhong';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
+                  dsq);
+      })();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+            </div>
+        </div>
+        
+                
+    </body>
+</html>
