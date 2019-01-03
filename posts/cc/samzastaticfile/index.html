@@ -5,10 +5,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.47" /> 
-<title>Solve NoSuchMethodError in Azure JAVA SDK  &middot; TC blog</title>
-<meta content="Solve NoSuchMethodError in Azure JAVA SDK  - TC blog"
+<title>Read Static file in Apache Samza &middot; TC blog</title>
+<meta content="Read Static file in Apache Samza - TC blog"
     property="og:title">
-<meta content=" - This blog will tell you how to solve NoSuchMethodError in Java SDK "
+<meta content=" - This blog will discuss several ways to read static file in Samza"
     property="og:description"> <!-- CSS -->
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
 <link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
@@ -103,12 +103,12 @@
 
         <div class="content container">
             <div class="post">
-  <h1>Solve NoSuchMethodError in Azure JAVA SDK </h1>
+  <h1>Read Static file in Apache Samza</h1>
   
   <div class="col-sm-12 col-md-12">
     <span class="text-left post-date meta">
             
-       <i class="fa fa-calendar" aria-hidden="true"></i> Jul 7, 2018 
+       <i class="fa fa-calendar" aria-hidden="true"></i> Dec 12, 2018 
       
       
         
@@ -116,7 +116,7 @@
             in
             
             
-                <a class="meta" href="http://www.tczhong.com/categories/azure">AZURE</a>
+                <a class="meta" href="http://www.tczhong.com/categories/apache-samza">APACHE SAMZA</a>
                 ,
             
                 <a class="meta" href="http://www.tczhong.com/categories/cloud-computing">CLOUD COMPUTING</a>
@@ -134,77 +134,88 @@
   
   
 
-<h1 id="problem">Problem</h1>
+<p><img src="https://samza.apache.org/img/samza-logo.png" alt="" /></p>
 
-<p>I met a NoSuchMethodError in Azure Java SDK. The error message is like the following:</p>
+<h1 id="scenario">Scenario</h1>
 
-<pre><code class="language-java">Exception in thread &quot;main&quot; java.lang.NoSuchMethodError: com.microsoft.azure.credentials.ApplicationTokenCredentials.proxy()Ljava/net/Proxy;
-</code></pre>
+<p>Apache Samza is a stream processing framework developed by Linkedin. It allows we to build stateful applications that process data in real-time and it could read data from Apache Kafka smoothly. It has handful of examples on how to read stream data from Kafka topic. However, it did not include any working examples for Apache Samza to consume static data and stream data at the same time in stream processing. In real life, we need to consume static data firstly and then make decisions based on static data and stream data. In Apache Spark streaming, it is possible to do this. In Apache Samza, it is not supported correctly.</p>
 
-<p>It was very strange and I searched on the <a href="https://stackoverflow.com/questions/41438600/java-lang-nosuchmethoderror-com-microsoft-azure-storage-core-storagecredentials?rq=1">stackoverflow</a>. And it shows the problem could be confliction in package version. Therefore I looked into the code to find the reason.</p>
+<h2 id="attempt-with-official-api">Attempt with official API</h2>
 
-<h1 id="solution">Solution</h1>
+<p>In the documentation, it provides the option to read data from <a href="https://samza.apache.org/learn/documentation/1.0.0/connectors/hdfs.html">HDFS</a>. It is said:</p>
 
-<p>In the beginning, I needed to go into the source code to see what happened there.</p>
+<blockquote>
+<p>When all partitions being processed by the task are at the end of stream (i.e., EOF has been reached for all files), the Samza job exits automatically</p>
+</blockquote>
 
-<pre><code class="language-java">// https://github.com/Azure/autorest-clientruntime-for-java/blob/master/azure-client-authentication/src/main/java/com/microsoft/azure/credentials/ApplicationTokenCredentials.java
-private AuthenticationResult acquireAccessToken(String resource) throws IOException {
-        String authorityUrl = this.environment().activeDirectoryEndpoint() + this.domain();
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        AuthenticationContext context = new AuthenticationContext(authorityUrl, false, executor);
-        if (proxy() != null) {
-            context.setProxy(proxy());
-        }
-        ....
-</code></pre>
+<p>This warning is only for one HDFS consumer, if we used a Kafka and HDFS consumer, it would not exit.</p>
 
-<p>So the problem is it could not find <code>proxy()</code>, where it is? I also could not find it in this file. I looked into the javadoc and it extends <code>AzureTokenCredentials</code>. Therefore I got into this file and saw the proxy methods.</p>
+<p>One thing it is also mentioned in the documentation:</p>
 
-<pre><code class="language-java">//https://github.com/Azure/autorest-clientruntime-for-java/blob/master/azure-client-runtime/src/main/java/com/microsoft/azure/credentials/AzureTokenCredentials.java
-	/**
-     * @return the proxy being used for accessing Active Directory.
-     */
-    public Proxy proxy() {
-        return proxy;
-    }
-</code></pre>
+<blockquote>
+<p>Samza supports Avro natively, and it’s easy to extend to other serialization formats. To support non-Avro input formats, you can implement the SingleFileHdfsReader interface.</p>
+</blockquote>
 
-<p>So why it could not find it? Maybe it is because package confliction. So I used <code>mvn dependency:tree</code> to check all the package version.</p>
+<p>If I wanted to read JSON file, I need to implement that interface. However, it did not provide any examples online, and I did not continue trying this method.</p>
 
-<pre><code>
-[INFO] +- junit:junit:jar:3.8.1:test
-[INFO] +- com.microsoft.azure:azure-keyvault:jar:1.0.0:compile
-[INFO] |  +- com.microsoft.azure:azure-client-runtime:jar:1.0.0:compile
-[INFO] |  |  \- com.microsoft.rest:client-runtime:jar:1.0.0:compile
-[INFO] |  |     +- com.squareup.retrofit2:retrofit:jar:2.1.0:compile
-[INFO] |  |     +- com.squareup.okhttp3:okhttp:jar:3.3.1:compile
-[INFO] |  |     |  \- com.squareup.okio:okio:jar:1.8.0:compile
-[INFO] |  |     +- com.squareup.okhttp3:logging-interceptor:jar:3.3.1:compile
-[INFO] |  |     +- com.squareup.okhttp3:okhttp-urlconnection:jar:3.3.1:compile
-[INFO] |  |     +- com.squareup.retrofit2:converter-jackson:jar:2.1.0:compile
-[INFO] |  |     +- com.fasterxml.jackson.datatype:jackson-datatype-joda:jar:2.7.2:compile
-[INFO] |  |     \- com.squareup.retrofit2:adapter-rxjava:jar:2.1.0:compile
-[INFO] |  \- com.microsoft.azure:azure-keyvault-webkey:jar:1.0.0:compile
-[INFO] +- com.microsoft.azure:azure:jar:1.8.0:compile
-[INFO] |  +- com.microsoft.azure:azure-client-authentication:jar:1.3.1:compile
-[INFO] |  |  \- com.microsoft.azure:azure-annotations:jar:1.2.0:compile
-[INFO] |  +- com.microsoft.azure:azure-mgmt-resources:jar:1.8.0:compile
-[INFO] |  |  +- org.slf4j:slf4j-simple:jar:1.7.5:compile
-[INFO] |  |  \- io.reactivex:rxjava:jar:1.2.4:compile
-....
-</code></pre>
+<h2 id="hacker-way-1">Hacker way 1</h2>
 
-<p>You could see in <code>azure-keyvault</code>, it used <code>azure-client-runtime:jar:1.0.0</code>, but in <code>azure-client-authentication:jar</code>, it is 1.3.1 version. The <code>azure-client-runtime</code> is too old and  that&rsquo;s why it could not find <code>proxy()</code>.</p>
-
-<p>Therefore the solution is to upgrade the version of this <code>azure-keyvault</code> package. You could find more infomation in maven official <a href="https://mvnrepository.com/artifact/com.microsoft.azure">website</a>.</p>
-
-<h2 id="general-solution">General Solution</h2>
+<p>One way to do this is to send static data as a stream. We do the following steps:</p>
 
 <ol>
-<li>Find the package contains that method or class</li>
-<li>Use <code>mvn dependency:tree</code> to get all package information, find package version</li>
-<li>Check dependency between package.</li>
+<li>Create a <code>data-stream</code> in Kafka cluster.</li>
+<li>Write Data producer code to read data in the static file line by line.</li>
+<li>Send JSON format data to all partitions in Kafka cluster with data-stream.</li>
+<li>Wait for Samza consume all data in the Kafka topic.</li>
+<li>Begin to send stream data.</li>
 </ol>
+
+<p>If we have multiple partitions in Kafka, we need to send data to all partitions if the static data is needed in all partitions. The reason is in Apache Samza, and it will start a Samza job in each partition. The KeyValueStore is not shared with different partitions. It is easy to get <code>NullPointerException</code> if we did not send to all partitions.</p>
+
+<p>Wait after sending data is also very important. The reason is in the <a href="https://samza.apache.org/learn/documentation/0.14/container/streams.html">documentation</a></p>
+
+<blockquote>
+<p>If a job is consuming messages from more than one input stream, and all input streams have messages available, messages are processed in a round robin fashion by default.</p>
+</blockquote>
+
+<p>Therefore, if we did not wait after sending static data in the topic, we would also get <code>NullPointerException</code> because Consumer did not read that data and save them in KeyValueStore.</p>
+
+<h2 id="hacker-way-2">Hacker way 2</h2>
+
+<p>Another way is to just put data in Java Maven Project resource folder. In the Samza Consumer code initialization step, we could read data from the resource folder and save them in KeyValueStore. We need to do the following things.</p>
+
+<ol>
+<li>Create a new folder under <code>src/main/resources</code> and put static data here.</li>
+<li>Add the following code snippets in <code>pom.xml.</code>
+<code>java
+        &lt;resources&gt;
+        &lt;resource&gt;
+            &lt;directory&gt;src/main/resources&lt;/directory&gt;
+            &lt;includes&gt;
+                &lt;include&gt;*&lt;/include&gt;
+            &lt;/includes&gt;
+        &lt;/resource&gt;
+  &lt;/resources&gt;
+</code></li>
+<li>In the source code, put the following code to read data.
+```java
+ClassLoader classLoader = this.getClass().getClassLoader();</li>
+</ol>
+
+<p>// Read &ldquo;UserInfoData.json&rdquo; from resources folder
+InputStream s = classLoader.getResourceAsStream(&ldquo;UserInfoData.json&rdquo;);
+Scanner scanner = new Scanner(s);</p>
+
+<p>while(scanner.hasNextLine()){
+   // read data and put them in KV store
+}
+```</p>
+
+<p>This way is more natural than the previous method.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>In the beginning, I thought it should support in the Apache Samza. However, after researching, it is not supported in the official documentation, and it seemed not a common use case. Then I used some hacker ways to avoid using official HDFS consumer. I spent lots of time to debug and make the first hacking method work. My experience taught me I should read the documentation carefully before writing any code. The second way is much easier and could achieve the same result as the first way.</p>
 
 </div>
             <div class="footer">

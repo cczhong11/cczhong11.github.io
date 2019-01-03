@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Read Static file in Apache Samza</title>
+      <link>http://www.tczhong.com/posts/cc/samzastaticfile/</link>
+      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/posts/cc/samzastaticfile/</guid>
+      <description>Scenario Apache Samza is a stream processing framework developed by Linkedin. It allows we to build stateful applications that process data in real-time and it could read data from Apache Kafka smoothly. It has handful of examples on how to read stream data from Kafka topic. However, it did not include any working examples for Apache Samza to consume static data and stream data at the same time in stream processing.</description>
+    </item>
+    
+    <item>
       <title>Alexa music player project</title>
       <link>http://www.tczhong.com/posts/project/alexamusic/</link>
       <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
