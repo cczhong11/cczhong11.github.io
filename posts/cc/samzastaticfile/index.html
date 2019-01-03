@@ -186,30 +186,33 @@
 
 <ol>
 <li>Create a new folder under <code>src/main/resources</code> and put static data here.</li>
-<li>Add the following code snippets in <code>pom.xml.</code>
-<code>java
-        &lt;resources&gt;
-        &lt;resource&gt;
-            &lt;directory&gt;src/main/resources&lt;/directory&gt;
-            &lt;includes&gt;
-                &lt;include&gt;*&lt;/include&gt;
-            &lt;/includes&gt;
-        &lt;/resource&gt;
-  &lt;/resources&gt;
-</code></li>
-<li>In the source code, put the following code to read data.
-```java
-ClassLoader classLoader = this.getClass().getClassLoader();</li>
+<li>Add the following code snippets in <code>pom.xml.</code></li>
 </ol>
 
-<p>// Read &ldquo;UserInfoData.json&rdquo; from resources folder
-InputStream s = classLoader.getResourceAsStream(&ldquo;UserInfoData.json&rdquo;);
-Scanner scanner = new Scanner(s);</p>
+<pre><code class="language-java">            &lt;resources&gt;
+            &lt;resource&gt;
+                &lt;directory&gt;src/main/resources&lt;/directory&gt;
+                &lt;includes&gt;
+                    &lt;include&gt;*&lt;/include&gt;
+                &lt;/includes&gt;
+            &lt;/resource&gt;
+      &lt;/resources&gt;
+</code></pre>
 
-<p>while(scanner.hasNextLine()){
+<ol>
+<li>In the source code, put the following code to read data.</li>
+</ol>
+
+<pre><code class="language-java">ClassLoader classLoader = this.getClass().getClassLoader();
+
+// Read &quot;UserInfoData.json&quot; from resources folder
+InputStream s = classLoader.getResourceAsStream(&quot;UserInfoData.json&quot;);
+Scanner scanner = new Scanner(s);
+        
+while(scanner.hasNextLine()){
    // read data and put them in KV store
 }
-```</p>
+</code></pre>
 
 <p>This way is more natural than the previous method.</p>
 
