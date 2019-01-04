@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iot on TC blog</title>
+    <link>http://www.tczhong.com/categories/iot/</link>
+    <description>Recent content in Iot on TC blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 27 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.tczhong.com/categories/iot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Virtual IoT Device on Cloud</title>
+      <link>http://www.tczhong.com/posts/cc/iot/</link>
+      <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/posts/cc/iot/</guid>
+      <description>Virtual IoT Device on Cloud IoT is very hot in these days. I believe in the future, all the devices in the home will have some connections with the internet. We could easily get the stream data from these devices and do some analysis to find the trend or abnormal event. Thanks for 5G and IPV6, it is possible to have enough addresses and high speed network.
+There are some key skills that are required in the companies.</description>
+    </item>
+    
+  </channel>
+</rss>
