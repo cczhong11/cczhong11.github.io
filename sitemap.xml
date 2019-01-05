@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.tczhong.com/posts/cc/piazza/</loc>
+    <lastmod>2018-12-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.tczhong.com/posts/ml/machinelearningreview/</loc>
     <lastmod>2018-12-12T00:00:00+00:00</lastmod>
   </url>
@@ -210,7 +215,7 @@
   
   <url>
     <loc>http://www.tczhong.com/categories/cloud-computing/</loc>
-    <lastmod>2018-12-05T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -378,13 +383,25 @@
   
   <url>
     <loc>http://www.tczhong.com/posts/</loc>
-    <lastmod>2018-12-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.tczhong.com/categories/python/</loc>
+    <lastmod>2018-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.tczhong.com/categories/scala/</loc>
     <lastmod>2018-04-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.tczhong.com/categories/slack/</loc>
+    <lastmod>2018-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -408,7 +425,7 @@
   
   <url>
     <loc>http://www.tczhong.com/</loc>
-    <lastmod>2018-12-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

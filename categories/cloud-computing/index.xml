@@ -6,10 +6,20 @@
     <description>Recent content in Cloud Computing on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.tczhong.com/categories/cloud-computing/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Slack and Piazza</title>
+      <link>http://www.tczhong.com/posts/cc/piazza/</link>
+      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/posts/cc/piazza/</guid>
+      <description>Piazza and Slack integration Slack is very popular in the workspace. As a TA in Cloud Computing Course (15-619), we also use Slack to discuss with each other and solve student&amp;rsquo;s problem together. Piazza is another common tool we used every day. It is like a forum within the course.
+When a student asks a question, we want to answer them quickly. Piazza could send you new questions in real time with email.</description>
+    </item>
     
     <item>
       <title>Read Static file in Apache Samza</title>

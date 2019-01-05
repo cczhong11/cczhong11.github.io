@@ -50,7 +50,7 @@
     <item>
       <title>Cloud Computing</title>
       <link>http://www.tczhong.com/categories/cloud-computing/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/cloud-computing/</guid>
       <description></description>
@@ -291,11 +291,29 @@
     </item>
     
     <item>
+      <title>Python</title>
+      <link>http://www.tczhong.com/categories/python/</link>
+      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Scala</title>
       <link>http://www.tczhong.com/categories/scala/</link>
       <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/scala/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Slack</title>
+      <link>http://www.tczhong.com/categories/slack/</link>
+      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/slack/</guid>
       <description></description>
     </item>
     
