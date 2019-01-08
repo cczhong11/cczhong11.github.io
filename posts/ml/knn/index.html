@@ -5,10 +5,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.47" /> 
-<title>Undertow configuration &middot; TC blog</title>
-<meta content="Undertow configuration - TC blog"
+<title> &middot; TC blog</title>
+<meta content=" - TC blog"
     property="og:title">
-<meta content=" - This blog will tell you my experience using Undertow."
+<meta content=" - "
     property="og:description"> <!-- CSS -->
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
 <link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
@@ -103,29 +103,13 @@
 
         <div class="content container">
             <div class="post">
-  <h1>Undertow configuration</h1>
+  <h1></h1>
   
   <div class="col-sm-12 col-md-12">
     <span class="text-left post-date meta">
             
-       <i class="fa fa-calendar" aria-hidden="true"></i> Apr 4, 2018 
       
       
-        
-        
-            in
-            
-            
-                <a class="meta" href="http://www.tczhong.com/categories/cloud-computing">CLOUD COMPUTING</a>
-                ,
-            
-                <a class="meta" href="http://www.tczhong.com/categories/tips">TIPS</a>
-                ,
-            
-                <a class="meta" href="http://www.tczhong.com/categories/web-services">WEB SERVICES</a>
-                
-            
-        
       
       
       
@@ -134,64 +118,67 @@
   
   
 
-<h1 id="undertow">Undertow</h1>
+<h1 id="k-nearest-neighbor-k-means-and-em-algorithm">K Nearest Neighbor, K-Means and EM algorithm</h1>
 
-<p>This is a very fast Java web server. When using this web server, I met some problems but I could not find enough answers even on the stackOverflow. Therefore, I decided to write my experience down.</p>
+<p>These three algorithms are used for clustering. Let&rsquo;s talk about K Nearest Neighbor(KNN) first.</p>
 
-<h2 id="how-to-set-parameters-to-each-servlet">How to set parameters to each Servlet?</h2>
+<h2 id="k-nearest-neighbor">K Nearest Neighbor</h2>
 
-<p>It is necessary for us to pass some parameters to Serlet functions. One way to do this is to use <code>addInitParam</code> when adding Servlet. Like the following code.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/KnnClassification.svg/320px-KnnClassification.svg.png?1546962079122" alt="" /></p>
 
-<pre><code class="language-java">DeploymentInfo servletBuilder = deployment()
-                    .setClassLoader(ServletServer.class.getClassLoader())
-                    .setContextPath(MYAPP)
-                    .setDeploymentName(&quot;test.war&quot;)
-                    .addServlets(
-                            servlet(&quot;MessageServlet&quot;, MessageServlet.class)
-                                    .addInitParam(&quot;message&quot;, &quot;Hello World&quot;)
-                                    .addMapping(&quot;/*&quot;),
-                    )
-</code></pre>
+<p>Example of k-NN classification. The test sample (green circle) should be classified either to the first class of blue squares or to the second class of red triangles. If k = 3 (solid line circle) it is assigned to the second class because there are 2 triangles and only 1 square inside the inner circle. If k = 5 (dashed line circle) it is assigned to the first class (3 squares vs. 2 triangles inside the outer circle).</p>
 
-<p>In the example, we set parameter <code>message</code> to &ldquo;Hello Word&rdquo;. Then how to we read that in the Servlet funtion? We could set in the <code>init</code>.</p>
+<p>In edger learning, it will choose a hypothesis space H and it is the hard bias. Then given the training data, it can find a member of H, h, that best fits in it. Then h could be apply to any data.</p>
 
-<pre><code class="language-java">//MessageServlet.java
-    public static final String MESSAGE = &quot;message&quot;;
+<p>The lazy learning is doing nothing in training step, just saving all data. In test step, it will do prediction based on data in this step.</p>
 
-    private String message;
+<p>For K-nearest Neighbors, it finds K nearest neighbors in the training data. Then average the label or find the most labels to predict this data&rsquo;s label. If K=1, it always finds itself. There is no hard bias for KNN, the soft bias is nearby point should have the same label.</p>
 
-    @Override
-    public void init(final ServletConfig config) throws ServletException {
-        super.init(config);
-        message = config.getInitParameter(MESSAGE);
-    }
-</code></pre>
+<p>The problem for KNN is: it is possible that different dimension will have different meaning, it is not wise just treat them as same. We could use $w_i$ to deal with different dimension problem.$f(q) = \frac{\sum K(dist(x_i,q))y_i}{\sum K(dist(x_i,q))}$</p>
 
-<h2 id="why-we-could-not-get-any-new-request-from-doget">Why we could not get any new request from <code>doGet</code></h2>
+<p>Kernel function is any positive semidefinite function of any two inputs. We could use kernel to estimate small dataset and aggregate them to estimate whole dataset. We can also use kernel smoothing.</p>
 
-<p>There is a very strange question happened when we used Undertow. Although we got requests from load generator continuously, we could not see any from the <code>doGet</code> function.</p>
+<h2 id="k-means">K-Means</h2>
 
-<p>It is because all listeners are pending at this time and we could not get any requests now. You could learn more from <a href="http://undertow.io/undertow-docs/undertow-docs-2.0.0/index.html#xnio-workers">here</a>. There is a limited threads opened for Undertow, if all <code>WORKER_IO_THREADS</code> threads were used, we will lose all incoming requests. We could set parameters for Undertow using the following codes.</p>
+<p>In the beginning, pre-define K centers in the observation.</p>
 
-<pre><code class="language-java">XnioWorker worker = xnio.createWorker(OptionMap.builder()
-    .set(Options.WORKER_IO_THREADS, ioThreads)
-    .set(Options.WORKER_TASK_CORE_THREADS, workerThreads)
-    .set(Options.WORKER_TASK_MAX_THREADS, workerThreads)
-    .set(Options.TCP_NODELAY, true)
-    .getMap());
-</code></pre>
+<p>It contains two steps, the first one is to assign the center of cluster. Assign each observation to the cluster whose mean has the least squared Euclidean distance. The second on is to update the new center which is the mean of the observations in the new cluster. Iterate many times, until the centers will not change.</p>
 
-<h2 id="connecting-to-mysql-problems">Connecting to MySQL problems</h2>
+<p>The algorithm does not guarantee convergence to the global optimum. The result may depend on the initial clusters. As the algorithm is usually fast, it is common to run it multiple times with different starting conditions.</p>
 
-<p>We could use <code>PreparedStatement</code> to perform SQL query.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/K-means_convergence.gif/440px-K-means_convergence.gif" alt="" /></p>
 
-<pre><code class="language-java">PreparedStatement statement = connection.prepareStatement(
-             &quot;SELECT * FROM World&quot;);
-ResultSet resultSet = statement.executeQuery()
-</code></pre>
+<h2 id="em-algorithm">EM algorithm</h2>
 
-<p>We also need to close them after using them. If you did not close them, there would occur out of memory problem.
-<a href="https://stackoverflow.com/questions/14546592/do-i-need-to-close-preparedstatement">reference</a>.</p>
+<p>EM algorithm is a general idea to calculate the unknown parameters. Let&rsquo;s use Gaussian Mixture Models as an example to talk about this model.</p>
+
+<p>If there are many gaussian models mixing with each other, we could get sampled data from this model. How could we estimate the $\mu_i$ for these value?</p>
+
+<p>Follow the MLE idea, we could get likelihood function with $\prod<em>{i} e^{-\frac{(x</em>{i}-\mu_{j})^{2}}{2\sigma^{2}}}$ with $\mu_j$. If we consider the prior $\lambda<em>j$ for model j. The most possible for $\mu$ is
+$$\boldsymbol{\mu}</em>{ML}=\arg\max<em>{\mu</em>{1},\mu<em>{2}}\prod</em>{i}\sum<em>{j}\lambda</em>{j}e^{-\frac{(x<em>{i}-\mu</em>{j})^{2}}{2\sigma^{2}}}$$. But there is no analytical solution for this function, EM algorithm could give a local maximum, not necessary to be global maximum.</p>
+
+<p>If we could get a table Z, when $x<em>i$ from Gaussian j,$Z</em>{i,j}=1$,otherwise 0. The $\hat \mu_j = \sum<em>i Z</em>{i,j}X<em>i / \sum Z</em>{i,j}$. If we don&rsquo;t know it, we could estimate it with $\hat \mu<em>j = \sum E[Z</em>{i,j}|\bar \mu] X<em>i / \sum E[Z</em>{i,j}|\bar \mu]$.</p>
+
+<p>The basic idea for EM is:</p>
+
+<ol>
+<li>Assume the $\mu_j$ in the model</li>
+<li>Classify data point to each model</li>
+<li>Re-estimate the $\mu_j$</li>
+<li>Repeat</li>
+</ol>
+
+<p>In GMM:</p>
+
+<ol>
+<li>E steps: $$E \left[z<em>{i,j}|\mu^{[k]}\right]=\frac{\lambda</em>{j}L\left(x<em>{i}|\mu=\mu</em>{j}^{[k]}\right)}{\sum<em>{j^{\prime}}\lambda</em>{j^{\prime}}L\left(x<em>{i}|\mu=\mu</em>{j^{\prime}}^{[k]}\right)}$$
+ In this step, it could classify data point to each cluster.</li>
+<li>M step: $$\mu<em>{j}^{[k+1]}=\frac{\sum</em>{i}E\left[z<em>{i,j}|\mu^{[k]}\right]\cdot x</em>{i}}{\sum<em>{i}E\left[z</em>{i,j}|\mu^{[k]}\right]}$$ In this step, it could re-estimate the $\mu_j$</li>
+</ol>
+
+<p>if L is bounded, then it can coverage to a (not nesseary global) local minimum.</p>
+
+<p>We could see the KMeans algorithm has the similar idea with EM algorithm.</p>
 
 </div>
             <div class="footer">

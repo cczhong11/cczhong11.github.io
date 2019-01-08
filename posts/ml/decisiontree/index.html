@@ -5,10 +5,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.47" /> 
-<title>Undertow configuration &middot; TC blog</title>
-<meta content="Undertow configuration - TC blog"
+<title> &middot; TC blog</title>
+<meta content=" - TC blog"
     property="og:title">
-<meta content=" - This blog will tell you my experience using Undertow."
+<meta content=" - "
     property="og:description"> <!-- CSS -->
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
 <link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
@@ -103,29 +103,13 @@
 
         <div class="content container">
             <div class="post">
-  <h1>Undertow configuration</h1>
+  <h1></h1>
   
   <div class="col-sm-12 col-md-12">
     <span class="text-left post-date meta">
             
-       <i class="fa fa-calendar" aria-hidden="true"></i> Apr 4, 2018 
       
       
-        
-        
-            in
-            
-            
-                <a class="meta" href="http://www.tczhong.com/categories/cloud-computing">CLOUD COMPUTING</a>
-                ,
-            
-                <a class="meta" href="http://www.tczhong.com/categories/tips">TIPS</a>
-                ,
-            
-                <a class="meta" href="http://www.tczhong.com/categories/web-services">WEB SERVICES</a>
-                
-            
-        
       
       
       
@@ -134,64 +118,37 @@
   
   
 
-<h1 id="undertow">Undertow</h1>
+<h1 id="decision-tree">Decision tree</h1>
 
-<p>This is a very fast Java web server. When using this web server, I met some problems but I could not find enough answers even on the stackOverflow. Therefore, I decided to write my experience down.</p>
+<p>This is an important algorithm in Machine Learning field. Using Decision tree can express all possible functions among the data. Understanding decision tree requires us to know entropy in the first place.</p>
 
-<h2 id="how-to-set-parameters-to-each-servlet">How to set parameters to each Servlet?</h2>
+<h2 id="entropy">Entropy</h2>
 
-<p>It is necessary for us to pass some parameters to Serlet functions. One way to do this is to use <code>addInitParam</code> when adding Servlet. Like the following code.</p>
+<p>Consider we flip an unbiased coin, we can get head and tail both in 50% chance. But if we flip a biased coin, we can get head in 90% chance and tail 10% chance. It is the most possible to have a head instead of a tail. We can see we are less surprised to flip this biased coin. Now, let&rsquo;s define surprise with probability. $$H(p) = -\sum p_i log_2(p_i)$$  It is the self entropy of the event with probability p. Because probability is always negative. Although we have negative symbol in the beginning, the entropy is still positive.</p>
 
-<pre><code class="language-java">DeploymentInfo servletBuilder = deployment()
-                    .setClassLoader(ServletServer.class.getClassLoader())
-                    .setContextPath(MYAPP)
-                    .setDeploymentName(&quot;test.war&quot;)
-                    .addServlets(
-                            servlet(&quot;MessageServlet&quot;, MessageServlet.class)
-                                    .addInitParam(&quot;message&quot;, &quot;Hello World&quot;)
-                                    .addMapping(&quot;/*&quot;),
-                    )
-</code></pre>
+<p>Now we can see flipping unbiased coin&rsquo;s entropy is 1. Flipping biased coin&rsquo;s entropy is just 0.469. We can easily prove that the entropy will become the maximum when the probability distribution is uniform.</p>
 
-<p>In the example, we set parameter <code>message</code> to &ldquo;Hello Word&rdquo;. Then how to we read that in the Servlet funtion? We could set in the <code>init</code>.</p>
+<p>The key idea here is that entropy represents surprise, uncertainty. The most important idea in machine learning is to reduce uncertainty!</p>
 
-<pre><code class="language-java">//MessageServlet.java
-    public static final String MESSAGE = &quot;message&quot;;
+<p>We also could get conditional entropy, $H(X|Y)$, which means the entropy of X when given Y.</p>
 
-    private String message;
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Entropy-mutual-information-relative-entropy-relation-diagram.svg/256px-Entropy-mutual-information-relative-entropy-relation-diagram.svg.png" alt="" /></p>
 
-    @Override
-    public void init(final ServletConfig config) throws ServletException {
-        super.init(config);
-        message = config.getInitParameter(MESSAGE);
-    }
-</code></pre>
+<p>$$H(Y|X) = \sum p(X=x_i) H(Y|X=x_i)$$</p>
 
-<h2 id="why-we-could-not-get-any-new-request-from-doget">Why we could not get any new request from <code>doGet</code></h2>
+<p>In the middle is I(X;Y), which is called as mutual information. If it is zero, it means X and Y are independent with each other.  It means the entropy when X and Y both happened.</p>
 
-<p>There is a very strange question happened when we used Undertow. Although we got requests from load generator continuously, we could not see any from the <code>doGet</code> function.</p>
+<h2 id="decision-tree-1">Decision tree</h2>
 
-<p>It is because all listeners are pending at this time and we could not get any requests now. You could learn more from <a href="http://undertow.io/undertow-docs/undertow-docs-2.0.0/index.html#xnio-workers">here</a>. There is a limited threads opened for Undertow, if all <code>WORKER_IO_THREADS</code> threads were used, we will lose all incoming requests. We could set parameters for Undertow using the following codes.</p>
+<p>Here we just discuss the most basic binary decision tree. In each attribute, it just has two possible values.</p>
 
-<pre><code class="language-java">XnioWorker worker = xnio.createWorker(OptionMap.builder()
-    .set(Options.WORKER_IO_THREADS, ioThreads)
-    .set(Options.WORKER_TASK_CORE_THREADS, workerThreads)
-    .set(Options.WORKER_TASK_MAX_THREADS, workerThreads)
-    .set(Options.TCP_NODELAY, true)
-    .getMap());
-</code></pre>
+<p>The algorithm is quite simple. Consider we have 10 attributes, we can test each attribute to see known which one could get minimum entropy. In other words, we want to know that given which attribute could help us get lowest entropy with the rest of attributes.</p>
 
-<h2 id="connecting-to-mysql-problems">Connecting to MySQL problems</h2>
+<p>$$A^* = min H(L|A) = min \sum p(A=a_i) H(L|A=a_i) = max I(L;A)$$</p>
 
-<p>We could use <code>PreparedStatement</code> to perform SQL query.</p>
+<p>It is a greedy algorithm, from the top of tree, we can know the attribute that contribute the most information in the data. Known that one can help us reduce the uncertainty.</p>
 
-<pre><code class="language-java">PreparedStatement statement = connection.prepareStatement(
-             &quot;SELECT * FROM World&quot;);
-ResultSet resultSet = statement.executeQuery()
-</code></pre>
-
-<p>We also need to close them after using them. If you did not close them, there would occur out of memory problem.
-<a href="https://stackoverflow.com/questions/14546592/do-i-need-to-close-preparedstatement">reference</a>.</p>
+<p>The problem is overfitting for decision tree. It is possible for us to have so many branches and overfit the training datasets. The idea to solve the problem is to do pruning on the tree. Pruning of the decision tree is done by replacing a whole subtree by a leaf node. Also with K-fold validation can help us.</p>
 
 </div>
             <div class="footer">

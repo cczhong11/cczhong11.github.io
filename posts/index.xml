@@ -233,5 +233,35 @@ gcloud dataproc clusters create cluster-name --project=project-id --bucket outpu
 How to Read JSON to DataFrame There are serveral ways to read json in Spark. The most common way is to load json in a DataFrame. Why not rdd? Because json contains some hierachy information and it could not represent well in RDD.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>http://www.tczhong.com/posts/ml/knn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/posts/ml/knn/</guid>
+      <description>K Nearest Neighbor, K-Means and EM algorithm These three algorithms are used for clustering. Let&amp;rsquo;s talk about K Nearest Neighbor(KNN) first.
+K Nearest Neighbor Example of k-NN classification. The test sample (green circle) should be classified either to the first class of blue squares or to the second class of red triangles. If k = 3 (solid line circle) it is assigned to the second class because there are 2 triangles and only 1 square inside the inner circle.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://www.tczhong.com/posts/ml/decisiontree/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/posts/ml/decisiontree/</guid>
+      <description>Decision tree This is an important algorithm in Machine Learning field. Using Decision tree can express all possible functions among the data. Understanding decision tree requires us to know entropy in the first place.
+Entropy Consider we flip an unbiased coin, we can get head and tail both in 50% chance. But if we flip a biased coin, we can get head in 90% chance and tail 10% chance. It is the most possible to have a head instead of a tail.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://www.tczhong.com/posts/ml/mle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/posts/ml/mle/</guid>
+      <description>Maximum Likelihood Estimation This is a very basic algorithm but I still want to write a blog about it. Let&amp;rsquo;s start with the basic idea.
+Probability If we have a situation $S_1$ and event A may happen. For example, under the same situation, the event A happen 7 out of 10. We could see the frequency of event A is 0.7. Under a lot of experiment with the same situation, if we still get the same result, we could see the probability of event A in this situation is 0.</description>
+    </item>
+    
   </channel>
 </rss>

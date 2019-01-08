@@ -5,10 +5,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.47" /> 
-<title>Undertow configuration &middot; TC blog</title>
-<meta content="Undertow configuration - TC blog"
+<title> &middot; TC blog</title>
+<meta content=" - TC blog"
     property="og:title">
-<meta content=" - This blog will tell you my experience using Undertow."
+<meta content=" - "
     property="og:description"> <!-- CSS -->
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
 <link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
@@ -103,29 +103,13 @@
 
         <div class="content container">
             <div class="post">
-  <h1>Undertow configuration</h1>
+  <h1></h1>
   
   <div class="col-sm-12 col-md-12">
     <span class="text-left post-date meta">
             
-       <i class="fa fa-calendar" aria-hidden="true"></i> Apr 4, 2018 
       
       
-        
-        
-            in
-            
-            
-                <a class="meta" href="http://www.tczhong.com/categories/cloud-computing">CLOUD COMPUTING</a>
-                ,
-            
-                <a class="meta" href="http://www.tczhong.com/categories/tips">TIPS</a>
-                ,
-            
-                <a class="meta" href="http://www.tczhong.com/categories/web-services">WEB SERVICES</a>
-                
-            
-        
       
       
       
@@ -134,64 +118,53 @@
   
   
 
-<h1 id="undertow">Undertow</h1>
+<h1 id="maximum-likelihood-estimation">Maximum Likelihood Estimation</h1>
 
-<p>This is a very fast Java web server. When using this web server, I met some problems but I could not find enough answers even on the stackOverflow. Therefore, I decided to write my experience down.</p>
+<p>This is a very basic algorithm but I still want to write a blog about it. Let&rsquo;s start with the basic idea.</p>
 
-<h2 id="how-to-set-parameters-to-each-servlet">How to set parameters to each Servlet?</h2>
+<h2 id="probability">Probability</h2>
 
-<p>It is necessary for us to pass some parameters to Serlet functions. One way to do this is to use <code>addInitParam</code> when adding Servlet. Like the following code.</p>
+<p>If we have a situation $S_1$ and event A may happen. For example, under the same situation, the event A happen 7 out of 10. We could see the frequency of event A is 0.7. Under a lot of experiment with the same situation, if we still get the same result, we could see the probability of event A in this situation is 0.7.</p>
 
-<pre><code class="language-java">DeploymentInfo servletBuilder = deployment()
-                    .setClassLoader(ServletServer.class.getClassLoader())
-                    .setContextPath(MYAPP)
-                    .setDeploymentName(&quot;test.war&quot;)
-                    .addServlets(
-                            servlet(&quot;MessageServlet&quot;, MessageServlet.class)
-                                    .addInitParam(&quot;message&quot;, &quot;Hello World&quot;)
-                                    .addMapping(&quot;/*&quot;),
-                    )
-</code></pre>
+<p>Another important concept is conditional probability. If we have another event B, and B may happen when event A happened. For instance, under the same situation, the event B happen 8 out of 10 when event A happened. The frequency of event B when event A happen is 0.8. If event B had the same pattern all the time, we can see the conditional probability of event B when event A happened is $P(B|A)=0.8$, the probability of event A and event B happened at the same time is $P(A,B)$.</p>
 
-<p>In the example, we set parameter <code>message</code> to &ldquo;Hello Word&rdquo;. Then how to we read that in the Servlet funtion? We could set in the <code>init</code>.</p>
+<p>Independence is also important to know here. If event A and event B are independent with each other, which means, event A happened or not had nothing to do with the event B, we could get the P(A，B) = P(A)*P(B).</p>
 
-<pre><code class="language-java">//MessageServlet.java
-    public static final String MESSAGE = &quot;message&quot;;
+<h2 id="bayes-theorem">Bayes&rsquo; theorem</h2>
 
-    private String message;
+<p>It is the most important theorem in the statistics world.</p>
 
-    @Override
-    public void init(final ServletConfig config) throws ServletException {
-        super.init(config);
-        message = config.getInitParameter(MESSAGE);
-    }
-</code></pre>
+<p>$$P ( A | B ) = \frac { P ( B | A ) P ( A ) } { P ( B ) }$$</p>
 
-<h2 id="why-we-could-not-get-any-new-request-from-doget">Why we could not get any new request from <code>doGet</code></h2>
+<p>If we want to know the probability of the A conditional on B, we can use the the probability of the B conditional on A and probability of A and B to know. In the real world, the probability of the A conditional on B is often hard to get and it can tell us the probability of a reason given situation. We can easily get the probability of a situation given the reason. The situation A is mostly data. The reason B is mostly hypothesis.</p>
 
-<p>There is a very strange question happened when we used Undertow. Although we got requests from load generator continuously, we could not see any from the <code>doGet</code> function.</p>
+<p>Prior is an important concept in Bayes&rsquo; thinking. It captures the belief for the right answer before seeing the data. In uniform distribution, prior is $\pi(h) = 1/|H|π(h)=1/∣H∣$ if h in H. Here $P(A)$ can be prior</p>
 
-<p>It is because all listeners are pending at this time and we could not get any requests now. You could learn more from <a href="http://undertow.io/undertow-docs/undertow-docs-2.0.0/index.html#xnio-workers">here</a>. There is a limited threads opened for Undertow, if all <code>WORKER_IO_THREADS</code> threads were used, we will lose all incoming requests. We could set parameters for Undertow using the following codes.</p>
+<p>The posterior is the probability of reason after seeing the data. It is $p(A|B)$.</p>
 
-<pre><code class="language-java">XnioWorker worker = xnio.createWorker(OptionMap.builder()
-    .set(Options.WORKER_IO_THREADS, ioThreads)
-    .set(Options.WORKER_TASK_CORE_THREADS, workerThreads)
-    .set(Options.WORKER_TASK_MAX_THREADS, workerThreads)
-    .set(Options.TCP_NODELAY, true)
-    .getMap());
-</code></pre>
+<p>Likelihood is another important concept. It will tell you under the given the parameters, what is the probability for data, expressing as $L(B|A)$.</p>
 
-<h2 id="connecting-to-mysql-problems">Connecting to MySQL problems</h2>
+<p>So in Bayes&rsquo; theorem, we can express it as prior * likelihood/evidence. Evidence is $P(B)$.</p>
 
-<p>We could use <code>PreparedStatement</code> to perform SQL query.</p>
+<h2 id="maximum-a-posteriori-and-maximum-likelihood-estimation">Maximum A Posteriori and Maximum Likelihood Estimation</h2>
 
-<pre><code class="language-java">PreparedStatement statement = connection.prepareStatement(
-             &quot;SELECT * FROM World&quot;);
-ResultSet resultSet = statement.executeQuery()
-</code></pre>
+<p>From the Bayes rule, we know $$P(\theta|X)=\frac{P(X|\theta)P(\theta)}{P(X)}$$.</p>
 
-<p>We also need to close them after using them. If you did not close them, there would occur out of memory problem.
-<a href="https://stackoverflow.com/questions/14546592/do-i-need-to-close-preparedstatement">reference</a>.</p>
+<p>Because $P(X)$ is the same, we could omit this value. $P(\theta|X) \propto P(X|\theta)P(\theta)$ If we want to find the most likely $\theta$, we need to have $\theta<em>{MAP}=\underset{\theta}{\arg\max}P(X|\theta)P(\theta)$. If data point is independent, we can use $\underset{\theta}{\arg\max}\log\prod</em>{i}P(x_{i}|\theta)P(\theta)$ to calculate the result. To make it easier to calculate, we use log in most cases. It is called as Maximum A Posteriori.</p>
+
+<p>For Maximum Likelihood Estimation, we want to maximize the likelihood function, which is $P(X|\theta)$. We want to know which theta could result in the given data.</p>
+
+<p>$$\begin{aligned}\theta<em>{MLE} &amp;= \underset{\theta}{\arg\max}P(X|\theta)\&amp;=\underset{\theta}{\arg\max}\prod</em>{i}P\left(x_{i}|\theta\right)\end{aligned}$$</p>
+
+<p>The difference between MLE and MAP is $P(\theta)$, if all possible reasons we need to consider is the same, MLE is equal to MAP.</p>
+
+<h2 id="naive-bayes">Naive Bayes</h2>
+
+<p>Naive Bayes is the extension for MAP algorithm. We could use $$j_{NB} = argmax_j p(cat=j)\prod p(a_i|j)$$ to calculate the most possible labels for the given data.</p>
+
+<p>In the text field, we could assume the probability for given label is based on the frequency of labels in the whole dataset. Then using the frequency of $a_i$ in the given label to calculate $P(a_i|j)$</p>
+
+<p>Sometimes, if there is no data under some labels in the training data, we need to use Laplace smoothing, adding 1 to both fraction side. $$P(w|c)=\frac{\operatorname{count}(w,c)+1}{\operatorname{count}&copy;+|V|}$$</p>
 
 </div>
             <div class="footer">
