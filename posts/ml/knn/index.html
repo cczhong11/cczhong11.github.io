@@ -28,6 +28,34 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.tczhong.com/apple-touch-icon-144-precomposed.png">
 <link rel="shortcut icon" href="http://www.tczhong.com/favicon.png"> 
 
+        <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+
+
+
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120924697-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -128,21 +156,21 @@
 
 <p>Example of k-NN classification. The test sample (green circle) should be classified either to the first class of blue squares or to the second class of red triangles. If k = 3 (solid line circle) it is assigned to the second class because there are 2 triangles and only 1 square inside the inner circle. If k = 5 (dashed line circle) it is assigned to the first class (3 squares vs. 2 triangles inside the outer circle).</p>
 
-<p>In edger learning, it will choose a hypothesis space H and it is the hard bias. Then given the training data, it can find a member of H, h, that best fits in it. Then h could be apply to any data.</p>
+<p>In edger learning, it will choose a hypothesis space H, and it is the hard bias. Then given the training data, it can find a member of H, h, that best fits in it. Then h could be applied to any data.</p>
 
-<p>The lazy learning is doing nothing in training step, just saving all data. In test step, it will do prediction based on data in this step.</p>
+<p>The lazy learning is doing nothing in training step, just saving all data. In test step, it will make a prediction based on data in this step.</p>
 
-<p>For K-nearest Neighbors, it finds K nearest neighbors in the training data. Then average the label or find the most labels to predict this data&rsquo;s label. If K=1, it always finds itself. There is no hard bias for KNN, the soft bias is nearby point should have the same label.</p>
+<p>For K-nearest Neighbors, it finds K nearest neighbors in the training data. Then average the label or find the most labels to predict this data&rsquo;s label. If K=1, it always finds itself. There is no hard bias for KNN, and the soft bias is nearby point should have the same label.</p>
 
 <p>The problem for KNN is: it is possible that different dimension will have different meaning, it is not wise just treat them as same. We could use $w_i$ to deal with different dimension problem.$f(q) = \frac{\sum K(dist(x_i,q))y_i}{\sum K(dist(x_i,q))}$</p>
 
-<p>Kernel function is any positive semidefinite function of any two inputs. We could use kernel to estimate small dataset and aggregate them to estimate whole dataset. We can also use kernel smoothing.</p>
+<p>The kernel function is any positive semidefinite function of any two inputs. We could use the kernel to estimate small dataset and aggregate them to estimate the whole dataset. We can also use kernel smoothing.</p>
 
 <h2 id="k-means">K-Means</h2>
 
 <p>In the beginning, pre-define K centers in the observation.</p>
 
-<p>It contains two steps, the first one is to assign the center of cluster. Assign each observation to the cluster whose mean has the least squared Euclidean distance. The second on is to update the new center which is the mean of the observations in the new cluster. Iterate many times, until the centers will not change.</p>
+<p>It contains two steps, and the first one is to assign the center of the cluster. Assign each observation to the cluster whose mean has the least squared Euclidean distance. The second one is to update the new center which is the mean of the observations in the new cluster. Iterate many times, until the centers will not change.</p>
 
 <p>The algorithm does not guarantee convergence to the global optimum. The result may depend on the initial clusters. As the algorithm is usually fast, it is common to run it multiple times with different starting conditions.</p>
 
@@ -150,9 +178,9 @@
 
 <h2 id="em-algorithm">EM algorithm</h2>
 
-<p>EM algorithm is a general idea to calculate the unknown parameters. Let&rsquo;s use Gaussian Mixture Models as an example to talk about this model.</p>
+<p>The EM algorithm is a general idea to calculate the unknown parameters. Let&rsquo;s use Gaussian Mixture Models as an example to talk about this model.</p>
 
-<p>If there are many gaussian models mixing with each other, we could get sampled data from this model. How could we estimate the $\mu_i$ for these value?</p>
+<p>If there are many gaussian models mixing, we could get sampled data from this model. How could we estimate the $\mu_i$ for these value?</p>
 
 <p>Follow the MLE idea, we could get likelihood function with $\prod<em>{i} e^{-\frac{(x</em>{i}-\mu_{j})^{2}}{2\sigma^{2}}}$ with $\mu_j$. If we consider the prior $\lambda<em>j$ for model j. The most possible for $\mu$ is
 $$\boldsymbol{\mu}</em>{ML}=\arg\max<em>{\mu</em>{1},\mu<em>{2}}\prod</em>{i}\sum<em>{j}\lambda</em>{j}e^{-\frac{(x<em>{i}-\mu</em>{j})^{2}}{2\sigma^{2}}}$$. But there is no analytical solution for this function, EM algorithm could give a local maximum, not necessary to be global maximum.</p>
@@ -176,7 +204,7 @@ $$\boldsymbol{\mu}</em>{ML}=\arg\max<em>{\mu</em>{1},\mu<em>{2}}\prod</em>{i}\su
 <li>M step: $$\mu<em>{j}^{[k+1]}=\frac{\sum</em>{i}E\left[z<em>{i,j}|\mu^{[k]}\right]\cdot x</em>{i}}{\sum<em>{i}E\left[z</em>{i,j}|\mu^{[k]}\right]}$$ In this step, it could re-estimate the $\mu_j$</li>
 </ol>
 
-<p>if L is bounded, then it can coverage to a (not nesseary global) local minimum.</p>
+<p>if L is bounded, then it can converge to a (not necessarily global) local minimum.</p>
 
 <p>We could see the KMeans algorithm has the similar idea with EM algorithm.</p>
 
@@ -186,34 +214,6 @@ $$\boldsymbol{\mu}</em>{ML}=\arg\max<em>{\mu</em>{1},\mu<em>{2}}\prod</em>{i}\su
 
 <script type="text/javascript">
     hljs.initHighlightingOnLoad();
-</script>
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-  });
-  MathJax.Hub.Queue(function() {
-    
-    
-    
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-
-  MathJax.Hub.Config({
-  
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
 </script>
 
 
