@@ -192,12 +192,12 @@
 
 <p>If we want to find the most likely $\theta$, we need to have $\theta_{ MAP }=\underset{\theta} {\arg\max} P(X|\theta)   P(\theta)$ .</p>
 
-<p>If data point is independent, we can use $\underset{\theta}{\arg\max}\log\prod<em>{ i } P(x</em>{i} |\theta)P(\theta)$ to calculate the result. To make it easier to calculate, we use log in most cases. It is called as Maximum A Posteriori.</p>
+<p>If data point is independent, we can use $\underset{\theta}{\arg\max}\log \prod _ { i } P (x _ {i} |\theta)P(\theta)$ to calculate the result. To make it easier to calculate, we use log in most cases. It is called as Maximum A Posteriori.</p>
 
 <p>For Maximum Likelihood Estimation, we want to maximize the likelihood function, which is $P(X|\theta)$. We want to know which theta could result in the given data.</p>
 
 <p>$$
-\begin{aligned}\theta<em>{MLE} &amp;= \underset{\theta}{\arg\max}P(X|\theta)\&amp;=\underset{\theta}{\arg\max}\prod</em>{i}P\left(x_{i}|\theta\right)\end{aligned}
+\begin{aligned}\theta _ {MLE} &amp;= \underset{\theta}{\arg\max}P(X|\theta)\&amp;=\underset{\theta}{\arg\max}\prod _ {i}P\left(x _ {i}|\theta\right)\end{aligned}
 $$</p>
 
 <p>The difference between MLE and MAP is $P(\theta)$, if all possible reasons we need to consider is the same, MLE is equal to MAP.</p>
