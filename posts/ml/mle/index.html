@@ -120,13 +120,13 @@
 
 <h1 id="maximum-likelihood-estimation">Maximum Likelihood Estimation</h1>
 
-<p>This is a very basic algorithm but I still want to write a blog about it. Let&rsquo;s start with the basic idea.</p>
+<p>This is a fundamental algorithm, but I still want to write a blog about it. Let&rsquo;s start with the basic idea.</p>
 
 <h2 id="probability">Probability</h2>
 
-<p>If we have a situation $S_1$ and event A may happen. For example, under the same situation, the event A happen 7 out of 10. We could see the frequency of event A is 0.7. Under a lot of experiment with the same situation, if we still get the same result, we could see the probability of event A in this situation is 0.7.</p>
+<p>If we have a situation $S_1$ and event A may happen. For example, under the same situation, the event A happens 7 out of 10. We could see the frequency of event A is 0.7. Under much experiment with the same situation, if we still get the same result, we could see the probability of event A in this situation is 0.7.</p>
 
-<p>Another important concept is conditional probability. If we have another event B, and B may happen when event A happened. For instance, under the same situation, the event B happen 8 out of 10 when event A happened. The frequency of event B when event A happen is 0.8. If event B had the same pattern all the time, we can see the conditional probability of event B when event A happened is $P(B|A)=0.8$, the probability of event A and event B happened at the same time is $P(A,B)$.</p>
+<p>Another important concept is the conditional probability. If we have another event B, and B may happen when event A happened. For instance, under the same situation, event B happens 8 out of 10 when event A happened. The frequency of event B when event A happen is 0.8. If event B had the same pattern all the time, we could see the conditional probability of event B when event A happened is $P(B|A)=0.8$, the probability of event A and event B happened at the same time is $P(A, B)$.</p>
 
 <p>Independence is also important to know here. If event A and event B are independent with each other, which means, event A happened or not had nothing to do with the event B, we could get the P(A，B) = P(A)*P(B).</p>
 
@@ -136,13 +136,13 @@
 
 <p>$$P ( A | B ) = \frac { P ( B | A ) P ( A ) } { P ( B ) }$$</p>
 
-<p>If we want to know the probability of the A conditional on B, we can use the the probability of the B conditional on A and probability of A and B to know. In the real world, the probability of the A conditional on B is often hard to get and it can tell us the probability of a reason given situation. We can easily get the probability of a situation given the reason. The situation A is mostly data. The reason B is mostly hypothesis.</p>
+<p>If we want to know the probability of the A conditional on B, we can use the probability of the B conditional on A and probability of A and B to know. In the real world, the probability of the A conditional on B is often hard to get, and it can tell us the probability of a reason given situation. We can quickly get the probability of a situation given the reason. The situation A is mostly data. The reason B is mostly hypothesis.</p>
 
 <p>Prior is an important concept in Bayes&rsquo; thinking. It captures the belief for the right answer before seeing the data. In uniform distribution, prior is $\pi(h) = 1/|H|π(h)=1/∣H∣$ if h in H. Here $P(A)$ can be prior</p>
 
 <p>The posterior is the probability of reason after seeing the data. It is $p(A|B)$.</p>
 
-<p>Likelihood is another important concept. It will tell you under the given the parameters, what is the probability for data, expressing as $L(B|A)$.</p>
+<p>The likelihood is another important concept. It will tell you under the given the parameters, what is the probability for data, expressing as $L(B|A)$.</p>
 
 <p>So in Bayes&rsquo; theorem, we can express it as prior * likelihood/evidence. Evidence is $P(B)$.</p>
 
@@ -162,7 +162,7 @@
 
 <p>Naive Bayes is the extension for MAP algorithm. We could use $$j_{NB} = argmax_j p(cat=j)\prod p(a_i|j)$$ to calculate the most possible labels for the given data.</p>
 
-<p>In the text field, we could assume the probability for given label is based on the frequency of labels in the whole dataset. Then using the frequency of $a_i$ in the given label to calculate $P(a_i|j)$</p>
+<p>In the text field, we could assume the probability for the given label is based on the frequency of labels in the whole dataset. Then using the frequency of $a_i$ in the given label to calculate $P(a_i|j)$</p>
 
 <p>Sometimes, if there is no data under some labels in the training data, we need to use Laplace smoothing, adding 1 to both fraction side. $$P(w|c)=\frac{\operatorname{count}(w,c)+1}{\operatorname{count}&copy;+|V|}$$</p>
 
@@ -173,7 +173,33 @@
 <script type="text/javascript">
     hljs.initHighlightingOnLoad();
 </script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
 </script>
 
 

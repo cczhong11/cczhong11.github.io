@@ -259,8 +259,8 @@ Entropy Consider we flip an unbiased coin, we can get head and tail both in 50% 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/posts/ml/mle/</guid>
-      <description>Maximum Likelihood Estimation This is a very basic algorithm but I still want to write a blog about it. Let&amp;rsquo;s start with the basic idea.
-Probability If we have a situation $S_1$ and event A may happen. For example, under the same situation, the event A happen 7 out of 10. We could see the frequency of event A is 0.7. Under a lot of experiment with the same situation, if we still get the same result, we could see the probability of event A in this situation is 0.</description>
+      <description>Maximum Likelihood Estimation This is a fundamental algorithm, but I still want to write a blog about it. Let&amp;rsquo;s start with the basic idea.
+Probability If we have a situation $S_1$ and event A may happen. For example, under the same situation, the event A happens 7 out of 10. We could see the frequency of event A is 0.7. Under much experiment with the same situation, if we still get the same result, we could see the probability of event A in this situation is 0.</description>
     </item>
     
   </channel>
