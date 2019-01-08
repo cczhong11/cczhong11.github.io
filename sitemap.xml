@@ -18,6 +18,21 @@
   </url>
   
   <url>
+    <loc>http://www.tczhong.com/posts/ml/mle/</loc>
+    <lastmod>2018-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.tczhong.com/posts/ml/decisiontree/</loc>
+    <lastmod>2018-12-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.tczhong.com/posts/ml/knn/</loc>
+    <lastmod>2018-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.tczhong.com/posts/cc/iot/</loc>
     <lastmod>2018-11-27T00:00:00+00:00</lastmod>
   </url>
@@ -175,18 +190,6 @@
   <url>
     <loc>http://www.tczhong.com/posts/cc/spark-etl/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.tczhong.com/posts/ml/knn/</loc>
-  </url>
-  
-  <url>
-    <loc>http://www.tczhong.com/posts/ml/decisiontree/</loc>
-  </url>
-  
-  <url>
-    <loc>http://www.tczhong.com/posts/ml/mle/</loc>
   </url>
   
   <url>
