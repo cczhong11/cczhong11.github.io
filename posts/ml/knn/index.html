@@ -172,7 +172,7 @@
 
 <p>For K-nearest Neighbors, it finds K nearest neighbors in the training data. Then average the label or find the most labels to predict this data&rsquo;s label. If K=1, it always finds itself. There is no hard bias for KNN, and the soft bias is nearby point should have the same label.</p>
 
-<p>The problem for KNN is: it is possible that different dimension will have different meaning, it is not wise just treat them as same. We could use $w_i$ to deal with different dimension problem.$f(q) = \frac{\sum K(dist(x_i,q))y_i}{\sum K(dist(x_i,q))}$</p>
+<p>The problem for KNN is: it is possible that different dimension will have different meaning, it is not wise just treat them as same. We could use $w _ i$ to deal with different dimension problem.$f(q) = \frac{\sum K(dist(x _ i,q))y _ i}{\sum K(dist(x _ i,q))}$</p>
 
 <p>The kernel function is any positive semidefinite function of any two inputs. We could use the kernel to estimate small dataset and aggregate them to estimate the whole dataset. We can also use kernel smoothing.</p>
 
@@ -184,34 +184,34 @@
 
 <p>The algorithm does not guarantee convergence to the global optimum. The result may depend on the initial clusters. As the algorithm is usually fast, it is common to run it multiple times with different starting conditions.</p>
 
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/K-means_convergence.gif/440px-K-means_convergence.gif" alt="" /></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/K-means _ convergence.gif/440px-K-means _ convergence.gif" alt="" /></p>
 
 <h2 id="em-algorithm">EM algorithm</h2>
 
 <p>The EM algorithm is a general idea to calculate the unknown parameters. Let&rsquo;s use Gaussian Mixture Models as an example to talk about this model.</p>
 
-<p>If there are many gaussian models mixing, we could get sampled data from this model. How could we estimate the $\mu_i$ for these value?</p>
+<p>If there are many gaussian models mixing, we could get sampled data from this model. How could we estimate the $\mu _ i$ for these value?</p>
 
-<p>Follow the MLE idea, we could get likelihood function with $\prod<em>{i} e^{-\frac{(x</em>{i}-\mu_{j})^{2}}{2\sigma^{2}}}$ with $\mu_j$. If we consider the prior $\lambda<em>j$ for model j. The most possible for $\mu$ is
-$$\boldsymbol{\mu}</em>{ML}=\arg\max<em>{\mu</em>{1},\mu<em>{2}}\prod</em>{i}\sum<em>{j}\lambda</em>{j}e^{-\frac{(x<em>{i}-\mu</em>{j})^{2}}{2\sigma^{2}}}$$. But there is no analytical solution for this function, EM algorithm could give a local maximum, not necessary to be global maximum.</p>
+<p>Follow the MLE idea, we could get likelihood function with $\prod _ {i} e^{-\frac{(x _ {i}-\mu _ {j})^{2}}{2\sigma^{2}}}$ with $\mu _ j$. If we consider the prior $\lambda _ j$ for model j. The most possible for $\mu$ is
+$$\boldsymbol{\mu} _ {ML}=\arg\max _ {\mu _ {1},\mu _ {2}}\prod _ {i}\sum _ {j}\lambda _ {j}e^{-\frac{(x _ {i}-\mu _ {j})^{2}}{2\sigma^{2}}}$$. But there is no analytical solution for this function, EM algorithm could give a local maximum, not necessary to be global maximum.</p>
 
-<p>If we could get a table Z, when $x<em>i$ from Gaussian j,$Z</em>{i,j}=1$,otherwise 0. The $\hat \mu_j = \sum<em>i Z</em>{i,j}X<em>i / \sum Z</em>{i,j}$. If we don&rsquo;t know it, we could estimate it with $\hat \mu<em>j = \sum E[Z</em>{i,j}|\bar \mu] X<em>i / \sum E[Z</em>{i,j}|\bar \mu]$.</p>
+<p>If we could get a table Z, when $x _ i$ from Gaussian j,$Z _ {i,j}=1$,otherwise 0. The $\hat \mu _ j = \sum _ i Z _ {i,j}X _ i / \sum Z _ {i,j}$. If we don&rsquo;t know it, we could estimate it with $\hat \mu _ j = \sum E[Z _ {i,j}|\bar \mu] X _ i / \sum E[Z _ {i,j}|\bar \mu]$.</p>
 
 <p>The basic idea for EM is:</p>
 
 <ol>
-<li>Assume the $\mu_j$ in the model</li>
+<li>Assume the $\mu _ j$ in the model</li>
 <li>Classify data point to each model</li>
-<li>Re-estimate the $\mu_j$</li>
+<li>Re-estimate the $\mu _ j$</li>
 <li>Repeat</li>
 </ol>
 
 <p>In GMM:</p>
 
 <ol>
-<li>E steps: $$E \left[z<em>{i,j}|\mu^{[k]}\right]=\frac{\lambda</em>{j}L\left(x<em>{i}|\mu=\mu</em>{j}^{[k]}\right)}{\sum<em>{j^{\prime}}\lambda</em>{j^{\prime}}L\left(x<em>{i}|\mu=\mu</em>{j^{\prime}}^{[k]}\right)}$$
+<li>E steps: $$E \left[z _ {i,j}|\mu^{[k]}\right]=\frac{\lambda _ {j}L\left(x _ {i}|\mu=\mu _ {j}^{[k]}\right)}{\sum _ {j^{\prime}}\lambda _ {j^{\prime}}L\left(x _ {i}|\mu=\mu _ {j^{\prime}}^{[k]}\right)}$$
  In this step, it could classify data point to each cluster.</li>
-<li>M step: $$\mu<em>{j}^{[k+1]}=\frac{\sum</em>{i}E\left[z<em>{i,j}|\mu^{[k]}\right]\cdot x</em>{i}}{\sum<em>{i}E\left[z</em>{i,j}|\mu^{[k]}\right]}$$ In this step, it could re-estimate the $\mu_j$</li>
+<li>M step: $$\mu _ {j}^{[k+1]}=\frac{\sum _ {i}E\left[z _ {i,j}|\mu^{[k]}\right]\cdot x _ {i}}{\sum _ {i}E\left[z _ {i,j}|\mu^{[k]}\right]}$$ In this step, it could re-estimate the $\mu _ j$</li>
 </ol>
 
 <p>if L is bounded, then it can converge to a (not necessarily global) local minimum.</p>

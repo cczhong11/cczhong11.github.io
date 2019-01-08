@@ -160,32 +160,32 @@
 
 <h2 id="neural-networks">Neural Networks</h2>
 
-<p>In general, neural networks have lots of node and each node will perform a transformation. In the easiest way, a linear transmission could be viewed as  $\sum w_i x_i$. It is the hard bias for this neural network, it is how each neuron could do. Neural Networks are also built as a layered Feedforward network, and the hard bias is the topology and activation function, they represent the expressive power for the network. The soft bias is the weight in the neuron.</p>
+<p>In general, neural networks have lots of node and each node will perform a transformation. In the easiest way, a linear transmission could be viewed as  $\sum w _ i x _ i$. It is the hard bias for this neural network, it is how each neuron could do. Neural Networks are also built as a layered Feedforward network, and the hard bias is the topology and activation function, they represent the expressive power for the network. The soft bias is the weight in the neuron.</p>
 
-<p>The transformation function is called activation function. When we use liner unit, it represent all linear function. And we could use MSE( $w* = argmin_w \sum (f_w(x_i)-y_i)^2$) to optimize the network. If we want to represent binary function or linear separator, we could use perceptron function( $\sigma(net) = 1 (wx&gt;0) -1 (wx&lt;=0)$) and it could perform AND and OR easily. We could use two layer of AND OR to perform any bool functions, but this function could not be differentiated, therefore in the most case, we use sigmoid function( $\sigma(net) = \frac{1}{1+e^{-net}}$) as activation function.</p>
+<p>The transformation function is called activation function. When we use liner unit, it represent all linear function. And we could use MSE( $w* = argmin _ w \sum (f _ w(x _ i)-y _ i)^2$) to optimize the network. If we want to represent binary function or linear separator, we could use perceptron function( $\sigma(net) = 1 (wx&gt;0) -1 (wx&lt;=0)$) and it could perform AND and OR easily. We could use two layer of AND OR to perform any bool functions, but this function could not be differentiated, therefore in the most case, we use sigmoid function( $\sigma(net) = \frac{1}{1+e^{-net}}$) as activation function.</p>
 
 <h2 id="optimization-methods">Optimization methods</h2>
 
 <p>We use gradient descent to optimize the neuron networks. We first use linear unit as an example, it is represented as following:</p>
 
-<p>$$o=w<em>{0}+w</em>{1}x<em>{1}+\cdots+w</em>{n}x_{n}$$</p>
+<p>$$o=w _ {0}+w _ {1}x _ {1}+\cdots+w _ {n}x _ {n}$$</p>
 
-<p>Then we could get loss function: $E[\vec{w}]=frac{1}{2}\sum<em>{d \in D} (t</em>{d}-o_{d})^{2}$, then we could get the gradient, which is $\nabla E [\vec{w} ]$, we need to use $w<em>i$ to partial derivative the E. Next we could get the difference for each w. $\Delta w</em>{i}=-\eta \frac{\partial E}{\partial w<em>{I}}$. In linear unit, we could get $\frac{\partial E}{\partial w</em>{i}}=\sum<em>{d}(t</em>{d}-o<em>{d})(-x</em>{i,d})$.</p>
+<p>Then we could get loss function: $E[\vec{w}]=frac{1}{2}\sum _ {d \in D} (t _ {d}-o _ {d})^{2}$, then we could get the gradient, which is $\nabla E [\vec{w} ]$, we need to use $w _ i$ to partial derivative the E. Next we could get the difference for each w. $\Delta w _ {i}=-\eta \frac{\partial E}{\partial w _ {I}}$. In linear unit, we could get $\frac{\partial E}{\partial w _ {i}}=\sum _ {d}(t _ {d}-o _ {d})(-x _ {i,d})$.</p>
 
 <p>The general steps for gradient descent is:</p>
 
 <ol>
-<li>In Initialize each $w_{I}$ to some small random value.</li>
+<li>In Initialize each $w _ {I}$ to some small random value.</li>
 <li>Until the termination condition is met, Do</li>
-<li>Initialize each $\Delta w_i$ to zero.</li>
-<li>For each (x,t) in training_examples, Do
+<li>Initialize each $\Delta w _ i$ to zero.</li>
+<li>For each (x,t) in training _ examples, Do
 
 <ul>
 <li>Input the instance x to the unit and
 compute the output o</li>
-<li>For each linear unit weight $w<em>i$, Do $\Delta w</em>{i}=\Delta w<em>{i}+\eta(t-o)x</em>{i}$</li>
+<li>For each linear unit weight $w _ i$, Do $\Delta w _ {i}=\Delta w _ {i}+\eta(t-o)x _ {i}$</li>
 </ul></li>
-<li>For each linear unit weight $w<em>i$, Do $w</em>{i}= w<em>{i}+\Delta w</em>{i}$</li>
+<li>For each linear unit weight $w _ i$, Do $w _ {i}= w _ {i}+\Delta w _ {i}$</li>
 </ol>
 
 <p>For stochastic gradient decent, it will update the weight based on every training data. A compromise between computing the true gradient and the gradient at a single example is to compute the gradient against more than one training example (called a &ldquo;mini-batch&rdquo;) at each step. The advantages for sgd is it doesn&rsquo;t require storing all training data in memory and it allows adding new data in an &ldquo;online&rdquo; setting. Stochastic gradient descent does not have faster convergence rate compared to the gradient descent.</p>
@@ -217,7 +217,7 @@ relationships. We could map data to space where data is separable.</p>
 
 <p>An autoencoder neural network is an unsupervised learning algorithm that applies backpropagation, setting the target values to be equal to the inputs.</p>
 
-<p>The autoencoder tries to learn a function $h_{W,b}(x) \approx x$. In other words, it is trying to learn an approximation to the identity function, so as to output $\hat x$ that is similar to x. The identity function seems a particularly trivial function to be trying to learn; but by placing constraints on the network, such as by limiting the number of hidden units, we can discover interesting structure about the data.</p>
+<p>The autoencoder tries to learn a function $h _ {W,b}(x) \approx x$. In other words, it is trying to learn an approximation to the identity function, so as to output $\hat x$ that is similar to x. The identity function seems a particularly trivial function to be trying to learn; but by placing constraints on the network, such as by limiting the number of hidden units, we can discover interesting structure about the data.</p>
 
 <ol>
 <li>Map the input to a compact representation z</li>
@@ -232,7 +232,7 @@ relationships. We could map data to space where data is separable.</p>
 
 <p>One neural network, called the generator, generates new data instances, while the other, the discriminator, evaluates them for authenticity; i.e. the discriminator decides whether each instance of data it reviews belongs to the actual training dataset or not.</p>
 
-<p><img src="https://skymind.ai/images/wiki/gan_schema.png" alt="" /></p>
+<p><img src="https://skymind.ai/images/wiki/gan _ schema.png" alt="" /></p>
 
 <p>Variational autoencoders are generative algorithm that add an additional constraint to encoding the input data, namely that the hidden representations are normalized. Variational autoencoders are capable of both compressing data like an autoencoder and synthesizing data like a GAN. However, while GANs generate data in fine, granular detail, images generated by VAEs tend to be more blurred.</p>
 
@@ -244,25 +244,25 @@ relationships. We could map data to space where data is separable.</p>
 
 <p>Likelihood is another important concept. It will tell you under the given the parameters, what is the probability for data, expressing as $L(D|h)$.</p>
 
-<p>We could express bayes rule as $p(h|D)=(\Pi(h)L(D|h)/P(D)$ = prior * likelihood/evidence. Here evidence is $\sum_{h&rsquo;}\Pi(h&rsquo;)L(D|h&rsquo;)$.</p>
+<p>We could express bayes rule as $p(h|D)=(\Pi(h)L(D|h)/P(D)$ = prior * likelihood/evidence. Here evidence is $\sum _ {h&rsquo;}\Pi(h&rsquo;)L(D|h&rsquo;)$.</p>
 
 <p>For prior odds, it is equal to  $\frac{\pi(h)}{1-\pi(h)}$, the likelihood ratio is equal to $\frac{L(D|h)}{L(D|!h)}$</p>
 
 <h2 id="map-and-mle">MAP and MLE</h2>
 
-<p>From the Bayes rule, we know $$P(\theta|X)=\frac{P(X|\theta)P(\theta)}{P(X)}$$. Because $P(X)$ is the same, we could omit this value. $P(\theta|X) \propto P(X|\theta)P(\theta)$ If we want to find the most likely $\theta$, we need to have $\theta<em>{MAP}=\underset{\theta}{\arg\max}P(X|\theta)P(\theta)$. If data point is independent, we can use $\underset{\theta}{\arg\max}\log\prod</em>{i}P(x_{i}|\theta)P(\theta)$ to calculate the result. To make it easier to calculate, we use log in most cases. It is called as Maximum A Posteriori.</p>
+<p>From the Bayes rule, we know $$P(\theta|X)=\frac{P(X|\theta)P(\theta)}{P(X)}$$. Because $P(X)$ is the same, we could omit this value. $P(\theta|X) \propto P(X|\theta)P(\theta)$ If we want to find the most likely $\theta$, we need to have $\theta _ {MAP}=\underset{\theta}{\arg\max}P(X|\theta)P(\theta)$. If data point is independent, we can use $\underset{\theta}{\arg\max}\log\prod _ {i}P(x _ {i}|\theta)P(\theta)$ to calculate the result. To make it easier to calculate, we use log in most cases. It is called as Maximum A Posteriori.</p>
 
 <p>For Maximum Likelihood Estimation, we want to maximize the likelihood function, which is $P(X|\theta)$. We want to know which theta could result in the given data.</p>
 
-<p>$$\begin{aligned}\theta<em>{MLE} &amp;= \underset{\theta}{\arg\max}P(X|\theta)\&amp;=\underset{\theta}{\arg\max}\prod</em>{i}P\left(x_{i}|\theta\right)\end{aligned}$$</p>
+<p>$$\begin{aligned}\theta _ {MLE} &amp;= \underset{\theta}{\arg\max}P(X|\theta)\&amp;=\underset{\theta}{\arg\max}\prod _ {i}P\left(x _ {i}|\theta\right)\end{aligned}$$</p>
 
 <p>The difference between MLE and MAP is $P(\theta)$, if all possible reasons we need to consider is the same, MLE is equal to MAP.</p>
 
 <h2 id="naive-bayes">Naive Bayes</h2>
 
-<p>Naive Bayes is the extension for MAP algorithm. We could use $$j_{NB} = argmax_j p(cat=j)\prod p(a_i|j)$$ to calculate the most possible labels for the given data.</p>
+<p>Naive Bayes is the extension for MAP algorithm. We could use $$j _ {NB} = argmax _ j p(cat=j)\prod p(a _ i|j)$$ to calculate the most possible labels for the given data.</p>
 
-<p>In the text field, we could assume the probability for given label is based on the frequency of labels in the whole dataset. Then using the frequency of $a_i$ in the given label to calculate $P(a_i|j)$</p>
+<p>In the text field, we could assume the probability for given label is based on the frequency of labels in the whole dataset. Then using the frequency of $a _ i$ in the given label to calculate $P(a _ i|j)$</p>
 
 <p>Sometimes, if there is no data under some labels in the training data, we need to use Laplace smoothing, adding 1 to both fraction side. $$P(w|c)=\frac{\operatorname{count}(w,c)+1}{\operatorname{count}&copy;+|V|}$$</p>
 
@@ -270,7 +270,7 @@ relationships. We could map data to space where data is separable.</p>
 
 <p>A Bayesian network is a probabilistic graphical model that represents a set of variables and their conditional dependencies via a directed acyclic graph (DAG).</p>
 
-<p>The main problem it want to solve is to learn join distribution over some variable set. If there is p binary variables, we will need $2^p - 1$ free parameters to represent the whole possibilities. It is very hard for computation. If we could know $x_i$ and $x_j$ conditional independent on any subsets, we only need O(p) parameters.</p>
+<p>The main problem it want to solve is to learn join distribution over some variable set. If there is p binary variables, we will need $2^p - 1$ free parameters to represent the whole possibilities. It is very hard for computation. If we could know $x _ i$ and $x _ j$ conditional independent on any subsets, we only need O(p) parameters.</p>
 
 <p>That&rsquo;s why we need a graph to represent the relationship between variables. It can reduce the free parameters. If we want to calculate P(A|B,C) without any independence information, we need |A| * |B| * |C| to represent it. If B is independent with A, it is P(A|B).</p>
 
@@ -283,7 +283,7 @@ relationships. We could map data to space where data is separable.</p>
 <li>not connected: may dependent</li>
 </ul>
 
-<p>We could use the graph to discover new dependency. The probability of joint distribution in the graph is $p(x_1,..x_p) = \prod p(x_i|parents(x_i)$. We also know $X_i$ is independent with all non-descendants if given the parents of $x_i$.</p>
+<p>We could use the graph to discover new dependency. The probability of joint distribution in the graph is $p(x _ 1,..x _ p) = \prod p(x _ i|parents(x _ i)$. We also know $X _ i$ is independent with all non-descendants if given the parents of $x _ i$.</p>
 
 <p>DGM is a language for expressing condition - hard bias, but it is not a completed language, it could not represent all bias.</p>
 
@@ -291,15 +291,21 @@ relationships. We could map data to space where data is separable.</p>
 
 <p>Conditional independence is x and y are independent with each other if we know some variables. Random variable X is conditionally independent of random variable Y given random variable Z if $P(X|Y,Z) = P(X|Z)$. The knowledge of Y doesn&rsquo;t affect your belief in the value of X, given a value of Z.</p>
 
-<p>Marginal Independence is when your knowledge of Y’s value doesn’t affect your belief in the value of X. If $P(X=x<em>{i}|Y=y</em>{k})=P(X=x_{i})$.</p>
+<p>Marginal Independence is when your knowledge of Y’s value doesn’t affect your belief in the value of X. If $P(X=x _ {i}|Y=y _ {k})=P(X=x _ {i})$.</p>
 
 <p>D-speration is one way to decide the dependency between variables.</p>
 
-<p><img src="pic/2.png" alt="" /> In this scenario, if E is evidence, we could know this path is blocked..</p>
+<p><img src="pic/2.png" alt="" /></p>
 
-<p><img src="pic/3.png" alt="" /> If E is evidence, we could know this path is blocked.</p>
+<p>In this scenario, if E is evidence, we could know this path is blocked..</p>
 
-<p><img src="pic/4.png" alt="" /> If E is not evidence and neither are any of its descendants. It is blocked.</p>
+<p><img src="pic/3.png" alt="" /></p>
+
+<p>If E is evidence, we could know this path is blocked.</p>
+
+<p><img src="pic/4.png" alt="" /></p>
+
+<p>If E is not evidence and neither are any of its descendants. It is blocked.</p>
 
 <p>Another way to solve the problem is to use the following steps:</p>
 
@@ -316,16 +322,16 @@ relationships. We could map data to space where data is separable.</p>
 <p>In Markov random field, it is an undirected graphical model, which is a set of random variables having a Markov property described by an undirected graph. There may be a cyclic dependencies. The Markov blanket for a node is simply its adjacent nodes.</p>
 
 <ol>
-<li>$x_i$ is independent with others given $MB(x_i)$</li>
+<li>$x _ i$ is independent with others given $MB(x _ i)$</li>
 <li>any subset is independent with any other subsets given any separating subset.</li>
-<li>$x_i$ is independent $x_j$ given everybody else if $x_i$ and $x_j$ is not neighbor.</li>
+<li>$x _ i$ is independent $x _ j$ given everybody else if $x _ i$ and $x _ j$ is not neighbor.</li>
 </ol>
 
 <p>In Markov Models, it is assumed that future states depend only on the current state, not on the events that occurred before it. We could use a matrix to represent the probability from one state to another state.</p>
 
 <p>In hidden Markov Models, there are some hidden variables that are not observed. Each node conditional depends on its parents.</p>
 
-<p>$$p(x_1,&hellip;x_n) = p(z_1)p(x_1|z<em>1)\prod</em>{x=2} P(Z<em>t|Z</em>{t-1})P(X_t|Z_t)$$</p>
+<p>$$p(x _ 1,&hellip;x _ n) = p(z _ 1)p(x _ 1|z _ 1)\prod _ {x=2} P(Z _ t|Z _ {t-1})P(X _ t|Z _ t)$$</p>
 
 <p><img src="pic/model.png" alt="" /></p>
 
@@ -342,12 +348,12 @@ relationships. We could map data to space where data is separable.</p>
 <li>Actions A</li>
 <li>Transitions T(s,a,s&rsquo;) aka. P(s&rsquo;|s,a)</li>
 <li>Rewards R(s,a,s&rsquo;) and discount factor $\gamma$</li>
-<li>Start state $s_0$</li>
+<li>Start state $s _ 0$</li>
 </ul>
 
 <h2 id="bellman-backup">Bellman backup</h2>
 
-<p>Bellman function is $V^{ * }(s)=\max<em>{a}Q^{ * }(s,a)$,$$Q^{ * }(a,s)=\sum</em>{s^{\prime}\in\mathcal{S}}\mathcal{P}r(s^{\prime}|s,a)[\mathcal{R}(s,a,s^{\prime})+\gamma V^{*}(s^{\prime})]$$, Q(a,s) is the reward that agent starts from state s0 and execute action a. $V(s)$ is state value. Q is the expectation of reward after choosing a.</p>
+<p>Bellman function is $V^{ * }(s)=\max _ {a}Q^{ * }(s,a)$,$$Q^{ * }(a,s)=\sum _ {s^{\prime}\in\mathcal{S}}\mathcal{P}r(s^{\prime}|s,a)[\mathcal{R}(s,a,s^{\prime})+\gamma V^{*}(s^{\prime})]$$, Q(a,s) is the reward that agent starts from state s0 and execute action a. $V(s)$ is state value. Q is the expectation of reward after choosing a.</p>
 
 <p>It will choose the max Q to update the V. It is expected discounted future reward.</p>
 
@@ -362,53 +368,53 @@ relationships. We could map data to space where data is separable.</p>
 <p>There are several steps in policy iteration.</p>
 
 <ol>
-<li>Start with some policy $\pi_0(s_i)$</li>
-<li>Compute the values of the all states according to current policy. Policy is not changed here. V is just $\sum_{s^{\prime}}p(s^{\prime}|s,\pi(s))[r(s,\pi(s),s^{\prime})+\gamma v(s^{\prime})]$</li>
-<li>Update policy: $\pi<em>{1}(s</em>{i})=\operatorname{argmax}<em>{a}{r</em>{i}+\gamma\sum<em>{j}p</em>{ij}^{a}V^{\pi<em>{0}}(s</em>{j})}$</li>
-<li>Stop when $\pi<em>{k+1}=\pi</em>{k}$</li>
+<li>Start with some policy $\pi _ 0(s _ i)$</li>
+<li>Compute the values of the all states according to current policy. Policy is not changed here. V is just $\sum _ {s^{\prime}}p(s^{\prime}|s,\pi(s))[r(s,\pi(s),s^{\prime})+\gamma v(s^{\prime})]$</li>
+<li>Update policy: $\pi _ {1}(s _ {i})=\operatorname{argmax} _ {a}{r _ {i}+\gamma\sum _ {j}p _ {ij}^{a}V^{\pi _ {0}}(s _ {j})}$</li>
+<li>Stop when $\pi _ {k+1}=\pi _ {k}$</li>
 </ol>
 
 <p><img src="pic/policy" alt="" /></p>
 
 <h2 id="sarsa">SARSA</h2>
 
-<p>It means State–action–reward–state–action. The main function for updating the Q-value depends on the current state of the agent &ldquo;S1&rdquo;, the action the agent chooses &ldquo;A1&rdquo;, the reward &ldquo;R&rdquo; the agent gets for choosing this action, the state &ldquo;S2&rdquo; that the agent enters after taking that action, and finally the next action &ldquo;A2&rdquo; the agent choose in its new state. The acronym for the quintuple ($s_t$, $a_t$, $r<em>t$, $s</em>{t+1}$, $a_{t+1}$) is SARSA. In SARSA, you update estimates based on and take the same action.</p>
+<p>It means State–action–reward–state–action. The main function for updating the Q-value depends on the current state of the agent &ldquo;S1&rdquo;, the action the agent chooses &ldquo;A1&rdquo;, the reward &ldquo;R&rdquo; the agent gets for choosing this action, the state &ldquo;S2&rdquo; that the agent enters after taking that action, and finally the next action &ldquo;A2&rdquo; the agent choose in its new state. The acronym for the quintuple ($s _ t$, $a _ t$, $r _ t$, $s _ {t+1}$, $a _ {t+1}$) is SARSA. In SARSA, you update estimates based on and take the same action.</p>
 
-<p>$$Q(s<em>{t},a</em>{t})= Q(s<em>{t},a</em>{t})+\alpha[r<em>{t}+\gamma Q(s</em>{t+1},a<em>{t+1})-Q(s</em>{t},a_{t})]$$</p>
+<p>$$Q(s _ {t},a _ {t})= Q(s _ {t},a _ {t})+\alpha[r _ {t}+\gamma Q(s _ {t+1},a _ {t+1})-Q(s _ {t},a _ {t})]$$</p>
 
 <p>A SARSA agent interacts with the environment and updates the policy based on actions taken, hence this is known as an <strong>on-policy</strong> learning algorithm. SARSA will approach convergence allowing for possible penalties from exploratory moves, whilst Q-learning will ignore them.</p>
 
 <h2 id="q-learning">Q-learning</h2>
 
 <p>In Q learning, it will update Q with max action it could take. Q-learning directly learns the optimal policy, whilst SARSA learns a near-optimal policy whilst exploring. Q-learning (and off-policy learning in general) has higher per-sample variance than SARSA, and may suffer from problems converging as a result. In Q learning, you update the estimate from the maximum estimate of possible next actions, regardless of which action you took.
-$$Q(s_t,a_t)←Q(s_t,a<em>t)+α[r</em>{t+1}+γ\max<em>{a&rsquo;}Q(s</em>{t+1},a&rsquo;)−Q(s_t,a_t)]$$</p>
+$$Q(s _ t,a _ t)←Q(s _ t,a _ t)+α[r _ {t+1}+γ\max _ {a&rsquo;}Q(s _ {t+1},a&rsquo;)−Q(s _ t,a _ t)]$$</p>
 
 <h1 id="em-algorithm">EM Algorithm</h1>
 
 <h2 id="gaussian-mixture-models">Gaussian Mixture Models</h2>
 
-<p>If there are many gaussian models mixing with each other, we could get sampled data from this model. How could we estimate the $\mu_i$ for these value?</p>
+<p>If there are many gaussian models mixing with each other, we could get sampled data from this model. How could we estimate the $\mu _ i$ for these value?</p>
 
-<p>Follow the MLE idea, we could get likelihood function with $\prod<em>{i} e^{-\frac{(x</em>{i}-\mu_{j})^{2}}{2\sigma^{2}}}$ with $\mu_j$. If we consider the prior $\lambda<em>j$ for model j. The most possible for $\mu$ is
-$$\boldsymbol{\mu}</em>{ML}=\arg\max<em>{\mu</em>{1},\mu<em>{2}}\prod</em>{i}\sum<em>{j}\lambda</em>{j}e^{-\frac{(x<em>{i}-\mu</em>{j})^{2}}{2\sigma^{2}}}$$. But there is no analytical solution for this function, EM algorithm could give a local maximum, not necessary to be global maximum.</p>
+<p>Follow the MLE idea, we could get likelihood function with $\prod _ {i} e^{-\frac{(x _ {i}-\mu _ {j})^{2}}{2\sigma^{2}}}$ with $\mu _ j$. If we consider the prior $\lambda _ j$ for model j. The most possible for $\mu$ is
+$$\boldsymbol{\mu} _ {ML}=\arg\max _ {\mu _ {1},\mu _ {2}}\prod _ {i}\sum _ {j}\lambda _ {j}e^{-\frac{(x _ {i}-\mu _ {j})^{2}}{2\sigma^{2}}}$$. But there is no analytical solution for this function, EM algorithm could give a local maximum, not necessary to be global maximum.</p>
 
-<p>If we could get a table Z, when $x<em>i$ from Gaussian j,$Z</em>{i,j}=1$,otherwise 0. The $\hat \mu_j = \sum<em>i Z</em>{i,j}X<em>i / \sum Z</em>{i,j}$. If we don&rsquo;t know it, we could estimate it with $\hat \mu<em>j = \sum E[Z</em>{i,j}|\bar \mu] X<em>i / \sum E[Z</em>{i,j}|\bar \mu]$.</p>
+<p>If we could get a table Z, when $x _ i$ from Gaussian j,$Z _ {i,j}=1$,otherwise 0. The $\hat \mu _ j = \sum _ i Z _ {i,j}X _ i / \sum Z _ {i,j}$. If we don&rsquo;t know it, we could estimate it with $\hat \mu _ j = \sum E[Z _ {i,j}|\bar \mu] X _ i / \sum E[Z _ {i,j}|\bar \mu]$.</p>
 
 <p>The basic idea for EM is:</p>
 
 <ol>
-<li>Assume the $\mu_j$ in the model</li>
+<li>Assume the $\mu _ j$ in the model</li>
 <li>Classify data point to each model</li>
-<li>Re-estimate the $\mu_j$</li>
+<li>Re-estimate the $\mu _ j$</li>
 <li>Repeat</li>
 </ol>
 
 <p>In GMM:</p>
 
 <ol>
-<li>E steps: $$E \left[z<em>{i,j}|\mu^{[k]}\right]=\frac{\lambda</em>{j}L\left(x<em>{i}|\mu=\mu</em>{j}^{[k]}\right)}{\sum<em>{j^{\prime}}\lambda</em>{j^{\prime}}L\left(x<em>{i}|\mu=\mu</em>{j^{\prime}}^{[k]}\right)}$$
+<li>E steps: $$E \left[z _ {i,j}|\mu^{[k]}\right]=\frac{\lambda _ {j}L\left(x _ {i}|\mu=\mu _ {j}^{[k]}\right)}{\sum _ {j^{\prime}}\lambda _ {j^{\prime}}L\left(x _ {i}|\mu=\mu _ {j^{\prime}}^{[k]}\right)}$$
  In this step, it could classify data point to each cluster.</li>
-<li>M step: $$\mu<em>{j}^{[k+1]}=\frac{\sum</em>{i}E\left[z<em>{i,j}|\mu^{[k]}\right]\cdot x</em>{i}}{\sum<em>{i}E\left[z</em>{i,j}|\mu^{[k]}\right]}$$ In this step, it could re-estimate the $\mu_j$</li>
+<li>M step: $$\mu _ {j}^{[k+1]}=\frac{\sum _ {i}E\left[z _ {i,j}|\mu^{[k]}\right]\cdot x _ {i}}{\sum _ {i}E\left[z _ {i,j}|\mu^{[k]}\right]}$$ In this step, it could re-estimate the $\mu _ j$</li>
 </ol>
 
 <p>if L is bounded, then it can coverage to a (not nesseary global) local minimum.</p>
@@ -427,7 +433,7 @@ $$\boldsymbol{\mu}</em>{ML}=\arg\max<em>{\mu</em>{1},\mu<em>{2}}\prod</em>{i}\su
 
 <p>For K-nearest Neighbors, it finds K nearest neighbors in the training data. Then average the label or find the most labels to predict this data&rsquo;s label. If K=1, it always finds itself. There is no hard bias for KNN, the soft bias is nearby point should have the same label.</p>
 
-<p>The problem for KNN is: it is possible that different dimension will have different meaning, it is not wise just treat them as same. We could use $w_i$ to deal with different dimension problem.$f(q) = \frac{\sum K(dist(x_i,q))y_i}{\sum K(dist(x_i,q))}$</p>
+<p>The problem for KNN is: it is possible that different dimension will have different meaning, it is not wise just treat them as same. We could use $w _ i$ to deal with different dimension problem.$f(q) = \frac{\sum K(dist(x _ i,q))y _ i}{\sum K(dist(x _ i,q))}$</p>
 
 <p>Kernel function is any positive semidefinite function of any two inputs. We could use kernel to estimate small dataset and aggregate them to estimate whole dataset. We can also use kernel smoothing.</p>
 
@@ -435,11 +441,11 @@ $$\boldsymbol{\mu}</em>{ML}=\arg\max<em>{\mu</em>{1},\mu<em>{2}}\prod</em>{i}\su
 
 <h2 id="support-vector-machines">Support Vector Machines</h2>
 
-<p>SVM wants to classify data using a boundary. Take 2d graph as example, there are + and - in it. We can see if for all x+, wx+b&gt;=1, for all x-, wx+b&lt;=-1. Think about value $y_i$, it could combine two function, if x+,$y_i=1$,else $y_i=-1$. Then the result is $y_i (w^T x+b)&gt;=1$. For equal situation, it is boundary. $y_i (w^T x + b)-1=0$.</p>
+<p>SVM wants to classify data using a boundary. Take 2d graph as example, there are + and - in it. We can see if for all x+, wx+b&gt;=1, for all x-, wx+b&lt;=-1. Think about value $y _ i$, it could combine two function, if x+,$y _ i=1$,else $y _ i=-1$. Then the result is $y _ i (w^T x+b)&gt;=1$. For equal situation, it is boundary. $y _ i (w^T x + b)-1=0$.</p>
 
-<p>To make the boundary width bigger, we need to max $\frac{(x+ - x- )w}{||w||_{2}}$, equally  min $<sup>1</sup>&frasl;<sub>2</sub> ||w||^2_2$  sub y_i(x^T x<em>i + b)&gt;=1. Hard margin is to make sure separate data, soft margin introduce the hinge loss, useful when data is not linearly separable. $\max\left(0,1-y</em>{i}\left(\vec{w}\cdot\vec{x}_{i}-b\right)\right)$</p>
+<p>To make the boundary width bigger, we need to max $\frac{(x+ - x- )w}{||w|| _ {2}}$, equally  min $<sup>1</sup>&frasl;<sub>2</sub> ||w||^2 _ 2$  sub y _ i(x^T x _ i + b)&gt;=1. Hard margin is to make sure separate data, soft margin introduce the hinge loss, useful when data is not linearly separable. $\max\left(0,1-y _ {i}\left(\vec{w}\cdot\vec{x} _ {i}-b\right)\right)$</p>
 
-<p>By solving for the Lagrangian dual of the problem, we could get $x_i x_i$ in the function, here we could apply different kernel function to get different boundary.</p>
+<p>By solving for the Lagrangian dual of the problem, we could get $x _ i x _ i$ in the function, here we could apply different kernel function to get different boundary.</p>
 
 </div>
             <div class="footer">

@@ -162,7 +162,7 @@
 
 <h2 id="entropy">Entropy</h2>
 
-<p>Consider we flip an unbiased coin, and we can get head and tail both in 50% chance. However, if we flip a biased coin, we can get head in 90% chance and tail 10% chance. It is the most possible to have a head instead of a tail. We can see we are less surprised to flip this biased coin. Now, let&rsquo;s define surprise with probability. $$H(p) = -\sum p_i log_2(p_i)$$  It is the self entropy of the event with probability p. Because probability is always negative. Although we have a negative symbol, the entropy is still positive.</p>
+<p>Consider we flip an unbiased coin, and we can get head and tail both in 50% chance. However, if we flip a biased coin, we can get head in 90% chance and tail 10% chance. It is the most possible to have a head instead of a tail. We can see we are less surprised to flip this biased coin. Now, let&rsquo;s define surprise with probability. $$H(p) = -\sum p _ i log _ 2(p _ i)$$  It is the self entropy of the event with probability p. Because probability is always negative. Although we have a negative symbol, the entropy is still positive.</p>
 
 <p>Now we can see flipping unbiased coin&rsquo;s entropy is 1. Flipping biased coin&rsquo;s entropy is just 0.469. We can easily prove that the entropy will become the maximum when the probability distribution is uniform.</p>
 
@@ -172,7 +172,7 @@
 
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Entropy-mutual-information-relative-entropy-relation-diagram.svg/256px-Entropy-mutual-information-relative-entropy-relation-diagram.svg.png" alt="" /></p>
 
-<p>$$H(Y|X) = \sum p(X=x_i) H(Y|X=x_i)$$</p>
+<p>$$H(Y|X) = \sum p(X=x _ i) H(Y|X=x _ i)$$</p>
 
 <p>In the middle is I(X; Y), which is called mutual information. If it is zero, it means X and Y are independent with each other.  It means the entropy when X and Y both happened.</p>
 
@@ -182,7 +182,7 @@
 
 <p>The algorithm is quite simple. Consider we have 10 attributes, we can test each attribute to see known which one could get minimum entropy. In other words, we want to know that given which attribute could help us get the lowest entropy with the rest of attributes.</p>
 
-<p>$$A^* = min H(L|A) = min \sum p(A=a_i) H(L|A=a_i) = max I(L;A)$$</p>
+<p>$$A^* = min H(L|A) = min \sum p(A=a _ i) H(L|A=a _ i) = max I(L;A)$$</p>
 
 <p>It is a greedy algorithm, from the top of the tree, we can know the attribute that contributes the most information in the data — known that one can help us reduce the uncertainty.</p>
 
