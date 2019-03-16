@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Db on TC blog</title>
+    <link>http://www.tczhong.com/categories/db/</link>
+    <description>Recent content in Db on TC blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 15 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.tczhong.com/categories/db/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SQL basics</title>
+      <link>http://www.tczhong.com/posts/db/sql/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/posts/db/sql/</guid>
+      <description>Introduction to SQL SQL is a very important language we used in Relational Database management system. Writing efficient SQL query can help us do lots of things.
+Relational model In the beginning, I would like to talk about relational model. In short, it is a table with different columns. In a more specific definition, it is an approach to managing data using a structure and language consistent with first-order predicate logic.</description>
+    </item>
+    
+  </channel>
+</rss>

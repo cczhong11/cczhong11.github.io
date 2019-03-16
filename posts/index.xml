@@ -22,6 +22,16 @@ When a student asks a question, we want to answer them quickly. Piazza could sen
     </item>
     
     <item>
+      <title>SQL basics</title>
+      <link>http://www.tczhong.com/posts/db/sql/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/posts/db/sql/</guid>
+      <description>Introduction to SQL SQL is a very important language we used in Relational Database management system. Writing efficient SQL query can help us do lots of things.
+Relational model In the beginning, I would like to talk about relational model. In short, it is a table with different columns. In a more specific definition, it is an approach to managing data using a structure and language consistent with first-order predicate logic.</description>
+    </item>
+    
+    <item>
       <title>Machine learning basic concepts</title>
       <link>http://www.tczhong.com/posts/ml/machinelearningreview/</link>
       <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
@@ -271,16 +281,6 @@ How to Read JSON to DataFrame There are serveral ways to read json in Spark. The
       <guid>http://www.tczhong.com/posts/cc/networklayer/</guid>
       <description>Network Layers In the network, there are two main parts, one is network edge, the other is network core. The network edge is end system, which running applications. The network core is routers and interconnected network.
 We used the layered architecture in OSI model, it can help us decompose the complexity of network, develop protocol separately. Also implementation in one layer can change without affecting other layers. In the above layers, we do not need to concern the details of lower layers.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://www.tczhong.com/posts/db/sql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/posts/db/sql/</guid>
-      <description>Introduction to SQL SQL is a very important language we used in Relational Database management system. Writing efficient SQL query can help us do lots of things.
-Relational model In the beginning, I would like to talk about relational model. In short, it is a table with different columns. In a more specific definition, it is an approach to managing data using a structure and language consistent with first-order predicate logic.</description>
     </item>
     
   </channel>

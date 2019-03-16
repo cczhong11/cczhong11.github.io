@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>http://www.tczhong.com/posts/db/sql/</loc>
+    <lastmod>2018-12-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.tczhong.com/posts/ml/machinelearningreview/</loc>
     <lastmod>2018-12-12T00:00:00+00:00</lastmod>
   </url>
@@ -197,10 +202,6 @@
   </url>
   
   <url>
-    <loc>http://www.tczhong.com/posts/db/sql/</loc>
-  </url>
-  
-  <url>
     <loc>http://www.tczhong.com/about/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -239,6 +240,12 @@
   <url>
     <loc>http://www.tczhong.com/categories/cloud-computing/</loc>
     <lastmod>2018-12-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.tczhong.com/categories/db/</loc>
+    <lastmod>2018-12-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -5,10 +5,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.47" /> 
-<title> &middot; TC blog</title>
-<meta content=" - TC blog"
+<title>SQL basics &middot; TC blog</title>
+<meta content="SQL basics - TC blog"
     property="og:title">
-<meta content=" - "
+<meta content=" - An introduction to SQL"
     property="og:description"> <!-- CSS -->
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
 <link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
@@ -131,13 +131,23 @@
 
         <div class="content container">
             <div class="post">
-  <h1></h1>
+  <h1>SQL basics</h1>
   
   <div class="col-sm-12 col-md-12">
     <span class="text-left post-date meta">
             
+       <i class="fa fa-calendar" aria-hidden="true"></i> Dec 12, 2018 
       
       
+        
+        
+            in
+            
+            
+                <a class="meta" href="http://www.tczhong.com/categories/db">DB</a>
+                
+            
+        
       
       
       
@@ -193,6 +203,66 @@
 </code></pre>
 
 <h3 id="product-join">PRODUCT/JOIN</h3>
+
+<p>The product will generate a relation that contains all possible combinations of tuples from the input relations. If we had M relations in table R and N relations in table S, we will have M*N results after the PRODUCT.</p>
+
+<p>JOIN is to generate a relation that contains all tuples that are a combination of two tuples. There are also some other various kind of JOIN. Inner JOIN is the same as JOIN.</p>
+
+<p>LEFT JOIN returns all records from the left table (table1), and the matched records from the right table (table2).</p>
+
+<p>OUTER JOIN return all records when there is a match in either left (table1) or right (table2) table records.</p>
+
+<pre><code class="language-SQL">SELECT * from table1 INNER/LEFT/OUTER JOIN table2 on table1.attr1 = table2.attr2
+</code></pre>
+
+<h2 id="advanced-sql">Advanced SQL</h2>
+
+<h3 id="aggregations-group-by">Aggregations + Group By</h3>
+
+<p>There are many aggregate functions, including the following operations:</p>
+
+<ul>
+<li>AVG(col) Return the average col value.<br /></li>
+<li>MIN(col) Return minimum col value.<br /></li>
+<li>MAX(col) Return maximum col value.<br /></li>
+<li>SUM(col) Return sum of values in col.<br /></li>
+<li>COUNT(col) Return # of values for col.</li>
+</ul>
+
+<p>We could also use DISTINCT keyword for COUNT, SUM, AVG.</p>
+
+<p>If we want to get aggregate results based on different groups, we can use <code>group by</code> to calculate aggregates against each subset.</p>
+
+<p>If we want to filter the result based on aggregation computation, we can use <code>HAVING attr &gt; x</code> after <code>group by</code>.</p>
+
+<h3 id="output-control">OUTPUT control</h3>
+
+<p>For output redirection, we can use <code>INTO table</code> to store query result to another table. Or <code>CREATE TABLE A (select ....)</code> can do the same thing.</p>
+
+<p>In order to get ORDER result, we can use <code>ORDER BY COL</code> and use <code>ASC|DESC</code> to control the order.</p>
+
+<p>We can also use <code>LIMIT</code> keyword to control the offset for output.</p>
+
+<h3 id="nested-queries">Nested Queries</h3>
+
+<p>We can also use a query inside a clause. For example, we can put  a select query after WHERE. <code>select a from b where x in (select x from...)</code>. Here there are 4 operators we can use.</p>
+
+<ul>
+<li>ALL→ Must satisfy expression for all rows in subquery</li>
+<li>ANY→ Must satisfy expression for at least one row in sub-query.</li>
+<li>IN→ Equivalent to &lsquo;=ANY()&rsquo; .</li>
+<li>EXISTS→ At least one row is returned.</li>
+</ul>
+
+<h3 id="common-table-expressions">Common Table Expressions</h3>
+
+<p>We can use this as a temporary table.</p>
+
+<pre><code class="language-sql">WITH cteSource (maxId) AS ( SELECT MAX(sid) FROM enrolled
+),
+X(Y) AS (SELECT ....)
+SELECT name FROM student, cteSource WHERE student.sid = cteSource.maxId
+</code></pre>
 
 </div>
             <div class="footer">
