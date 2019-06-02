@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on TC blog</title>
-    <link>http://www.tczhong.com/categories/python/</link>
-    <description>Recent content in Python on TC blog</description>
+    <title>Kafka on TC blog</title>
+    <link>http://www.tczhong.com/categories/kafka/</link>
+    <description>Recent content in Kafka on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 05 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.tczhong.com/categories/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.tczhong.com/categories/kafka/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,16 +20,6 @@
       <description>In this blog, I introduce a way to do streaming processing with Kafka and Spark Streaming. In the workflow, Kafka is used as a message queuing system and Spark Streaming process data from Kafka and save them into MySQL database.
 Install the software In this section, we need to install these things on the machine.
  Hadoop Spark Kafka MySQL  In the beginning, we need to download Hadoop from the official website and then extract them.</description>
-    </item>
-    
-    <item>
-      <title>Slack and Piazza</title>
-      <link>http://www.tczhong.com/posts/cc/piazza/</link>
-      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/posts/cc/piazza/</guid>
-      <description>Piazza and Slack integration Slack is very popular in the workspace. As a TA in Cloud Computing Course (15-619), we also use Slack to discuss with each other and solve student&amp;rsquo;s problem together. Piazza is another common tool we used every day. It is like a forum within the course.
-When a student asks a question, we want to answer them quickly. Piazza could send you new questions in real time with email.</description>
     </item>
     
   </channel>

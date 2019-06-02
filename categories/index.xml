@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Apache Spark</title>
+      <link>http://www.tczhong.com/categories/apache-spark/</link>
+      <pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/apache-spark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Aws</title>
       <link>http://www.tczhong.com/categories/aws/</link>
       <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
@@ -50,7 +59,7 @@
     <item>
       <title>Cloud Computing</title>
       <link>http://www.tczhong.com/categories/cloud-computing/</link>
-      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/cloud-computing/</guid>
       <description></description>
@@ -192,6 +201,15 @@
     </item>
     
     <item>
+      <title>Kafka</title>
+      <link>http://www.tczhong.com/categories/kafka/</link>
+      <pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/kafka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Leetcode</title>
       <link>http://www.tczhong.com/categories/leetcode/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
@@ -302,7 +320,7 @@
     <item>
       <title>Python</title>
       <link>http://www.tczhong.com/categories/python/</link>
-      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/python/</guid>
       <description></description>

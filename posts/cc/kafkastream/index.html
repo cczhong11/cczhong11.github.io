@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" class="wf-firasans-n4-active wf-active">
+	<head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.47" /> 
+<title>Build Spark Streaming with Kafka &middot; TC blog</title>
+<meta content="Build Spark Streaming with Kafka - TC blog"
+    property="og:title">
+<meta content=" - This blog will introduce a way to connect Spark Streaming and Kafka together"
+    property="og:description"> <!-- CSS -->
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
+<link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
+<link rel="stylesheet" href="http://www.tczhong.com/css/poole.css">
+<link rel="stylesheet" href="http://www.tczhong.com/css/hyde.css"> <!-- Font-Awesome -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+    crossorigin="anonymous"></script> <!-- highlight.js-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css"> <!-- Customised CSS -->
+<link rel="stylesheet" href="http://www.tczhong.com/css/custom.css"> <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]--> <!-- Icons -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.tczhong.com/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="http://www.tczhong.com/favicon.png"> 
+
+        <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+
+
+
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120924697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120924697-1');
+</script>
+
+
+	</head>
+    <body>
+        <div class="sidebar">
+	<div class="container text-center sidebar-sticky">
+		<div class="sidebar-about text-center">
+			<a href="http://www.tczhong.com/"><h1 class="brand">TC blog</h1>
+			 <img src="https://avatars2.githubusercontent.com/u/7358252?s=460&amp;v=4" alt="Author Image" class="img-circle headshot center"> </a>
+			<p class="lead">
+				 I am who I am. Love Cloud and Data science 
+			</p>
+		</div>
+		
+<div>
+	<ul class="sidebar-nav">
+		
+		
+				<li>
+					<a href="http://www.tczhong.com/posts/"> <span>Posts</span></a>
+				</li>
+				<li>
+					<a href="http://www.tczhong.com/about/hello"> <span>About</span></a>
+				</li>
+				<li>
+					<a href="http://www.tczhong.com/tianchen_zhong.pdf"> <span>My Resume</span></a>
+				</li>
+				<li>
+					<a href="http://www.tczhong.com/posts/project/index.html"> <span>Project</span></a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+        <p>
+		<section class="row text-center">
+	
+	
+	
+	&nbsp;<a href="https://github.com/cczhong11"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/tianchen-zhong"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	&nbsp;<a href="https://stackoverflow.com/users/7112540"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="mailto:tczhong24@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+        </p>
+		<p class="copyright">&copy; 2019 Tc Zhong.
+        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+        </p>
+	</div>
+	<div>
+	</div>
+</div>
+
+        <div class="content container">
+            <div class="post">
+  <h1>Build Spark Streaming with Kafka</h1>
+  
+  <div class="col-sm-12 col-md-12">
+    <span class="text-left post-date meta">
+            
+       <i class="fa fa-calendar" aria-hidden="true"></i> Apr 4, 2019 
+      
+      
+        
+        
+            in
+            
+            
+                <a class="meta" href="http://www.tczhong.com/categories/apache-spark">APACHE SPARK</a>
+                ,
+            
+                <a class="meta" href="http://www.tczhong.com/categories/cloud-computing">CLOUD COMPUTING</a>
+                ,
+            
+                <a class="meta" href="http://www.tczhong.com/categories/kafka">KAFKA</a>
+                ,
+            
+                <a class="meta" href="http://www.tczhong.com/categories/python">PYTHON</a>
+                
+            
+        
+      
+      
+      
+      </span>  
+  </div>    
+  
+  
+
+<p>In this blog, I introduce a way to do streaming processing with  Kafka and Spark Streaming. In the workflow, Kafka is used as a message queuing system and Spark Streaming process data from Kafka and save them into MySQL database.</p>
+
+<h2 id="install-the-software">Install the software</h2>
+
+<p>In this section, we need to install these things on the machine.</p>
+
+<ul>
+<li>Hadoop</li>
+<li>Spark</li>
+<li>Kafka</li>
+<li>MySQL</li>
+</ul>
+
+<p><img src="https://hadoop.apache.org/hadoop-logo.jpg" alt="" /></p>
+
+<p>In the beginning, we need to download Hadoop from the official website and then extract them. Next, we need to set the environment path.</p>
+
+<pre><code class="language-bash">wget -P ~ http://archive.apache.org/dist/hadoop/common/hadoop-2.8.0/hadoop-2.8.0.tar.gz
+tar xf hadoop-2.8.0.tar.gz
+echo HADOOP_HOME=~/hadoop-2.8.0 &gt;&gt; ~/.bashrc
+</code></pre>
+
+<p><img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="" /></p>
+
+<p>We could use a similar procedure to install the Spark.</p>
+
+<pre><code class="language-bash"># download spark
+wget -P ~ http://mirrors.advancedhosters.com/apache/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz
+tar -zxvf spark-2.4.0-bin-hadoop2.7.tgz
+
+# set PATH
+echo SPARK_PATH=~/spark-2.4.0-bin-hadoop2.7 &gt;&gt; ~/.bashrc
+source ~/.bashrc
+</code></pre>
+
+<p>Installing the MySQL is the easiest one, we only need to use <code>sudo apt-get install mysql-server</code> to install it. One thing to remember is that we only need to use <code>sudo mysql</code> to login MySQL as the root user.</p>
+
+<p><img src="https://kafka.apache.org/images/logo.png" alt="" /></p>
+
+<p>Installing Kafka is a bit difficult because we need to set up Zookeeper to start the Kafka service. The detailed procedure you could find <a href="https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-18-04">here</a>. We can use</p>
+
+<pre><code class="language-bash">~/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 5 --topic xxxx
+</code></pre>
+
+<p>to test the installation result.</p>
+
+<h2 id="setup-kafka-producer">Setup Kafka producer</h2>
+
+<p>Because we did not have streaming data, we need to produce from the  Kafka Producer API. Here is a straightforward java project. The Kafka Producer API you can find <a href="https://kafka.apache.org/10/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html">here</a></p>
+
+<p>The main part code is here. In my code, I sent the data to different partition based on <code>fid</code>. For the completed example, you can visit <a href="https://github.com/omkreddy/kafka-examples/tree/master/producer">here</a>.</p>
+
+<pre><code class="language-java">KafkaProducer&lt;String, String&gt; producer = new KafkaProducer&lt;&gt;(props);
+
+        JsonParser parser = new JsonParser();
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(&quot;xxxxxx.log&quot;));
+        String line = null;
+
+        while ((line = bufferedReader.readLine()) != null) {
+            JsonObject jsonObject = parser.parse(line).getAsJsonObject();
+            if (jsonObject.get(&quot;fid&quot;)!=JsonNull){
+                int fid = Integer.parseInt(jsonObject.get(&quot;fid&quot;).getAsString());
+                        
+                producer.send(new ProducerRecord&lt;String, String&gt;(&quot;xxxxx&quot;, fid % 5, null, line));
+            }
+            
+            
+        }
+        bufferedReader.close();
+        producer.close();
+</code></pre>
+
+<h2 id="set-up-spark-streaming">Set up Spark Streaming</h2>
+
+<p>This part is not as easy as I thought. Here I focused on how to make pySpark Streaming work.</p>
+
+<p>In the Streaming app, we need to set up a StreamingContext and then create a stream to listen to the topic from Kafka.</p>
+
+<pre><code class="language-python">sc = SparkContext(appName=&quot;PythonSparkStreamingKafka&quot;)
+sc.setLogLevel(&quot;WARN&quot;)
+ssc = StreamingContext(sc,60)
+kafkaStream = KafkaUtils.createStream(ssc, 'localhost:2181', 'spark-streaming', {'xxx':1})
+</code></pre>
+
+<p>Next, we view each stream object as Discretized Streams, which means each object is an RDD here. More detailed information about DStream you can find <a href="https://spark.apache.org/docs/2.2.0/streaming-programming-guide.html#discretized-streams-dstreams">here</a>.</p>
+
+<p><img src="https://spark.apache.org/docs/2.2.0/img/streaming-dstream.png" alt="" /></p>
+
+<p>Then we can map each RDD and save them into MySQL.</p>
+
+<pre><code class="language-python">
+def getSparkSessionInstance(sparkConf):
+    if ('sparkSessionSingletonInstance' not in globals()):
+        globals()['sparkSessionSingletonInstance'] = SparkSession\
+            .builder\
+            .config(conf=sparkConf)\
+            .getOrCreate()
+    return globals()['sparkSessionSingletonInstance']
+    
+def convert_json2df(rdd):
+    
+    if rdd.isEmpty():
+        return
+    print(rdd.count())
+    spark = getSparkSessionInstance(rdd.context.getConf())
+    df = spark.createDataFrame(rdd)
+    df = df.toDF('uid','fid','tid','date','ip','credits','groupid')
+    df.write.format(&quot;jdbc&quot;)\
+   .option(&quot;url&quot;, &quot;jdbc:mysql://localhost:3306/xxxx&quot;)\  #db name
+   .option(&quot;dbtable&quot;, &quot;log&quot;)\                                                      #table name
+   .option(&quot;user&quot;, &quot;user&quot;)\
+   .option(&quot;password&quot;, &quot;xxxx&quot;)\ 
+   .option(&quot;driver&quot;, 'com.mysql.jdbc.Driver')\
+   .mode('append').save()
+
+lines = kafkaStream.map(lambda x: check_json(x)).filter(lambda x: x) \
+    .foreachRDD(lambda x: convert_json2df(x))
+
+</code></pre>
+
+<p>We also need to start the streaming process.</p>
+
+<pre><code class="language-python">ssc.start()  
+ssc.awaitTermination()
+</code></pre>
+
+<p>Last but not least, we need to add several packages to start the Spark Streaming job.</p>
+
+<pre><code class="language-bash">spark-2.4.0-bin-hadoop2.7/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8-assembly_2.11:2.3.1,mysql:mysql-connector-java:8.0.15 streaming.py
+</code></pre>
+
+</div>
+            <div class="footer">
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+      (function () {
+            
+            
+            
+            if (location.hostname === "localhost" || 
+            	location.hostname === "127.0.0.1" || 
+            	location.hostname === "") {
+                return;
+			}
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'tczhong';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
+                  dsq);
+      })();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+            </div>
+        </div>
+        
+                
+    </body>
+</html>
