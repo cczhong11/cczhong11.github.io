@@ -6,26 +6,44 @@
     <description>Recent content in Categories on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 03 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.tczhong.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Alexa</title>
-      <link>http://www.tczhong.com/categories/alexa/</link>
-      <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
+      <title>Skill</title>
+      <link>http://www.tczhong.com/categories/skill/</link>
+      <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/categories/alexa/</guid>
+      <guid>http://www.tczhong.com/categories/skill/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Apache Samza</title>
-      <link>http://www.tczhong.com/categories/apache-samza/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
+      <title>Time management</title>
+      <link>http://www.tczhong.com/categories/time-management/</link>
+      <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/categories/apache-samza/</guid>
+      <guid>http://www.tczhong.com/categories/time-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bitcoin</title>
+      <link>http://www.tczhong.com/categories/bitcoin/</link>
+      <pubDate>Tue, 03 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/bitcoin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blockchain</title>
+      <link>http://www.tczhong.com/categories/blockchain/</link>
+      <pubDate>Tue, 03 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/blockchain/</guid>
       <description></description>
     </item>
     
@@ -39,11 +57,137 @@
     </item>
     
     <item>
-      <title>Aws</title>
+      <title>Cloud computing</title>
+      <link>http://www.tczhong.com/categories/cloud-computing/</link>
+      <pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/cloud-computing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kafka</title>
+      <link>http://www.tczhong.com/categories/kafka/</link>
+      <pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/kafka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://www.tczhong.com/categories/python/</link>
+      <pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Slack</title>
+      <link>http://www.tczhong.com/categories/slack/</link>
+      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/slack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>db</title>
+      <link>http://www.tczhong.com/categories/db/</link>
+      <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/db/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ML</title>
+      <link>http://www.tczhong.com/categories/ml/</link>
+      <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/ml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Apache Samza</title>
+      <link>http://www.tczhong.com/categories/apache-samza/</link>
+      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/apache-samza/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>http://www.tczhong.com/categories/java/</link>
+      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IoT</title>
+      <link>http://www.tczhong.com/categories/iot/</link>
+      <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/iot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virtual device</title>
+      <link>http://www.tczhong.com/categories/virtual-device/</link>
+      <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/virtual-device/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Alexa</title>
+      <link>http://www.tczhong.com/categories/alexa/</link>
+      <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/alexa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS</title>
       <link>http://www.tczhong.com/categories/aws/</link>
       <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GTD</title>
+      <link>http://www.tczhong.com/categories/gtd/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/gtd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mac</title>
+      <link>http://www.tczhong.com/categories/mac/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Omnifocus</title>
+      <link>http://www.tczhong.com/categories/omnifocus/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/omnifocus/</guid>
       <description></description>
     </item>
     
@@ -57,25 +201,43 @@
     </item>
     
     <item>
-      <title>Cloud Computing</title>
-      <link>http://www.tczhong.com/categories/cloud-computing/</link>
-      <pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate>
+      <title>Intern</title>
+      <link>http://www.tczhong.com/categories/intern/</link>
+      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/categories/cloud-computing/</guid>
+      <guid>http://www.tczhong.com/categories/intern/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Db</title>
-      <link>http://www.tczhong.com/categories/db/</link>
-      <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
+      <title>Hackathon</title>
+      <link>http://www.tczhong.com/categories/hackathon/</link>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/categories/db/</guid>
+      <guid>http://www.tczhong.com/categories/hackathon/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Gcp</title>
+      <title>personal</title>
+      <link>http://www.tczhong.com/categories/personal/</link>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/personal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>http://www.tczhong.com/categories/javascript/</link>
+      <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GCP</title>
       <link>http://www.tczhong.com/categories/gcp/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -93,56 +255,11 @@
     </item>
     
     <item>
-      <title>Graph</title>
-      <link>http://www.tczhong.com/categories/graph/</link>
-      <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
+      <title>Leetcode</title>
+      <link>http://www.tczhong.com/categories/leetcode/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/categories/graph/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gtd</title>
-      <link>http://www.tczhong.com/categories/gtd/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/gtd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hackathon</title>
-      <link>http://www.tczhong.com/categories/hackathon/</link>
-      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/hackathon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hadoop</title>
-      <link>http://www.tczhong.com/categories/hadoop/</link>
-      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/hadoop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hbase</title>
-      <link>http://www.tczhong.com/categories/hbase/</link>
-      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/hbase/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Idea</title>
-      <link>http://www.tczhong.com/categories/idea/</link>
-      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/idea/</guid>
+      <guid>http://www.tczhong.com/categories/leetcode/</guid>
       <description></description>
     </item>
     
@@ -156,42 +273,6 @@
     </item>
     
     <item>
-      <title>Intern</title>
-      <link>http://www.tczhong.com/categories/intern/</link>
-      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/intern/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Iot</title>
-      <link>http://www.tczhong.com/categories/iot/</link>
-      <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/iot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>http://www.tczhong.com/categories/java/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javascript</title>
-      <link>http://www.tczhong.com/categories/javascript/</link>
-      <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Jave</title>
       <link>http://www.tczhong.com/categories/jave/</link>
       <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
@@ -201,164 +282,11 @@
     </item>
     
     <item>
-      <title>Kafka</title>
-      <link>http://www.tczhong.com/categories/kafka/</link>
-      <pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/kafka/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Leetcode</title>
-      <link>http://www.tczhong.com/categories/leetcode/</link>
-      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/leetcode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mac</title>
-      <link>http://www.tczhong.com/categories/mac/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/mac/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
-      <link>http://www.tczhong.com/categories/machine-learning/</link>
-      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mapreduce</title>
-      <link>http://www.tczhong.com/categories/mapreduce/</link>
-      <pubDate>Tue, 10 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/mapreduce/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Markdown</title>
-      <link>http://www.tczhong.com/categories/markdown/</link>
-      <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ml</title>
-      <link>http://www.tczhong.com/categories/ml/</link>
-      <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/ml/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mvc</title>
+      <title>MVC</title>
       <link>http://www.tczhong.com/categories/mvc/</link>
       <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/mvc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Note</title>
-      <link>http://www.tczhong.com/categories/note/</link>
-      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/note/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ntfs</title>
-      <link>http://www.tczhong.com/categories/ntfs/</link>
-      <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/ntfs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Omnifocus</title>
-      <link>http://www.tczhong.com/categories/omnifocus/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/omnifocus/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Other</title>
-      <link>http://www.tczhong.com/categories/other/</link>
-      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/other/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Personal</title>
-      <link>http://www.tczhong.com/categories/personal/</link>
-      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/personal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>http://www.tczhong.com/categories/python/</link>
-      <pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Scala</title>
-      <link>http://www.tczhong.com/categories/scala/</link>
-      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/scala/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Slack</title>
-      <link>http://www.tczhong.com/categories/slack/</link>
-      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/slack/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Soark</title>
-      <link>http://www.tczhong.com/categories/soark/</link>
-      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/soark/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Spark</title>
-      <link>http://www.tczhong.com/categories/spark/</link>
-      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/spark/</guid>
       <description></description>
     </item>
     
@@ -372,6 +300,42 @@
     </item>
     
     <item>
+      <title>Graph</title>
+      <link>http://www.tczhong.com/categories/graph/</link>
+      <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/graph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>http://www.tczhong.com/categories/markdown/</link>
+      <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine learning</title>
+      <link>http://www.tczhong.com/categories/machine-learning/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NTFS</title>
+      <link>http://www.tczhong.com/categories/ntfs/</link>
+      <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/ntfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Tips</title>
       <link>http://www.tczhong.com/categories/tips/</link>
       <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
@@ -381,20 +345,92 @@
     </item>
     
     <item>
-      <title>Virtual Device</title>
-      <link>http://www.tczhong.com/categories/virtual-device/</link>
-      <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/virtual-device/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Web Services</title>
+      <title>Web services</title>
       <link>http://www.tczhong.com/categories/web-services/</link>
       <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/web-services/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scala</title>
+      <link>http://www.tczhong.com/categories/scala/</link>
+      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/scala/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Soark</title>
+      <link>http://www.tczhong.com/categories/soark/</link>
+      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/soark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hadoop</title>
+      <link>http://www.tczhong.com/categories/hadoop/</link>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/hadoop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HBase</title>
+      <link>http://www.tczhong.com/categories/hbase/</link>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/hbase/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mapreduce</title>
+      <link>http://www.tczhong.com/categories/mapreduce/</link>
+      <pubDate>Tue, 10 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/mapreduce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>idea</title>
+      <link>http://www.tczhong.com/categories/idea/</link>
+      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/idea/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>note</title>
+      <link>http://www.tczhong.com/categories/note/</link>
+      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/note/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>other</title>
+      <link>http://www.tczhong.com/categories/other/</link>
+      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/other/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spark</title>
+      <link>http://www.tczhong.com/categories/spark/</link>
+      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/spark/</guid>
       <description></description>
     </item>
     

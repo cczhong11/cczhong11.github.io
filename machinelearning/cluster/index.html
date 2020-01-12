@@ -4,7 +4,7 @@
     <link href="http://gmpg.org/xfn/11" rel="profile">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.47" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.58.3" /> 
 <title>Clustering &middot; TC blog</title>
 <meta content="Clustering - TC blog"
     property="og:title">
@@ -121,7 +121,7 @@
 </section>
 
         </p>
-		<p class="copyright">&copy; 2019 Tc Zhong.
+		<p class="copyright">&copy; 2020 Tc Zhong.
         <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
         </p>
 	</div>
@@ -188,19 +188,20 @@ $$minimize<em>\theta \;\; \frac{1}{m} \sum</em>{i=1}^m \min_{\mu \in {\mu^{(1)},
 <li>choose centre randomly</li>
 <li>repeat until convergence</li>
 <li>for every i, set $c^{(i)}=argmin ||x^{(i)}-\mu_j||^2$ $c^{(i)}$ is label for each point</li>
-<li>for every $\mu_j$ set $\mu_j=\frac{\sum (c(i)=j)x^{i}}{\sum (c(i)=j)}$ Each centroid is the geometric mean of the points that have that centroid&rsquo;s label. Important: If a centroid is empty</li>
-</ol>
+
+<li><p>for every $\mu_j$ set $\mu_j=\frac{\sum (c(i)=j)x^{i}}{\sum (c(i)=j)}$ Each centroid is the geometric mean of the points that have that centroid&rsquo;s label. Important: If a centroid is empty</p>
 
 <pre><code class="language-python">def kmeans(X, k, max_iter=10, rand_seed=0):
-    np.random.seed(rand_seed)
-    Mu = X[np.random.choice(X.shape[0],k),:]
-    for i in range(max_iter):
-        D = -2*X@Mu.T + (X**2).sum(axis=1)[:,None] + (Mu**2).sum(axis=1)
-        y = np.argmin(D,axis=1)
-        Mu = np.array([np.mean(X[y==i],axis=0) for i in range(k)])
-    loss = np.linalg.norm(X - Mu[np.argmin(D,axis=1),:])**2/X.shape[0]
-    return Mu, y, loss
-</code></pre>
+np.random.seed(rand_seed)
+Mu = X[np.random.choice(X.shape[0],k),:]
+for i in range(max_iter):
+    D = -2*X@Mu.T + (X**2).sum(axis=1)[:,None] + (Mu**2).sum(axis=1)
+    y = np.argmin(D,axis=1)
+    Mu = np.array([np.mean(X[y==i],axis=0) for i in range(k)])
+loss = np.linalg.norm(X - Mu[np.argmin(D,axis=1),:])**2/X.shape[0]
+return Mu, y, loss
+</code></pre></li>
+</ol>
 
 <p>The problem for k-means is it is possible to get into local optima.</p>
 

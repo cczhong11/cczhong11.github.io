@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Db on TC blog</title>
+    <title>db on TC blog</title>
     <link>http://www.tczhong.com/categories/db/</link>
-    <description>Recent content in Db on TC blog</description>
+    <description>Recent content in db on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0000</lastBuildDate>
