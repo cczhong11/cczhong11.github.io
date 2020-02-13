@@ -6,10 +6,19 @@
     <description>Recent content in Posts on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 03 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.tczhong.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Losing NTFS data in Mac</title>
+      <link>http://www.tczhong.com/posts/mac/losing-data-in-ntfs/</link>
+      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/posts/mac/losing-data-in-ntfs/</guid>
+      <description>Losing NTFS data in Mac What happened In one day evening, I played with my WD 2TB external drive. All my important data is in it and I did not have a whole backup for this drive because it is the backup for other drive. I installed an App called Mounty this time, because it is free and looks good. However, it is stuck in the computer after some movements for the file, which results in I unplugged it without waiting the response for the finder.</description>
+    </item>
     
     <item>
       <title>My thinking in Time Management</title>

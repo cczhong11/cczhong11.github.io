@@ -5,10 +5,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.58.3" /> 
-<title>NTFS &middot; TC blog</title>
-<meta content="NTFS - TC blog"
+<title>Losing NTFS data in Mac &middot; TC blog</title>
+<meta content="Losing NTFS data in Mac - TC blog"
     property="og:title">
-<meta content=" - "
+<meta content=" - How to recover data and what should not do!"
     property="og:description"> <!-- CSS -->
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
 <link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
@@ -26,9 +26,7 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.tczhong.com/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="http://www.tczhong.com/favicon.png"> <!-- RSS -->
-<link href="http://www.tczhong.com/categories/ntfs/index.xml" rel="alternate" type="application/rss+xml" title="TC blog" />
-<link href="http://www.tczhong.com/categories/ntfs/index.xml" rel="feed" type="application/rss+xml" title="TC blog" />
+<link rel="shortcut icon" href="http://www.tczhong.com/favicon.png"> 
 
         <script type="text/javascript" async
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -132,23 +130,99 @@
 </div>
 
         <div class="content container">
-            <h1 class="title">NTFS</h1>
-<ul class="posts">
-    <li>
-        <span>
-            <a href="http://www.tczhong.com/posts/mac/losing-data-in-ntfs/">Losing NTFS data in Mac</a>
-            <time class="pull-right post-list"> Feb 12, 2020</time>
-        </span>
-    </li><li>
-        <span>
-            <a href="http://www.tczhong.com/posts/mac/ntfs/">How to mount NTFS in Mac</a>
-            <time class="pull-right post-list"> May 5, 2018</time>
-        </span>
-    </li>
-</ul>
-
-            <div class="footer">
+            <div class="post">
+  <h1>Losing NTFS data in Mac</h1>
+  
+  <div class="col-sm-12 col-md-12">
+    <span class="text-left post-date meta">
+            
+       <i class="fa fa-calendar" aria-hidden="true"></i> Feb 2, 2020 
+      
+      
+        
+        
+            in
+            
+            
+                <a class="meta" href="http://www.tczhong.com/categories/mac">MAC</a>
+                ,
+            
+                <a class="meta" href="http://www.tczhong.com/categories/ntfs">NTFS</a>
                 
+            
+        
+      
+      
+      
+      </span>  
+  </div>    
+  
+  
+
+<h1 id="losing-ntfs-data-in-mac">Losing NTFS data in Mac</h1>
+
+<h2 id="what-happened">What happened</h2>
+
+<p>In one day evening, I played with my WD 2TB external drive. All my important data is in it and I did not have a whole backup for this drive because it is the backup for other drive. I installed an App called Mounty this time, because it is free and looks good. However, it is stuck in the computer after some movements for the file, which results in I unplugged it without waiting the response for the finder. The result is when I plugged it again in my Mac. It told me the drive is corrupted and it could not open. I was anxiety because this drive contains all my precious data.</p>
+
+<h2 id="what-you-should-not-do">What you should not do!</h2>
+
+<p>I was frustruated and I searched online, I found they said you need a Windows computer to fix it because NTFS is a windows file system. However, I did not have that at home. However, I had a raspiberry pi, which running linux system on it. I thought I could try to fix it in Linux.</p>
+
+<p>In the linux, I ran the command <code>ntfsfix</code> on my drive. What this tool try to do is to rewrite the MBR record, which result in no operation system could get the correct partition information. This is very very bad!!! If I plugged it into Mac, it told me I need to format the drive and it could not read anything from it.</p>
+
+<h2 id="what-you-should-do">What you should do</h2>
+
+<p>You should find a Windows Computer ASAP and run <code>chkdsk /F X:</code> immediately.</p>
+
+<h2 id="how-to-recover-data">How to recover data</h2>
+
+<p>I got a Windows computer and tried to run <code>chkdsk</code>, but there is no drive letter for my drive. Therefore, I could not use this command anymore. Open the <code>disk management</code>, I could only see the wrong partition information. So I could only use the software to reover the data. I downloaded the <code>easyrecovery</code> and I saw the data is still there so I still want to recover the partition. After trying several times, I rewritten the partition information and I saw I could add drive letter to it in the <code>disk management</code> tool. When I tried to do it, IT BEGAN TO FORMAT THE DRIVE!!! When I found it, I stopped it immediately. Now I found the MBR record is totally gone and I could only search 2TB with 40MB/s speed to try to recover the data.</p>
+
+<p>Use DiskGenius is the final way to recover the data which takes me a lot of time to get them all.</p>
+
+<p><img src="https://mksorb.com/wp-content/uploads/2019/01/DiskGenius-Professional-Crack-Preview.png" alt="" /></p>
+
+<p>Please have a backup in any data and do not use NTFS drive in Mac OS.</p>
+
+</div>
+            <div class="footer">
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+      (function () {
+            
+            
+            
+            if (location.hostname === "localhost" || 
+            	location.hostname === "127.0.0.1" || 
+            	location.hostname === "") {
+                return;
+			}
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'tczhong';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
+                  dsq);
+      })();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
             </div>
         </div>
         
