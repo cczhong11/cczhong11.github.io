@@ -21,15 +21,6 @@
     </item>
     
     <item>
-      <title>NTFS</title>
-      <link>http://www.tczhong.com/categories/ntfs/</link>
-      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/ntfs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Skill</title>
       <link>http://www.tczhong.com/categories/skill/</link>
       <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
@@ -161,6 +152,15 @@
       <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/virtual-device/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>http://www.tczhong.com/categories/network/</link>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/network/</guid>
       <description></description>
     </item>
     
@@ -332,6 +332,15 @@
       <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NTFS</title>
+      <link>http://www.tczhong.com/categories/ntfs/</link>
+      <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/ntfs/</guid>
       <description></description>
     </item>
     

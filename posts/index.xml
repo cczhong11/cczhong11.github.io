@@ -140,6 +140,16 @@ There are some key skills that are required in the companies.</description>
     </item>
     
     <item>
+      <title>Network Layers</title>
+      <link>http://www.tczhong.com/posts/cc/networklayer/</link>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/posts/cc/networklayer/</guid>
+      <description>Network Layers In the network, there are two main parts, one is network edge, the other is network core. The network edge is end system, which running applications. The network core is routers and interconnected network.
+We used the layered architecture in OSI model, it can help us decompose the complexity of network, develop protocol separately. Also implementation in one layer can change without affecting other layers. In the above layers, we do not need to concern the details of lower layers.</description>
+    </item>
+    
+    <item>
       <title>Alexa music player project</title>
       <link>http://www.tczhong.com/posts/project/alexamusic/</link>
       <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
@@ -455,16 +465,6 @@ gcloud dataproc clusters create cluster-name --project=project-id --bucket outpu
       <guid>http://www.tczhong.com/posts/cc/spark-etl/</guid>
       <description>There is not much information about how could we perform complex operation on pySpark. I summary some tips from stackoverflow and my experience. Hope it will be helpful for you.
 How to Read JSON to DataFrame There are serveral ways to read json in Spark. The most common way is to load json in a DataFrame. Why not rdd? Because json contains some hierachy information and it could not represent well in RDD.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://www.tczhong.com/posts/cc/networklayer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/posts/cc/networklayer/</guid>
-      <description>Network Layers In the network, there are two main parts, one is network edge, the other is network core. The network edge is end system, which running applications. The network core is routers and interconnected network.
-We used the layered architecture in OSI model, it can help us decompose the complexity of network, develop protocol separately. Also implementation in one layer can change without affecting other layers. In the above layers, we do not need to concern the details of lower layers.</description>
     </item>
     
   </channel>
