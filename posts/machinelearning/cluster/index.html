@@ -1,275 +1,198 @@
 <!DOCTYPE html>
-<html lang="en" class="wf-firasans-n4-active wf-active">
-	<head>
-    <link href="http://gmpg.org/xfn/11" rel="profile">
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.58.3" /> 
-<title>Clustering &middot; TC blog</title>
-<meta content="Clustering - TC blog"
-    property="og:title">
-<meta content=" - This blog tells you do cluster"
-    property="og:description"> <!-- CSS -->
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
-<link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
-<link rel="stylesheet" href="http://www.tczhong.com/css/poole.css">
-<link rel="stylesheet" href="http://www.tczhong.com/css/hyde.css"> <!-- Font-Awesome -->
-<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
-    crossorigin="anonymous"></script> <!-- highlight.js-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css"> <!-- Customised CSS -->
-<link rel="stylesheet" href="http://www.tczhong.com/css/custom.css"> <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]--> <!-- Icons -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.tczhong.com/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="http://www.tczhong.com/favicon.png"> 
+<html lang="en" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-        <script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-  });
-  MathJax.Hub.Queue(function() {
+  
+  <meta name="author"
+        content=""/>
 
+  
+  <meta name="description" content="This blog tells you do cluster"/>
+  
 
+  
 
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
+  
+  <link rel="canonical" href="http://www.tczhong.com/posts/machinelearning/cluster/"/>
 
-  MathJax.Hub.Config({
+  
 
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120924697-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <title>Clustering &middot; TC blog</title>
 
-  gtag('config', 'UA-120924697-1');
-</script>
+  <link rel="shortcut icon" href="http://www.tczhong.com/images/favicon.ico"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/animate.min.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/remixicon.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/zozo.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/highlight.css"/>
 
+  
+  
+</head>
 
-	</head>
-    <body>
-        <div class="sidebar">
-	<div class="container text-center sidebar-sticky">
-		<div class="sidebar-about text-center">
-			<a href="http://www.tczhong.com/"><h1 class="brand">TC blog</h1>
-			 <img src="https://avatars2.githubusercontent.com/u/7358252?s=460&amp;v=4" alt="Author Image" class="img-circle headshot center"> </a>
-			<p class="lead">
-				 I am who I am. Love Cloud and Data science 
-			</p>
-		</div>
-		
-<div>
-	<ul class="sidebar-nav">
-		
-		
-				<li>
-					<a href="http://www.tczhong.com/posts/"> <span>Posts</span></a>
-				</li>
-				<li>
-					<a href="http://www.tczhong.com/about/hello"> <span>About</span></a>
-				</li>
-				<li>
-					<a href="http://www.tczhong.com/tianchen_zhong.pdf"> <span>My Resume</span></a>
-				</li>
-				<li>
-					<a href="http://www.tczhong.com/posts/project/index.html"> <span>Project</span></a>
-				</li>
-		</li>
-	</ul>
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="http://www.tczhong.com/posts/">Posts</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/about/hello">About</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/tianchen_zhong.pdf">My Resume</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/posts/project/index.html">Project</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
 </div>
 
-        <p>
-		<section class="row text-center">
-	
-	
-	
-	&nbsp;<a href="https://github.com/cczhong11"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	&nbsp;<a href="https://linkedin.com/in/tianchen-zhong"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
-	
-	
-	&nbsp;<a href="https://stackoverflow.com/users/7112540"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	&nbsp;<a href="mailto:tczhong24@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
-	
-</section>
-
-        </p>
-		<p class="copyright">&copy; 2020 Tc Zhong.
-        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
-        </p>
-	</div>
-	<div>
-	</div>
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="http://www.tczhong.com/">
+          <span>TC blog</span>
+          <img src="http://www.tczhong.com/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title"></p>
+      <div class="my_socials">
+        
+        <a href="http://www.tczhong.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
 </div>
 
-        <div class="content container">
-            <div class="post">
-  <h1>Clustering</h1>
-  
-  <div class="col-sm-12 col-md-12">
-    <span class="text-left post-date meta">
-            
-       <i class="fa fa-calendar" aria-hidden="true"></i> May 5, 2018 
-      
-      
-        
-        
-            in
-            
-            
-                <a class="meta" href="http://www.tczhong.com/categories/machine-learning">MACHINE LEARNING</a>
-                
-            
-        
-      
-      
-      
-      </span>  
-  </div>    
-  
-  
-
-<h1 id="unsupervised-learning">unsupervised learning</h1>
-
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='http://www.tczhong.com/posts/machinelearning/cluster/'>Clustering</a></h2>
+          <span class="date">2018.05.01</span>
+        </div>
+        <div class="post_content markdown"><h1 id="unsupervised-learning">unsupervised learning</h1>
 <p>the general philosophy of unsupervised learning is that we want to discover some kind of structure in the data. Different unsupervised learning methods work in very different ways, and discover very different kinds of structure, but they all have this similar element.</p>
-
-<p>Recall from our presentations on supervised learnign that the three aspects of a supervised learning algorithm are:
-1. a hypothesis function;($R^n -&gt; R^n$). Mapping input back to this input <strong>space.The goal of this hypothesis class is to approximately reconstruct the input</strong>
-2. a loss function; the goal of an unsupervised learning loss function is to measure the <strong>difference between the hypothesis function and the input itself</strong>.
-3. a method for minimizing the average loss over the training data. in the unsupervised setting there (just empirically) is a bit more <strong>variation</strong> in the methods people use to solve this optimization problem. This is because the hypothesis functions themselves often involve discrete terms or other similar elements that cannot be differentiated (we’ll see this is the case of k-means clustering), or because particular optimization methods can provide exact solution</p>
-
+<p>Recall from our presentations on supervised learnign that the three aspects of a supervised learning algorithm are:</p>
+<ol>
+<li>a hypothesis function;($R^n -&gt; R^n$). Mapping input back to this input <strong>space.The goal of this hypothesis class is to approximately reconstruct the input</strong></li>
+<li>a loss function; the goal of an unsupervised learning loss function is to measure the <strong>difference between the hypothesis function and the input itself</strong>.</li>
+<li>a method for minimizing the average loss over the training data. in the unsupervised setting there (just empirically) is a bit more <strong>variation</strong> in the methods people use to solve this optimization problem. This is because the hypothesis functions themselves often involve discrete terms or other similar elements that cannot be differentiated (we’ll see this is the case of k-means clustering), or because particular optimization methods can provide exact solution</li>
+</ol>
 <h1 id="kmeans">kmeans</h1>
-
 <h2 id="hypothesis-function">Hypothesis function</h2>
-
 <p>The parameters $\theta$ of our hypothesis function just include the centers themselves.
 $$\theta = {\mu^{(1)}, \ldots, \mu^{(k)}}$$</p>
-
-<p>The function is $$h<em>\theta(x) = argmin</em>{\mu \in {\mu^{(1)}, \ldots, \mu^{(k)}} } |\mu - x|_2^2$$</p>
-
+<p>The function is $$h_\theta(x) = argmin_{\mu \in {\mu^{(1)}, \ldots, \mu^{(k)}} } |\mu - x|_2^2$$</p>
 <h2 id="loss-function">Loss function</h2>
-
 <p>The loss function used by k-means is simply the squared loss
-$$\ell(h<em>\theta(x), x) = \min</em>{\mu \in {\mu^{(1)}, \ldots, \mu^{(k)}}} |\mu - x|_2^2$$</p>
-
+$$\ell(h_\theta(x), x) = \min_{\mu \in {\mu^{(1)}, \ldots, \mu^{(k)}}} |\mu - x|_2^2$$</p>
 <h2 id="optimization">Optimization</h2>
-
 <p>Finally, let&rsquo;s now consider the ML optimization problem that results from the hypothesis and loss above,
-$$minimize<em>\theta \;\; \frac{1}{m} \sum</em>{i=1}^m \min_{\mu \in {\mu^{(1)}, \ldots, \mu^{(k)}}} |\mu - x^{(i)}|_2^2.$$</p>
-
+$$minimize_\theta ;; \frac{1}{m} \sum_{i=1}^m \min_{\mu \in {\mu^{(1)}, \ldots, \mu^{(k)}}} |\mu - x^{(i)}|_2^2.$$</p>
 <ol>
 <li>choose centre randomly</li>
 <li>repeat until convergence</li>
 <li>for every i, set $c^{(i)}=argmin ||x^{(i)}-\mu_j||^2$ $c^{(i)}$ is label for each point</li>
-
-<li><p>for every $\mu_j$ set $\mu_j=\frac{\sum (c(i)=j)x^{i}}{\sum (c(i)=j)}$ Each centroid is the geometric mean of the points that have that centroid&rsquo;s label. Important: If a centroid is empty</p>
-
-<pre><code class="language-python">def kmeans(X, k, max_iter=10, rand_seed=0):
-np.random.seed(rand_seed)
-Mu = X[np.random.choice(X.shape[0],k),:]
-for i in range(max_iter):
-    D = -2*X@Mu.T + (X**2).sum(axis=1)[:,None] + (Mu**2).sum(axis=1)
-    y = np.argmin(D,axis=1)
-    Mu = np.array([np.mean(X[y==i],axis=0) for i in range(k)])
-loss = np.linalg.norm(X - Mu[np.argmin(D,axis=1),:])**2/X.shape[0]
-return Mu, y, loss
-</code></pre></li>
+<li>for every $\mu_j$ set $\mu_j=\frac{\sum (c(i)=j)x^{i}}{\sum (c(i)=j)}$ Each centroid is the geometric mean of the points that have that centroid&rsquo;s label. Important: If a centroid is empty</li>
 </ol>
-
-<p>The problem for k-means is it is possible to get into local optima.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">kmeans</span>(X, k, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, rand_seed<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>):
+    np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>seed(rand_seed)
+    Mu <span style="color:#f92672">=</span> X[np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>choice(X<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>],k),:]
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(max_iter):
+        D <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>X<span style="color:#a6e22e">@Mu.T</span> <span style="color:#f92672">+</span> (X<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">.</span>sum(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)[:,None] <span style="color:#f92672">+</span> (Mu<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">.</span>sum(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+        y <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>argmin(D,axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+        Mu <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([np<span style="color:#f92672">.</span>mean(X[y<span style="color:#f92672">==</span>i],axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(k)])
+    loss <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>norm(X <span style="color:#f92672">-</span> Mu[np<span style="color:#f92672">.</span>argmin(D,axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>),:])<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span><span style="color:#f92672">/</span>X<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]
+    <span style="color:#66d9ef">return</span> Mu, y, loss
+</code></pre></div><p>The problem for k-means is it is possible to get into local optima.</p>
 <h1 id="expectation-maximization">Expectation Maximization</h1>
-
 <p>the EM algorithm gives an efficient method for maximum likelihood estimation. Maximizing ℓ(θ) explicitly might be difficult, and our strategy will be to instead repeatedly construct a lower-bound on l(E-step), and then optimize that lower-bound (M-step).</p>
-
 <p>Lets review EM. In EM, you randomly initialize your model parameters, then you alternate between (E) assigning values to hidden variables, based on parameters and (M) computing parameters based on fully observed data.</p>
-
 <p><strong>E-Step</strong>: Coming up with values to hidden variables, based on parameters. If you work out the math of chosing the best values for the class variable based on the features of a given piece of data in your data set, it comes out to &ldquo;<strong>for each data-point, chose the centroid that it is closest to, by euclidean distance, and assign that centroid&rsquo;s label</strong>.&rdquo; The proof of this is within your grasp!</p>
-
 <p><strong>M-Step</strong>: Coming up with parameters, based on full assignments. If you work out the math of chosing the best parameter values based on the features of a given piece of data in your data set, it comes out to &ldquo;<strong>take the mean of all the data-points that were labeled as c</strong>.&rdquo;</p>
-
 <h1 id="how-to-choose-k">how to choose k</h1>
-
 <p>the loss should continue to decrease for larger numbers of centers (the more centers, the closer any given point will be to them). But unlike supervised learning, there is not even a good analogue of cross-validation that we can use here: this property of lower loss will typically also apply to a validation set as well.</p>
-
 <p>A common strategy is rather just to plot the loss versus the number of clusters and try to find a point that is “good enough” in terms of loss versus the number of cluster (i.e., where adding additional clusters doesn’t help much).</p>
-
 <p>it is very difficult to infer anything about the “real” number of clusters in the data from running k-means (in fact, you should really never try to do this)</p>
-
 <ul>
 <li>Heuristic: Find large gap between k -1-means cost and kmeans cost.</li>
 <li>Hold-out validation/cross-validation on auxiliary task (e.g.,supervised learning task).</li>
 <li>Try hierarchical clustering</li>
 </ul>
-
 </div>
-            <div class="footer">
-                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-<script type="text/javascript">
-    hljs.initHighlightingOnLoad();
-</script>
-
-
-        <h2>Comments</h2>
-        <div id="disqus_thread"></div>
-<script type="text/javascript">
-      (function () {
-            
-            
-            
-            if (location.hostname === "localhost" || 
-            	location.hostname === "127.0.0.1" || 
-            	location.hostname === "") {
-                return;
-			}
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            var disqus_shortname = 'tczhong';
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
-                  dsq);
-      })();
-</script>
-
-<noscript>
-	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    
-
-            </div>
+        <div class="post_footer">
+          
         </div>
-        
-                
-    </body>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span></span>
+  </div>
+</footer>
+
+
+
+<script src="http://www.tczhong.com/js/jquery-3.3.1.min.js"></script>
+<script src="http://www.tczhong.com/js/zozo.js"></script>
+<script src="http://www.tczhong.com/js/highlight.pack.js"></script>
+<link  href="http://www.tczhong.com/css/fancybox.min.css" rel="stylesheet">
+<script src="http://www.tczhong.com/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+
+
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tczhong" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</body>
 </html>

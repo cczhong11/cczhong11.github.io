@@ -1,310 +1,210 @@
 <!DOCTYPE html>
-<html lang="en" class="wf-firasans-n4-active wf-active">
-	<head>
-    <link href="http://gmpg.org/xfn/11" rel="profile">
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.58.3" /> 
-<title>SQL basics &middot; TC blog</title>
-<meta content="SQL basics - TC blog"
-    property="og:title">
-<meta content=" - An introduction to SQL"
-    property="og:description"> <!-- CSS -->
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
-<link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
-<link rel="stylesheet" href="http://www.tczhong.com/css/poole.css">
-<link rel="stylesheet" href="http://www.tczhong.com/css/hyde.css"> <!-- Font-Awesome -->
-<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
-    crossorigin="anonymous"></script> <!-- highlight.js-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css"> <!-- Customised CSS -->
-<link rel="stylesheet" href="http://www.tczhong.com/css/custom.css"> <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]--> <!-- Icons -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.tczhong.com/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="http://www.tczhong.com/favicon.png"> 
+<html lang="en" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-        <script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-  });
-  MathJax.Hub.Queue(function() {
+  
+  <meta name="author"
+        content=""/>
 
+  
+  <meta name="description" content="An introduction to SQL"/>
+  
 
+  
 
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
+  
+  <link rel="canonical" href="http://www.tczhong.com/posts/db/sql/"/>
 
-  MathJax.Hub.Config({
+  
 
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120924697-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <title>SQL basics &middot; TC blog</title>
 
-  gtag('config', 'UA-120924697-1');
-</script>
+  <link rel="shortcut icon" href="http://www.tczhong.com/images/favicon.ico"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/animate.min.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/remixicon.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/zozo.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/highlight.css"/>
 
+  
+  
+</head>
 
-	</head>
-    <body>
-        <div class="sidebar">
-	<div class="container text-center sidebar-sticky">
-		<div class="sidebar-about text-center">
-			<a href="http://www.tczhong.com/"><h1 class="brand">TC blog</h1>
-			 <img src="https://avatars2.githubusercontent.com/u/7358252?s=460&amp;v=4" alt="Author Image" class="img-circle headshot center"> </a>
-			<p class="lead">
-				 I am who I am. Love Cloud and Data science 
-			</p>
-		</div>
-		
-<div>
-	<ul class="sidebar-nav">
-		
-		
-				<li>
-					<a href="http://www.tczhong.com/posts/"> <span>Posts</span></a>
-				</li>
-				<li>
-					<a href="http://www.tczhong.com/about/hello"> <span>About</span></a>
-				</li>
-				<li>
-					<a href="http://www.tczhong.com/tianchen_zhong.pdf"> <span>My Resume</span></a>
-				</li>
-				<li>
-					<a href="http://www.tczhong.com/posts/project/index.html"> <span>Project</span></a>
-				</li>
-		</li>
-	</ul>
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="http://www.tczhong.com/posts/">Posts</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/about/hello">About</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/tianchen_zhong.pdf">My Resume</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/posts/project/index.html">Project</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
 </div>
 
-        <p>
-		<section class="row text-center">
-	
-	
-	
-	&nbsp;<a href="https://github.com/cczhong11"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	&nbsp;<a href="https://linkedin.com/in/tianchen-zhong"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
-	
-	
-	&nbsp;<a href="https://stackoverflow.com/users/7112540"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	&nbsp;<a href="mailto:tczhong24@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
-	
-</section>
-
-        </p>
-		<p class="copyright">&copy; 2020 Tc Zhong.
-        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
-        </p>
-	</div>
-	<div>
-	</div>
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="http://www.tczhong.com/">
+          <span>TC blog</span>
+          <img src="http://www.tczhong.com/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title"></p>
+      <div class="my_socials">
+        
+        <a href="http://www.tczhong.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
 </div>
 
-        <div class="content container">
-            <div class="post">
-  <h1>SQL basics</h1>
-  
-  <div class="col-sm-12 col-md-12">
-    <span class="text-left post-date meta">
-            
-       <i class="fa fa-calendar" aria-hidden="true"></i> Dec 12, 2018 
-      
-      
-        
-        
-            in
-            
-            
-                <a class="meta" href="http://www.tczhong.com/categories/db">DB</a>
-                
-            
-        
-      
-      
-      
-      </span>  
-  </div>    
-  
-  
-
-<h1 id="introduction-to-sql">Introduction to SQL</h1>
-
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='http://www.tczhong.com/posts/db/sql/'>SQL basics</a></h2>
+          <span class="date">2018.12.15</span>
+        </div>
+        <div class="post_content markdown"><h1 id="introduction-to-sql">Introduction to SQL</h1>
 <p>SQL is a very important language we used in Relational Database management system. Writing efficient SQL query can help us do lots of things.</p>
-
 <h2 id="relational-model">Relational model</h2>
-
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Relational_model_concepts.png/360px-Relational_model_concepts.png" alt="" /></p>
-
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Relational_model_concepts.png/360px-Relational_model_concepts.png" alt=""></p>
 <p>In the beginning, I would like to talk about relational model. In short, it is a table with different columns. In a more specific definition, it is an approach to managing data using a structure and language consistent with first-order predicate logic. A relation is an unordered set and it contains the relationship of attributes. The primary key in each relation is unique and we could use it to find any relation. A tuple is a set of attribute values in the relation.</p>
-
 <h2 id="sql-language-and-relational-algebra">SQL language and Relational algebra</h2>
-
 <p>There are several important operations in the Relational algebra and I will introduce them with SQL operations.</p>
-
 <h3 id="select">Select</h3>
-
 <p>This operation acts a filter, which can help us get a subset of the tuples we want. We can express the condition to filter the data with a selection predicate. We can also combine multiple predicates using AND.</p>
-
 <p>In SQL, we can use the following command to execute SELECT. We put the predicates after where clause.</p>
-
-<pre><code class="language-SQL">SELECT * FROM table WHERE x&gt;10;
-</code></pre>
-
-<h3 id="projection">Projection</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">WHERE</span> x<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">10</span>;
+</code></pre></div><h3 id="projection">Projection</h3>
 <p>This operation can generate a relation with tuples that contains only the specified attributes. It acts as a subset operation. In is also a very common operation in the SQL</p>
-
 <p>In SQL, we can use the following command to execute Projection. We put attributes after SELECT clause.</p>
-
-<pre><code class="language-SQL">SELECT a1,a2 FROM table;
-</code></pre>
-
-<h3 id="union-intersection-difference">UNION/INTERSECTION/DIFFERENCE</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> a1,a2 <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">table</span>;
+</code></pre></div><h3 id="unionintersectiondifference">UNION/INTERSECTION/DIFFERENCE</h3>
 <p>These three operations are not very common in SQL. It can get results from two relations.</p>
-
 <p>Union generates a relation that contains all tuples that appear in either only one or both of the input relations. Intersection generates a relation that contains only the tuples that appear in both of the input relations. Difference generates a relation that contains only the tuples that appear in the first and not the second of the input relations.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL">
+(<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> R) <span style="color:#66d9ef">UNION</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> S);
 
-<pre><code class="language-SQL">
-(SELECT * FROM R) UNION (SELECT * FROM S);
+(<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> R) <span style="color:#66d9ef">INTERSECT</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> S);
 
-(SELECT * FROM R) INTERSECT (SELECT * FROM S);
-
-(SELECT * FROM R) EXCEPT (SELECT * FROM S);
-</code></pre>
-
-<h3 id="product-join">PRODUCT/JOIN</h3>
-
+(<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> R) <span style="color:#66d9ef">EXCEPT</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> S);
+</code></pre></div><h3 id="productjoin">PRODUCT/JOIN</h3>
 <p>The product will generate a relation that contains all possible combinations of tuples from the input relations. If we had M relations in table R and N relations in table S, we will have M*N results after the PRODUCT.</p>
-
 <p>JOIN is to generate a relation that contains all tuples that are a combination of two tuples. There are also some other various kind of JOIN. Inner JOIN is the same as JOIN.</p>
-
 <p>LEFT JOIN returns all records from the left table (table1), and the matched records from the right table (table2).</p>
-
 <p>OUTER JOIN return all records when there is a match in either left (table1) or right (table2) table records.</p>
-
-<pre><code class="language-SQL">SELECT * from table1 INNER/LEFT/OUTER JOIN table2 on table1.attr1 = table2.attr2
-</code></pre>
-
-<h2 id="advanced-sql">Advanced SQL</h2>
-
-<h3 id="aggregations-group-by">Aggregations + Group By</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> table1 <span style="color:#66d9ef">INNER</span><span style="color:#f92672">/</span><span style="color:#66d9ef">LEFT</span><span style="color:#f92672">/</span><span style="color:#66d9ef">OUTER</span> <span style="color:#66d9ef">JOIN</span> table2 <span style="color:#66d9ef">on</span> table1.attr1 <span style="color:#f92672">=</span> table2.attr2
+</code></pre></div><h2 id="advanced-sql">Advanced SQL</h2>
+<h3 id="aggregations--group-by">Aggregations + Group By</h3>
 <p>There are many aggregate functions, including the following operations:</p>
-
 <ul>
-<li>AVG(col) Return the average col value.<br /></li>
-<li>MIN(col) Return minimum col value.<br /></li>
-<li>MAX(col) Return maximum col value.<br /></li>
-<li>SUM(col) Return sum of values in col.<br /></li>
+<li>AVG(col) Return the average col value.</li>
+<li>MIN(col) Return minimum col value.</li>
+<li>MAX(col) Return maximum col value.</li>
+<li>SUM(col) Return sum of values in col.</li>
 <li>COUNT(col) Return # of values for col.</li>
 </ul>
-
 <p>We could also use DISTINCT keyword for COUNT, SUM, AVG.</p>
-
 <p>If we want to get aggregate results based on different groups, we can use <code>group by</code> to calculate aggregates against each subset.</p>
-
 <p>If we want to filter the result based on aggregation computation, we can use <code>HAVING attr &gt; x</code> after <code>group by</code>.</p>
-
 <h3 id="output-control">OUTPUT control</h3>
-
 <p>For output redirection, we can use <code>INTO table</code> to store query result to another table. Or <code>CREATE TABLE A (select ....)</code> can do the same thing.</p>
-
 <p>In order to get ORDER result, we can use <code>ORDER BY COL</code> and use <code>ASC|DESC</code> to control the order.</p>
-
 <p>We can also use <code>LIMIT</code> keyword to control the offset for output.</p>
-
 <h3 id="nested-queries">Nested Queries</h3>
-
 <p>We can also use a query inside a clause. For example, we can put  a select query after WHERE. <code>select a from b where x in (select x from...)</code>. Here there are 4 operators we can use.</p>
-
 <ul>
 <li>ALL→ Must satisfy expression for all rows in subquery</li>
 <li>ANY→ Must satisfy expression for at least one row in sub-query.</li>
 <li>IN→ Equivalent to &lsquo;=ANY()&rsquo; .</li>
 <li>EXISTS→ At least one row is returned.</li>
 </ul>
-
 <h3 id="common-table-expressions">Common Table Expressions</h3>
-
 <p>We can use this as a temporary table.</p>
-
-<pre><code class="language-sql">WITH cteSource (maxId) AS ( SELECT MAX(sid) FROM enrolled
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">WITH</span> cteSource (maxId) <span style="color:#66d9ef">AS</span> ( <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MAX</span>(sid) <span style="color:#66d9ef">FROM</span> enrolled
 ),
-X(Y) AS (SELECT ....)
-SELECT name FROM student, cteSource WHERE student.sid = cteSource.maxId
-</code></pre>
-
-</div>
-            <div class="footer">
-                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-<script type="text/javascript">
-    hljs.initHighlightingOnLoad();
-</script>
-
-
-        <h2>Comments</h2>
-        <div id="disqus_thread"></div>
-<script type="text/javascript">
-      (function () {
-            
-            
-            
-            if (location.hostname === "localhost" || 
-            	location.hostname === "127.0.0.1" || 
-            	location.hostname === "") {
-                return;
-			}
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            var disqus_shortname = 'tczhong';
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
-                  dsq);
-      })();
-</script>
-
-<noscript>
-	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    
-
-            </div>
+X(Y) <span style="color:#66d9ef">AS</span> (<span style="color:#66d9ef">SELECT</span> ....)
+<span style="color:#66d9ef">SELECT</span> name <span style="color:#66d9ef">FROM</span> student, cteSource <span style="color:#66d9ef">WHERE</span> student.sid <span style="color:#f92672">=</span> cteSource.maxId
+</code></pre></div></div>
+        <div class="post_footer">
+          
         </div>
-        
-                
-    </body>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span></span>
+  </div>
+</footer>
+
+
+
+<script src="http://www.tczhong.com/js/jquery-3.3.1.min.js"></script>
+<script src="http://www.tczhong.com/js/zozo.js"></script>
+<script src="http://www.tczhong.com/js/highlight.pack.js"></script>
+<link  href="http://www.tczhong.com/css/fancybox.min.css" rel="stylesheet">
+<script src="http://www.tczhong.com/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+
+
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tczhong" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</body>
 </html>

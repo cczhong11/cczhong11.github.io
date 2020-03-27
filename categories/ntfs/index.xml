@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NTFS on TC blog</title>
@@ -28,8 +28,8 @@
       <guid>http://www.tczhong.com/posts/mac/ntfs/</guid>
       <description>Install FUSE FUSE for macOS allows you to extend macOS&amp;rsquo;s native file handling capabilities via third-party file systems. You could install it here.
 Install ntfs-3g Use
-brew install ntfs-3g  If you run into error, Error: Could not symlink sbin/mkntfs. You need to use the absolute path to run the following function.
-Next, we need to umount our driver, since it only has read permission. And create an endpoint for it.</description>
+brew install ntfs-3g If you run into error, Error: Could not symlink sbin/mkntfs. You need to use the absolute path to run the following function.
+Next, we need to umount our driver, since it only has read permission. And create an endpoint for it. Then we could use ntfs-3g to mount the driver.</description>
     </item>
     
   </channel>

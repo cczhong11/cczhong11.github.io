@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Machine learning on TC blog</title>
@@ -42,7 +42,7 @@ The main idea for decision tree is to choose one place to cut the whole sample s
       <description>Dimension Rerduction PCA Principal component analysis (PCA) looks at “simplifying” the data in another manner, by preserving the axes of major variation in the data.
 Hypothesis function $h_\theta (x) = UWx, \theta={U \in R^{n*k},W\in R^{k*n}}$. We are compressing input by multiplying by a low rank matriex.
 Loss function $$\ell(h_\theta(x), x)=|\mu - x|_2^2$$
-Optimization problem. $$minimize{U,W} = \sum{I=1}^m | UWx^{(i)}-x^{(i)}|^2_2$$
+Optimization problem. $$minimize_{U,W} = \sum_{I=1}^m | UWx^{(i)}-x^{(i)}|^2_2$$
 procedure Given: normalized data matrix X, k components
  Compute singular value decomposition $USV^T = X$, where $U,V$ is orthogonal and $S$ is diagonal matrix of singular values.</description>
     </item>
@@ -54,7 +54,8 @@ procedure Given: normalized data matrix X, k components
       
       <guid>http://www.tczhong.com/posts/machinelearning/cluster/</guid>
       <description>unsupervised learning the general philosophy of unsupervised learning is that we want to discover some kind of structure in the data. Different unsupervised learning methods work in very different ways, and discover very different kinds of structure, but they all have this similar element.
-Recall from our presentations on supervised learnign that the three aspects of a supervised learning algorithm are: 1. a hypothesis function;($R^n -&amp;gt; R^n$). Mapping input back to this input space.</description>
+Recall from our presentations on supervised learnign that the three aspects of a supervised learning algorithm are:
+ a hypothesis function;($R^n -&amp;gt; R^n$). Mapping input back to this input space.</description>
     </item>
     
     <item>
@@ -96,8 +97,8 @@ $L(\theta) = \prod p(y^i|x^i;\theta)$</description>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/posts/machinelearning/maximum-likelihood-estimation/</guid>
-      <description>Maximum likelihood estimation In the beginning, we could get a sample set $x_1,x_2,&amp;hellip;$, and we assume these points are independent with each other. Then we could get the possibility for us to get these points. $p(x_1,x_2,x_3&amp;hellip;,xm;\theta) = \prod{i=1}^m p(x_i;\theta)$
-So, what&amp;rsquo;s the most possible $\theta$ under this circumstance, it is when this possibility get its maximum value. Therefore, we want to maximize $\theta$, to calculate $$maximize\theta \; \prod{i=1}^m p(x^{(i)};\theta)$$ If we take the log to $p(x)$, we could get the log likelihood of the data, which is also equivalent to that value.</description>
+      <description>Maximum likelihood estimation In the beginning, we could get a sample set $x_1,x_2,&amp;hellip;$, and we assume these points are independent with each other. Then we could get the possibility for us to get these points. $p(x_1,x_2,x_3&amp;hellip;,x_m;\theta) = \prod_{i=1}^m p(x_i;\theta)$
+So, what&amp;rsquo;s the most possible $\theta$ under this circumstance, it is when this possibility get its maximum value. Therefore, we want to maximize $\theta$, to calculate $$maximize_\theta ; \prod_{i=1}^m p(x^{(i)};\theta)$$ If we take the log to $p(x)$, we could get the **log likelihood** of the data, which is also equivalent to that value.</description>
     </item>
     
     <item>
@@ -140,7 +141,8 @@ Markov chain Monte Carlo Markov chain Monte Carlo (MCMC) refers to a class of me
       
       <guid>http://www.tczhong.com/posts/machinelearning/recommender/</guid>
       <description>Recommendation Collaborative filtering Solely upon the preferences that other users have indicated for these items.(rating for items): row -&amp;gt; users column-&amp;gt; items
-The task of collaborative filtering, then, is to “fill in” the remaining entries of this matrix given the observed matrix. This X matrix that we observed is sparse but the unknown entries do not correspond to actual zeros in the matrix, but are rather just truly unknown.</description>
+The task of collaborative filtering, then, is to “fill in” the remaining entries of this matrix given the observed matrix. This X matrix that we observed is sparse but the unknown entries do not correspond to actual zeros in the matrix, but are rather just truly unknown.
+▪	User-user approaches: In this approach we estimate a user’s rating of an item by finding “similar” users and then looking at their predictions for this item.</description>
     </item>
     
   </channel>

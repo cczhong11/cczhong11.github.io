@@ -1,159 +1,98 @@
 <!DOCTYPE html>
-<html lang="en" class="wf-firasans-n4-active wf-active">
-	<head>
-    <link href="http://gmpg.org/xfn/11" rel="profile">
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.58.3" /> 
-<title> &middot; TC blog</title>
-<meta content=" - TC blog"
-    property="og:title">
-<meta content=" - "
-    property="og:description"> <!-- CSS -->
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
-<link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
-<link rel="stylesheet" href="http://www.tczhong.com/css/poole.css">
-<link rel="stylesheet" href="http://www.tczhong.com/css/hyde.css"> <!-- Font-Awesome -->
-<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
-    crossorigin="anonymous"></script> <!-- highlight.js-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css"> <!-- Customised CSS -->
-<link rel="stylesheet" href="http://www.tczhong.com/css/custom.css"> <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]--> <!-- Icons -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.tczhong.com/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="http://www.tczhong.com/favicon.png"> 
+<html lang="en" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-        <script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-  });
-  MathJax.Hub.Queue(function() {
+  
+  <meta name="author"
+        content=""/>
 
+  
+  <meta name="description" content="Network Layers In the network, there are two main parts, one is network edge, the other is network core. The network edge is end system, which running applications. The network core is routers and interconnected network.
+We used the layered architecture in OSI model, it can help us decompose the complexity of network, develop protocol separately. Also implementation in one layer can change without affecting other layers. In the above layers, we do not need to concern the details of lower layers."/>
+  
 
+  
 
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
+  
+  <link rel="canonical" href="http://www.tczhong.com/posts/cc/networklayer/"/>
 
-  MathJax.Hub.Config({
+  
 
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120924697-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <title> &middot; TC blog</title>
 
-  gtag('config', 'UA-120924697-1');
-</script>
+  <link rel="shortcut icon" href="http://www.tczhong.com/images/favicon.ico"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/animate.min.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/remixicon.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/zozo.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/highlight.css"/>
 
+  
+  
+</head>
 
-	</head>
-    <body>
-        <div class="sidebar">
-	<div class="container text-center sidebar-sticky">
-		<div class="sidebar-about text-center">
-			<a href="http://www.tczhong.com/"><h1 class="brand">TC blog</h1>
-			 <img src="https://avatars2.githubusercontent.com/u/7358252?s=460&amp;v=4" alt="Author Image" class="img-circle headshot center"> </a>
-			<p class="lead">
-				 I am who I am. Love Cloud and Data science 
-			</p>
-		</div>
-		
-<div>
-	<ul class="sidebar-nav">
-		
-		
-				<li>
-					<a href="http://www.tczhong.com/posts/"> <span>Posts</span></a>
-				</li>
-				<li>
-					<a href="http://www.tczhong.com/about/hello"> <span>About</span></a>
-				</li>
-				<li>
-					<a href="http://www.tczhong.com/tianchen_zhong.pdf"> <span>My Resume</span></a>
-				</li>
-				<li>
-					<a href="http://www.tczhong.com/posts/project/index.html"> <span>Project</span></a>
-				</li>
-		</li>
-	</ul>
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="http://www.tczhong.com/posts/">Posts</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/about/hello">About</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/tianchen_zhong.pdf">My Resume</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/posts/project/index.html">Project</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
 </div>
 
-        <p>
-		<section class="row text-center">
-	
-	
-	
-	&nbsp;<a href="https://github.com/cczhong11"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	&nbsp;<a href="https://linkedin.com/in/tianchen-zhong"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
-	
-	
-	&nbsp;<a href="https://stackoverflow.com/users/7112540"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	&nbsp;<a href="mailto:tczhong24@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
-	
-</section>
-
-        </p>
-		<p class="copyright">&copy; 2020 Tc Zhong.
-        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
-        </p>
-	</div>
-	<div>
-	</div>
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="http://www.tczhong.com/">
+          <span>TC blog</span>
+          <img src="http://www.tczhong.com/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title"></p>
+      <div class="my_socials">
+        
+        <a href="http://www.tczhong.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
 </div>
 
-        <div class="content container">
-            <div class="post">
-  <h1></h1>
-  
-  <div class="col-sm-12 col-md-12">
-    <span class="text-left post-date meta">
-            
-      
-      
-      
-      
-      
-      </span>  
-  </div>    
-  
-  
-
-<h1 id="network-layers">Network Layers</h1>
-
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='http://www.tczhong.com/posts/cc/networklayer/'></a></h2>
+          <span class="date">0001.01.01</span>
+        </div>
+        <div class="post_content markdown"><h1 id="network-layers">Network Layers</h1>
 <p>In the network, there are two main parts, one is network edge, the other is network core. The network edge is end system, which running applications. The network core is routers and interconnected network.</p>
-
 <p>We used the layered architecture in OSI model, it can help us decompose the complexity of network, develop protocol separately. Also implementation in one layer can change without affecting other layers. In the above layers, we do not need to concern the details of lower layers.</p>
-
 <p>I want to talk about 5 layers in this blog.</p>
-
 <ul>
 <li>physical layer</li>
 <li>data link layer</li>
@@ -161,130 +100,114 @@
 <li>transport layer</li>
 <li>application layer</li>
 </ul>
-
 <h2 id="application-layer">Application layer</h2>
-
 <p>This layer provides user with access to network resources. HTTP is the most popular protocol in this layer. It uses tcp as transport protocol. When we open a connection with a remote host, we will pipeline the requests. It can reduce the transport layer connection cost and reduce latency by avoiding slow-starts.</p>
-
 <p>DNS is addressing mechanism in this layer. The url is not what the computer will send requests to, it is the ip of that remote host. DNS is a directory service for the Internet. DNS will translate url to ip for you.</p>
-
 <p>DNS is also a hierarchical structure in name-servers. When querying a domain, we first look it up in local name servers. If there is no cache for this url, it will do iterator look up. For example, take &ldquo;library.cmu.edu&rdquo; as an example.</p>
-
 <ol>
 <li>Ask root domain name-server the address for &ldquo;edu&rdquo; name-server</li>
 <li>Ask &ldquo;edu&rdquo; name-server the address for &ldquo;.cmu.edu&rdquo; name-server</li>
 <li>Ask &ldquo;cmu.edu&rdquo; name-server the address for &ldquo;library.cmu.edu&rdquo;</li>
 </ol>
-
 <p>DNS is running over UDP. DNS did not need tcp retransmission when lost, just try another nameserver. Also tcp takes long time to set up. DNS needs quick query.</p>
-
 <p>We could use <code>dig</code> to play with DNS.</p>
-
 <ul>
 <li><code>dig domain</code> you could use this to get the ip for that domain name server.</li>
 <li><code>-t</code> specify the type for that record &ldquo;MX/PTR/A/NS/CNAME&rdquo;</li>
 <li><code>-x</code> inverse search</li>
 </ul>
-
 <h2 id="transport-layer">Transport layer</h2>
-
 <p>The mission for this layer is to build logical connections between applications which run on different hosts. The addressing mechanism is multiplex, with <strong>port number</strong> bound to different applications. Data type is segment. In this protocol, it will break data to segments and re-assembly them.</p>
-
 <p>UDP is connectionless service, it means it does not need time to create the connection between the hosts. It is fast and each segment is handled independently. The problem is it is possible to lose segments and out-of-order. There is no congestion control mechanism. In its segment, it has checksum field, which could help detect errors.</p>
-
 <p>Let&rsquo;s talk about several real data transport protocol, which help us transmit data reliable, including Stop-n-Wait, Go Back N &amp; Selective Repeat. Stop-n-wait is the simplest one. Sender will resend if it did not get ACK or get NACK from the receiver. The problem is it is possible to lose ACK or segment, we could not distinguish them. We may resend the same segment several time.</p>
-
 <p>Go back N uses a sliding window. The receiver only send ACK for correctly-received segment with highest in-order segment. If it received out-of-order segment, it just discard them. Selective Repeat uses receiver&rsquo;s sliding window to solve this problem. Receiver individually ACKs all correctly received segments and sender only resends segments for which ACK not received.</p>
-
 <p>TCP is a point-to-point, reliable, pipelined protocol. It has flow control and congestion control. In the beginning, there is a three-way handshake.</p>
-
 <ul>
 <li>step1: send SYN segment and specifies initial seq no., no data</li>
 <li>step2: server respond with SYNACK segment, allocates buffers and specifies initial seq no.</li>
 <li>step3: replies with ACK, may contain data</li>
 </ul>
-
 <p>The flow control make sure sender won’t overflow the <strong>receiver’s buffer</strong> by transmitting too much, too fast. Receiver advertises spare room by including value of RcvWindow in ACK segment. The congestion control is a bit harder. It has three phases.</p>
-
 <ul>
 <li>When CongWin is below Threshold, window grows exponentially (slow-start phase)</li>
 <li>When CongWin is above Threshold, window grows linearly (congestion-avoidance phase)</li>
 <li>When a triple duplicate ACK occurs, Threshold set to CongWin/2 and CongWin set to Threshold. Window grows linearly</li>
 <li>When timeout occurs, Threshold set to CongWin/2 and CongWin is set to 1 MSS. Enters slow-start phase again.</li>
 </ul>
-
 <h2 id="network-layer">Network layer</h2>
-
 <p>In this layer, it provides logical connection between hosts for use in transport layer. The addressing mechanism is IP address. Packets are forwarded using address of the destination host, and packets are forwarded independently. It has two responsibilities: routing and forwarding. In routing, the routers create a forwarding table to determine end-to-end paths for each packets. The forwarding will move packets from router’s incoming interface to appropriate outgoing interface.</p>
-
 <p>The routing algorithm have two type: link state and distance vector. In the first one, each node knows the whole graph, the typical one is Dijkstra&rsquo;s algorithm.</p>
-
-<p><img src="../5.png" alt="" /></p>
-
+<p><img src="../5.png" alt=""></p>
 <p>For the distance link algorithm, it only has local knowledge.</p>
-
 <ul>
 <li>Each node periodically sends its own distance vector estimates to neighbors</li>
 <li>When a node x receives a new DV estimate from a neighbor v, uses B-F</li>
 <li>Dx(y) ←minv{c(x,v)+Dv(y)} for each y ∈ N</li>
 <li>The estimate Dx(y) converges to the actual dx(y) for minor, natural conditions</li>
 </ul>
-
 <p>There are some scaling problems, in the real world, Autonomous System represents an organization controls over their own routers. There are some algorithms like OSPF, IS-IS, RIP, EIGRP solve the routing problem.</p>
-
 <p>Dynamic Host Configuration Protocol help solve limited IP address problem. NAT(Network Address Translation) uses port number in the router and allow subnet ip allocation.</p>
-
 <h2 id="data-link-layer">Data link layer</h2>
-
 <p>In this layer, addressing mechanism is MAC address. It transfers frames from one node, over a link.</p>
-
 <p>It uses CDMA/CD protocol, we means Carrier Sense: Listen before talking,Multiple Access: Broadcast Medium and Collision Detection: Listen as you talk. If you hear someone else, be quiet.</p>
-
 <h2 id="physical-layer">Physical layer</h2>
-
 <p>In this layer, it just send bits by bits.</p>
-
 </div>
-            <div class="footer">
-                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-<script type="text/javascript">
-    hljs.initHighlightingOnLoad();
-</script>
-
-
-        <h2>Comments</h2>
-        <div id="disqus_thread"></div>
-<script type="text/javascript">
-      (function () {
-            
-            
-            
-            if (location.hostname === "localhost" || 
-            	location.hostname === "127.0.0.1" || 
-            	location.hostname === "") {
-                return;
-			}
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            var disqus_shortname = 'tczhong';
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
-                  dsq);
-      })();
-</script>
-
-<noscript>
-	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    
-
-            </div>
+        <div class="post_footer">
+          
         </div>
-        
-                
-    </body>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span></span>
+  </div>
+</footer>
+
+
+
+<script src="http://www.tczhong.com/js/jquery-3.3.1.min.js"></script>
+<script src="http://www.tczhong.com/js/zozo.js"></script>
+<script src="http://www.tczhong.com/js/highlight.pack.js"></script>
+<link  href="http://www.tczhong.com/css/fancybox.min.css" rel="stylesheet">
+<script src="http://www.tczhong.com/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+
+
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tczhong" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</body>
 </html>

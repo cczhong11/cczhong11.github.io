@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Azure on TC blog</title>
@@ -37,7 +37,7 @@ Background and Problem I want to talk about some background information about my
       
       <guid>http://www.tczhong.com/posts/cc/azure-error/</guid>
       <description>Problem I met a NoSuchMethodError in Azure Java SDK. The error message is like the following:
-Exception in thread &amp;quot;main&amp;quot; java.lang.NoSuchMethodError: com.microsoft.azure.credentials.ApplicationTokenCredentials.proxy()Ljava/net/Proxy;  It was very strange and I searched on the stackoverflow. And it shows the problem could be confliction in package version. Therefore I looked into the code to find the reason.
+Exception in thread &amp;#34;main&amp;#34; java.lang.NoSuchMethodError: com.microsoft.azure.credentials.ApplicationTokenCredentials.proxy()Ljava/net/Proxy; It was very strange and I searched on the stackoverflow. And it shows the problem could be confliction in package version. Therefore I looked into the code to find the reason.
 Solution In the beginning, I needed to go into the source code to see what happened there.</description>
     </item>
     

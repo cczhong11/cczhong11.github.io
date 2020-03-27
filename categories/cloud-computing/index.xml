@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cloud computing on TC blog</title>
@@ -67,7 +67,7 @@ There are some key skills that are required in the companies.</description>
       
       <guid>http://www.tczhong.com/posts/cc/azure-error/</guid>
       <description>Problem I met a NoSuchMethodError in Azure Java SDK. The error message is like the following:
-Exception in thread &amp;quot;main&amp;quot; java.lang.NoSuchMethodError: com.microsoft.azure.credentials.ApplicationTokenCredentials.proxy()Ljava/net/Proxy;  It was very strange and I searched on the stackoverflow. And it shows the problem could be confliction in package version. Therefore I looked into the code to find the reason.
+Exception in thread &amp;#34;main&amp;#34; java.lang.NoSuchMethodError: com.microsoft.azure.credentials.ApplicationTokenCredentials.proxy()Ljava/net/Proxy; It was very strange and I searched on the stackoverflow. And it shows the problem could be confliction in package version. Therefore I looked into the code to find the reason.
 Solution In the beginning, I needed to go into the source code to see what happened there.</description>
     </item>
     
@@ -88,7 +88,7 @@ Solution In the beginning, I needed to go into the source code to see what happe
       <guid>http://www.tczhong.com/posts/java/spring_mvc/</guid>
       <description>Spring boot Framework Spring boot framework is a strong framework helps you build a MVC model web service quickly. So in the first place, we need to understand what is MVC model
 Model-View-Controller  Model  Model represent knowledge. It represents how basic items interact with each other.
- Views  A view is a (visual) representation of its model. A view is attached to its model (or model part) and gets the data necessary for the presentation from the model by asking questions.</description>
+Views  A view is a (visual) representation of its model. A view is attached to its model (or model part) and gets the data necessary for the presentation from the model by asking questions.</description>
     </item>
     
     <item>
@@ -139,7 +139,7 @@ Basic input and output The key thing in Mapreduce is Mapper and Reducer. We use 
       <guid>http://www.tczhong.com/posts/cc/gcp-spark/</guid>
       <description>GCP is very cheap compared with AWS and Azure. However, it did not have enough documentation and I met some problems that did not even on StackOverflow. That&amp;rsquo;s why I want to write this blog.
 Start your cluster We could use command line with GCP CLI to start cluster.
-gcloud dataproc clusters create cluster-name --project=project-id --bucket outputbucket --initialization-actions gs://xxx/jupyter.sh --master-machine-type=n1-standard-2 --worker-machine-type=n1-standard-1 --zone=xxxx  Install external Python package on Spark If we want to use your own package and Juypter NoteBook on Spark, you need to contain an initialization step for your cluster.</description>
+gcloud dataproc clusters create cluster-name --project=project-id --bucket outputbucket --initialization-actions gs://xxx/jupyter.sh --master-machine-type=n1-standard-2 --worker-machine-type=n1-standard-1 --zone=xxxx Install external Python package on Spark If we want to use your own package and Juypter NoteBook on Spark, you need to contain an initialization step for your cluster.</description>
     </item>
     
     <item>

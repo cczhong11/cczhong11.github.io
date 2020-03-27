@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Spark on TC blog</title>
@@ -19,7 +19,7 @@
       <guid>http://www.tczhong.com/posts/cc/gcp-spark/</guid>
       <description>GCP is very cheap compared with AWS and Azure. However, it did not have enough documentation and I met some problems that did not even on StackOverflow. That&amp;rsquo;s why I want to write this blog.
 Start your cluster We could use command line with GCP CLI to start cluster.
-gcloud dataproc clusters create cluster-name --project=project-id --bucket outputbucket --initialization-actions gs://xxx/jupyter.sh --master-machine-type=n1-standard-2 --worker-machine-type=n1-standard-1 --zone=xxxx  Install external Python package on Spark If we want to use your own package and Juypter NoteBook on Spark, you need to contain an initialization step for your cluster.</description>
+gcloud dataproc clusters create cluster-name --project=project-id --bucket outputbucket --initialization-actions gs://xxx/jupyter.sh --master-machine-type=n1-standard-2 --worker-machine-type=n1-standard-1 --zone=xxxx Install external Python package on Spark If we want to use your own package and Juypter NoteBook on Spark, you need to contain an initialization step for your cluster.</description>
     </item>
     
     <item>

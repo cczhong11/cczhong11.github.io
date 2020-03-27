@@ -1,284 +1,210 @@
 <!DOCTYPE html>
-<html lang="en" class="wf-firasans-n4-active wf-active">
-	<head>
-    <link href="http://gmpg.org/xfn/11" rel="profile">
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.58.3" /> 
-<title>How to build your own apple script for omnifocus &middot; TC blog</title>
-<meta content="How to build your own apple script for omnifocus - TC blog"
-    property="og:title">
-<meta content=" - This blog tells you some basic usage for apple script  for omnifocus"
-    property="og:description"> <!-- CSS -->
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
-<link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
-<link rel="stylesheet" href="http://www.tczhong.com/css/poole.css">
-<link rel="stylesheet" href="http://www.tczhong.com/css/hyde.css"> <!-- Font-Awesome -->
-<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
-    crossorigin="anonymous"></script> <!-- highlight.js-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css"> <!-- Customised CSS -->
-<link rel="stylesheet" href="http://www.tczhong.com/css/custom.css"> <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]--> <!-- Icons -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.tczhong.com/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="http://www.tczhong.com/favicon.png"> 
+<html lang="en" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-        <script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-  });
-  MathJax.Hub.Queue(function() {
+  
+  <meta name="author"
+        content=""/>
 
+  
+  <meta name="description" content="This blog tells you some basic usage for apple script  for omnifocus"/>
+  
 
+  
 
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
+  
+  <link rel="canonical" href="http://www.tczhong.com/posts/mac/omnifocusapplescriptbasic/"/>
 
-  MathJax.Hub.Config({
+  
 
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120924697-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <title>How to build your own apple script for omnifocus &middot; TC blog</title>
 
-  gtag('config', 'UA-120924697-1');
-</script>
+  <link rel="shortcut icon" href="http://www.tczhong.com/images/favicon.ico"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/animate.min.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/remixicon.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/zozo.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/highlight.css"/>
 
+  
+  
+</head>
 
-	</head>
-    <body>
-        <div class="sidebar">
-	<div class="container text-center sidebar-sticky">
-		<div class="sidebar-about text-center">
-			<a href="http://www.tczhong.com/"><h1 class="brand">TC blog</h1>
-			 <img src="https://avatars2.githubusercontent.com/u/7358252?s=460&amp;v=4" alt="Author Image" class="img-circle headshot center"> </a>
-			<p class="lead">
-				 I am who I am. Love Cloud and Data science 
-			</p>
-		</div>
-		
-<div>
-	<ul class="sidebar-nav">
-		
-		
-				<li>
-					<a href="http://www.tczhong.com/posts/"> <span>Posts</span></a>
-				</li>
-				<li>
-					<a href="http://www.tczhong.com/about/hello"> <span>About</span></a>
-				</li>
-				<li>
-					<a href="http://www.tczhong.com/tianchen_zhong.pdf"> <span>My Resume</span></a>
-				</li>
-				<li>
-					<a href="http://www.tczhong.com/posts/project/index.html"> <span>Project</span></a>
-				</li>
-		</li>
-	</ul>
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="http://www.tczhong.com/posts/">Posts</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/about/hello">About</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/tianchen_zhong.pdf">My Resume</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/posts/project/index.html">Project</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
 </div>
 
-        <p>
-		<section class="row text-center">
-	
-	
-	
-	&nbsp;<a href="https://github.com/cczhong11"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	&nbsp;<a href="https://linkedin.com/in/tianchen-zhong"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
-	
-	
-	&nbsp;<a href="https://stackoverflow.com/users/7112540"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	&nbsp;<a href="mailto:tczhong24@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
-	
-</section>
-
-        </p>
-		<p class="copyright">&copy; 2020 Tc Zhong.
-        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
-        </p>
-	</div>
-	<div>
-	</div>
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="http://www.tczhong.com/">
+          <span>TC blog</span>
+          <img src="http://www.tczhong.com/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title"></p>
+      <div class="my_socials">
+        
+        <a href="http://www.tczhong.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
 </div>
 
-        <div class="content container">
-            <div class="post">
-  <h1>How to build your own apple script for omnifocus</h1>
-  
-  <div class="col-sm-12 col-md-12">
-    <span class="text-left post-date meta">
-            
-       <i class="fa fa-calendar" aria-hidden="true"></i> Sep 9, 2018 
-      
-      
-        
-        
-            in
-            
-            
-                <a class="meta" href="http://www.tczhong.com/categories/gtd">GTD</a>
-                ,
-            
-                <a class="meta" href="http://www.tczhong.com/categories/mac">MAC</a>
-                ,
-            
-                <a class="meta" href="http://www.tczhong.com/categories/omnifocus">OMNIFOCUS</a>
-                
-            
-        
-      
-      
-      
-      </span>  
-  </div>    
-  
-  
-
-<h1 id="how-to-use-apple-script-with-omnifocus">How to use apple script with Omnifocus</h1>
-
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='http://www.tczhong.com/posts/mac/omnifocusapplescriptbasic/'>How to build your own apple script for omnifocus</a></h2>
+          <span class="date">2018.09.01</span>
+        </div>
+        <div class="post_content markdown"><h1 id="how-to-use-apple-script-with-omnifocus">How to use apple script with Omnifocus</h1>
 <p>Omnifocus is a very great to-do list app in Mac and iPhone. It is expensive and very good to use. We could also use apple script to make it become more powerful.</p>
-
 <h2 id="list-all-done-tasks">List all done tasks</h2>
-
 <p>In many cases, we need to do summary on how many tasks we have done that day or week. Therefore, we could just log out all completed tasks and send to notebook/Day one.</p>
-
 <p>The general idea is to get all modified project and then get all tasks inside, if we saw any tasks with completion date during that day, we just log that tasks out.</p>
-
 <p>The code could see here:</p>
-
-<pre><code class="language-applescript">tell application &quot;OmniFocus&quot;
-	tell front document
-		-- Get the list of projects that were modified within thedate span
-		set theProjects to every flattened project where its modification date is greater than startDate and modification date is less than endDate
-		-- Loop through the matching project list
-		repeat with a from 1 to length of theProjects
-			-- Get the current project to work with
-			set currentProj to item a of theProjects
-			-- Get the tasks that were completed within the datespan
-			set theTasks to (every flattened task of currentProj where its completed = true and completion date is greater than startDate and completion date is less than endDate)
-			-- If there are tasks that meet the criteria
-			if theTasks is not equal to {} then
-				-- Add a dividing line and then enter the projectname
-				set reportText to reportText &amp; return &amp; return &amp; &quot;# &quot; &amp; name of currentProj &amp; return
-				-- Loop through the tasks
-				repeat with b from 1 to length of theTasks
-					-- Get the current task to work with
-					set currentTask to item b of theTasks
-					-- Save the completed date to a variable
-					set completedDate to completion date of currentTask
-					-- Get the time of the completed date
-					set completedTime to time string of completedDate
-					-- Add the task to the report text with thecompleted time
-					set reportText to reportText &amp; return &amp; &quot; - &quot; &amp; name of currentTask &amp; &quot; ----- &quot; &amp; completedTime
-				end repeat
-			end if
-		end repeat
-    end tell -- end tell front document
-end tell -- end tell application &quot;OmniFocus&quot;
-</code></pre>
-
-<h2 id="add-new-template-tasks">Add new template tasks</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-applescript" data-lang="applescript"><span style="color:#66d9ef">tell</span> application <span style="color:#e6db74">&#34;OmniFocus&#34;</span>
+	<span style="color:#66d9ef">tell</span> front <span style="color:#a6e22e">document</span>
+		<span style="color:#75715e">-- Get the list of projects that were modified within thedate span</span>
+		<span style="color:#66d9ef">set</span> theProjects <span style="color:#66d9ef">to</span> every flattened project where <span style="color:#66d9ef">its</span> modification date <span style="color:#f92672">is greater than</span> startDate <span style="color:#f92672">and</span> modification date <span style="color:#f92672">is less than</span> endDate
+		<span style="color:#75715e">-- Loop through the matching project list</span>
+		<span style="color:#66d9ef">repeat</span> <span style="color:#66d9ef">with</span> a <span style="color:#66d9ef">from</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">to</span> length <span style="color:#66d9ef">of</span> theProjects
+			<span style="color:#75715e">-- Get the current project to work with</span>
+			<span style="color:#66d9ef">set</span> currentProj <span style="color:#66d9ef">to</span> item a <span style="color:#66d9ef">of</span> theProjects
+			<span style="color:#75715e">-- Get the tasks that were completed within the datespan</span>
+			<span style="color:#66d9ef">set</span> theTasks <span style="color:#66d9ef">to</span> (every flattened task <span style="color:#66d9ef">of</span> currentProj where <span style="color:#66d9ef">its</span> completed <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">and</span> completion date <span style="color:#f92672">is greater than</span> startDate <span style="color:#f92672">and</span> completion date <span style="color:#f92672">is less than</span> endDate)
+			<span style="color:#75715e">-- If there are tasks that meet the criteria</span>
+			<span style="color:#66d9ef">if</span> theTasks <span style="color:#f92672">is not</span> <span style="color:#f92672">equal to</span> {} <span style="color:#66d9ef">then</span>
+				<span style="color:#75715e">-- Add a dividing line and then enter the projectname</span>
+				<span style="color:#66d9ef">set</span> reportText <span style="color:#66d9ef">to</span> reportText <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;# &#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">of</span> currentProj <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">return</span>
+				<span style="color:#75715e">-- Loop through the tasks</span>
+				<span style="color:#66d9ef">repeat</span> <span style="color:#66d9ef">with</span> b <span style="color:#66d9ef">from</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">to</span> length <span style="color:#66d9ef">of</span> theTasks
+					<span style="color:#75715e">-- Get the current task to work with</span>
+					<span style="color:#66d9ef">set</span> currentTask <span style="color:#66d9ef">to</span> item b <span style="color:#66d9ef">of</span> theTasks
+					<span style="color:#75715e">-- Save the completed date to a variable</span>
+					<span style="color:#66d9ef">set</span> completedDate <span style="color:#66d9ef">to</span> completion date <span style="color:#66d9ef">of</span> currentTask
+					<span style="color:#75715e">-- Get the time of the completed date</span>
+					<span style="color:#66d9ef">set</span> completedTime <span style="color:#66d9ef">to</span> time string <span style="color:#66d9ef">of</span> completedDate
+					<span style="color:#75715e">-- Add the task to the report text with thecompleted time</span>
+					<span style="color:#66d9ef">set</span> reportText <span style="color:#66d9ef">to</span> reportText <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34; - &#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">of</span> currentTask <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34; ----- &#34;</span> <span style="color:#f92672">&amp;</span> completedTime
+				<span style="color:#66d9ef">end</span> <span style="color:#66d9ef">repeat</span>
+			<span style="color:#66d9ef">end</span> <span style="color:#66d9ef">if</span>
+		<span style="color:#66d9ef">end</span> <span style="color:#66d9ef">repeat</span>
+    <span style="color:#66d9ef">end</span> <span style="color:#66d9ef">tell</span> <span style="color:#75715e">-- end tell front document</span>
+<span style="color:#66d9ef">end</span> <span style="color:#66d9ef">tell</span> <span style="color:#75715e">-- end tell application &#34;OmniFocus&#34;</span>
+</code></pre></div><h2 id="add-new-template-tasks">Add new template tasks</h2>
 <p>We could use <code>dialog</code> to input some common things, for example, if we want to read book, using following code could get all important elements.</p>
-
-<pre><code class="language-script">set bookTitle to text returned of (display dialog &quot;What's the title of the book?&quot; default answer &quot;&quot;)
+<pre><code class="language-script" data-lang="script">set bookTitle to text returned of (display dialog &quot;What's the title of the book?&quot; default answer &quot;&quot;)
 set numPages to text returned of (display dialog &quot;How many pages are in the book?&quot; default answer 0) as integer
 set startDate to text returned of (display dialog &quot;When should this start?&quot; default answer &quot;yyyymmdd&quot;)
 set endDate to text returned of (display dialog &quot;When should this end?&quot; default answer &quot;yyyymmdd&quot;)
-</code></pre>
-
-<p>Then we could perform some calculation and add tasks to omnifocus.</p>
-
-<pre><code class="language-script">tell application &quot;OmniFocus&quot;
+</code></pre><p>Then we could perform some calculation and add tasks to omnifocus.</p>
+<pre><code class="language-script" data-lang="script">tell application &quot;OmniFocus&quot;
 	tell document of front window
         .....
         set newTask to make new inbox task with properties {name:taskTitle, defer date:deferDate, context:theContext}
     end tell
 end tell
-</code></pre>
-
-<h2 id="tips">Tips</h2>
-
+</code></pre><h2 id="tips">Tips</h2>
 <ol>
-<li><p>if you want to learn more, there are some repo</p>
-
+<li>
+<p>if you want to learn more, there are some repo</p>
 <ul>
 <li><a href="https://github.com/joebuhlig/OFScripts">OFscripts</a></li>
 <li><a href="https://github.com/dbyler/omnifocus-scripts">omnifocus-scripts</a></li>
-</ul></li>
-
-<li><p>Open Apple script app, then choose open dictionary and open Omnifocus, you could see more commands.</p></li>
+</ul>
+</li>
+<li>
+<p>Open Apple script app, then choose open dictionary and open Omnifocus, you could see more commands.</p>
+</li>
 </ol>
-
 </div>
-            <div class="footer">
-                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-<script type="text/javascript">
-    hljs.initHighlightingOnLoad();
-</script>
-
-
-        <h2>Comments</h2>
-        <div id="disqus_thread"></div>
-<script type="text/javascript">
-      (function () {
-            
-            
-            
-            if (location.hostname === "localhost" || 
-            	location.hostname === "127.0.0.1" || 
-            	location.hostname === "") {
-                return;
-			}
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            var disqus_shortname = 'tczhong';
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
-                  dsq);
-      })();
-</script>
-
-<noscript>
-	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    
-
-            </div>
+        <div class="post_footer">
+          
         </div>
-        
-                
-    </body>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span></span>
+  </div>
+</footer>
+
+
+
+<script src="http://www.tczhong.com/js/jquery-3.3.1.min.js"></script>
+<script src="http://www.tczhong.com/js/zozo.js"></script>
+<script src="http://www.tczhong.com/js/highlight.pack.js"></script>
+<link  href="http://www.tczhong.com/css/fancybox.min.css" rel="stylesheet">
+<script src="http://www.tczhong.com/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+
+
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tczhong" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</body>
 </html>

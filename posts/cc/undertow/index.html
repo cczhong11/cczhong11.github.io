@@ -1,267 +1,189 @@
 <!DOCTYPE html>
-<html lang="en" class="wf-firasans-n4-active wf-active">
-	<head>
-    <link href="http://gmpg.org/xfn/11" rel="profile">
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.58.3" /> 
-<title>Undertow configuration &middot; TC blog</title>
-<meta content="Undertow configuration - TC blog"
-    property="og:title">
-<meta content=" - This blog will tell you my experience using Undertow."
-    property="og:description"> <!-- CSS -->
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
-<link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
-<link rel="stylesheet" href="http://www.tczhong.com/css/poole.css">
-<link rel="stylesheet" href="http://www.tczhong.com/css/hyde.css"> <!-- Font-Awesome -->
-<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
-    crossorigin="anonymous"></script> <!-- highlight.js-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css"> <!-- Customised CSS -->
-<link rel="stylesheet" href="http://www.tczhong.com/css/custom.css"> <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]--> <!-- Icons -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.tczhong.com/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="http://www.tczhong.com/favicon.png"> 
+<html lang="en" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-        <script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-  });
-  MathJax.Hub.Queue(function() {
-
-
-
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-
-  MathJax.Hub.Config({
-
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120924697-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-120924697-1');
-</script>
-
-
-	</head>
-    <body>
-        <div class="sidebar">
-	<div class="container text-center sidebar-sticky">
-		<div class="sidebar-about text-center">
-			<a href="http://www.tczhong.com/"><h1 class="brand">TC blog</h1>
-			 <img src="https://avatars2.githubusercontent.com/u/7358252?s=460&amp;v=4" alt="Author Image" class="img-circle headshot center"> </a>
-			<p class="lead">
-				 I am who I am. Love Cloud and Data science 
-			</p>
-		</div>
-		
-<div>
-	<ul class="sidebar-nav">
-		
-		
-				<li>
-					<a href="http://www.tczhong.com/posts/"> <span>Posts</span></a>
-				</li>
-				<li>
-					<a href="http://www.tczhong.com/about/hello"> <span>About</span></a>
-				</li>
-				<li>
-					<a href="http://www.tczhong.com/tianchen_zhong.pdf"> <span>My Resume</span></a>
-				</li>
-				<li>
-					<a href="http://www.tczhong.com/posts/project/index.html"> <span>Project</span></a>
-				</li>
-		</li>
-	</ul>
-</div>
-
-        <p>
-		<section class="row text-center">
-	
-	
-	
-	&nbsp;<a href="https://github.com/cczhong11"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	&nbsp;<a href="https://linkedin.com/in/tianchen-zhong"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
-	
-	
-	&nbsp;<a href="https://stackoverflow.com/users/7112540"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	&nbsp;<a href="mailto:tczhong24@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
-	
-</section>
-
-        </p>
-		<p class="copyright">&copy; 2020 Tc Zhong.
-        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
-        </p>
-	</div>
-	<div>
-	</div>
-</div>
-
-        <div class="content container">
-            <div class="post">
-  <h1>Undertow configuration</h1>
   
-  <div class="col-sm-12 col-md-12">
-    <span class="text-left post-date meta">
-            
-       <i class="fa fa-calendar" aria-hidden="true"></i> Apr 4, 2018 
-      
-      
-        
-        
-            in
-            
-            
-                <a class="meta" href="http://www.tczhong.com/categories/cloud-computing">CLOUD COMPUTING</a>
-                ,
-            
-                <a class="meta" href="http://www.tczhong.com/categories/tips">TIPS</a>
-                ,
-            
-                <a class="meta" href="http://www.tczhong.com/categories/web-services">WEB SERVICES</a>
-                
-            
-        
-      
-      
-      
-      </span>  
-  </div>    
+  <meta name="author"
+        content=""/>
+
   
+  <meta name="description" content="This blog will tell you my experience using Undertow."/>
   
 
-<h1 id="undertow">Undertow</h1>
+  
 
-<p>This is a very fast Java web server. When using this web server, I met some problems but I could not find enough answers even on the stackOverflow. Therefore, I decided to write my experience down.</p>
+  
+  <link rel="canonical" href="http://www.tczhong.com/posts/cc/undertow/"/>
 
-<h2 id="how-to-set-parameters-to-each-servlet">How to set parameters to each Servlet?</h2>
+  
 
-<p>It is necessary for us to pass some parameters to Serlet functions. One way to do this is to use <code>addInitParam</code> when adding Servlet. Like the following code.</p>
+  <title>Undertow configuration &middot; TC blog</title>
 
-<pre><code class="language-java">DeploymentInfo servletBuilder = deployment()
-                    .setClassLoader(ServletServer.class.getClassLoader())
-                    .setContextPath(MYAPP)
-                    .setDeploymentName(&quot;test.war&quot;)
-                    .addServlets(
-                            servlet(&quot;MessageServlet&quot;, MessageServlet.class)
-                                    .addInitParam(&quot;message&quot;, &quot;Hello World&quot;)
-                                    .addMapping(&quot;/*&quot;),
-                    )
-</code></pre>
+  <link rel="shortcut icon" href="http://www.tczhong.com/images/favicon.ico"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/animate.min.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/remixicon.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/zozo.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/highlight.css"/>
 
-<p>In the example, we set parameter <code>message</code> to &ldquo;Hello Word&rdquo;. Then how to we read that in the Servlet funtion? We could set in the <code>init</code>.</p>
+  
+  
+</head>
 
-<pre><code class="language-java">//MessageServlet.java
-    public static final String MESSAGE = &quot;message&quot;;
-
-    private String message;
-
-    @Override
-    public void init(final ServletConfig config) throws ServletException {
-        super.init(config);
-        message = config.getInitParameter(MESSAGE);
-    }
-</code></pre>
-
-<h2 id="why-we-could-not-get-any-new-request-from-doget">Why we could not get any new request from <code>doGet</code></h2>
-
-<p>There is a very strange question happened when we used Undertow. Although we got requests from load generator continuously, we could not see any from the <code>doGet</code> function.</p>
-
-<p>It is because all listeners are pending at this time and we could not get any requests now. You could learn more from <a href="http://undertow.io/undertow-docs/undertow-docs-2.0.0/index.html#xnio-workers">here</a>. There is a limited threads opened for Undertow, if all <code>WORKER_IO_THREADS</code> threads were used, we will lose all incoming requests. We could set parameters for Undertow using the following codes.</p>
-
-<pre><code class="language-java">XnioWorker worker = xnio.createWorker(OptionMap.builder()
-    .set(Options.WORKER_IO_THREADS, ioThreads)
-    .set(Options.WORKER_TASK_CORE_THREADS, workerThreads)
-    .set(Options.WORKER_TASK_MAX_THREADS, workerThreads)
-    .set(Options.TCP_NODELAY, true)
-    .getMap());
-</code></pre>
-
-<h2 id="connecting-to-mysql-problems">Connecting to MySQL problems</h2>
-
-<p>We could use <code>PreparedStatement</code> to perform SQL query.</p>
-
-<pre><code class="language-java">PreparedStatement statement = connection.prepareStatement(
-             &quot;SELECT * FROM World&quot;);
-ResultSet resultSet = statement.executeQuery()
-</code></pre>
-
-<p>We also need to close them after using them. If you did not close them, there would occur out of memory problem.
-<a href="https://stackoverflow.com/questions/14546592/do-i-need-to-close-preparedstatement">reference</a>.</p>
-
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="http://www.tczhong.com/posts/">Posts</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/about/hello">About</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/tianchen_zhong.pdf">My Resume</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/posts/project/index.html">Project</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
 </div>
-            <div class="footer">
-                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
-<script type="text/javascript">
-    hljs.initHighlightingOnLoad();
-</script>
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="http://www.tczhong.com/">
+          <span>TC blog</span>
+          <img src="http://www.tczhong.com/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title"></p>
+      <div class="my_socials">
+        
+        <a href="http://www.tczhong.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-        <h2>Comments</h2>
-        <div id="disqus_thread"></div>
-<script type="text/javascript">
-      (function () {
-            
-            
-            
-            if (location.hostname === "localhost" || 
-            	location.hostname === "127.0.0.1" || 
-            	location.hostname === "") {
-                return;
-			}
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            var disqus_shortname = 'tczhong';
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
-                  dsq);
-      })();
-</script>
-
-<noscript>
-	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    
-
-            </div>
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='http://www.tczhong.com/posts/cc/undertow/'>Undertow configuration</a></h2>
+          <span class="date">2018.04.27</span>
         </div>
-        
-                
-    </body>
+        <div class="post_content markdown"><h1 id="undertow">Undertow</h1>
+<p>This is a very fast Java web server. When using this web server, I met some problems but I could not find enough answers even on the stackOverflow. Therefore, I decided to write my experience down.</p>
+<h2 id="how-to-set-parameters-to-each-servlet">How to set parameters to each Servlet?</h2>
+<p>It is necessary for us to pass some parameters to Serlet functions. One way to do this is to use <code>addInitParam</code> when adding Servlet. Like the following code.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">DeploymentInfo servletBuilder <span style="color:#f92672">=</span> deployment<span style="color:#f92672">()</span>
+                    <span style="color:#f92672">.</span><span style="color:#a6e22e">setClassLoader</span><span style="color:#f92672">(</span>ServletServer<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getClassLoader</span><span style="color:#f92672">())</span>
+                    <span style="color:#f92672">.</span><span style="color:#a6e22e">setContextPath</span><span style="color:#f92672">(</span>MYAPP<span style="color:#f92672">)</span>
+                    <span style="color:#f92672">.</span><span style="color:#a6e22e">setDeploymentName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;test.war&#34;</span><span style="color:#f92672">)</span>
+                    <span style="color:#f92672">.</span><span style="color:#a6e22e">addServlets</span><span style="color:#f92672">(</span>
+                            servlet<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;MessageServlet&#34;</span><span style="color:#f92672">,</span> MessageServlet<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
+                                    <span style="color:#f92672">.</span><span style="color:#a6e22e">addInitParam</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;message&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Hello World&#34;</span><span style="color:#f92672">)</span>
+                                    <span style="color:#f92672">.</span><span style="color:#a6e22e">addMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/*&#34;</span><span style="color:#f92672">),</span>
+                    <span style="color:#f92672">)</span>
+</code></pre></div><p>In the example, we set parameter <code>message</code> to &ldquo;Hello Word&rdquo;. Then how to we read that in the Servlet funtion? We could set in the <code>init</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//MessageServlet.java
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String MESSAGE <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;message&#34;</span><span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">private</span> String message<span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">init</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> ServletConfig config<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> ServletException <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">init</span><span style="color:#f92672">(</span>config<span style="color:#f92672">);</span>
+        message <span style="color:#f92672">=</span> config<span style="color:#f92672">.</span><span style="color:#a6e22e">getInitParameter</span><span style="color:#f92672">(</span>MESSAGE<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><h2 id="why-we-could-not-get-any-new-request-from-doget">Why we could not get any new request from <code>doGet</code></h2>
+<p>There is a very strange question happened when we used Undertow. Although we got requests from load generator continuously, we could not see any from the <code>doGet</code> function.</p>
+<p>It is because all listeners are pending at this time and we could not get any requests now. You could learn more from <a href="http://undertow.io/undertow-docs/undertow-docs-2.0.0/index.html#xnio-workers">here</a>. There is a limited threads opened for Undertow, if all <code>WORKER_IO_THREADS</code> threads were used, we will lose all incoming requests. We could set parameters for Undertow using the following codes.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">XnioWorker worker <span style="color:#f92672">=</span> xnio<span style="color:#f92672">.</span><span style="color:#a6e22e">createWorker</span><span style="color:#f92672">(</span>OptionMap<span style="color:#f92672">.</span><span style="color:#a6e22e">builder</span><span style="color:#f92672">()</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>Options<span style="color:#f92672">.</span><span style="color:#a6e22e">WORKER_IO_THREADS</span><span style="color:#f92672">,</span> ioThreads<span style="color:#f92672">)</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>Options<span style="color:#f92672">.</span><span style="color:#a6e22e">WORKER_TASK_CORE_THREADS</span><span style="color:#f92672">,</span> workerThreads<span style="color:#f92672">)</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>Options<span style="color:#f92672">.</span><span style="color:#a6e22e">WORKER_TASK_MAX_THREADS</span><span style="color:#f92672">,</span> workerThreads<span style="color:#f92672">)</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>Options<span style="color:#f92672">.</span><span style="color:#a6e22e">TCP_NODELAY</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">)</span>
+    <span style="color:#f92672">.</span><span style="color:#a6e22e">getMap</span><span style="color:#f92672">());</span>
+</code></pre></div><h2 id="connecting-to-mysql-problems">Connecting to MySQL problems</h2>
+<p>We could use <code>PreparedStatement</code> to perform SQL query.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">PreparedStatement statement <span style="color:#f92672">=</span> connection<span style="color:#f92672">.</span><span style="color:#a6e22e">prepareStatement</span><span style="color:#f92672">(</span>
+             <span style="color:#e6db74">&#34;SELECT * FROM World&#34;</span><span style="color:#f92672">);</span>
+ResultSet resultSet <span style="color:#f92672">=</span> statement<span style="color:#f92672">.</span><span style="color:#a6e22e">executeQuery</span><span style="color:#f92672">()</span>
+</code></pre></div><p>We also need to close them after using them. If you did not close them, there would occur out of memory problem.
+<a href="https://stackoverflow.com/questions/14546592/do-i-need-to-close-preparedstatement">reference</a>.</p>
+</div>
+        <div class="post_footer">
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span></span>
+  </div>
+</footer>
+
+
+
+<script src="http://www.tczhong.com/js/jquery-3.3.1.min.js"></script>
+<script src="http://www.tczhong.com/js/zozo.js"></script>
+<script src="http://www.tczhong.com/js/highlight.pack.js"></script>
+<link  href="http://www.tczhong.com/css/fancybox.min.css" rel="stylesheet">
+<script src="http://www.tczhong.com/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+
+
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tczhong" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</body>
 </html>

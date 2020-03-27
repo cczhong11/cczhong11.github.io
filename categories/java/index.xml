@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java on TC blog</title>
@@ -36,7 +36,7 @@
       
       <guid>http://www.tczhong.com/posts/cc/azure-error/</guid>
       <description>Problem I met a NoSuchMethodError in Azure Java SDK. The error message is like the following:
-Exception in thread &amp;quot;main&amp;quot; java.lang.NoSuchMethodError: com.microsoft.azure.credentials.ApplicationTokenCredentials.proxy()Ljava/net/Proxy;  It was very strange and I searched on the stackoverflow. And it shows the problem could be confliction in package version. Therefore I looked into the code to find the reason.
+Exception in thread &amp;#34;main&amp;#34; java.lang.NoSuchMethodError: com.microsoft.azure.credentials.ApplicationTokenCredentials.proxy()Ljava/net/Proxy; It was very strange and I searched on the stackoverflow. And it shows the problem could be confliction in package version. Therefore I looked into the code to find the reason.
 Solution In the beginning, I needed to go into the source code to see what happened there.</description>
     </item>
     
@@ -48,7 +48,7 @@ Solution In the beginning, I needed to go into the source code to see what happe
       <guid>http://www.tczhong.com/posts/java/spring_mvc/</guid>
       <description>Spring boot Framework Spring boot framework is a strong framework helps you build a MVC model web service quickly. So in the first place, we need to understand what is MVC model
 Model-View-Controller  Model  Model represent knowledge. It represents how basic items interact with each other.
- Views  A view is a (visual) representation of its model. A view is attached to its model (or model part) and gets the data necessary for the presentation from the model by asking questions.</description>
+Views  A view is a (visual) representation of its model. A view is attached to its model (or model part) and gets the data necessary for the presentation from the model by asking questions.</description>
     </item>
     
   </channel>
