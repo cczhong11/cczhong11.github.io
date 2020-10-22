@@ -6,10 +6,21 @@
     <description>Recent content on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 12 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.tczhong.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Submit data with React</title>
+      <link>http://www.tczhong.com/posts/frontend/send-form-with-react/</link>
+      <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/posts/frontend/send-form-with-react/</guid>
+      <description>Send data with React This looks like a very simple topic for React aplication. But I met some problems during implementation. The main topic I would like to discuss here is CORS and Form submit.
+What is CORS It is Cross-Origin Resource Sharing and it is a standard of W3C. It allows browser to send cross-origin requests. The main thing is the server needs to handle CORS interface.
+There are two types of CORS:</description>
+    </item>
     
     <item>
       <title>Losing NTFS data in Mac</title>

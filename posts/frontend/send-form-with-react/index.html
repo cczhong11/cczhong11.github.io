@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content=""/>
+
+  
+  <meta name="description" content="Write correct way to submit data with react"/>
+  
+
+  
+
+  
+  <link rel="canonical" href="http://www.tczhong.com/posts/frontend/send-form-with-react/"/>
+
+  
+
+  <title>Submit data with React &middot; TC blog</title>
+
+  <link rel="shortcut icon" href="http://www.tczhong.com/images/favicon.ico"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/animate.min.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/remixicon.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/zozo.css"/>
+  <link rel="stylesheet" href="http://www.tczhong.com/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="http://www.tczhong.com/posts/">Posts</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/about/hello">About</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/tianchen_zhong.pdf">My Resume</a>
+      </li>
+      
+      <li>
+        <a href="http://www.tczhong.com/posts/project/index.html">Project</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="http://www.tczhong.com/">
+          <span>TC blog</span>
+          <img src="http://www.tczhong.com/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title"></p>
+      <div class="my_socials">
+        
+        <a href="http://www.tczhong.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='http://www.tczhong.com/posts/frontend/send-form-with-react/'>Submit data with React</a></h2>
+          <span class="date">2020.10.21</span>
+        </div>
+        <div class="post_content markdown"><h1 id="send-data-with-react">Send data with React</h1>
+<p>This looks like a very simple topic for React aplication. But I met some problems during implementation. The main topic I would like to discuss here is CORS and Form submit.</p>
+<h2 id="what-is-cors">What is CORS</h2>
+<p>It is Cross-Origin Resource Sharing and it is a standard of W3C. It allows browser to send cross-origin requests. The main thing is the server needs to handle CORS interface.</p>
+<p>There are two types of CORS:</p>
+<ul>
+<li>Simple request</li>
+<li>not-so-simple request</li>
+</ul>
+<p>If one request meets the following requirements, it is simple request:</p>
+<ul>
+<li>request methods: HEAD, GET, POST</li>
+<li>HEADER only contains: Accept, Accept-language, Content-Type, Last-event-id, Content-Language:
+<ul>
+<li>Content type: only one of application/x-www-form-urlencoded, multipart/form-data, text/plain</li>
+</ul>
+</li>
+</ul>
+<p>For all other request, it is not-so-simple request.</p>
+<p>We can see if we send data via a form, it is a simple request. If we want to send some RESTful API, it would be a post request with some json data in the body, which means that it is a no-so-simple request.</p>
+<h2 id="send-form-data">Send form data</h2>
+<p>This code snippet could be used to send form data.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">MyForm</span>(){
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">form</span> <span style="color:#a6e22e">onSubmit</span><span style="color:#f92672">=</span>{(<span style="color:#a6e22e">event</span>)=&gt;{
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">form</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>;
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormData</span>(<span style="color:#a6e22e">form</span>);
+        <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;/api/form-submit-url&#39;</span>, {
+            <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;POST&#39;</span>,
+            <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">data</span>,
+        });
+      }}<span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span>
+          <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span>
+          <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+        <span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Send</span> <span style="color:#a6e22e">data</span><span style="color:#f92672">!&lt;</span><span style="color:#960050;background-color:#1e0010">/input&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/form&gt;</span>
+    );
+  }
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">MyForm</span>;
+</code></pre></div><p>This looks very simple. But it would not work if we send a RESTFUL request.</p>
+<h2 id="what-happened-if-we-only-change-in-the-onsubmit-callback">What happened if we only change in the onSubmit callback</h2>
+<p>As we know, send json requests with post is a no-so-simple request in CORS. So in the browser, it would happen this.</p>
+<ol>
+<li>Browser send a preflight request first to ask the server, and it is a OPTIONS request</li>
+<li>If get acknowledgements from the server, it would send the real request.</li>
+</ol>
+<p><img src="https://tczimg.s3.amazonaws.com/vscode/d149db8c6bec4970a27cd53d51854776.png" alt=""></p>
+<p>reference: <a href="https://livebook.manning.com/book/cors-in-action/chapter-4/14">https://livebook.manning.com/book/cors-in-action/chapter-4/14</a></p>
+<p>If we put restful requests in the <code>onSubmit</code>, when click the button with <code>type=submit</code>, the browser will send the preflight request and refresh the page. <strong>So the actual request would never send.</strong></p>
+<p>It is stuck me for a while, which means we could not use onSubmit to send restful requests.</p>
+<h2 id="send-restful-request">Send RESTful request</h2>
+<p>The correct way to send RESTful requests is to use normal button to do it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, {<span style="color:#a6e22e">useState</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">MyForm</span>(){
+    <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">username</span>, <span style="color:#a6e22e">setUsername</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">form</span> <span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span>
+          <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span>
+          <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+          <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">username</span>}
+          <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{(<span style="color:#a6e22e">event</span>)=&gt;{<span style="color:#a6e22e">setUsername</span>(<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">value</span>);}}
+        <span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>((<span style="color:#a6e22e">event</span>)=&gt;{
+            <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;/api/form-submit-url&#39;</span>, {
+            <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;POST&#39;</span>,
+            <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">username</span><span style="color:#f92672">:</span><span style="color:#a6e22e">username</span>},
+        });})<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Send</span> <span style="color:#a6e22e">data</span><span style="color:#f92672">!&lt;</span><span style="color:#960050;background-color:#1e0010">/input&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/form&gt;</span>
+    );
+  }
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">MyForm</span>;
+</code></pre></div><h2 id="remember-to-implement-cros-in-the-server-side">Remember to implement CROS in the server side</h2>
+<p>We can use the package to do it.</p>
+<ul>
+<li>flask: <a href="https://flask-cors.readthedocs.io/en/latest/">Flask-CORS</a></li>
+<li>nodejs: <a href="https://www.npmjs.com/package/cors">cors</a></li>
+</ul>
+</div>
+        <div class="post_footer">
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span></span>
+  </div>
+</footer>
+
+
+
+<script src="http://www.tczhong.com/js/jquery-3.3.1.min.js"></script>
+<script src="http://www.tczhong.com/js/zozo.js"></script>
+<script src="http://www.tczhong.com/js/highlight.pack.js"></script>
+<link  href="http://www.tczhong.com/css/fancybox.min.css" rel="stylesheet">
+<script src="http://www.tczhong.com/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+
+
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tczhong" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</body>
+</html>
