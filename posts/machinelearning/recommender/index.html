@@ -1,94 +1,160 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<html lang="en" class="wf-firasans-n4-active wf-active">
+	<head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">   <meta name="generator" content="Hugo 0.67.0" /> 
+<title>Recommendation &middot; TC blog</title>
+<meta content="Recommendation - TC blog"
+    property="og:title">
+<meta content=" - Basic idea for Recommendation"
+    property="og:description"> <!-- CSS -->
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
+<link rel="stylesheet" href="http://www.tczhong.com/css/print.css" media="print">
+<link rel="stylesheet" href="http://www.tczhong.com/css/poole.css">
+<link rel="stylesheet" href="http://www.tczhong.com/css/hyde.css"> <!-- Font-Awesome -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+    crossorigin="anonymous"></script> <!-- highlight.js-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css"> <!-- Customised CSS -->
+<link rel="stylesheet" href="http://www.tczhong.com/css/custom.css"> <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]--> <!-- Icons -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.tczhong.com/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="http://www.tczhong.com/favicon.png"> 
 
-  
-  <meta name="author"
-        content=""/>
+        <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
 
-  
-  <meta name="description" content="Basic idea for Recommendation"/>
-  
 
-  
 
-  
-  <link rel="canonical" href="http://www.tczhong.com/posts/machinelearning/recommender/"/>
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
 
-  
+  MathJax.Hub.Config({
 
-  <title>Recommendation &middot; TC blog</title>
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120924697-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  <link rel="shortcut icon" href="http://www.tczhong.com/images/favicon.ico"/>
-  <link rel="stylesheet" href="http://www.tczhong.com/css/animate.min.css"/>
-  <link rel="stylesheet" href="http://www.tczhong.com/css/remixicon.css"/>
-  <link rel="stylesheet" href="http://www.tczhong.com/css/zozo.css"/>
-  <link rel="stylesheet" href="http://www.tczhong.com/css/highlight.css"/>
+  gtag('config', 'UA-120924697-1');
+</script>
 
-  
-  
-</head>
 
-<body>
-<div class="main animated">
-  <div class="nav_container animated fadeInDown">
-  <div class="site_nav" id="site_nav">
-    <ul>
-      
-      <li>
-        <a href="http://www.tczhong.com/posts/">Posts</a>
-      </li>
-      
-      <li>
-        <a href="http://www.tczhong.com/about/hello">About</a>
-      </li>
-      
-      <li>
-        <a href="http://www.tczhong.com/tianchen_zhong.pdf">My Resume</a>
-      </li>
-      
-      <li>
-        <a href="http://www.tczhong.com/posts/project/index.html">Project</a>
-      </li>
-      
-    </ul>
-  </div>
-  <div class="menu_icon">
-    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
-  </div>
+	</head>
+    <body>
+        <div class="sidebar">
+	<div class="container text-center sidebar-sticky">
+		<div class="sidebar-about text-center">
+			<a href="http://www.tczhong.com/"><h1 class="brand">TC blog</h1>
+			 <img src="https://avatars2.githubusercontent.com/u/7358252?s=460&amp;v=4" alt="Author Image" class="img-circle headshot center"> </a>
+			<p class="lead">
+				 I am who I am. Love Cloud and Data science 
+			</p>
+		</div>
+		
+<div>
+	<ul class="sidebar-nav">
+		
+		
+				<li>
+					<a href="http://www.tczhong.com/posts/"> <span>Posts</span></a>
+				</li>
+				<li>
+					<a href="http://www.tczhong.com/about/hello"> <span>About</span></a>
+				</li>
+				<li>
+					<a href="http://www.tczhong.com/tianchen_zhong.pdf"> <span>My Resume</span></a>
+				</li>
+				<li>
+					<a href="http://www.tczhong.com/posts/project/index.html"> <span>Project</span></a>
+				</li>
+		</li>
+	</ul>
 </div>
 
-  <div class="header animated fadeInDown">
-  <div class="site_title_container">
-    <div class="site_title">
-      <h1>
-        <a href="http://www.tczhong.com/">
-          <span>TC blog</span>
-          <img src="http://www.tczhong.com/img/kirby.png"/>
-        </a>
-      </h1>
-    </div>
-    <div class="description">
-      <p class="sub_title"></p>
-      <div class="my_socials">
+        <p>
+		<section class="row text-center">
+	
+	
+	
+	&nbsp;<a href="https://github.com/cczhong11"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/tianchen-zhong"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	&nbsp;<a href="https://stackoverflow.com/users/7112540"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="mailto:tczhong24@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+        </p>
+		<p class="copyright">&copy; 2020 Tc Zhong.
+        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+        </p>
+	</div>
+	<div>
+	</div>
+</div>
+
+        <div class="content container">
+            <div class="post">
+  <h1>Recommendation</h1>
+  
+  <div class="col-sm-12 col-md-12">
+    <span class="text-left post-date meta">
+            
+       <i class="fa fa-calendar" aria-hidden="true"></i> May 5, 2018 
+      
+      
         
-        <a href="http://www.tczhong.com/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <div class="content">
-    <div class="post_page">
-      <div class="post animated fadeInDown">
-        <div class="post_title post_detail_title">
-          <h2><a href='http://www.tczhong.com/posts/machinelearning/recommender/'>Recommendation</a></h2>
-          <span class="date">2018.05.01</span>
-        </div>
-        <div class="post_content markdown"><h1 id="recommendation">Recommendation</h1>
+        
+            in
+            
+            
+                <a class="meta" href="http://www.tczhong.com/categories/machine-learning">MACHINE LEARNING</a>
+                
+            
+        
+      
+      
+      
+      </span>  
+  </div>    
+  
+  <h1 id="recommendation">Recommendation</h1>
 <h2 id="collaborative-filtering">Collaborative filtering</h2>
 <p>Solely upon the preferences that other users have indicated for these items.(rating for items): row -&gt; users  column-&gt; items</p>
 <p>The task of collaborative filtering, then, is to “fill in” the remaining entries of this matrix given the observed matrix. This X matrix that we observed is sparse but the unknown entries do not correspond to actual zeros in the matrix, but are rather just truly unknown.</p>
@@ -139,62 +205,48 @@ $$</p>
 <h3 id="relation-to-pca">relation to PCA</h3>
 <p>As mentioned above, there is a close relationship between matrix factorization for collaborative filtering and PCA.  Both are finding low-rank approximation to some matrix $X$.  But the key difference is that while <strong>PCA tries to find an approximation that matches <em>all</em> the entries of $X$</strong> (that is, $S$ would consist of the set of all valid $i,j$ pairs), matrix factorization for collaborative filtering only considers the loss on the observed entries.  Although we won&rsquo;t get into the specifics here, it turns out that this difference means that PCA can be solved optimally an eigenvalue decomposition (or equivalently, a singular value decomposition), whereas matrix factorization cannot be solved in this analytical manner, and the alternating optimization scheme we mentioned above has the potential for local optima.</p>
 <p>Because of this, <strong>it is somewhat common to initialize matrix factorization with $u$ and $v$ terms determined by PCA</strong> (probably subtracting the mean of the data first as in typical PCA, so we don&rsquo;t try too hard <em>too</em> hard to fit the zero entries).  Doing so is not required by any means, but it is a nice way of proving a non-random initial solution to the problem, so that we can begin the matrix factorization steps.</p>
+
 </div>
-        <div class="post_footer">
-          
-        </div>
-      </div>
-      
-      
-    </div>
-  </div>
-  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
-</div>
-<footer class="footer">
-  <div class="powered_by">
-    <a href="https://zeuk.me">Designed by Zeuk,</a>
-    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
-  </div>
+            <div class="footer">
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
-  <div class="footer_slogan">
-    <span></span>
-  </div>
-</footer>
-
-
-
-<script src="http://www.tczhong.com/js/jquery-3.3.1.min.js"></script>
-<script src="http://www.tczhong.com/js/zozo.js"></script>
-<script src="http://www.tczhong.com/js/highlight.pack.js"></script>
-<link  href="http://www.tczhong.com/css/fancybox.min.css" rel="stylesheet">
-<script src="http://www.tczhong.com/js/fancybox.min.js"></script>
-
-<script>hljs.initHighlightingOnLoad()</script>
-
-
-
-
-
-<div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "tczhong" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
-</body>
+
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+      (function () {
+            
+            
+            
+            if (location.hostname === "localhost" || 
+            	location.hostname === "127.0.0.1" || 
+            	location.hostname === "") {
+                return;
+			}
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'tczhong';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
+                  dsq);
+      })();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+            </div>
+        </div>
+        
+                
+    </body>
 </html>
