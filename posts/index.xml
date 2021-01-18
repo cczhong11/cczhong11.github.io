@@ -17,8 +17,8 @@
       <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/posts/frontend/view-ar-object-on-the-web/</guid>
-      <description>It is fun to view AR object in your website. In fact, it is easy to view it with your iPhone.
-Follow the following step and you can get it.
+      <description>It is fun to view AR object with your iPhone. In fact, it is not hard to embed the AR animation in your website.
+Follow the following step and you can do it.
 Step 1: Prepare your usdz file Create a 3D animation and export it as usdz file. You can use some tool like: vectary.
 Step 2: Put html code &amp;lt;a href=&amp;#34;/path_to_asset/cup.usdz&amp;#34; rel=&amp;#34;ar&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;/path_to_asset/cup.jpeg&amp;#34;/&amp;gt; &amp;lt;/a&amp;gt; Step3: View it on your iOS device Tap the image to view it in the argumented reality with an iOS device running iOS 12+.</description>
     </item>
