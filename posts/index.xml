@@ -20,7 +20,7 @@
       <description>It is fun to view AR object in your website. In fact, it is easy to view it with your iPhone.
 Follow the following step and you can get it.
 Step 1: Prepare your usdz file Create a 3D animation and export it as usdz file. You can use some tool like: vectary.
-Step 2: Put html code &amp;lt;a href=”/path_to_asset/cup.usdz” rel=”ar”&amp;gt; &amp;lt;img src=”/path_to_asset/cup.jpeg”/&amp;gt; &amp;lt;/a&amp;gt; Step3: View it on your iOS device </description>
+Step 2: Put html code &amp;lt;a href=”/path_to_asset/cup.usdz” rel=”ar”&amp;gt; &amp;lt;img src=”/path_to_asset/cup.jpeg”/&amp;gt; &amp;lt;/a&amp;gt; Step3: View it on your iOS device  </description>
     </item>
     
     <item>
