@@ -6,10 +6,19 @@
     <description>Recent content in Categories on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 18 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.tczhong.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AWS</title>
+      <link>http://www.tczhong.com/categories/aws/</link>
+      <pubDate>Sat, 14 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/categories/aws/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>AR</title>
@@ -188,15 +197,6 @@
       <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.tczhong.com/categories/alexa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AWS</title>
-      <link>http://www.tczhong.com/categories/aws/</link>
-      <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.tczhong.com/categories/aws/</guid>
       <description></description>
     </item>
     

@@ -6,10 +6,21 @@
     <description>Recent content in AWS on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 03 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.tczhong.com/categories/aws/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fix the strong problem when fetch s3 object</title>
+      <link>http://www.tczhong.com/posts/cc/fix-alexa-skill-s3/</link>
+      <pubDate>Sat, 14 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/posts/cc/fix-alexa-skill-s3/</guid>
+      <description>Fix the strong problem when fetch s3 object Problem I used to have a Alexa skill to play the music from my s3 storage, but it did not work properly for a while. In the beginning, I thought it was code logic, but after digging into the logic I could not find the error.
+The main problem is here
+responseBuilder.addAudioPlayerPlayDirective( playBehavior, podcast.url, enqueueToken, offsetInMilliseconds, expectedPreviousToken, ); It should play the music from the url, I logged the podcast url and I also tried from the browser, it worked fine.</description>
+    </item>
     
     <item>
       <title>Alexa music player project</title>

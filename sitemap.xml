@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.tczhong.com/categories/aws/</loc>
+    <lastmod>2021-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.tczhong.com/categories/</loc>
+    <lastmod>2021-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.tczhong.com/posts/cc/fix-alexa-skill-s3/</loc>
+    <lastmod>2021-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.tczhong.com/posts/</loc>
+    <lastmod>2021-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.tczhong.com/</loc>
+    <lastmod>2021-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.tczhong.com/categories/ar/</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.tczhong.com/categories/</loc>
-    <lastmod>2021-01-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.tczhong.com/posts/frontend/view-ar-object-on-the-web/</loc>
-    <lastmod>2021-01-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.tczhong.com/posts/</loc>
-    <lastmod>2021-01-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.tczhong.com/</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -199,11 +209,6 @@
   
   <url>
     <loc>http://www.tczhong.com/posts/project/alexamusic/</loc>
-    <lastmod>2018-09-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.tczhong.com/categories/aws/</loc>
     <lastmod>2018-09-03T00:00:00+00:00</lastmod>
   </url>
   

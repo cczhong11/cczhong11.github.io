@@ -17,19 +17,19 @@
     
     
 
-<title>Embed AR in your website • TC blog</title>
+<title>Fix the strong problem when fetch s3 object • TC blog</title>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Embed AR in your website"/>
-<meta name="twitter:description" content="Embed your 3D model in your website"/>
+<meta name="twitter:title" content="Fix the strong problem when fetch s3 object"/>
+<meta name="twitter:description" content="This blog will introduce how to fix the utf-8 encoding file in s3 problem"/>
 
-<meta property="og:title" content="Embed AR in your website" />
-<meta property="og:description" content="Embed your 3D model in your website" />
+<meta property="og:title" content="Fix the strong problem when fetch s3 object" />
+<meta property="og:description" content="This blog will introduce how to fix the utf-8 encoding file in s3 problem" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.tczhong.com/posts/frontend/view-ar-object-on-the-web/" />
-<meta property="article:published_time" content="2021-01-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-01-18T00:00:00+00:00" /><meta property="og:site_name" content="TC blog" />
+<meta property="og:url" content="http://www.tczhong.com/posts/cc/fix-alexa-skill-s3/" />
+<meta property="article:published_time" content="2021-08-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-14T00:00:00+00:00" /><meta property="og:site_name" content="TC blog" />
 
 
     
@@ -171,13 +171,13 @@
     
 <article>
   <header>
-    <h1>Embed AR in your website</h1>
+    <h1>Fix the strong problem when fetch s3 object</h1>
     
     
 <div class="post__meta">
     
     
-      <i class="fas fa-calendar-alt"></i> Jan 1, 2021
+      <i class="fas fa-calendar-alt"></i> Aug 8, 2021
     
     
     
@@ -186,7 +186,7 @@
           in
           
           
-              <a class="badge badge-category" href="http://www.tczhong.com/categories/ar">AR</a>
+              <a class="badge badge-category" href="http://www.tczhong.com/categories/aws">AWS</a>
               
           
       
@@ -202,38 +202,33 @@
   
   
   <div class="post">
-    <p>It is fun to view AR object with your iPhone. In fact, it is not hard to embed the AR animation in your website.</p>
-<p>Follow the following step and you can do it.</p>
-<h2 id="step-1-prepare-your-usdz-file">Step 1: Prepare your usdz file</h2>
-<p>Create a 3D animation and export it as usdz file. You can use some tool like: <a href="https://www.vectary.com/">vectary</a>.</p>
-<h2 id="step-2-put-html-code">Step 2: Put html code</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/path_to_asset/cup.usdz&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ar&#34;</span>&gt;
-&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/path_to_asset/cup.jpeg&#34;</span>/&gt;
-&lt;/<span style="color:#f92672">a</span>&gt;
-</code></pre></div><h2 id="step3-view-it-on-your-ios-device">Step3: View it on your iOS device</h2>
-<p>Tap the image to view it in the argumented reality with an iOS device running iOS 12+.</p>
-
-
-<a href="https://tczimg.s3.amazonaws.com/ar/run.usdz" rel="ar">
-<img src="https://tczimg.s3.amazonaws.com/ar/run.gif"/>
-</a>
-
+    <h1 id="fix-the-strong-problem-when-fetch-s3-object">Fix the strong problem when fetch s3 object</h1>
+<h2 id="problem">Problem</h2>
+<p>I used to have a Alexa skill to play the music from my s3 storage, but it did not work properly for a while. In the beginning, I thought it was code logic, but after digging into the logic I could not find the error.</p>
+<p>The main problem is here</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">responseBuilder</span>.<span style="color:#a6e22e">addAudioPlayerPlayDirective</span>(
+            <span style="color:#a6e22e">playBehavior</span>,
+            <span style="color:#a6e22e">podcast</span>.<span style="color:#a6e22e">url</span>,
+            <span style="color:#a6e22e">enqueueToken</span>,
+            <span style="color:#a6e22e">offsetInMilliseconds</span>,
+            <span style="color:#a6e22e">expectedPreviousToken</span>,
+          );
+</code></pre></div><p>It should play the music from the url, I logged the podcast url and I also tried from the browser, it worked fine. But it just could not play the music.</p>
+<h2 id="debug">Debug</h2>
+<p>I used a pure s3 url and I found it worked. I used another url with Chinese character in it, it threw the exception, so I found the error.</p>
+<h2 id="solution">Solution</h2>
+<p>Encode the url with <code>encodeURI(url)</code> and we can get the correct url to fetch the s3 data.</p>
 
   </div>
   
 
 <div class="navigation navigation-single">
     
-    <a href="http://www.tczhong.com/posts/frontend/send-form-with-react/" class="navigation-prev">
+    <a href="http://www.tczhong.com/posts/frontend/view-ar-object-on-the-web/" class="navigation-prev">
       <i aria-hidden="true" class="fa fa-chevron-left"></i>
-      <span class="navigation-tittle">Submit data with React</span>
+      <span class="navigation-tittle">Embed AR in your website</span>
     </a>
     
-    
-    <a href="http://www.tczhong.com/posts/cc/fix-alexa-skill-s3/" class="navigation-next">
-      <span class="navigation-tittle">Fix the strong problem when fetch s3 object</span>
-      <i aria-hidden="true" class="fa fa-chevron-right"></i>
-    </a>
     
 </div>
 
