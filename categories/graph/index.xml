@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Graph on TC blog</title>
-    <link>http://www.tczhong.com/categories/graph/</link>
+    <link>https://www.tczhong.com/categories/graph/</link>
     <description>Recent content in Graph on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 24 May 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/graph/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 May 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/graph/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to draw graph in code</title>
-      <link>http://www.tczhong.com/posts/mac/graphvis/</link>
+      <link>https://www.tczhong.com/posts/mac/graphvis/</link>
       <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/mac/graphvis/</guid>
+      <guid>https://www.tczhong.com/posts/mac/graphvis/</guid>
       <description>Basic Drawing We could use Graphviz to draw a graph in code and it is also easily to used in Markdown file. In this blog, I will focus on dot tool.
 In the beginning, we need to install it. If you are a Mac user, we could use brew install graphvis. For other user, you could download file from the official website.
 You could create a file with the following code.</description>

@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hadoop on TC blog</title>
-    <link>http://www.tczhong.com/categories/hadoop/</link>
+    <link>https://www.tczhong.com/categories/hadoop/</link>
     <description>Recent content in Hadoop on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 17 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/hadoop/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/hadoop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Improve performance on HBase</title>
-      <link>http://www.tczhong.com/posts/cc/hbase-reading/</link>
+      <link>https://www.tczhong.com/posts/cc/hbase-reading/</link>
       <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/hbase-reading/</guid>
+      <guid>https://www.tczhong.com/posts/cc/hbase-reading/</guid>
       <description>Tips on improving reading performance In some scenario, we need to have high RPS in HBase reading.Therefore, we could change some configuration in HBase to meet this requirement. I found this blog very helpful. HBase official guide is also great.
  Increase hfile.block.cache.size and decrease hbase.regionserver.global.memstore.size. The first configuration is for reading cache and the second one is writing cache. The sum of two value should be 0.8 Decrease BLOCKSIZE in HBase table.</description>
     </item>
     
     <item>
       <title>Mapreduce custom output</title>
-      <link>http://www.tczhong.com/posts/cc/mapreduce/</link>
+      <link>https://www.tczhong.com/posts/cc/mapreduce/</link>
       <pubDate>Tue, 10 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/mapreduce/</guid>
+      <guid>https://www.tczhong.com/posts/cc/mapreduce/</guid>
       <description>Introduction Mapreduce is a very strong computing framework and we could use it to transform data to HDFS. Acutally, we could use Mapreduce to write data to any databse.
 Basic input and output The key thing in Mapreduce is Mapper and Reducer. We use the following code snippets to build a mapper. Here, Mapper&amp;lt;Object, Text, Text, Text&amp;gt; means input key and value class and ouput key and value class. Please notice that we could not use string and int here, since it is not fit the requirement in HDFS.</description>
     </item>

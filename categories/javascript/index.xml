@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JavaScript on TC blog</title>
-    <link>http://www.tczhong.com/categories/javascript/</link>
+    <link>https://www.tczhong.com/categories/javascript/</link>
     <description>Recent content in JavaScript on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 15 Jul 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Jul 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Solve TimeZone in Azure Web App</title>
-      <link>http://www.tczhong.com/posts/cc/azure-timezone/</link>
+      <link>https://www.tczhong.com/posts/cc/azure-timezone/</link>
       <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/azure-timezone/</guid>
+      <guid>https://www.tczhong.com/posts/cc/azure-timezone/</guid>
       <description>TimeZone&amp;rsquo;s Problem In my intern project, I need to handle timezone problem. Because in US, there is Daylight time saving and 5 diffferent timezone. My code should provide service for people in different timezones. Therefore, in the front end, I could allow user input time in their own timezone, but I should save date and time in GMT+0. Then I could make sure all time in database is saved in the same timezone.</description>
     </item>
     

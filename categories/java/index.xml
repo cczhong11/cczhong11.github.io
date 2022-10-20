@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java on TC blog</title>
-    <link>http://www.tczhong.com/categories/java/</link>
+    <link>https://www.tczhong.com/categories/java/</link>
     <description>Recent content in Java on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Read Static file in Apache Samza</title>
-      <link>http://www.tczhong.com/posts/cc/samzastaticfile/</link>
+      <link>https://www.tczhong.com/posts/cc/samzastaticfile/</link>
       <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/samzastaticfile/</guid>
+      <guid>https://www.tczhong.com/posts/cc/samzastaticfile/</guid>
       <description>Scenario Apache Samza is a stream processing framework developed by Linkedin. It allows we to build stateful applications that process data in real-time and it could read data from Apache Kafka smoothly. It has handful of examples on how to read stream data from Kafka topic. However, it did not include any working examples for Apache Samza to consume static data and stream data at the same time in stream processing.</description>
     </item>
     
     <item>
       <title>Solve TimeZone in Azure Web App</title>
-      <link>http://www.tczhong.com/posts/cc/azure-timezone/</link>
+      <link>https://www.tczhong.com/posts/cc/azure-timezone/</link>
       <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/azure-timezone/</guid>
+      <guid>https://www.tczhong.com/posts/cc/azure-timezone/</guid>
       <description>TimeZone&amp;rsquo;s Problem In my intern project, I need to handle timezone problem. Because in US, there is Daylight time saving and 5 diffferent timezone. My code should provide service for people in different timezones. Therefore, in the front end, I could allow user input time in their own timezone, but I should save date and time in GMT+0. Then I could make sure all time in database is saved in the same timezone.</description>
     </item>
     
     <item>
       <title>Solve NoSuchMethodError in Azure JAVA SDK </title>
-      <link>http://www.tczhong.com/posts/cc/azure-error/</link>
+      <link>https://www.tczhong.com/posts/cc/azure-error/</link>
       <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/azure-error/</guid>
+      <guid>https://www.tczhong.com/posts/cc/azure-error/</guid>
       <description>Problem I met a NoSuchMethodError in Azure Java SDK. The error message is like the following:
 Exception in thread &amp;#34;main&amp;#34; java.lang.NoSuchMethodError: com.microsoft.azure.credentials.ApplicationTokenCredentials.proxy()Ljava/net/Proxy; It was very strange and I searched on the stackoverflow. And it shows the problem could be confliction in package version. Therefore I looked into the code to find the reason.
 Solution In the beginning, I needed to go into the source code to see what happened there.</description>
@@ -38,10 +38,10 @@ Solution In the beginning, I needed to go into the source code to see what happe
     
     <item>
       <title>Spring MVC model</title>
-      <link>http://www.tczhong.com/posts/java/spring_mvc/</link>
+      <link>https://www.tczhong.com/posts/java/spring_mvc/</link>
       <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/java/spring_mvc/</guid>
+      <guid>https://www.tczhong.com/posts/java/spring_mvc/</guid>
       <description>Spring boot Framework Spring boot framework is a strong framework helps you build a MVC model web service quickly. So in the first place, we need to understand what is MVC model
 Model-View-Controller  Model  Model represent knowledge. It represents how basic items interact with each other.
 Views  A view is a (visual) representation of its model. A view is attached to its model (or model part) and gets the data necessary for the presentation from the model by asking questions.</description>

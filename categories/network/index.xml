@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Network on TC blog</title>
-    <link>http://www.tczhong.com/categories/network/</link>
+    <link>https://www.tczhong.com/categories/network/</link>
     <description>Recent content in Network on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Network Layers</title>
-      <link>http://www.tczhong.com/posts/cc/networklayer/</link>
+      <link>https://www.tczhong.com/posts/cc/networklayer/</link>
       <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/networklayer/</guid>
+      <guid>https://www.tczhong.com/posts/cc/networklayer/</guid>
       <description>Network Layers In the network, there are two main parts, one is network edge, the other is network core. The network edge is end system, which running applications. The network core is routers and interconnected network.
 We used the layered architecture in OSI model, it can help us decompose the complexity of network, develop protocol separately. Also implementation in one layer can change without affecting other layers. In the above layers, we do not need to concern the details of lower layers.</description>
     </item>

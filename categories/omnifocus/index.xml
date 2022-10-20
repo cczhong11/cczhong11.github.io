@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Omnifocus on TC blog</title>
-    <link>http://www.tczhong.com/categories/omnifocus/</link>
+    <link>https://www.tczhong.com/categories/omnifocus/</link>
     <description>Recent content in Omnifocus on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/omnifocus/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/omnifocus/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to build your own apple script for omnifocus</title>
-      <link>http://www.tczhong.com/posts/mac/omnifocusapplescriptbasic/</link>
+      <link>https://www.tczhong.com/posts/mac/omnifocusapplescriptbasic/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/mac/omnifocusapplescriptbasic/</guid>
+      <guid>https://www.tczhong.com/posts/mac/omnifocusapplescriptbasic/</guid>
       <description>How to use apple script with Omnifocus Omnifocus is a very great to-do list app in Mac and iPhone. It is expensive and very good to use. We could also use apple script to make it become more powerful.
 List all done tasks In many cases, we need to do summary on how many tasks we have done that day or week. Therefore, we could just log out all completed tasks and send to notebook/Day one.</description>
     </item>

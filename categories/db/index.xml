@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>db on TC blog</title>
-    <link>http://www.tczhong.com/categories/db/</link>
+    <link>https://www.tczhong.com/categories/db/</link>
     <description>Recent content in db on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/db/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/db/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Database concurrency control</title>
-      <link>http://www.tczhong.com/posts/db/concurrencycontrol/</link>
+      <link>https://www.tczhong.com/posts/db/concurrencycontrol/</link>
       <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/db/concurrencycontrol/</guid>
+      <guid>https://www.tczhong.com/posts/db/concurrencycontrol/</guid>
       <description>Concurrency control In the database system, it could execute several operations concurrently. The basic unit of change in DBMS is Transaction. Transaction is the execution of a sequence of one or more operations on a shared database to perform some higher level function. It is a sequence of read and write operations.
 The outcome of a transaction is either COMMIT or ABORT. If commit, all the transaction&amp;rsquo;s modifications are saved to the database.</description>
     </item>
     
     <item>
       <title>SQL basics</title>
-      <link>http://www.tczhong.com/posts/db/sql/</link>
+      <link>https://www.tczhong.com/posts/db/sql/</link>
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/db/sql/</guid>
+      <guid>https://www.tczhong.com/posts/db/sql/</guid>
       <description>Introduction to SQL SQL is a very important language we used in Relational Database management system. Writing efficient SQL query can help us do lots of things.
 Relational model In the beginning, I would like to talk about relational model. In short, it is a table with different columns. In a more specific definition, it is an approach to managing data using a structure and language consistent with first-order predicate logic.</description>
     </item>

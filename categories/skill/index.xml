@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Skill on TC blog</title>
-    <link>http://www.tczhong.com/categories/skill/</link>
+    <link>https://www.tczhong.com/categories/skill/</link>
     <description>Recent content in Skill on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 03 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/skill/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/skill/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My thinking in Time Management</title>
-      <link>http://www.tczhong.com/posts/skill/timemanagement/</link>
+      <link>https://www.tczhong.com/posts/skill/timemanagement/</link>
       <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/skill/timemanagement/</guid>
+      <guid>https://www.tczhong.com/posts/skill/timemanagement/</guid>
       <description>My thinking in Time Management Actually time could not be managed, you could only control yourself and decide where to spend you time. The most important thing in life is to know the power of persistence.
 In each task, there are easy parts and hard parts. In this era, getting into some new field is not as hard as before, we could know anything by just clicking on Internet. Many easy-reading tutorial could help us to know a new tool or new programming language in a few hours.</description>
     </item>

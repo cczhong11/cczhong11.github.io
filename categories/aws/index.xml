@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AWS on TC blog</title>
-    <link>http://www.tczhong.com/categories/aws/</link>
+    <link>https://www.tczhong.com/categories/aws/</link>
     <description>Recent content in AWS on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 14 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/aws/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fix the strong problem when fetch s3 object</title>
-      <link>http://www.tczhong.com/posts/cc/fix-alexa-skill-s3/</link>
+      <link>https://www.tczhong.com/posts/cc/fix-alexa-skill-s3/</link>
       <pubDate>Sat, 14 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/fix-alexa-skill-s3/</guid>
+      <guid>https://www.tczhong.com/posts/cc/fix-alexa-skill-s3/</guid>
       <description>Fix the strong problem when fetch s3 object Problem I used to have a Alexa skill to play the music from my s3 storage, but it did not work properly for a while. In the beginning, I thought it was code logic, but after digging into the logic I could not find the error.
 The main problem is here
 responseBuilder.addAudioPlayerPlayDirective( playBehavior, podcast.url, enqueueToken, offsetInMilliseconds, expectedPreviousToken, ); It should play the music from the url, I logged the podcast url and I also tried from the browser, it worked fine.</description>
@@ -20,20 +20,20 @@ responseBuilder.addAudioPlayerPlayDirective( playBehavior, podcast.url, enqueueT
     
     <item>
       <title>Alexa music player project</title>
-      <link>http://www.tczhong.com/posts/project/alexamusic/</link>
+      <link>https://www.tczhong.com/posts/project/alexamusic/</link>
       <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/project/alexamusic/</guid>
+      <guid>https://www.tczhong.com/posts/project/alexamusic/</guid>
       <description>Alexa music player Amazon Alexa is a good voice assistant in our home. As a speaker, the best usage is still a
 //debug when just see error in cloudwatch, see your alexa app, some error message display on the screen</description>
     </item>
     
     <item>
       <title>HackMidwest -- Sonder</title>
-      <link>http://www.tczhong.com/posts/project/hackmidwest/</link>
+      <link>https://www.tczhong.com/posts/project/hackmidwest/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/project/hackmidwest/</guid>
+      <guid>https://www.tczhong.com/posts/project/hackmidwest/</guid>
       <description>Hack Midwest &amp;ndash; Team Sonder We won Sprint Prize and Cloudinary Prize.
 Sonder is a proximity-based multi-purpose private network with applications in home automation, event planning and anonymous communication, enabled through text-based (SMS) virtual assistant. It allows user to anonymously interact with authorized peers.
 The problem is every virtual automation assistance needs wifi to communicate with each other, we want to make a AP-less virtual automation. The main idea is to use cellular services to interact with a central hub to process information in areas such as home/office, social gatherings and hackathons.</description>

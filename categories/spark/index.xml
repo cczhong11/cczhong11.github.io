@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Spark on TC blog</title>
-    <link>http://www.tczhong.com/categories/spark/</link>
+    <link>https://www.tczhong.com/categories/spark/</link>
     <description>Recent content in Spark on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Mar 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/spark/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Mar 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/spark/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GCP for Spark</title>
-      <link>http://www.tczhong.com/posts/cc/gcp-spark/</link>
+      <link>https://www.tczhong.com/posts/cc/gcp-spark/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/gcp-spark/</guid>
+      <guid>https://www.tczhong.com/posts/cc/gcp-spark/</guid>
       <description>GCP is very cheap compared with AWS and Azure. However, it did not have enough documentation and I met some problems that did not even on StackOverflow. That&amp;rsquo;s why I want to write this blog.
 Start your cluster We could use command line with GCP CLI to start cluster.
 gcloud dataproc clusters create cluster-name --project=project-id --bucket outputbucket --initialization-actions gs://xxx/jupyter.sh --master-machine-type=n1-standard-2 --worker-machine-type=n1-standard-1 --zone=xxxx Install external Python package on Spark If we want to use your own package and Juypter NoteBook on Spark, you need to contain an initialization step for your cluster.</description>
@@ -20,10 +20,10 @@ gcloud dataproc clusters create cluster-name --project=project-id --bucket outpu
     
     <item>
       <title>Spark for ETL</title>
-      <link>http://www.tczhong.com/posts/cc/spark-etl/</link>
+      <link>https://www.tczhong.com/posts/cc/spark-etl/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/spark-etl/</guid>
+      <guid>https://www.tczhong.com/posts/cc/spark-etl/</guid>
       <description>There is not much information about how could we perform complex operation on pySpark. I summary some tips from stackoverflow and my experience. Hope it will be helpful for you.
 How to Read JSON to DataFrame There are serveral ways to read json in Spark. The most common way is to load json in a DataFrame. Why not rdd? Because json contains some hierachy information and it could not represent well in RDD.</description>
     </item>

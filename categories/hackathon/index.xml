@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hackathon on TC blog</title>
-    <link>http://www.tczhong.com/categories/hackathon/</link>
+    <link>https://www.tczhong.com/categories/hackathon/</link>
     <description>Recent content in Hackathon on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 23 Jul 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/hackathon/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Jul 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/hackathon/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HackMidwest -- Sonder</title>
-      <link>http://www.tczhong.com/posts/project/hackmidwest/</link>
+      <link>https://www.tczhong.com/posts/project/hackmidwest/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/project/hackmidwest/</guid>
+      <guid>https://www.tczhong.com/posts/project/hackmidwest/</guid>
       <description>Hack Midwest &amp;ndash; Team Sonder We won Sprint Prize and Cloudinary Prize.
 Sonder is a proximity-based multi-purpose private network with applications in home automation, event planning and anonymous communication, enabled through text-based (SMS) virtual assistant. It allows user to anonymously interact with authorized peers.
 The problem is every virtual automation assistance needs wifi to communicate with each other, we want to make a AP-less virtual automation. The main idea is to use cellular services to interact with a central hub to process information in areas such as home/office, social gatherings and hackathons.</description>

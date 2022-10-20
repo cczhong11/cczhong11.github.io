@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AR on TC blog</title>
-    <link>http://www.tczhong.com/categories/ar/</link>
+    <link>https://www.tczhong.com/categories/ar/</link>
     <description>Recent content in AR on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 18 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/ar/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/ar/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Embed AR in your website</title>
-      <link>http://www.tczhong.com/posts/frontend/view-ar-object-on-the-web/</link>
+      <link>https://www.tczhong.com/posts/frontend/view-ar-object-on-the-web/</link>
       <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/frontend/view-ar-object-on-the-web/</guid>
+      <guid>https://www.tczhong.com/posts/frontend/view-ar-object-on-the-web/</guid>
       <description>It is fun to view AR object with your iPhone. In fact, it is not hard to embed the AR animation in your website.
 Follow the following step and you can do it.
 Step 1: Prepare your usdz file Create a 3D animation and export it as usdz file. You can use some tool like: vectary.

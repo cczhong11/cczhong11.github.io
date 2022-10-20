@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cloud computing on TC blog</title>
-    <link>http://www.tczhong.com/categories/cloud-computing/</link>
+    <link>https://www.tczhong.com/categories/cloud-computing/</link>
     <description>Recent content in Cloud computing on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 05 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/cloud-computing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/cloud-computing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Build Spark Streaming with Kafka</title>
-      <link>http://www.tczhong.com/posts/cc/kafkastream/</link>
+      <link>https://www.tczhong.com/posts/cc/kafkastream/</link>
       <pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/kafkastream/</guid>
+      <guid>https://www.tczhong.com/posts/cc/kafkastream/</guid>
       <description>In this blog, I introduce a way to do streaming processing with Kafka and Spark Streaming. In the workflow, Kafka is used as a message queuing system and Spark Streaming process data from Kafka and save them into MySQL database.
 Install the software In this section, we need to install these things on the machine.
  Hadoop Spark Kafka MySQL  In the beginning, we need to download Hadoop from the official website and then extract them.</description>
@@ -20,48 +20,48 @@ Install the software In this section, we need to install these things on the mac
     
     <item>
       <title>Slack and Piazza</title>
-      <link>http://www.tczhong.com/posts/cc/piazza/</link>
+      <link>https://www.tczhong.com/posts/cc/piazza/</link>
       <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/piazza/</guid>
+      <guid>https://www.tczhong.com/posts/cc/piazza/</guid>
       <description>Piazza and Slack integration Slack is very popular in the workspace. As a TA in Cloud Computing Course (15-619), we also use Slack to discuss with each other and solve student&amp;rsquo;s problem together. Piazza is another common tool we used every day. It is like a forum within the course.
 When a student asks a question, we want to answer them quickly. Piazza could send you new questions in real time with email.</description>
     </item>
     
     <item>
       <title>Read Static file in Apache Samza</title>
-      <link>http://www.tczhong.com/posts/cc/samzastaticfile/</link>
+      <link>https://www.tczhong.com/posts/cc/samzastaticfile/</link>
       <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/samzastaticfile/</guid>
+      <guid>https://www.tczhong.com/posts/cc/samzastaticfile/</guid>
       <description>Scenario Apache Samza is a stream processing framework developed by Linkedin. It allows we to build stateful applications that process data in real-time and it could read data from Apache Kafka smoothly. It has handful of examples on how to read stream data from Kafka topic. However, it did not include any working examples for Apache Samza to consume static data and stream data at the same time in stream processing.</description>
     </item>
     
     <item>
       <title>Virtual IoT Device on Cloud</title>
-      <link>http://www.tczhong.com/posts/cc/iot/</link>
+      <link>https://www.tczhong.com/posts/cc/iot/</link>
       <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/iot/</guid>
+      <guid>https://www.tczhong.com/posts/cc/iot/</guid>
       <description>Virtual IoT Device on Cloud IoT is very hot in these days. I believe in the future, all the devices in the home will have some connections with the internet. We could easily get the stream data from these devices and do some analysis to find the trend or abnormal event. Thanks for 5G and IPV6, it is possible to have enough addresses and high speed network.
 There are some key skills that are required in the companies.</description>
     </item>
     
     <item>
       <title>Solve TimeZone in Azure Web App</title>
-      <link>http://www.tczhong.com/posts/cc/azure-timezone/</link>
+      <link>https://www.tczhong.com/posts/cc/azure-timezone/</link>
       <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/azure-timezone/</guid>
+      <guid>https://www.tczhong.com/posts/cc/azure-timezone/</guid>
       <description>TimeZone&amp;rsquo;s Problem In my intern project, I need to handle timezone problem. Because in US, there is Daylight time saving and 5 diffferent timezone. My code should provide service for people in different timezones. Therefore, in the front end, I could allow user input time in their own timezone, but I should save date and time in GMT+0. Then I could make sure all time in database is saved in the same timezone.</description>
     </item>
     
     <item>
       <title>Solve NoSuchMethodError in Azure JAVA SDK </title>
-      <link>http://www.tczhong.com/posts/cc/azure-error/</link>
+      <link>https://www.tczhong.com/posts/cc/azure-error/</link>
       <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/azure-error/</guid>
+      <guid>https://www.tczhong.com/posts/cc/azure-error/</guid>
       <description>Problem I met a NoSuchMethodError in Azure Java SDK. The error message is like the following:
 Exception in thread &amp;#34;main&amp;#34; java.lang.NoSuchMethodError: com.microsoft.azure.credentials.ApplicationTokenCredentials.proxy()Ljava/net/Proxy; It was very strange and I searched on the stackoverflow. And it shows the problem could be confliction in package version. Therefore I looked into the code to find the reason.
 Solution In the beginning, I needed to go into the source code to see what happened there.</description>
@@ -69,19 +69,19 @@ Solution In the beginning, I needed to go into the source code to see what happe
     
     <item>
       <title>Create a thumbnail of photo using Java</title>
-      <link>http://www.tczhong.com/posts/java/createthumbnail/</link>
+      <link>https://www.tczhong.com/posts/java/createthumbnail/</link>
       <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/java/createthumbnail/</guid>
+      <guid>https://www.tczhong.com/posts/java/createthumbnail/</guid>
       <description>Create a thumbnail of photo using Java Why we need a thumbnail In the mobile application, if we want to show a picture quickly and we do not care the clarity of that image. We could create a thumbnail of that image, which is a smaller version of this image. The original image captured by iPhone X could be 10 MB, but the thumbnail only have 50 kb, which is much more handy to use when you need to show them quickly.</description>
     </item>
     
     <item>
       <title>Spring MVC model</title>
-      <link>http://www.tczhong.com/posts/java/spring_mvc/</link>
+      <link>https://www.tczhong.com/posts/java/spring_mvc/</link>
       <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/java/spring_mvc/</guid>
+      <guid>https://www.tczhong.com/posts/java/spring_mvc/</guid>
       <description>Spring boot Framework Spring boot framework is a strong framework helps you build a MVC model web service quickly. So in the first place, we need to understand what is MVC model
 Model-View-Controller  Model  Model represent knowledge. It represents how basic items interact with each other.
 Views  A view is a (visual) representation of its model. A view is attached to its model (or model part) and gets the data necessary for the presentation from the model by asking questions.</description>
@@ -89,50 +89,50 @@ Views  A view is a (visual) representation of its model. A view is attached to i
     
     <item>
       <title>Undertow configuration</title>
-      <link>http://www.tczhong.com/posts/cc/undertow/</link>
+      <link>https://www.tczhong.com/posts/cc/undertow/</link>
       <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/undertow/</guid>
+      <guid>https://www.tczhong.com/posts/cc/undertow/</guid>
       <description>Undertow This is a very fast Java web server. When using this web server, I met some problems but I could not find enough answers even on the stackOverflow. Therefore, I decided to write my experience down.
 How to set parameters to each Servlet? It is necessary for us to pass some parameters to Serlet functions. One way to do this is to use addInitParam when adding Servlet. Like the following code.</description>
     </item>
     
     <item>
       <title>Scala join RDD tips</title>
-      <link>http://www.tczhong.com/posts/cc/scala-spark-join/</link>
+      <link>https://www.tczhong.com/posts/cc/scala-spark-join/</link>
       <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/scala-spark-join/</guid>
+      <guid>https://www.tczhong.com/posts/cc/scala-spark-join/</guid>
       <description>Why Spark RDD join is expensive As we know, Join is the most expensive operation on rdd. The reason is when we join two rdd, it requires corresponding keys from each RDD are located at the same partition so that they can be combined locally. Therefore, we will shuffle keys from each rdd to make sure they are in the same partition.
 You could learn more about rdd join from here</description>
     </item>
     
     <item>
       <title>Improve performance on HBase</title>
-      <link>http://www.tczhong.com/posts/cc/hbase-reading/</link>
+      <link>https://www.tczhong.com/posts/cc/hbase-reading/</link>
       <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/hbase-reading/</guid>
+      <guid>https://www.tczhong.com/posts/cc/hbase-reading/</guid>
       <description>Tips on improving reading performance In some scenario, we need to have high RPS in HBase reading.Therefore, we could change some configuration in HBase to meet this requirement. I found this blog very helpful. HBase official guide is also great.
  Increase hfile.block.cache.size and decrease hbase.regionserver.global.memstore.size. The first configuration is for reading cache and the second one is writing cache. The sum of two value should be 0.8 Decrease BLOCKSIZE in HBase table.</description>
     </item>
     
     <item>
       <title>Mapreduce custom output</title>
-      <link>http://www.tczhong.com/posts/cc/mapreduce/</link>
+      <link>https://www.tczhong.com/posts/cc/mapreduce/</link>
       <pubDate>Tue, 10 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/mapreduce/</guid>
+      <guid>https://www.tczhong.com/posts/cc/mapreduce/</guid>
       <description>Introduction Mapreduce is a very strong computing framework and we could use it to transform data to HDFS. Acutally, we could use Mapreduce to write data to any databse.
 Basic input and output The key thing in Mapreduce is Mapper and Reducer. We use the following code snippets to build a mapper. Here, Mapper&amp;lt;Object, Text, Text, Text&amp;gt; means input key and value class and ouput key and value class. Please notice that we could not use string and int here, since it is not fit the requirement in HDFS.</description>
     </item>
     
     <item>
       <title>GCP for Spark</title>
-      <link>http://www.tczhong.com/posts/cc/gcp-spark/</link>
+      <link>https://www.tczhong.com/posts/cc/gcp-spark/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/gcp-spark/</guid>
+      <guid>https://www.tczhong.com/posts/cc/gcp-spark/</guid>
       <description>GCP is very cheap compared with AWS and Azure. However, it did not have enough documentation and I met some problems that did not even on StackOverflow. That&amp;rsquo;s why I want to write this blog.
 Start your cluster We could use command line with GCP CLI to start cluster.
 gcloud dataproc clusters create cluster-name --project=project-id --bucket outputbucket --initialization-actions gs://xxx/jupyter.sh --master-machine-type=n1-standard-2 --worker-machine-type=n1-standard-1 --zone=xxxx Install external Python package on Spark If we want to use your own package and Juypter NoteBook on Spark, you need to contain an initialization step for your cluster.</description>
@@ -140,10 +140,10 @@ gcloud dataproc clusters create cluster-name --project=project-id --bucket outpu
     
     <item>
       <title>Spark for ETL</title>
-      <link>http://www.tczhong.com/posts/cc/spark-etl/</link>
+      <link>https://www.tczhong.com/posts/cc/spark-etl/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/spark-etl/</guid>
+      <guid>https://www.tczhong.com/posts/cc/spark-etl/</guid>
       <description>There is not much information about how could we perform complex operation on pySpark. I summary some tips from stackoverflow and my experience. Hope it will be helpful for you.
 How to Read JSON to DataFrame There are serveral ways to read json in Spark. The most common way is to load json in a DataFrame. Why not rdd? Because json contains some hierachy information and it could not represent well in RDD.</description>
     </item>

@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Intern on TC blog</title>
-    <link>http://www.tczhong.com/categories/intern/</link>
+    <link>https://www.tczhong.com/categories/intern/</link>
     <description>Recent content in Intern on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/intern/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/intern/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Intern Project</title>
-      <link>http://www.tczhong.com/posts/project/intern/</link>
+      <link>https://www.tczhong.com/posts/project/intern/</link>
       <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/project/intern/</guid>
+      <guid>https://www.tczhong.com/posts/project/intern/</guid>
       <description>Intern Project In this summer, I am the intern from the Cloud infrastructure team in Walmart Sam&amp;rsquo;s Club and my manager is Ciby. My project is to design a scheduler to help developers to dynamically scale CosmosDB resource based on time.
 Background and Problem I want to talk about some background information about my project. Azure Cosmos DB is a popular database among all application development teams in Sams. The billing of usage is based on Resource Unit configuration.</description>
     </item>
     
     <item>
       <title>Solve TimeZone in Azure Web App</title>
-      <link>http://www.tczhong.com/posts/cc/azure-timezone/</link>
+      <link>https://www.tczhong.com/posts/cc/azure-timezone/</link>
       <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.tczhong.com/posts/cc/azure-timezone/</guid>
+      <guid>https://www.tczhong.com/posts/cc/azure-timezone/</guid>
       <description>TimeZone&amp;rsquo;s Problem In my intern project, I need to handle timezone problem. Because in US, there is Daylight time saving and 5 diffferent timezone. My code should provide service for people in different timezones. Therefore, in the front end, I could allow user input time in their own timezone, but I should save date and time in GMT+0. Then I could make sure all time in database is saved in the same timezone.</description>
     </item>
     
