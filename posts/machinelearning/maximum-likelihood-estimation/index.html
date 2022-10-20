@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.67.0" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -27,9 +27,10 @@
 <meta property="og:title" content="Maximum likelihood estimation" />
 <meta property="og:description" content="Basic idea for Maximum likelihood estimation" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.tczhong.com/posts/machinelearning/maximum-likelihood-estimation/" />
+<meta property="og:url" content="http://www.tczhong.com/posts/machinelearning/maximum-likelihood-estimation/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-05-01T00:00:00+00:00" />
 <meta property="article:modified_time" content="2018-05-01T00:00:00+00:00" /><meta property="og:site_name" content="TC blog" />
+
 
 
     
@@ -207,27 +208,27 @@
 $p(x_1,x_2,x_3&hellip;,x_m;\theta) = \prod_{i=1}^m p(x_i;\theta)$</p>
 <p>So, what&rsquo;s the most possible $\theta$ under this circumstance, it is when this possibility get its maximum value. Therefore, we want to maximize $\theta$, to calculate
 $$maximize_\theta ; \prod_{i=1}^m p(x^{(i)};\theta)$$
-If we take the log to $p(x)$, we could get the **log likelihood** of the data, which is also equivalent to that value.
+If we take the log to $p(x)$, we could get the <strong>log likelihood</strong> of the data, which is also equivalent to that value.
 $$maximize_\theta ; \frac{1}{m} \sum_{i=1}^m \log p(x^{(i)};\theta)$$</p>
 <p>Therefore, when we need to calculate $\phi$ in Bernoulli distribution, we could use $p(X = x; \phi) = \phi^x (1-\phi)^{(1-x)}$ to capture $x=1$ and $x=0$ at the same time. Then we could rewrite it to $maximize_{\phi} \sum_{i=1}^m (x^{(i)}\log\phi + (1-x^{(i)}) \log (1-\phi))$</p>
 <p>In order to maximize this equation, let&rsquo;s take the derivative and set it equal to 0. So, we could know why we could estimate $\phi$ just like this.
 $$\begin{split}
 \frac{d}{d \phi} \sum_{i=1}^m \left (x^{(i)}\log\phi + (1-x^{(i)}) \log (1-\phi) \right )
-&amp; = \sum_{i=1}^m \frac{d}{d \phi} \left ( x^{(i)}\log\phi + (1-x^{(i)}) \log (1-\phi) \right )  \<br>
+&amp; = \sum_{i=1}^m \frac{d}{d \phi} \left ( x^{(i)}\log\phi + (1-x^{(i)}) \log (1-\phi) \right )  \
 &amp; = \sum_{i=1}^m \left ( \frac{x^{(i)}}{\phi} - \frac{1-x^{(i)}}{1-\phi} \right )
 \end{split}$$</p>
 <p>$$\begin{split}
-&amp; \sum_{i=1}^m \left ( \frac{x^{(i)}}{\phi} - \frac{1-x^{(i)}}{1-\phi} \right ) = 0 \<br>
-\Longrightarrow ;; &amp; \frac{\sum_{i=1}^m x^{(i)}}{\phi} - \frac{\sum_{i=1}^m (1-x^{(i)})} {1-\phi} = 0 \<br>
-\Longrightarrow ;; &amp; (1-\phi) \sum_{i=1}^m x^{(i)}  - \phi \sum_{i=1}^m (1-x^{(i)}) = 0 \<br>
-\Longrightarrow ;; &amp; \sum_{i=1}^m x^{(i)} = \phi \sum_{i=1}^m (x^{(i)} + (1-x^{(i)})) \<br>
-\Longrightarrow ;; &amp; \sum_{i=1}^m x^{(i)} = \phi m \<br>
+&amp; \sum_{i=1}^m \left ( \frac{x^{(i)}}{\phi} - \frac{1-x^{(i)}}{1-\phi} \right ) = 0 \
+\Longrightarrow ;; &amp; \frac{\sum_{i=1}^m x^{(i)}}{\phi} - \frac{\sum_{i=1}^m (1-x^{(i)})} {1-\phi} = 0 \
+\Longrightarrow ;; &amp; (1-\phi) \sum_{i=1}^m x^{(i)}  - \phi \sum_{i=1}^m (1-x^{(i)}) = 0 \
+\Longrightarrow ;; &amp; \sum_{i=1}^m x^{(i)} = \phi \sum_{i=1}^m (x^{(i)} + (1-x^{(i)})) \
+\Longrightarrow ;; &amp; \sum_{i=1}^m x^{(i)} = \phi m \
 \Longrightarrow ;; &amp; \phi = \frac{\sum_{i=1}^m x^{(i)}}{m}.
 \end{split}$$</p>
 <h2 id="naive-bayes">Naive bayes</h2>
 <p>Naive bayes is an easy method, the key is to calculate $$p(Y \mid X) = \frac{p(X \mid Y)p(Y)}{\sum_y p(X \mid y) p(y)}$$. We could calculate $P(X \ mid Y)$ and $P(Y)$ respectively.</p>
 <p>The naive Bayes approach, however, is to make the additional assumption that the individual features  $X_i$  are conditionally independent given  $Y$ . This lets us represent the condition $p(X \mid Y) = \prod_{i=1}^n p(X_i \mid Y)$.</p>
-<p>For example, we need to detect spam mail. We need to training the classifier. The training data tells us $P(words|spam)$ and $P(words'|not spam)$, then we could get the $P(spam)$, we could use $P(spam|words&rsquo;') = \frac{p(words|spam)P(spam)}{p(words|spam)P(spam)+p(words|not spam)P(not spam)}$</p>
+<p>For example, we need to detect spam mail. We need to training the classifier. The training data tells us $P(words|spam)$ and $P(words'|not spam)$, then we could get the $P(spam)$, we could use $P(spam|words'') = \frac{p(words|spam)P(spam)}{p(words|spam)P(spam)+p(words|not spam)P(not spam)}$</p>
 <p>We could use log to avoid too small value yield from $\prod$, like $\log p(y) + \sum_{i=1}^n \log p(x_i \mid y)$.</p>
 <p>We also could use laplace smoothing to avoid zero. $\phi_i^y = \frac{\sum_{j=1}^m x_i^{(j)} \mathrm{1}{y^{(j)} = y} + 1}{\sum_{j=1}^m \mathrm{1}{y^{(j)} = y} + 2}$</p>
 <h2 id="logistic-regression">logistic regression</h2>

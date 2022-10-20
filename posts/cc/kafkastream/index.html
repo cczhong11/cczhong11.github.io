@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.67.0" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -27,9 +27,10 @@
 <meta property="og:title" content="Build Spark Streaming with Kafka" />
 <meta property="og:description" content="This blog will introduce a way to connect Spark Streaming and Kafka together" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.tczhong.com/posts/cc/kafkastream/" />
+<meta property="og:url" content="http://www.tczhong.com/posts/cc/kafkastream/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-04-05T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-04-05T00:00:00+00:00" /><meta property="og:site_name" content="TC blog" />
+
 
 
     
@@ -222,12 +223,12 @@
 </ul>
 <p><img src="https://hadoop.apache.org/hadoop-logo.jpg" alt=""></p>
 <p>In the beginning, we need to download Hadoop from the official website and then extract them. Next, we need to set the environment path.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget -P ~ http://archive.apache.org/dist/hadoop/common/hadoop-2.8.0/hadoop-2.8.0.tar.gz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget -P ~ http://archive.apache.org/dist/hadoop/common/hadoop-2.8.0/hadoop-2.8.0.tar.gz
 tar xf hadoop-2.8.0.tar.gz
 echo HADOOP_HOME<span style="color:#f92672">=</span>~/hadoop-2.8.0 &gt;&gt; ~/.bashrc
 </code></pre></div><p><img src="https://spark.apache.org/images/spark-logo-trademark.png" alt=""></p>
 <p>We could use a similar procedure to install the Spark.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># download spark</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># download spark</span>
 wget -P ~ http://mirrors.advancedhosters.com/apache/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz
 tar -zxvf spark-2.4.0-bin-hadoop2.7.tgz
 
@@ -237,12 +238,12 @@ source ~/.bashrc
 </code></pre></div><p>Installing the MySQL is the easiest one, we only need to use <code>sudo apt-get install mysql-server </code> to install it. One thing to remember is that we only need to use <code>sudo mysql</code> to login MySQL as the root user.</p>
 <p><img src="https://kafka.apache.org/images/logo.png" alt=""></p>
 <p>Installing Kafka is a bit difficult because we need to set up Zookeeper to start the Kafka service. The detailed procedure you could find <a href="https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-18-04">here</a>. We can use</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor <span style="color:#ae81ff">1</span> --partitions <span style="color:#ae81ff">5</span> --topic xxxx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor <span style="color:#ae81ff">1</span> --partitions <span style="color:#ae81ff">5</span> --topic xxxx
 </code></pre></div><p>to test the installation result.</p>
 <h2 id="setup-kafka-producer">Setup Kafka producer</h2>
 <p>Because we did not have streaming data, we need to produce from the  Kafka Producer API. Here is a straightforward java project. The Kafka Producer API you can find <a href="https://kafka.apache.org/10/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html">here</a></p>
 <p>The main part code is here. In my code, I sent the data to different partition based on <code>fid</code>. For the completed example, you can visit <a href="https://github.com/omkreddy/kafka-examples/tree/master/producer">here</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">KafkaProducer<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> producer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> KafkaProducer<span style="color:#f92672">&lt;&gt;(</span>props<span style="color:#f92672">);</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">KafkaProducer<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> producer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> KafkaProducer<span style="color:#f92672">&lt;&gt;(</span>props<span style="color:#f92672">);</span>
 
         JsonParser parser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JsonParser<span style="color:#f92672">();</span>
         BufferedReader bufferedReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileReader<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;xxxxxx.log&#34;</span><span style="color:#f92672">));</span>
@@ -263,14 +264,14 @@ source ~/.bashrc
 </code></pre></div><h2 id="set-up-spark-streaming">Set up Spark Streaming</h2>
 <p>This part is not as easy as I thought. Here I focused on how to make pySpark Streaming work.</p>
 <p>In the Streaming app, we need to set up a StreamingContext and then create a stream to listen to the topic from Kafka.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sc <span style="color:#f92672">=</span> SparkContext(appName<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;PythonSparkStreamingKafka&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sc <span style="color:#f92672">=</span> SparkContext(appName<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;PythonSparkStreamingKafka&#34;</span>)
 sc<span style="color:#f92672">.</span>setLogLevel(<span style="color:#e6db74">&#34;WARN&#34;</span>)
 ssc <span style="color:#f92672">=</span> StreamingContext(sc,<span style="color:#ae81ff">60</span>)
 kafkaStream <span style="color:#f92672">=</span> KafkaUtils<span style="color:#f92672">.</span>createStream(ssc, <span style="color:#e6db74">&#39;localhost:2181&#39;</span>, <span style="color:#e6db74">&#39;spark-streaming&#39;</span>, {<span style="color:#e6db74">&#39;xxx&#39;</span>:<span style="color:#ae81ff">1</span>})
 </code></pre></div><p>Next, we view each stream object as Discretized Streams, which means each object is an RDD here. More detailed information about DStream you can find <a href="https://spark.apache.org/docs/2.2.0/streaming-programming-guide.html#discretized-streams-dstreams">here</a>.</p>
 <p><img src="https://spark.apache.org/docs/2.2.0/img/streaming-dstream.png" alt=""></p>
 <p>Then we can map each RDD and save them into MySQL.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getSparkSessionInstance</span>(sparkConf):
     <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#39;sparkSessionSingletonInstance&#39;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> globals()):
         globals()[<span style="color:#e6db74">&#39;sparkSessionSingletonInstance&#39;</span>] <span style="color:#f92672">=</span> SparkSession\
@@ -283,7 +284,7 @@ kafkaStream <span style="color:#f92672">=</span> KafkaUtils<span style="color:#f
     
     <span style="color:#66d9ef">if</span> rdd<span style="color:#f92672">.</span>isEmpty():
         <span style="color:#66d9ef">return</span>
-    <span style="color:#66d9ef">print</span>(rdd<span style="color:#f92672">.</span>count())
+    print(rdd<span style="color:#f92672">.</span>count())
     spark <span style="color:#f92672">=</span> getSparkSessionInstance(rdd<span style="color:#f92672">.</span>context<span style="color:#f92672">.</span>getConf())
     df <span style="color:#f92672">=</span> spark<span style="color:#f92672">.</span>createDataFrame(rdd)
     df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>toDF(<span style="color:#e6db74">&#39;uid&#39;</span>,<span style="color:#e6db74">&#39;fid&#39;</span>,<span style="color:#e6db74">&#39;tid&#39;</span>,<span style="color:#e6db74">&#39;date&#39;</span>,<span style="color:#e6db74">&#39;ip&#39;</span>,<span style="color:#e6db74">&#39;credits&#39;</span>,<span style="color:#e6db74">&#39;groupid&#39;</span>)
@@ -299,10 +300,10 @@ lines <span style="color:#f92672">=</span> kafkaStream<span style="color:#f92672
     <span style="color:#f92672">.</span>foreachRDD(<span style="color:#66d9ef">lambda</span> x: convert_json2df(x))
 
 </code></pre></div><p>We also need to start the streaming process.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ssc<span style="color:#f92672">.</span>start()  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ssc<span style="color:#f92672">.</span>start()  
 ssc<span style="color:#f92672">.</span>awaitTermination()
 </code></pre></div><p>Last but not least, we need to add several packages to start the Spark Streaming job.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">spark-2.4.0-bin-hadoop2.7/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8-assembly_2.11:2.3.1,mysql:mysql-connector-java:8.0.15 streaming.py
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">spark-2.4.0-bin-hadoop2.7/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8-assembly_2.11:2.3.1,mysql:mysql-connector-java:8.0.15 streaming.py
 </code></pre></div>
   </div>
   

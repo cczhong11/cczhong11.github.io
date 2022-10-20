@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.89.4" />
+
+    
+    
+    
+
+<title>How to set up HTTPS server with flask with personal domain • TC blog</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to set up HTTPS server with flask with personal domain"/>
+<meta name="twitter:description" content="e2e to set up HTTPS server with python flask app"/>
+
+<meta property="og:title" content="How to set up HTTPS server with flask with personal domain" />
+<meta property="og:description" content="e2e to set up HTTPS server with python flask app" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.tczhong.com/posts/frontend/set-up-https-server/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-10-19T00:00:00+00:00" /><meta property="og:site_name" content="TC blog" />
+
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="http://www.tczhong.com/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
+
+
+<link rel="stylesheet" href="http://www.tczhong.com/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.tczhong.com/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="http://www.tczhong.com/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://www.tczhong.com/">TC blog</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://avatars2.githubusercontent.com/u/7358252?s=460&amp;v=4" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         I am who I am. Love Cloud and Data science 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">TC blog</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="http://www.tczhong.com/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="http://www.tczhong.com/about/hello">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="http://www.tczhong.com/tianchen_zhong.pdf">
+						<span>My Resume</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="http://www.tczhong.com/posts/project/index.html">
+						<span>Project</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	<a href="https://github.com/cczhong11" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/tianchen-zhong" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/7112540" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:tczhong24@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>How to set up HTTPS server with flask with personal domain</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Oct 10, 2022
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="http://www.tczhong.com/categories/https">HTTPS</a>
+              •
+          
+              <a class="badge badge-category" href="http://www.tczhong.com/categories/ssl">SSL</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <h1 id="background">Background</h1>
+<p>I currently has a personal website that hosted in the github page with React. In the React I also call the backend server with RESTful API.</p>
+<p><img src="http://www.tczhong.com/content/posts/frontend/https.png" alt=""></p>
+<p>My backend server is using AWS ec2 and I just used Python Flask for easy use.</p>
+<p>In the past, I just expose the flask app to a port and in the React App to call this <code>http://ip:port</code> to get the data.</p>
+<p>However, this method did not work properly if the github pages are in https because it would be fixed http and https. So I need to set up https in the backend server.</p>
+<h1 id="https-introduction">HTTPS introduction</h1>
+<p>HTTPS (HTTP over SSL) refers to the combination of HTTP and SSL to implement secure communication between a Web browser and a Web server. The HTTPS capability is built into all modern Web browsers. Its use depends on the Web server supporting HTTPS communication.</p>
+<p>This showed the flow for HTTPS communication.</p>
+<p><img src="https://tczimg.s3.amazonaws.com/vscode/4d47d6abb64d4e70a358bb75133fa668.png" alt=""></p>
+<p>In short, in the server side we need a certificate and private key to enable https.</p>
+<h1 id="how-to">How to</h1>
+<p>There are lots of answers in the stackoverflow talking about <a href="https://stackoverflow.com/questions/29458548/can-you-add-https-functionality-to-a-python-flask-web-server">how to add https to flask</a>. However it is only useful in the local environment and the self generated certificate would not sufficient in the prod environment. Chrome will show the error <code>NET::ERR_CERT_INVALID</code> and you still could not use the https web site.</p>
+<p>This <a href="https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https">post</a> gave me a good idea how to set up the https successfully.</p>
+<p>So in the following example, I talked about how to set up the HTTPS with cloudflare.</p>
+<ol>
+<li>Give your server a sub domain in the cloudflare DNS. This step is necessary since the certificate only works with domain, not with IP.</li>
+<li>Get a origin certificate from the cloudflare.
+<img src="https://tczimg.s3.amazonaws.com/vscode/054120d2c8a141989d3ee3316cff0572.png" alt=""></li>
+<li>you also need an edge certificate if you need CDN.</li>
+<li>set up your nginx.</li>
+</ol>
+<pre tabindex="0"><code>$ sudo vim /etc/nginx/sites-enabled/default
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    ssl_certificate /home/path/server.cert;
+    ssl_certificate_key /home/path/server.key;
+
+    location /path/ {
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header HOST $http_host;
+                proxy_pass http://127.0.0.1:111/path/;
+                proxy_redirect off;
+    }
+}
+</code></pre><p>Add the following to your config and change the port number and route to fit your own server.</p>
+<p>Run <code>sudo /etc/init.d/nginx reload</code></p>
+<ol start="5">
+<li>Run your flask app</li>
+<li>Update your url in the react</li>
+<li>Depoly the page.</li>
+</ol>
+<p>Then you should see the https working in your website</p>
+<h1 id="summary">Summary</h1>
+<p>This problem bothered me long time and it took me several tries to make it work. Understanding the Https concept really helped me to finally make it work.</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="http://www.tczhong.com/posts/cc/fix-alexa-skill-s3/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Fix the strong problem when fetch s3 object</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'tczhong';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+    
+
+
+
+    </body>
+</html>

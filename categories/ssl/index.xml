@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SSL on TC blog</title>
+    <link>http://www.tczhong.com/categories/ssl/</link>
+    <description>Recent content in SSL on TC blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 19 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/ssl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to set up HTTPS server with flask with personal domain</title>
+      <link>http://www.tczhong.com/posts/frontend/set-up-https-server/</link>
+      <pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/posts/frontend/set-up-https-server/</guid>
+      <description>Background I currently has a personal website that hosted in the github page with React. In the React I also call the backend server with RESTful API.
+My backend server is using AWS ec2 and I just used Python Flask for easy use.
+In the past, I just expose the flask app to a port and in the React App to call this http://ip:port to get the data.
+However, this method did not work properly if the github pages are in https because it would be fixed http and https.</description>
+    </item>
+    
+  </channel>
+</rss>

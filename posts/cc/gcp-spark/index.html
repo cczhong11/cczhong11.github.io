@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.67.0" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -27,9 +27,10 @@
 <meta property="og:title" content="GCP for Spark" />
 <meta property="og:description" content="This blog will introduce how to perform Spark job on GCP." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.tczhong.com/posts/cc/gcp-spark/" />
+<meta property="og:url" content="http://www.tczhong.com/posts/cc/gcp-spark/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-03-27T00:00:00+00:00" />
 <meta property="article:modified_time" content="2018-03-27T00:00:00+00:00" /><meta property="og:site_name" content="TC blog" />
+
 
 
     
@@ -211,13 +212,13 @@
     <p>GCP is very cheap compared with AWS and Azure. However, it did not have enough documentation and I met some problems that did not even on StackOverflow. That&rsquo;s why I want to write this blog.</p>
 <h1 id="start-your-cluster">Start your cluster</h1>
 <p>We could use command line with GCP CLI to start cluster.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
 gcloud dataproc clusters create cluster-name --project<span style="color:#f92672">=</span>project-id --bucket outputbucket --initialization-actions gs://xxx/jupyter.sh --master-machine-type<span style="color:#f92672">=</span>n1-standard-2 --worker-machine-type<span style="color:#f92672">=</span>n1-standard-1 --zone<span style="color:#f92672">=</span>xxxx
 
 </code></pre></div><h1 id="install-external-python-package-on-spark">Install external Python package on Spark</h1>
 <p>If we want to use your own package and Juypter NoteBook on Spark, you need to contain an initialization step for your cluster.</p>
 <p>** Please Noticed that you do not have permission to install python package after start your cluster! **</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
 <span style="color:#75715e">#!/usr/bin/env bash</span>
 set -e
 
@@ -273,7 +274,7 @@ echo <span style="color:#e6db74">&#34;Completed installing Jupyter!&#34;</span>
 
 </code></pre></div><h1 id="begin-your-job">Begin your job</h1>
 <p>You could submit python file from your local machine.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud beta dataproc jobs submit pyspark --cluster cluster-name python-file
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud beta dataproc jobs submit pyspark --cluster cluster-name python-file
 </code></pre></div><p>You can also use Jupyter. You need to first build a ssh tunnel. You could find more information from <a href="https://cloud.google.com/dataproc/docs/tutorials/jupyter-notebook">here</a></p>
 
   </div>

@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.67.0" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -27,9 +27,10 @@
 <meta property="og:title" content="Maximum Likelihood Estimation basic concepts" />
 <meta property="og:description" content="An article about some basic concepts for MLE" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.tczhong.com/posts/ml/mle/" />
+<meta property="og:url" content="http://www.tczhong.com/posts/ml/mle/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-12-03T00:00:00+00:00" />
 <meta property="article:modified_time" content="2018-12-03T00:00:00+00:00" /><meta property="og:site_name" content="TC blog" />
+
 
 
     
@@ -208,14 +209,14 @@
 <p>If we have a situation $S_1$ and event A may happen. For example, under the same situation, the event A happens 7 out of 10. We could see the frequency of event A is 0.7. Under much experiment with the same situation, if we still get the same result, we could see the probability of event A in this situation is 0.7.</p>
 <p>Another important concept is the conditional probability. If we have another event B, and B may happen when event A happened. For instance, under the same situation, event B happens 8 out of 10 when event A happened. The frequency of event B when event A happen is 0.8. If event B had the same pattern all the time, we could see the conditional probability of event B when event A happened is $P(B|A)=0.8$, the probability of event A and event B happened at the same time is $P(A, B)$.</p>
 <p>Independence is also important to know here. If event A and event B are independent with each other, which means, event A happened or not had nothing to do with the event B, we could get the P(A，B) = P(A)*P(B).</p>
-<h2 id="bayes-theorem">Bayes&rsquo; theorem</h2>
+<h2 id="bayes-theorem">Bayes' theorem</h2>
 <p>It is the most important theorem in the statistics world.</p>
 <p>$$P ( A | B ) = \frac { P ( B | A ) P ( A ) } { P ( B ) }$$</p>
 <p>If we want to know the probability of the A conditional on B, we can use the probability of the B conditional on A and probability of A and B to know. In the real world, the probability of the A conditional on B is often hard to get, and it can tell us the probability of a reason given situation. We can quickly get the probability of a situation given the reason. The situation A is mostly data. The reason B is mostly hypothesis.</p>
-<p>Prior is an important concept in Bayes&rsquo; thinking. It captures the belief for the right answer before seeing the data. In uniform distribution, prior is $\pi(h) = 1/|H|π(h)=1/∣H∣$ if h in H. Here $P(A)$ can be prior</p>
+<p>Prior is an important concept in Bayes' thinking. It captures the belief for the right answer before seeing the data. In uniform distribution, prior is $\pi(h) = 1/|H|π(h)=1/∣H∣$ if h in H. Here $P(A)$ can be prior</p>
 <p>The posterior is the probability of reason after seeing the data. It is $p(A|B)$.</p>
 <p>The likelihood is another important concept. It will tell you under the given the parameters, what is the probability for data, expressing as $L(B|A)$.</p>
-<p>So in Bayes&rsquo; theorem, we can express it as prior * likelihood/evidence. Evidence is $P(B)$.</p>
+<p>So in Bayes' theorem, we can express it as prior * likelihood/evidence. Evidence is $P(B)$.</p>
 <h2 id="maximum-a-posteriori-and-maximum-likelihood-estimation">Maximum A Posteriori and Maximum Likelihood Estimation</h2>
 <p>From the Bayes rule, we know $$P(\theta|X)=\frac{P(X|\theta)P(\theta)}{P(X)}$$.</p>
 <p>Because $P(X)$ is the same, we could omit this value. $P(\theta|X) \propto P(X|\theta)P(\theta)$.</p>

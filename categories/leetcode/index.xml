@@ -6,11 +6,7 @@
     <description>Recent content in Leetcode on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 08 Jul 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.tczhong.com/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 08 Jul 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Leetcode Answer websites</title>
       <link>http://www.tczhong.com/posts/project/leetcodeanswer/</link>

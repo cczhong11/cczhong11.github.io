@@ -6,10 +6,18 @@
     <description>Recent content on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 14 Aug 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.tczhong.com/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Wed, 19 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to set up HTTPS server with flask with personal domain</title>
+      <link>http://www.tczhong.com/posts/frontend/set-up-https-server/</link>
+      <pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.tczhong.com/posts/frontend/set-up-https-server/</guid>
+      <description>Background I currently has a personal website that hosted in the github page with React. In the React I also call the backend server with RESTful API.
+My backend server is using AWS ec2 and I just used Python Flask for easy use.
+In the past, I just expose the flask app to a port and in the React App to call this http://ip:port to get the data.
+However, this method did not work properly if the github pages are in https because it would be fixed http and https.</description>
+    </item>
     
     <item>
       <title>Fix the strong problem when fetch s3 object</title>
@@ -323,7 +331,7 @@ The main idea for decision tree is to choose one place to cut the whole sample s
       
       <guid>http://www.tczhong.com/posts/machinelearning/dimension_reduction/</guid>
       <description>Dimension Rerduction PCA Principal component analysis (PCA) looks at “simplifying” the data in another manner, by preserving the axes of major variation in the data.
-Hypothesis function $h_\theta (x) = UWx, \theta={U \in R^{n*k},W\in R^{k*n}}$. We are compressing input by multiplying by a low rank matriex.
+Hypothesis function $h_\theta (x) = UWx, \theta={U \in R^{nk},W\in R^{kn}}$. We are compressing input by multiplying by a low rank matriex.
 Loss function $$\ell(h_\theta(x), x)=|\mu - x|_2^2$$
 Optimization problem. $$minimize_{U,W} = \sum_{I=1}^m | UWx^{(i)}-x^{(i)}|^2_2$$
 procedure Given: normalized data matrix X, k components
@@ -393,7 +401,7 @@ $L(\theta) = \prod p(y^i|x^i;\theta)$</description>
       
       <guid>http://www.tczhong.com/posts/machinelearning/maximum-likelihood-estimation/</guid>
       <description>Maximum likelihood estimation In the beginning, we could get a sample set $x_1,x_2,&amp;hellip;$, and we assume these points are independent with each other. Then we could get the possibility for us to get these points. $p(x_1,x_2,x_3&amp;hellip;,x_m;\theta) = \prod_{i=1}^m p(x_i;\theta)$
-So, what&amp;rsquo;s the most possible $\theta$ under this circumstance, it is when this possibility get its maximum value. Therefore, we want to maximize $\theta$, to calculate $$maximize_\theta ; \prod_{i=1}^m p(x^{(i)};\theta)$$ If we take the log to $p(x)$, we could get the **log likelihood** of the data, which is also equivalent to that value.</description>
+So, what&amp;rsquo;s the most possible $\theta$ under this circumstance, it is when this possibility get its maximum value. Therefore, we want to maximize $\theta$, to calculate $$maximize_\theta ; \prod_{i=1}^m p(x^{(i)};\theta)$$ If we take the log to $p(x)$, we could get the log likelihood of the data, which is also equivalent to that value.</description>
     </item>
     
     <item>

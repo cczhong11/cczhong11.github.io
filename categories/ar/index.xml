@@ -6,11 +6,7 @@
     <description>Recent content in AR on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 18 Jan 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.tczhong.com/categories/ar/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 18 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/ar/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Embed AR in your website</title>
       <link>http://www.tczhong.com/posts/frontend/view-ar-object-on-the-web/</link>

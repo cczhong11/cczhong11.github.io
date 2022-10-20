@@ -6,11 +6,7 @@
     <description>Recent content in AWS on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 14 Aug 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.tczhong.com/categories/aws/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 14 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fix the strong problem when fetch s3 object</title>
       <link>http://www.tczhong.com/posts/cc/fix-alexa-skill-s3/</link>

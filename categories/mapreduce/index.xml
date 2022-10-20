@@ -6,11 +6,7 @@
     <description>Recent content in Mapreduce on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Apr 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.tczhong.com/categories/mapreduce/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 10 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://www.tczhong.com/categories/mapreduce/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mapreduce custom output</title>
       <link>http://www.tczhong.com/posts/cc/mapreduce/</link>

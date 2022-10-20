@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.67.0" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -27,9 +27,10 @@
 <meta property="og:title" content="How to build your own apple script for omnifocus" />
 <meta property="og:description" content="This blog tells you some basic usage for apple script  for omnifocus" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.tczhong.com/posts/mac/omnifocusapplescriptbasic/" />
+<meta property="og:url" content="http://www.tczhong.com/posts/mac/omnifocusapplescriptbasic/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-09-01T00:00:00+00:00" />
 <meta property="article:modified_time" content="2018-09-01T00:00:00+00:00" /><meta property="og:site_name" content="TC blog" />
+
 
 
     
@@ -214,7 +215,7 @@
 <p>In many cases, we need to do summary on how many tasks we have done that day or week. Therefore, we could just log out all completed tasks and send to notebook/Day one.</p>
 <p>The general idea is to get all modified project and then get all tasks inside, if we saw any tasks with completion date during that day, we just log that tasks out.</p>
 <p>The code could see here:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-applescript" data-lang="applescript"><span style="color:#66d9ef">tell</span> application <span style="color:#e6db74">&#34;OmniFocus&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-applescript" data-lang="applescript"><span style="color:#66d9ef">tell</span> application <span style="color:#e6db74">&#34;OmniFocus&#34;</span>
 	<span style="color:#66d9ef">tell</span> front <span style="color:#a6e22e">document</span>
 		<span style="color:#75715e">-- Get the list of projects that were modified within thedate span</span>
 		<span style="color:#66d9ef">set</span> theProjects <span style="color:#66d9ef">to</span> every flattened project where <span style="color:#66d9ef">its</span> modification date <span style="color:#f92672">is greater than</span> startDate <span style="color:#f92672">and</span> modification date <span style="color:#f92672">is less than</span> endDate
@@ -245,12 +246,12 @@
 <span style="color:#66d9ef">end</span> <span style="color:#66d9ef">tell</span> <span style="color:#75715e">-- end tell application &#34;OmniFocus&#34;</span>
 </code></pre></div><h2 id="add-new-template-tasks">Add new template tasks</h2>
 <p>We could use <code>dialog</code> to input some common things, for example, if we want to read book, using following code could get all important elements.</p>
-<pre><code class="language-script" data-lang="script">set bookTitle to text returned of (display dialog &quot;What's the title of the book?&quot; default answer &quot;&quot;)
+<pre tabindex="0"><code class="language-script" data-lang="script">set bookTitle to text returned of (display dialog &quot;What's the title of the book?&quot; default answer &quot;&quot;)
 set numPages to text returned of (display dialog &quot;How many pages are in the book?&quot; default answer 0) as integer
 set startDate to text returned of (display dialog &quot;When should this start?&quot; default answer &quot;yyyymmdd&quot;)
 set endDate to text returned of (display dialog &quot;When should this end?&quot; default answer &quot;yyyymmdd&quot;)
 </code></pre><p>Then we could perform some calculation and add tasks to omnifocus.</p>
-<pre><code class="language-script" data-lang="script">tell application &quot;OmniFocus&quot;
+<pre tabindex="0"><code class="language-script" data-lang="script">tell application &quot;OmniFocus&quot;
 	tell document of front window
         .....
         set newTask to make new inbox task with properties {name:taskTitle, defer date:deferDate, context:theContext}

@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.67.0" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -27,9 +27,10 @@
 <meta property="og:title" content="Undertow configuration" />
 <meta property="og:description" content="This blog will tell you my experience using Undertow." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.tczhong.com/posts/cc/undertow/" />
+<meta property="og:url" content="http://www.tczhong.com/posts/cc/undertow/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-04-27T00:00:00+00:00" />
 <meta property="article:modified_time" content="2018-04-27T00:00:00+00:00" /><meta property="og:site_name" content="TC blog" />
+
 
 
     
@@ -212,7 +213,7 @@
 <p>This is a very fast Java web server. When using this web server, I met some problems but I could not find enough answers even on the stackOverflow. Therefore, I decided to write my experience down.</p>
 <h2 id="how-to-set-parameters-to-each-servlet">How to set parameters to each Servlet?</h2>
 <p>It is necessary for us to pass some parameters to Serlet functions. One way to do this is to use <code>addInitParam</code> when adding Servlet. Like the following code.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">DeploymentInfo servletBuilder <span style="color:#f92672">=</span> deployment<span style="color:#f92672">()</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">DeploymentInfo servletBuilder <span style="color:#f92672">=</span> deployment<span style="color:#f92672">()</span>
                     <span style="color:#f92672">.</span><span style="color:#a6e22e">setClassLoader</span><span style="color:#f92672">(</span>ServletServer<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getClassLoader</span><span style="color:#f92672">())</span>
                     <span style="color:#f92672">.</span><span style="color:#a6e22e">setContextPath</span><span style="color:#f92672">(</span>MYAPP<span style="color:#f92672">)</span>
                     <span style="color:#f92672">.</span><span style="color:#a6e22e">setDeploymentName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;test.war&#34;</span><span style="color:#f92672">)</span>
@@ -222,7 +223,7 @@
                                     <span style="color:#f92672">.</span><span style="color:#a6e22e">addMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/*&#34;</span><span style="color:#f92672">),</span>
                     <span style="color:#f92672">)</span>
 </code></pre></div><p>In the example, we set parameter <code>message</code> to &ldquo;Hello Word&rdquo;. Then how to we read that in the Servlet funtion? We could set in the <code>init</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//MessageServlet.java
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//MessageServlet.java
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String MESSAGE <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;message&#34;</span><span style="color:#f92672">;</span>
 
     <span style="color:#66d9ef">private</span> String message<span style="color:#f92672">;</span>
@@ -235,7 +236,7 @@
 </code></pre></div><h2 id="why-we-could-not-get-any-new-request-from-doget">Why we could not get any new request from <code>doGet</code></h2>
 <p>There is a very strange question happened when we used Undertow. Although we got requests from load generator continuously, we could not see any from the <code>doGet</code> function.</p>
 <p>It is because all listeners are pending at this time and we could not get any requests now. You could learn more from <a href="http://undertow.io/undertow-docs/undertow-docs-2.0.0/index.html#xnio-workers">here</a>. There is a limited threads opened for Undertow, if all <code>WORKER_IO_THREADS</code> threads were used, we will lose all incoming requests. We could set parameters for Undertow using the following codes.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">XnioWorker worker <span style="color:#f92672">=</span> xnio<span style="color:#f92672">.</span><span style="color:#a6e22e">createWorker</span><span style="color:#f92672">(</span>OptionMap<span style="color:#f92672">.</span><span style="color:#a6e22e">builder</span><span style="color:#f92672">()</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">XnioWorker worker <span style="color:#f92672">=</span> xnio<span style="color:#f92672">.</span><span style="color:#a6e22e">createWorker</span><span style="color:#f92672">(</span>OptionMap<span style="color:#f92672">.</span><span style="color:#a6e22e">builder</span><span style="color:#f92672">()</span>
     <span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>Options<span style="color:#f92672">.</span><span style="color:#a6e22e">WORKER_IO_THREADS</span><span style="color:#f92672">,</span> ioThreads<span style="color:#f92672">)</span>
     <span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>Options<span style="color:#f92672">.</span><span style="color:#a6e22e">WORKER_TASK_CORE_THREADS</span><span style="color:#f92672">,</span> workerThreads<span style="color:#f92672">)</span>
     <span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>Options<span style="color:#f92672">.</span><span style="color:#a6e22e">WORKER_TASK_MAX_THREADS</span><span style="color:#f92672">,</span> workerThreads<span style="color:#f92672">)</span>
@@ -243,7 +244,7 @@
     <span style="color:#f92672">.</span><span style="color:#a6e22e">getMap</span><span style="color:#f92672">());</span>
 </code></pre></div><h2 id="connecting-to-mysql-problems">Connecting to MySQL problems</h2>
 <p>We could use <code>PreparedStatement</code> to perform SQL query.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">PreparedStatement statement <span style="color:#f92672">=</span> connection<span style="color:#f92672">.</span><span style="color:#a6e22e">prepareStatement</span><span style="color:#f92672">(</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">PreparedStatement statement <span style="color:#f92672">=</span> connection<span style="color:#f92672">.</span><span style="color:#a6e22e">prepareStatement</span><span style="color:#f92672">(</span>
              <span style="color:#e6db74">&#34;SELECT * FROM World&#34;</span><span style="color:#f92672">);</span>
 ResultSet resultSet <span style="color:#f92672">=</span> statement<span style="color:#f92672">.</span><span style="color:#a6e22e">executeQuery</span><span style="color:#f92672">()</span>
 </code></pre></div><p>We also need to close them after using them. If you did not close them, there would occur out of memory problem.

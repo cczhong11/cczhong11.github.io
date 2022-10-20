@@ -1,519 +1,322 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>http://www.tczhong.com/categories/aws/</loc>
-    <lastmod>2021-08-14T00:00:00+00:00</lastmod>
-  </url>
-  
   <url>
     <loc>http://www.tczhong.com/categories/</loc>
+    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.tczhong.com/posts/frontend/set-up-https-server/</loc>
+    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.tczhong.com/categories/https/</loc>
+    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.tczhong.com/posts/</loc>
+    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.tczhong.com/categories/ssl/</loc>
+    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.tczhong.com/</loc>
+    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.tczhong.com/categories/aws/</loc>
     <lastmod>2021-08-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/cc/fix-alexa-skill-s3/</loc>
     <lastmod>2021-08-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.tczhong.com/posts/</loc>
-    <lastmod>2021-08-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.tczhong.com/</loc>
-    <lastmod>2021-08-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/ar/</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/frontend/view-ar-object-on-the-web/</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/react/</loc>
     <lastmod>2020-10-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/frontend/send-form-with-react/</loc>
     <lastmod>2020-10-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/mac/losing-data-in-ntfs/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/mac/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/skill/timemanagement/</loc>
     <lastmod>2019-11-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/skill/</loc>
     <lastmod>2019-11-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/time-management/</loc>
     <lastmod>2019-11-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/bitcoin/</loc>
     <lastmod>2019-09-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/skill/bitcoin/</loc>
     <lastmod>2019-09-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/blockchain/</loc>
     <lastmod>2019-09-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/apache-spark/</loc>
     <lastmod>2019-04-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/cc/kafkastream/</loc>
     <lastmod>2019-04-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/cloud-computing/</loc>
     <lastmod>2019-04-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/kafka/</loc>
     <lastmod>2019-04-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/python/</loc>
     <lastmod>2019-04-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/slack/</loc>
     <lastmod>2018-12-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/cc/piazza/</loc>
     <lastmod>2018-12-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/db/concurrencycontrol/</loc>
     <lastmod>2018-12-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/db/</loc>
     <lastmod>2018-12-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/db/sql/</loc>
     <lastmod>2018-12-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/ml/machinelearningreview/</loc>
     <lastmod>2018-12-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/ml/</loc>
     <lastmod>2018-12-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/apache-samza/</loc>
     <lastmod>2018-12-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/java/</loc>
     <lastmod>2018-12-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/cc/samzastaticfile/</loc>
     <lastmod>2018-12-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/ml/mle/</loc>
     <lastmod>2018-12-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/ml/decisiontree/</loc>
     <lastmod>2018-12-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/ml/knn/</loc>
     <lastmod>2018-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/iot/</loc>
     <lastmod>2018-11-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/virtual-device/</loc>
     <lastmod>2018-11-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/cc/iot/</loc>
     <lastmod>2018-11-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/network/</loc>
     <lastmod>2018-11-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/cc/networklayer/</loc>
     <lastmod>2018-11-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/alexa/</loc>
     <lastmod>2018-09-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/project/alexamusic/</loc>
     <lastmod>2018-09-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/gtd/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/mac/omnifocusapplescriptbasic/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/omnifocus/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/azure/</loc>
     <lastmod>2018-08-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/intern/</loc>
     <lastmod>2018-08-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/project/intern/</loc>
     <lastmod>2018-08-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/hackathon/</loc>
     <lastmod>2018-07-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/project/hackmidwest/</loc>
     <lastmod>2018-07-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/personal/</loc>
     <lastmod>2018-07-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/project/</loc>
     <lastmod>2018-07-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/javascript/</loc>
     <lastmod>2018-07-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/cc/azure-timezone/</loc>
     <lastmod>2018-07-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/gcp/</loc>
     <lastmod>2018-07-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/github/</loc>
     <lastmod>2018-07-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/leetcode/</loc>
     <lastmod>2018-07-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/project/leetcodeanswer/</loc>
     <lastmod>2018-07-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/cc/azure-error/</loc>
     <lastmod>2018-07-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/java/createthumbnail/</loc>
     <lastmod>2018-06-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/image/</loc>
     <lastmod>2018-06-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/jave/</loc>
     <lastmod>2018-06-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/mvc/</loc>
     <lastmod>2018-06-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/spring/</loc>
     <lastmod>2018-06-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/java/spring_mvc/</loc>
     <lastmod>2018-06-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/graph/</loc>
     <lastmod>2018-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/mac/graphvis/</loc>
     <lastmod>2018-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/markdown/</loc>
     <lastmod>2018-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/machinelearning/anomaly-and-multivariate-gaussia-distribution/</loc>
     <lastmod>2018-05-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/machine-learning/</loc>
     <lastmod>2018-05-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/machinelearning/decision-tree/</loc>
     <lastmod>2018-05-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/machinelearning/dimension_reduction/</loc>
     <lastmod>2018-05-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/mac/ntfs/</loc>
     <lastmod>2018-05-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/ntfs/</loc>
     <lastmod>2018-05-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/tips/</loc>
     <lastmod>2018-05-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/machinelearning/cluster/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/machinelearning/validation/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/machinelearning/hypothesis-testing/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/machinelearning/logistic-regression/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/machinelearning/maximum-likelihood-estimation/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/machinelearning/neuralnetwork/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/machinelearning/probaility/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/machinelearning/probability_modeling/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/machinelearning/recommender/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/cc/undertow/</loc>
     <lastmod>2018-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/web-services/</loc>
     <lastmod>2018-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/scala/</loc>
     <lastmod>2018-04-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/cc/scala-spark-join/</loc>
     <lastmod>2018-04-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/soark/</loc>
     <lastmod>2018-04-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/hadoop/</loc>
     <lastmod>2018-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/hbase/</loc>
     <lastmod>2018-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/cc/hbase-reading/</loc>
     <lastmod>2018-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/mapreduce/</loc>
     <lastmod>2018-04-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/cc/mapreduce/</loc>
     <lastmod>2018-04-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/about/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/cc/gcp-spark/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/idea/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/about/hello/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/note/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/other/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/categories/spark/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/posts/cc/spark-etl/</loc>
     <lastmod>2018-03-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://www.tczhong.com/tags/</loc>
   </url>
-  
 </urlset>

@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.67.0" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -27,9 +27,10 @@
 <meta property="og:title" content="How to draw graph in code" />
 <meta property="og:description" content="This blog tells you how to use graphVis and plantUML" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.tczhong.com/posts/mac/graphvis/" />
+<meta property="og:url" content="http://www.tczhong.com/posts/mac/graphvis/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-05-24T00:00:00+00:00" />
 <meta property="article:modified_time" content="2018-05-24T00:00:00+00:00" /><meta property="og:site_name" content="TC blog" />
+
 
 
     
@@ -212,17 +213,17 @@
 <p>We could use <a href="http://graphviz.org/">Graphviz</a> to draw a graph in code and it is also easily to used in Markdown file. In this blog, I will focus on <code>dot</code> tool.</p>
 <p>In the beginning, we need to install it. If you are a Mac user, we could use <code>brew install graphvis</code>. For other user, you could download file from the official <a href="https://graphviz.gitlab.io/download/">website</a>.</p>
 <p>You could create a file with the following code.</p>
-<pre><code>digraph{
+<pre tabindex="0"><code>digraph{
 a-&gt;b
 a-&gt;c
 }
 </code></pre><p>And then you need to save it as <code>demo.gv</code>. Next, run the code</p>
-<pre><code>	dot -Tpng demo.gv &gt; demo.png
+<pre tabindex="0"><code>	dot -Tpng demo.gv &gt; demo.png
 </code></pre><p>You could get the following pic.</p>
 <p><img src="pic/demo.png" alt=""></p>
 <p>In this command, you could change <code>-Tpng</code> to <code>-Tjpg</code> or <code>-Tpdf</code>, <code>-Tsvg</code>.</p>
 <p>To add them to markdown, we could use service from <code>gravizo</code>.</p>
-<pre><code>&lt;img src='https://g.gravizo.com/svg?
+<pre tabindex="0"><code>&lt;img src='https://g.gravizo.com/svg?
  digraph G {
 a-&gt;b,
 a-&gt;c
@@ -295,7 +296,7 @@ a-&gt;c
 <h2 id="principal-graph-attributes">Principal Graph Attributes</h2>
 <p>Here I just want to mention <code>rank</code>.</p>
 <p>Using the following code we could get multiple node in the same level.</p>
-<pre><code>digraph G {
+<pre tabindex="0"><code>digraph G {
      A [label=&quot;Teacher&quot;],
     A -&gt; B,
     A -&gt; C,
@@ -309,7 +310,7 @@ a-&gt;c
 <h1 id="flow-chart">Flow chart</h1>
 <p>Actually, we could still use <code>dot</code> to generate flow chart. But it will spend lots of time to change shape to express exact idea. One good tool is <a href="http://plantuml.com/">plantUML</a></p>
 <p>We could use <code>startuml</code> to begin the chart. The basic chart could generate use following chart. More info could find <a href="http://plantuml.com/activity-diagram-beta">here</a>.</p>
-<pre><code>@startuml
+<pre tabindex="0"><code>@startuml
 
 start
 
@@ -337,12 +338,12 @@ stop
 
 @enduml
 </code></pre><p>We can save them in a <code>demo.txt</code> file. Then download plantUML jar <a href="http://sourceforge.net/projects/plantuml/files/plantuml.jar/download">file</a> to generate png.</p>
-<pre><code>java -jar plantuml.jar demo.txt
+<pre tabindex="0"><code>java -jar plantuml.jar demo.txt
 </code></pre><p><img src="pic/demo2.png" alt=""></p>
 <h1 id="uml">UML</h1>
 <p>You can also use this tool to get UML graph. There are lots of usage in the official <a href="http://plantuml.com/class-diagram">website</a>.</p>
 <p>I just list some basic code here.</p>
-<pre><code>@startuml
+<pre tabindex="0"><code>@startuml
 class Foo1 {
   You can use
   several lines
