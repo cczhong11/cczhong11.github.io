@@ -6,7 +6,17 @@
     <description>Recent content in Posts on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to migrate your PostgreSQL database out of heroku</title>
+      <link>https://www.tczhong.com/posts/db/how-to-migrate-heroku-postgres/</link>
+      <pubDate>Sat, 29 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/posts/db/how-to-migrate-heroku-postgres/</guid>
+      <description>How to migrate your database out of heroku background As we know, heroku will stop supporting the free tier for postgresql and web server. It did not provide good tutorials to help you upgrade your database or migrate your database. So It took me a long time to learn how to migrate my database.
+decision Since I did not find a good way to pay the heroku so I dicided to host my web application in my own AWS server.</description>
+    </item>
+    
     <item>
       <title>How to set up HTTPS server with flask with personal domain</title>
       <link>https://www.tczhong.com/posts/frontend/set-up-https-server/</link>

@@ -3,7 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.tczhong.com/categories/</loc>
-    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.tczhong.com/categories/db/</loc>
+    <lastmod>2022-10-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.tczhong.com/posts/db/how-to-migrate-heroku-postgres/</loc>
+    <lastmod>2022-10-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.tczhong.com/categories/postgres/</loc>
+    <lastmod>2022-10-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.tczhong.com/posts/</loc>
+    <lastmod>2022-10-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.tczhong.com/</loc>
+    <lastmod>2022-10-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.tczhong.com/posts/frontend/set-up-https-server/</loc>
     <lastmod>2022-10-19T00:00:00+00:00</lastmod>
@@ -11,13 +26,7 @@
     <loc>https://www.tczhong.com/categories/https/</loc>
     <lastmod>2022-10-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.tczhong.com/posts/</loc>
-    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.tczhong.com/categories/ssl/</loc>
-    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.tczhong.com/</loc>
     <lastmod>2022-10-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.tczhong.com/categories/aws/</loc>
@@ -84,9 +93,6 @@
     <lastmod>2018-12-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.tczhong.com/posts/db/concurrencycontrol/</loc>
-    <lastmod>2018-12-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.tczhong.com/categories/db/</loc>
     <lastmod>2018-12-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.tczhong.com/posts/db/sql/</loc>

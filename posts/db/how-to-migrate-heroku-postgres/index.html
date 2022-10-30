@@ -17,19 +17,19 @@
     
     
 
-<title>How to set up HTTPS server with flask with personal domain • TC blog</title>
+<title>How to migrate your PostgreSQL database out of heroku • TC blog</title>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="How to set up HTTPS server with flask with personal domain"/>
-<meta name="twitter:description" content="e2e to set up HTTPS server with python flask app"/>
+<meta name="twitter:title" content="How to migrate your PostgreSQL database out of heroku"/>
+<meta name="twitter:description" content="step by step to migrate your database out of heroku"/>
 
-<meta property="og:title" content="How to set up HTTPS server with flask with personal domain" />
-<meta property="og:description" content="e2e to set up HTTPS server with python flask app" />
+<meta property="og:title" content="How to migrate your PostgreSQL database out of heroku" />
+<meta property="og:description" content="step by step to migrate your database out of heroku" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.tczhong.com/posts/frontend/set-up-https-server/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-10-19T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-10-19T00:00:00+00:00" /><meta property="og:site_name" content="TC blog" />
+<meta property="og:url" content="https://www.tczhong.com/posts/db/how-to-migrate-heroku-postgres/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-10-29T00:00:00+00:00" /><meta property="og:site_name" content="TC blog" />
 
 
 
@@ -172,7 +172,7 @@
     
 <article>
   <header>
-    <h1>How to set up HTTPS server with flask with personal domain</h1>
+    <h1>How to migrate your PostgreSQL database out of heroku</h1>
     
     
 <div class="post__meta">
@@ -187,10 +187,10 @@
           in
           
           
-              <a class="badge badge-category" href="https://www.tczhong.com/categories/https">HTTPS</a>
+              <a class="badge badge-category" href="https://www.tczhong.com/categories/db">DB</a>
               •
           
-              <a class="badge badge-category" href="https://www.tczhong.com/categories/ssl">SSL</a>
+              <a class="badge badge-category" href="https://www.tczhong.com/categories/postgres">POSTGRES</a>
               
           
       
@@ -206,69 +206,48 @@
   
   
   <div class="post">
-    <h1 id="background">Background</h1>
-<p>I currently has a personal website that hosted in the github page with React. In the React I also call the backend server with RESTful API.</p>
-<p><img src="https://www.tczhong.com/content/posts/frontend/https.png" alt=""></p>
-<p>My backend server is using AWS ec2 and I just used Python Flask for easy use.</p>
-<p>In the past, I just expose the flask app to a port and in the React App to call this <code>http://ip:port</code> to get the data.</p>
-<p>However, this method did not work properly if the github pages are in https because it would be fixed http and https. So I need to set up https in the backend server.</p>
-<h1 id="https-introduction">HTTPS introduction</h1>
-<p>HTTPS (HTTP over SSL) refers to the combination of HTTP and SSL to implement secure communication between a Web browser and a Web server. The HTTPS capability is built into all modern Web browsers. Its use depends on the Web server supporting HTTPS communication.</p>
-<p>This showed the flow for HTTPS communication.</p>
-<p><img src="https://tczimg.s3.amazonaws.com/vscode/4d47d6abb64d4e70a358bb75133fa668.png" alt=""></p>
-<p>In short, in the server side we need a certificate and private key to enable https.</p>
-<h1 id="how-to">How to</h1>
-<p>There are lots of answers in the stackoverflow talking about <a href="https://stackoverflow.com/questions/29458548/can-you-add-https-functionality-to-a-python-flask-web-server">how to add https to flask</a>. However it is only useful in the local environment and the self generated certificate would not sufficient in the prod environment. Chrome will show the error <code>NET::ERR_CERT_INVALID</code> and you still could not use the https web site.</p>
-<p>This <a href="https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https">post</a> gave me a good idea how to set up the https successfully.</p>
-<p>So in the following example, I talked about how to set up the HTTPS with cloudflare.</p>
-<ol>
-<li>Give your server a sub domain in the cloudflare DNS. This step is necessary since the certificate only works with domain, not with IP.</li>
-<li>Get a origin certificate from the cloudflare.
-<img src="https://tczimg.s3.amazonaws.com/vscode/054120d2c8a141989d3ee3316cff0572.png" alt=""></li>
-<li>you also need an edge certificate if you need CDN.</li>
-<li>set up your nginx.</li>
-</ol>
-<pre tabindex="0"><code>$ sudo vim /etc/nginx/sites-enabled/default
+    <h1 id="how-to-migrate-your-database-out-of-heroku">How to migrate your database out of heroku</h1>
+<h2 id="background">background</h2>
+<p>As we know, heroku will stop supporting the free tier for postgresql and web server. It did not provide good tutorials to help you upgrade your database or migrate your database. So It took me a long time to learn how to migrate my database.</p>
+<h2 id="decision">decision</h2>
+<p>Since I did not find a good way to pay the heroku so I dicided to host my web application in my own AWS server.</p>
+<h2 id="heroku-export">heroku export</h2>
+<p>This step is pretty simple. Go to your postgresql instance in the heroku and go to durability page. We can see the step to do manual backup. Create one and download to local disk.</p>
+<p><img src="https://tczimg.s3.amazonaws.com/vscode/7a2b6f306818425591ca663553b0660d.png" alt=""></p>
+<h2 id="install-on-ubuntu">install on ubuntu</h2>
+<p>Next, go to your ubuntu server and install postgresql. We need to install the latest version since the heroku using the latest one. We need to have the same version to restore the DB.</p>
+<pre tabindex="0"><code>sudo sh -c 'echo &quot;deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main&quot; &gt;&gt; /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install -y postgresql-client-11
+</code></pre><h2 id="create-new-db-and-user-with-password">create new db and user with password</h2>
+<p>Then we need to create new database and user with password. Follow the <a href="https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart">link</a>.</p>
+<pre tabindex="0"><code>
+sudo -u postgres createuser &lt;name&gt; --pwprompt
+sudo -i -u postgres
+createdb db
 
-server {
-    listen 443 ssl;
-    listen [::]:443 ssl;
-    ssl_certificate /home/path/server.cert;
-    ssl_certificate_key /home/path/server.key;
+</code></pre><p>Why we need to create a password for the new user? because when we do the restore the database, it would ask password even we created an user without password.</p>
+<h2 id="restore-the-export-on-server">restore the export on server</h2>
+<p>Run the command and we can see the restored database in the local environment.</p>
+<pre tabindex="0"><code>pg_restore --verbose --clean --no-acl --no-owner -h localhost -U myuser -d mydb latest.dump
+</code></pre><h2 id="connect-the-new-local-db">connect the new local db</h2>
+<pre tabindex="0"><code>sudo -i -u postgres
+psql
 
-    location /path/ {
-                proxy_set_header X-Real-IP $remote_addr;
-                proxy_set_header HOST $http_host;
-                proxy_pass http://127.0.0.1:111/path/;
-                proxy_redirect off;
-    }
-}
-</code></pre><p>Add the following to your config and change the port number and route to fit your own server.</p>
-<p>Run <code>sudo /etc/init.d/nginx reload</code></p>
-<ol start="5">
-<li>Run your flask app</li>
-<li>Update your url in the react</li>
-<li>Depoly the page.</li>
-</ol>
-<p>Then you should see the https working in your website</p>
-<h1 id="summary">Summary</h1>
-<p>This problem bothered me long time and it took me several tries to make it work. Understanding the Https concept really helped me to finally make it work.</p>
-
+\c db
+select * from table_name;
+</code></pre>
   </div>
   
 
 <div class="navigation navigation-single">
     
-    <a href="https://www.tczhong.com/posts/cc/fix-alexa-skill-s3/" class="navigation-prev">
+    <a href="https://www.tczhong.com/posts/frontend/set-up-https-server/" class="navigation-prev">
       <i aria-hidden="true" class="fa fa-chevron-left"></i>
-      <span class="navigation-tittle">Fix the strong problem when fetch s3 object</span>
+      <span class="navigation-tittle">How to set up HTTPS server with flask with personal domain</span>
     </a>
     
-    
-    <a href="https://www.tczhong.com/posts/db/how-to-migrate-heroku-postgres/" class="navigation-next">
-      <span class="navigation-tittle">How to migrate your PostgreSQL database out of heroku</span>
-      <i aria-hidden="true" class="fa fa-chevron-right"></i>
-    </a>
     
 </div>
 
