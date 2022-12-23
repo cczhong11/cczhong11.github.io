@@ -11,20 +11,20 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.106.0">
 
     
     
     
 
-<title>Fix the strong problem when fetch s3 object • TC blog</title>
+<title>Fix the strange problem when fetch s3 object • TC blog</title>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Fix the strong problem when fetch s3 object"/>
+<meta name="twitter:title" content="Fix the strange problem when fetch s3 object"/>
 <meta name="twitter:description" content="This blog will introduce how to fix the utf-8 encoding file in s3 problem"/>
 
-<meta property="og:title" content="Fix the strong problem when fetch s3 object" />
+<meta property="og:title" content="Fix the strange problem when fetch s3 object" />
 <meta property="og:description" content="This blog will introduce how to fix the utf-8 encoding file in s3 problem" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.tczhong.com/posts/cc/fix-alexa-skill-s3/" /><meta property="article:section" content="posts" />
@@ -172,7 +172,7 @@
     
 <article>
   <header>
-    <h1>Fix the strong problem when fetch s3 object</h1>
+    <h1>Fix the strange problem when fetch s3 object</h1>
     
     
 <div class="post__meta">
@@ -207,14 +207,14 @@
 <h2 id="problem">Problem</h2>
 <p>I used to have a Alexa skill to play the music from my s3 storage, but it did not work properly for a while. In the beginning, I thought it was code logic, but after digging into the logic I could not find the error.</p>
 <p>The main problem is here</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">responseBuilder</span>.<span style="color:#a6e22e">addAudioPlayerPlayDirective</span>(
-            <span style="color:#a6e22e">playBehavior</span>,
-            <span style="color:#a6e22e">podcast</span>.<span style="color:#a6e22e">url</span>,
-            <span style="color:#a6e22e">enqueueToken</span>,
-            <span style="color:#a6e22e">offsetInMilliseconds</span>,
-            <span style="color:#a6e22e">expectedPreviousToken</span>,
-          );
-</code></pre></div><p>It should play the music from the url, I logged the podcast url and I also tried from the browser, it worked fine. But it just could not play the music.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">responseBuilder</span>.<span style="color:#a6e22e">addAudioPlayerPlayDirective</span>(
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">playBehavior</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">podcast</span>.<span style="color:#a6e22e">url</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">enqueueToken</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">offsetInMilliseconds</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">expectedPreviousToken</span>,
+</span></span><span style="display:flex;"><span>          );
+</span></span></code></pre></div><p>It should play the music from the url, I logged the podcast url and I also tried from the browser, it worked fine. But it just could not play the music.</p>
 <h2 id="debug">Debug</h2>
 <p>I used a pure s3 url and I found it worked. I used another url with Chinese character in it, it threw the exception, so I found the error.</p>
 <h2 id="solution">Solution</h2>

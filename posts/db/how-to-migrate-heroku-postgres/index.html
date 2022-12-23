@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.106.0">
 
     
     
@@ -216,7 +216,7 @@
 <p><img src="https://tczimg.s3.amazonaws.com/vscode/7a2b6f306818425591ca663553b0660d.png" alt=""></p>
 <h2 id="install-on-ubuntu">install on ubuntu</h2>
 <p>Next, go to your ubuntu server and install postgresql. We need to install the latest version since the heroku using the latest one. We need to have the same version to restore the DB.</p>
-<pre tabindex="0"><code>sudo sh -c 'echo &quot;deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main&quot; &gt;&gt; /etc/apt/sources.list.d/pgdg.list'
+<pre tabindex="0"><code>sudo sh -c &#39;echo &#34;deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main&#34; &gt;&gt; /etc/apt/sources.list.d/pgdg.list&#39;
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install -y postgresql-client-11
@@ -226,7 +226,6 @@ sudo apt-get install -y postgresql-client-11
 sudo -u postgres createuser &lt;name&gt; --pwprompt
 sudo -i -u postgres
 createdb db
-
 </code></pre><p>Why we need to create a password for the new user? because when we do the restore the database, it would ask password even we created an user without password.</p>
 <h2 id="restore-the-export-on-server">restore the export on server</h2>
 <p>Run the command and we can see the restored database in the local environment.</p>

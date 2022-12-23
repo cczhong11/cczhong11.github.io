@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.106.0">
 
     
     
@@ -213,27 +213,27 @@
 <h3 id="select">Select</h3>
 <p>This operation acts a filter, which can help us get a subset of the tuples we want. We can express the condition to filter the data with a selection predicate. We can also combine multiple predicates using AND.</p>
 <p>In SQL, we can use the following command to execute SELECT. We put the predicates after where clause.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">WHERE</span> x<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">10</span>;
-</code></pre></div><h3 id="projection">Projection</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">WHERE</span> x<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">10</span>;
+</span></span></code></pre></div><h3 id="projection">Projection</h3>
 <p>This operation can generate a relation with tuples that contains only the specified attributes. It acts as a subset operation. In is also a very common operation in the SQL</p>
 <p>In SQL, we can use the following command to execute Projection. We put attributes after SELECT clause.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> a1,a2 <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">table</span>;
-</code></pre></div><h3 id="unionintersectiondifference">UNION/INTERSECTION/DIFFERENCE</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> a1,a2 <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">table</span>;
+</span></span></code></pre></div><h3 id="unionintersectiondifference">UNION/INTERSECTION/DIFFERENCE</h3>
 <p>These three operations are not very common in SQL. It can get results from two relations.</p>
 <p>Union generates a relation that contains all tuples that appear in either only one or both of the input relations. Intersection generates a relation that contains only the tuples that appear in both of the input relations. Difference generates a relation that contains only the tuples that appear in the first and not the second of the input relations.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL">
-(<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> R) <span style="color:#66d9ef">UNION</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> S);
-
-(<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> R) <span style="color:#66d9ef">INTERSECT</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> S);
-
-(<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> R) <span style="color:#66d9ef">EXCEPT</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> S);
-</code></pre></div><h3 id="productjoin">PRODUCT/JOIN</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> R) <span style="color:#66d9ef">UNION</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> S);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> R) <span style="color:#66d9ef">INTERSECT</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> S);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> R) <span style="color:#66d9ef">EXCEPT</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> S);
+</span></span></code></pre></div><h3 id="productjoin">PRODUCT/JOIN</h3>
 <p>The product will generate a relation that contains all possible combinations of tuples from the input relations. If we had M relations in table R and N relations in table S, we will have M*N results after the PRODUCT.</p>
 <p>JOIN is to generate a relation that contains all tuples that are a combination of two tuples. There are also some other various kind of JOIN. Inner JOIN is the same as JOIN.</p>
 <p>LEFT JOIN returns all records from the left table (table1), and the matched records from the right table (table2).</p>
 <p>OUTER JOIN return all records when there is a match in either left (table1) or right (table2) table records.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> table1 <span style="color:#66d9ef">INNER</span><span style="color:#f92672">/</span><span style="color:#66d9ef">LEFT</span><span style="color:#f92672">/</span><span style="color:#66d9ef">OUTER</span> <span style="color:#66d9ef">JOIN</span> table2 <span style="color:#66d9ef">on</span> table1.attr1 <span style="color:#f92672">=</span> table2.attr2
-</code></pre></div><h2 id="advanced-sql">Advanced SQL</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> table1 <span style="color:#66d9ef">INNER</span><span style="color:#f92672">/</span><span style="color:#66d9ef">LEFT</span><span style="color:#f92672">/</span><span style="color:#66d9ef">OUTER</span> <span style="color:#66d9ef">JOIN</span> table2 <span style="color:#66d9ef">on</span> table1.attr1 <span style="color:#f92672">=</span> table2.attr2
+</span></span></code></pre></div><h2 id="advanced-sql">Advanced SQL</h2>
 <h3 id="aggregations--group-by">Aggregations + Group By</h3>
 <p>There are many aggregate functions, including the following operations:</p>
 <ul>
@@ -260,11 +260,11 @@
 </ul>
 <h3 id="common-table-expressions">Common Table Expressions</h3>
 <p>We can use this as a temporary table.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">WITH</span> cteSource (maxId) <span style="color:#66d9ef">AS</span> ( <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MAX</span>(sid) <span style="color:#66d9ef">FROM</span> enrolled
-),
-X(Y) <span style="color:#66d9ef">AS</span> (<span style="color:#66d9ef">SELECT</span> ....)
-<span style="color:#66d9ef">SELECT</span> name <span style="color:#66d9ef">FROM</span> student, cteSource <span style="color:#66d9ef">WHERE</span> student.sid <span style="color:#f92672">=</span> cteSource.maxId
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">WITH</span> cteSource (maxId) <span style="color:#66d9ef">AS</span> ( <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MAX</span>(sid) <span style="color:#66d9ef">FROM</span> enrolled
+</span></span><span style="display:flex;"><span>),
+</span></span><span style="display:flex;"><span>X(Y) <span style="color:#66d9ef">AS</span> (<span style="color:#66d9ef">SELECT</span> ....)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> name <span style="color:#66d9ef">FROM</span> student, cteSource <span style="color:#66d9ef">WHERE</span> student.sid <span style="color:#f92672">=</span> cteSource.maxId
+</span></span></code></pre></div>
   </div>
   
 

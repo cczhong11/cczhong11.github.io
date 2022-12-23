@@ -15,7 +15,7 @@
       <guid>https://www.tczhong.com/posts/cc/kafkastream/</guid>
       <description>In this blog, I introduce a way to do streaming processing with Kafka and Spark Streaming. In the workflow, Kafka is used as a message queuing system and Spark Streaming process data from Kafka and save them into MySQL database.
 Install the software In this section, we need to install these things on the machine.
- Hadoop Spark Kafka MySQL  In the beginning, we need to download Hadoop from the official website and then extract them.</description>
+Hadoop Spark Kafka MySQL In the beginning, we need to download Hadoop from the official website and then extract them.</description>
     </item>
     
     <item>
@@ -83,8 +83,8 @@ Solution In the beginning, I needed to go into the source code to see what happe
       
       <guid>https://www.tczhong.com/posts/java/spring_mvc/</guid>
       <description>Spring boot Framework Spring boot framework is a strong framework helps you build a MVC model web service quickly. So in the first place, we need to understand what is MVC model
-Model-View-Controller  Model  Model represent knowledge. It represents how basic items interact with each other.
-Views  A view is a (visual) representation of its model. A view is attached to its model (or model part) and gets the data necessary for the presentation from the model by asking questions.</description>
+Model-View-Controller Model Model represent knowledge. It represents how basic items interact with each other.
+Views A view is a (visual) representation of its model. A view is attached to its model (or model part) and gets the data necessary for the presentation from the model by asking questions.</description>
     </item>
     
     <item>
@@ -114,7 +114,7 @@ You could learn more about rdd join from here</description>
       
       <guid>https://www.tczhong.com/posts/cc/hbase-reading/</guid>
       <description>Tips on improving reading performance In some scenario, we need to have high RPS in HBase reading.Therefore, we could change some configuration in HBase to meet this requirement. I found this blog very helpful. HBase official guide is also great.
- Increase hfile.block.cache.size and decrease hbase.regionserver.global.memstore.size. The first configuration is for reading cache and the second one is writing cache. The sum of two value should be 0.8 Decrease BLOCKSIZE in HBase table.</description>
+Increase hfile.block.cache.size and decrease hbase.regionserver.global.memstore.size. The first configuration is for reading cache and the second one is writing cache. The sum of two value should be 0.8 Decrease BLOCKSIZE in HBase table.</description>
     </item>
     
     <item>

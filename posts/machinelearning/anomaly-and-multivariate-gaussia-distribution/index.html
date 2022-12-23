@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.106.0">
 
     
     
@@ -218,8 +218,8 @@
 <p><img src="pic/learningMG.png" alt=""></p>
 <p>But we need to understand, there is no $Z$ in reality. What we could do is to use EM(Expectation maximaization) algorithm, doing a process like k-means.</p>
 <p>E step: compute $p(z^{(i)}=z;x^{(i)};\mu,\Sigma,\phi)$ using bayes
-$$p(z^{(i)}=z;x^{(i)};\mu,\Sigma,\phi) = \frac{p(z^{(i)}=z;x^{(i)};\mu,\Sigma)p(z^{(i)}=z;\phi)}{\sum_{z'} p(z^{(i)}=z';x^{(i)};\mu,\Sigma)p(z^{(i)}=z';\phi)}$$
-$$=\frac{\mathcal{N}(x^{(i)};\mu^{(z)},\Sigma^{(z)})\phi_z}{\sum_{z'} \mathcal{N}(x^{(i)};\mu^{(z')},\Sigma^{(z')})\phi_{z'}}$$</p>
+$$p(z^{(i)}=z;x^{(i)};\mu,\Sigma,\phi) = \frac{p(z^{(i)}=z;x^{(i)};\mu,\Sigma)p(z^{(i)}=z;\phi)}{\sum_{z&rsquo;} p(z^{(i)}=z&rsquo;;x^{(i)};\mu,\Sigma)p(z^{(i)}=z&rsquo;;\phi)}$$
+$$=\frac{\mathcal{N}(x^{(i)};\mu^{(z)},\Sigma^{(z)})\phi_z}{\sum_{z&rsquo;} \mathcal{N}(x^{(i)};\mu^{(z&rsquo;)},\Sigma^{(z&rsquo;)})\phi_{z&rsquo;}}$$</p>
 <p>M step: re-estimate parameters using these probabilities</p>
 <p><img src="pic/mstep.md" alt=""></p>
 <p>So, it still has local optimal problem. The difference between k-means and mixture of gaussian is <strong>EM is a soft assignment</strong>, one point could be different distribution. However, k-means is a hard assignment.</p>

@@ -30,7 +30,7 @@ However, this method did not work properly if the github pages are in https beca
     </item>
     
     <item>
-      <title>Fix the strong problem when fetch s3 object</title>
+      <title>Fix the strange problem when fetch s3 object</title>
       <link>https://www.tczhong.com/posts/cc/fix-alexa-skill-s3/</link>
       <pubDate>Sat, 14 Aug 2021 00:00:00 +0000</pubDate>
       
@@ -100,7 +100,7 @@ During our daily money transaction , we need bank to provide trust between two p
       <guid>https://www.tczhong.com/posts/cc/kafkastream/</guid>
       <description>In this blog, I introduce a way to do streaming processing with Kafka and Spark Streaming. In the workflow, Kafka is used as a message queuing system and Spark Streaming process data from Kafka and save them into MySQL database.
 Install the software In this section, we need to install these things on the machine.
- Hadoop Spark Kafka MySQL  In the beginning, we need to download Hadoop from the official website and then extract them.</description>
+Hadoop Spark Kafka MySQL In the beginning, we need to download Hadoop from the official website and then extract them.</description>
     </item>
     
     <item>
@@ -248,7 +248,7 @@ The problem is every virtual automation assistance needs wifi to communicate wit
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.tczhong.com/posts/project/</guid>
-      <description>2018  Hackmidwest: NodeJs, DynamoDB, Twillio, Alexa, Foursquare, Codeception Hackathon: Java, Ionoic, Google Map, Azure CosmosDB, Blob, Photo Mobi2mp3: Python, tts Lucene Based search engine: Java, BM25, learning to rank, Course project Twitter Analytics Web Service:Java, Hadoop, MySQL, Spark, JMeter, AWS, Course project resume generated tool: Python, latex, JSON Social Networking Timeline with Heterogeneous Back-ends:Java, MongoDB, Course project Input Text Predictor:Java, Redis, Course project Streaming Data Processing System:Rider-Driver Matching:Kafka, Course project  2017  Introduction to Computer system: C, web proxy, shell, Cache, malloc, Course Project Real-time Embedded System Kernel: multi-thread real-time kernel, Loadable Kernel Modules, embedded Linux, C, Assembly University Chatbot: C#, Python, SQL server, Azure 2048 AI Solver: Python, Keras, Tensorflow  2016  Academic entities relationship finding service: Java, Restful Android application to detect and train attention based on EEG signal: Java, Andriod, Mindwave  </description>
+      <description>2018 Hackmidwest: NodeJs, DynamoDB, Twillio, Alexa, Foursquare, Codeception Hackathon: Java, Ionoic, Google Map, Azure CosmosDB, Blob, Photo Mobi2mp3: Python, tts Lucene Based search engine: Java, BM25, learning to rank, Course project Twitter Analytics Web Service:Java, Hadoop, MySQL, Spark, JMeter, AWS, Course project resume generated tool: Python, latex, JSON Social Networking Timeline with Heterogeneous Back-ends:Java, MongoDB, Course project Input Text Predictor:Java, Redis, Course project Streaming Data Processing System:Rider-Driver Matching:Kafka, Course project 2017 Introduction to Computer system: C, web proxy, shell, Cache, malloc, Course Project Real-time Embedded System Kernel: multi-thread real-time kernel, Loadable Kernel Modules, embedded Linux, C, Assembly University Chatbot: C#, Python, SQL server, Azure 2048 AI Solver: Python, Keras, Tensorflow 2016 Academic entities relationship finding service: Java, Restful Android application to detect and train attention based on EEG signal: Java, Andriod, Mindwave </description>
     </item>
     
     <item>
@@ -297,8 +297,8 @@ Solution In the beginning, I needed to go into the source code to see what happe
       
       <guid>https://www.tczhong.com/posts/java/spring_mvc/</guid>
       <description>Spring boot Framework Spring boot framework is a strong framework helps you build a MVC model web service quickly. So in the first place, we need to understand what is MVC model
-Model-View-Controller  Model  Model represent knowledge. It represents how basic items interact with each other.
-Views  A view is a (visual) representation of its model. A view is attached to its model (or model part) and gets the data necessary for the presentation from the model by asking questions.</description>
+Model-View-Controller Model Model represent knowledge. It represents how basic items interact with each other.
+Views A view is a (visual) representation of its model. A view is attached to its model (or model part) and gets the data necessary for the presentation from the model by asking questions.</description>
     </item>
     
     <item>
@@ -345,7 +345,7 @@ Hypothesis function $h_\theta (x) = UWx, \theta={U \in R^{nk},W\in R^{kn}}$. We 
 Loss function $$\ell(h_\theta(x), x)=|\mu - x|_2^2$$
 Optimization problem. $$minimize_{U,W} = \sum_{I=1}^m | UWx^{(i)}-x^{(i)}|^2_2$$
 procedure Given: normalized data matrix X, k components
- Compute singular value decomposition $USV^T = X$, where $U,V$ is orthogonal and $S$ is diagonal matrix of singular values.</description>
+Compute singular value decomposition $USV^T = X$, where $U,V$ is orthogonal and $S$ is diagonal matrix of singular values.</description>
     </item>
     
     <item>
@@ -368,7 +368,7 @@ Next, we need to umount our driver, since it only has read permission. And creat
       <guid>https://www.tczhong.com/posts/machinelearning/cluster/</guid>
       <description>unsupervised learning the general philosophy of unsupervised learning is that we want to discover some kind of structure in the data. Different unsupervised learning methods work in very different ways, and discover very different kinds of structure, but they all have this similar element.
 Recall from our presentations on supervised learnign that the three aspects of a supervised learning algorithm are:
- a hypothesis function;($R^n -&amp;gt; R^n$). Mapping input back to this input space.</description>
+a hypothesis function;($R^n -&amp;gt; R^n$). Mapping input back to this input space.</description>
     </item>
     
     <item>
@@ -378,7 +378,7 @@ Recall from our presentations on supervised learnign that the three aspects of a
       
       <guid>https://www.tczhong.com/posts/machinelearning/validation/</guid>
       <description>Cross-validation Hold - out validation In this method, we will have 70% training data and 30% validation data. When we do the training, we will only use the training data, then we will use the validation data to test our model and tuning the hyperparameters
- parameters:$\theta$ hypermeters: degree of polynominal, amount of regulazation&amp;hellip;  K-hold validation In this method, we will divide the data into k part, then we will use k-1 data to train the model and have the rest one validate the model.</description>
+parameters:$\theta$ hypermeters: degree of polynominal, amount of regulazation&amp;hellip; K-hold validation In this method, we will divide the data into k part, then we will use k-1 data to train the model and have the rest one validate the model.</description>
     </item>
     
     <item>
@@ -485,7 +485,7 @@ You could learn more about rdd join from here</description>
       
       <guid>https://www.tczhong.com/posts/cc/hbase-reading/</guid>
       <description>Tips on improving reading performance In some scenario, we need to have high RPS in HBase reading.Therefore, we could change some configuration in HBase to meet this requirement. I found this blog very helpful. HBase official guide is also great.
- Increase hfile.block.cache.size and decrease hbase.regionserver.global.memstore.size. The first configuration is for reading cache and the second one is writing cache. The sum of two value should be 0.8 Decrease BLOCKSIZE in HBase table.</description>
+Increase hfile.block.cache.size and decrease hbase.regionserver.global.memstore.size. The first configuration is for reading cache and the second one is writing cache. The sum of two value should be 0.8 Decrease BLOCKSIZE in HBase table.</description>
     </item>
     
     <item>

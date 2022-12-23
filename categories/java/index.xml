@@ -43,8 +43,8 @@ Solution In the beginning, I needed to go into the source code to see what happe
       
       <guid>https://www.tczhong.com/posts/java/spring_mvc/</guid>
       <description>Spring boot Framework Spring boot framework is a strong framework helps you build a MVC model web service quickly. So in the first place, we need to understand what is MVC model
-Model-View-Controller  Model  Model represent knowledge. It represents how basic items interact with each other.
-Views  A view is a (visual) representation of its model. A view is attached to its model (or model part) and gets the data necessary for the presentation from the model by asking questions.</description>
+Model-View-Controller Model Model represent knowledge. It represents how basic items interact with each other.
+Views A view is a (visual) representation of its model. A view is attached to its model (or model part) and gets the data necessary for the presentation from the model by asking questions.</description>
     </item>
     
   </channel>

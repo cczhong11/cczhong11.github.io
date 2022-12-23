@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.106.0">
 
     
     
@@ -221,12 +221,12 @@ We first search &ldquo;Incoming Webhooks&rdquo; in Slack App Directory, then we 
 <p>Next, we need to choose one channel to send a message to. We could create a new channel to send the message.</p>
 <p><img src="../url.png" alt=""></p>
 <p>After clicking &ldquo;Add Incoming Webhooks integration&rdquo;, we could see a URL for us to send. Then we could use the following Python code snippet to send the message to Slack channel.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
-<span style="color:#f92672">import</span> json
-data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;text&#34;</span>: <span style="color:#e6db74">&#34;hello, world&#34;</span>}
-header<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;Content-Type&#34;</span>:<span style="color:#e6db74">&#34;application/json&#34;</span>}
-requests<span style="color:#f92672">.</span>post(url,data<span style="color:#f92672">=</span>json<span style="color:#f92672">.</span>dumps(data),headers<span style="color:#f92672">=</span>header)
-</code></pre></div><h2 id="piazza-api">Piazza API</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;text&#34;</span>: <span style="color:#e6db74">&#34;hello, world&#34;</span>}
+</span></span><span style="display:flex;"><span>header<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;Content-Type&#34;</span>:<span style="color:#e6db74">&#34;application/json&#34;</span>}
+</span></span><span style="display:flex;"><span>requests<span style="color:#f92672">.</span>post(url,data<span style="color:#f92672">=</span>json<span style="color:#f92672">.</span>dumps(data),headers<span style="color:#f92672">=</span>header)
+</span></span></code></pre></div><h2 id="piazza-api">Piazza API</h2>
 <p>Piazza did not provide open API for us to use, but we could do reverse engineering to get the web API is used. The Python2 package could find <a href="https://github.com/hfaran/piazza-api">here</a>.</p>
 <p>This API could help me browse the Piazza page and get the newest post id. The program I wrote will do the following thing.</p>
 <ol>

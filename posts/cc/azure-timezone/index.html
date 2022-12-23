@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.106.0">
 
     
     
@@ -224,30 +224,28 @@
 <p>But here, since user could from different timezone, we did not set this value here.</p>
 <h2 id="java-code-implementation">Java Code implementation</h2>
 <p>You could find lots of code on StackOverflow telling you how to change timezone, but they all could not use here. The reason is they all assume the input time&rsquo;s timezone is the same as the local machine time. For example, after parsing datetime from user input, it will use system timezone to understand this time and then you could set timezone id to change it. However, in my case, I want my web application to receive time and parse it to UTC. Because when my RESTful server receive that time, it thought it is <strong>GMT+0</strong>. Therefore, when I just set it to GMT+0 timezone, it would not change.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
-<span style="color:#75715e">// WRONG WAY in THIS CASE!
-</span><span style="color:#75715e"></span>String dateInString <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;22-1-2015 10:15:55 AM&#34;</span><span style="color:#f92672">;</span>
-LocalDateTime ldt <span style="color:#f92672">=</span> LocalDateTime<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span>dateInString<span style="color:#f92672">,</span> DateTimeFormatter<span style="color:#f92672">.</span><span style="color:#a6e22e">ofPattern</span><span style="color:#f92672">(</span>DATE_FORMAT<span style="color:#f92672">));</span>
-
-ZoneId singaporeZoneId <span style="color:#f92672">=</span> ZoneId<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Asia/Singapore&#34;</span><span style="color:#f92672">);</span>
-System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;TimeZone : &#34;</span> singaporeZoneId<span style="color:#f92672">)</span>
-<span style="color:#75715e">//LocalDateTime + ZoneId = ZonedDateTime
-</span><span style="color:#75715e"></span>ZonedDateTime asiaZonedDateTime <span style="color:#f92672">=</span> ldt<span style="color:#f92672">.</span><span style="color:#a6e22e">atZo</span><span style="color:#f92672">(</span>singaporeZoneId<span style="color:#f92672">);</span>
-System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Date (Singapore) : &#34;</span> asiaZonedDateTime<span style="color:#f92672">)</span>
-ZoneId newYokZoneId <span style="color:#f92672">=</span> ZoneId<span style="color:#f92672">.(</span><span style="color:#e6db74">&#34;America/New_York&#34;</span><span style="color:#f92672">);</span>
-System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;TimeZone : &#34;</span> <span style="color:#f92672">+</span> newYokZoneId<span style="color:#f92672">);</span>
-
-</code></pre></div><p>So the right method is to parse time in custom timezone. Then you could just put that in GMT+0 timezone.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
-DateTimeFormatter formatter <span style="color:#f92672">=</span> DateTimeFormatter<span style="color:#f92672">.</span><span style="color:#a6e22e">ofPattern</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;MM/dd/yyyy HH:mm:ss&#34;</span><span style="color:#f92672">);</span>
-
-ZonedDateTime time <span style="color:#f92672">=</span> LocalDateTime<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span>end<span style="color:#f92672">,</span> formatter<span style="color:#f92672">).</span><span style="color:#a6e22e">atZone</span><span style="color:#f92672">(</span>ZoneId<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;America/New_York&#34;</span><span style="color:#f92672">));</span>
-time<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span>DateTimeFormatter<span style="color:#f92672">.</span><span style="color:#a6e22e">ISO_INSTANT</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
-
-</code></pre></div><h2 id="javascript-implementation">JavaScript implementation</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// WRONG WAY in THIS CASE!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>String dateInString <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;22-1-2015 10:15:55 AM&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>LocalDateTime ldt <span style="color:#f92672">=</span> LocalDateTime<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span>dateInString<span style="color:#f92672">,</span> DateTimeFormatter<span style="color:#f92672">.</span><span style="color:#a6e22e">ofPattern</span><span style="color:#f92672">(</span>DATE_FORMAT<span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ZoneId singaporeZoneId <span style="color:#f92672">=</span> ZoneId<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Asia/Singapore&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;TimeZone : &#34;</span> singaporeZoneId<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//LocalDateTime + ZoneId = ZonedDateTime
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ZonedDateTime asiaZonedDateTime <span style="color:#f92672">=</span> ldt<span style="color:#f92672">.</span><span style="color:#a6e22e">atZo</span><span style="color:#f92672">(</span>singaporeZoneId<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Date (Singapore) : &#34;</span> asiaZonedDateTime<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>ZoneId newYokZoneId <span style="color:#f92672">=</span> ZoneId<span style="color:#f92672">.(</span><span style="color:#e6db74">&#34;America/New_York&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;TimeZone : &#34;</span> <span style="color:#f92672">+</span> newYokZoneId<span style="color:#f92672">);</span>
+</span></span></code></pre></div><p>So the right method is to parse time in custom timezone. Then you could just put that in GMT+0 timezone.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DateTimeFormatter formatter <span style="color:#f92672">=</span> DateTimeFormatter<span style="color:#f92672">.</span><span style="color:#a6e22e">ofPattern</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;MM/dd/yyyy HH:mm:ss&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ZonedDateTime time <span style="color:#f92672">=</span> LocalDateTime<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span>end<span style="color:#f92672">,</span> formatter<span style="color:#f92672">).</span><span style="color:#a6e22e">atZone</span><span style="color:#f92672">(</span>ZoneId<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;America/New_York&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>time<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span>DateTimeFormatter<span style="color:#f92672">.</span><span style="color:#a6e22e">ISO_INSTANT</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+</span></span></code></pre></div><h2 id="javascript-implementation">JavaScript implementation</h2>
 <p>For Javascript part, we could use <code>Moment</code> <a href="https://momentjs.com/">package</a>. In my case, I need to change timezone from GMT+0 to user local timezone. It is quite easy, because it is only one line.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">moment</span>(<span style="color:#a6e22e">UTCTimeString</span>).<span style="color:#a6e22e">format</span>(<span style="color:#e6db74">&#39;MM/DD/YYYY HH:mm:ss&#39;</span>)
-</code></pre></div><h2 id="conclusion">Conclusion</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">moment</span>(<span style="color:#a6e22e">UTCTimeString</span>).<span style="color:#a6e22e">format</span>(<span style="color:#e6db74">&#39;MM/DD/YYYY HH:mm:ss&#39;</span>)
+</span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
 <p>The function seems very easy, but I actually spent lots of time on it. The reason is I did not get that the machine&rsquo;s timezone was &ldquo;GMT+0&rdquo; in the beginning, therefore I could not change it.</p>
 
   </div>

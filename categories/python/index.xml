@@ -15,7 +15,7 @@
       <guid>https://www.tczhong.com/posts/cc/kafkastream/</guid>
       <description>In this blog, I introduce a way to do streaming processing with Kafka and Spark Streaming. In the workflow, Kafka is used as a message queuing system and Spark Streaming process data from Kafka and save them into MySQL database.
 Install the software In this section, we need to install these things on the machine.
- Hadoop Spark Kafka MySQL  In the beginning, we need to download Hadoop from the official website and then extract them.</description>
+Hadoop Spark Kafka MySQL In the beginning, we need to download Hadoop from the official website and then extract them.</description>
     </item>
     
     <item>

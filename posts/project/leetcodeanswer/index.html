@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.106.0">
 
     
     
@@ -243,28 +243,28 @@
 <h2 id="functions">Functions</h2>
 <p>In this part, I used JavaScript to query the datastore. In the beginning, I searched a lot about how to connect the datastore from the function, but there is no stackoverflow thread about this. One reason is the number of GCP users is not as high as Azure and AWS, thus lots of problem nobody knows.</p>
 <p>However, it is easier than what I thought. In the first step, I tested all my code locally with Nodejs and make sure it could work to query the right document I want. Then I just needed to add <code>&quot;@google-cloud/datastore&quot;: &quot;^1.4.1&quot;</code> in the <code>package.json</code>. And then I could write function to query the result.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getdata</span>(<span style="color:#a6e22e">parameter</span>,<span style="color:#a6e22e">cb</span>){
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">query</span> <span style="color:#f92672">=</span>
-    <span style="color:#a6e22e">ds</span>.<span style="color:#a6e22e">createQuery</span>(<span style="color:#a6e22e">type</span>).<span style="color:#a6e22e">filter</span>(<span style="color:#e6db74">&#39;__key__&#39;</span>, <span style="color:#e6db74">&#39;=&#39;</span>, <span style="color:#a6e22e">ds</span>.<span style="color:#a6e22e">key</span>([<span style="color:#a6e22e">type</span>, <span style="color:#a6e22e">name</span>]));
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">rs</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>;
-    <span style="color:#a6e22e">ds</span>.<span style="color:#a6e22e">runQuery</span>(<span style="color:#a6e22e">query</span>)
-    .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">results</span> =&gt; {
-       <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">results</span>[<span style="color:#ae81ff">0</span>];
-       <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">t</span>[<span style="color:#ae81ff">0</span>]
-       <span style="color:#a6e22e">cb</span>(<span style="color:#a6e22e">data</span>);
-    })
-    .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">err</span> =&gt; {
-       <span style="color:#a6e22e">cb</span>(<span style="color:#e6db74">&#39;ERROR:&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">err</span>);
-    });
-}
-<span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">helloWorld</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
-    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">condition</span>){
-          <span style="color:#a6e22e">getdata</span>(<span style="color:#a6e22e">parameter</span>,<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">d</span>){
-            <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">200</span>).<span style="color:#a6e22e">json</span>({<span style="color:#e6db74">&#34;data&#34;</span><span style="color:#f92672">:</span><span style="color:#a6e22e">d</span>}).<span style="color:#a6e22e">end</span>();
-          });
-      }}
-}
-</code></pre></div><p>Here I used callback to send data to request. Because here it is a promise and you could not get data without a callback. Therefore I learnt callback and wrote the async code. I also designed a RESTful Api to let the front end could send request to query the data.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getdata</span>(<span style="color:#a6e22e">parameter</span>,<span style="color:#a6e22e">cb</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">query</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ds</span>.<span style="color:#a6e22e">createQuery</span>(<span style="color:#a6e22e">type</span>).<span style="color:#a6e22e">filter</span>(<span style="color:#e6db74">&#39;__key__&#39;</span>, <span style="color:#e6db74">&#39;=&#39;</span>, <span style="color:#a6e22e">ds</span>.<span style="color:#a6e22e">key</span>([<span style="color:#a6e22e">type</span>, <span style="color:#a6e22e">name</span>]));
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">rs</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ds</span>.<span style="color:#a6e22e">runQuery</span>(<span style="color:#a6e22e">query</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">results</span> =&gt; {
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">results</span>[<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">t</span>[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">cb</span>(<span style="color:#a6e22e">data</span>);
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">err</span> =&gt; {
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">cb</span>(<span style="color:#e6db74">&#39;ERROR:&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">err</span>);
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">helloWorld</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">condition</span>){
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">getdata</span>(<span style="color:#a6e22e">parameter</span>,<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">d</span>){
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">200</span>).<span style="color:#a6e22e">json</span>({<span style="color:#e6db74">&#34;data&#34;</span><span style="color:#f92672">:</span><span style="color:#a6e22e">d</span>}).<span style="color:#a6e22e">end</span>();
+</span></span><span style="display:flex;"><span>          });
+</span></span><span style="display:flex;"><span>      }}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Here I used callback to send data to request. Because here it is a promise and you could not get data without a callback. Therefore I learnt callback and wrote the async code. I also designed a RESTful Api to let the front end could send request to query the data.</p>
 <h2 id="front-end">Front End</h2>
 <p>In the front end, I used ReactJS and github pages. The tutorial to do this could find <a href="https://codeburst.io/deploy-react-to-github-pages-to-create-an-amazing-website-42d8b09cd4d">here</a>.</p>
 <p>I just create a very easy web page and allow users to query the data save in the datastore.</p>

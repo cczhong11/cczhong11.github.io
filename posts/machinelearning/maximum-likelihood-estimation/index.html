@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.106.0">
 
     
     
@@ -228,7 +228,7 @@ $$\begin{split}
 <h2 id="naive-bayes">Naive bayes</h2>
 <p>Naive bayes is an easy method, the key is to calculate $$p(Y \mid X) = \frac{p(X \mid Y)p(Y)}{\sum_y p(X \mid y) p(y)}$$. We could calculate $P(X \ mid Y)$ and $P(Y)$ respectively.</p>
 <p>The naive Bayes approach, however, is to make the additional assumption that the individual features  $X_i$  are conditionally independent given  $Y$ . This lets us represent the condition $p(X \mid Y) = \prod_{i=1}^n p(X_i \mid Y)$.</p>
-<p>For example, we need to detect spam mail. We need to training the classifier. The training data tells us $P(words|spam)$ and $P(words'|not spam)$, then we could get the $P(spam)$, we could use $P(spam|words'') = \frac{p(words|spam)P(spam)}{p(words|spam)P(spam)+p(words|not spam)P(not spam)}$</p>
+<p>For example, we need to detect spam mail. We need to training the classifier. The training data tells us $P(words|spam)$ and $P(words&rsquo;|not spam)$, then we could get the $P(spam)$, we could use $P(spam|words&rsquo;&rsquo;) = \frac{p(words|spam)P(spam)}{p(words|spam)P(spam)+p(words|not spam)P(not spam)}$</p>
 <p>We could use log to avoid too small value yield from $\prod$, like $\log p(y) + \sum_{i=1}^n \log p(x_i \mid y)$.</p>
 <p>We also could use laplace smoothing to avoid zero. $\phi_i^y = \frac{\sum_{j=1}^m x_i^{(j)} \mathrm{1}{y^{(j)} = y} + 1}{\sum_{j=1}^m \mathrm{1}{y^{(j)} = y} + 2}$</p>
 <h2 id="logistic-regression">logistic regression</h2>

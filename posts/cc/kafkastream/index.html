@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.106.0">
 
     
     
@@ -223,88 +223,87 @@
 </ul>
 <p><img src="https://hadoop.apache.org/hadoop-logo.jpg" alt=""></p>
 <p>In the beginning, we need to download Hadoop from the official website and then extract them. Next, we need to set the environment path.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget -P ~ http://archive.apache.org/dist/hadoop/common/hadoop-2.8.0/hadoop-2.8.0.tar.gz
-tar xf hadoop-2.8.0.tar.gz
-echo HADOOP_HOME<span style="color:#f92672">=</span>~/hadoop-2.8.0 &gt;&gt; ~/.bashrc
-</code></pre></div><p><img src="https://spark.apache.org/images/spark-logo-trademark.png" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -P ~ http://archive.apache.org/dist/hadoop/common/hadoop-2.8.0/hadoop-2.8.0.tar.gz
+</span></span><span style="display:flex;"><span>tar xf hadoop-2.8.0.tar.gz
+</span></span><span style="display:flex;"><span>echo HADOOP_HOME<span style="color:#f92672">=</span>~/hadoop-2.8.0 &gt;&gt; ~/.bashrc
+</span></span></code></pre></div><p><img src="https://spark.apache.org/images/spark-logo-trademark.png" alt=""></p>
 <p>We could use a similar procedure to install the Spark.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># download spark</span>
-wget -P ~ http://mirrors.advancedhosters.com/apache/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz
-tar -zxvf spark-2.4.0-bin-hadoop2.7.tgz
-
-<span style="color:#75715e"># set PATH</span>
-echo SPARK_PATH<span style="color:#f92672">=</span>~/spark-2.4.0-bin-hadoop2.7 &gt;&gt; ~/.bashrc
-source ~/.bashrc
-</code></pre></div><p>Installing the MySQL is the easiest one, we only need to use <code>sudo apt-get install mysql-server </code> to install it. One thing to remember is that we only need to use <code>sudo mysql</code> to login MySQL as the root user.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># download spark</span>
+</span></span><span style="display:flex;"><span>wget -P ~ http://mirrors.advancedhosters.com/apache/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz
+</span></span><span style="display:flex;"><span>tar -zxvf spark-2.4.0-bin-hadoop2.7.tgz
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># set PATH</span>
+</span></span><span style="display:flex;"><span>echo SPARK_PATH<span style="color:#f92672">=</span>~/spark-2.4.0-bin-hadoop2.7 &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>source ~/.bashrc
+</span></span></code></pre></div><p>Installing the MySQL is the easiest one, we only need to use <code>sudo apt-get install mysql-server </code> to install it. One thing to remember is that we only need to use <code>sudo mysql</code> to login MySQL as the root user.</p>
 <p><img src="https://kafka.apache.org/images/logo.png" alt=""></p>
 <p>Installing Kafka is a bit difficult because we need to set up Zookeeper to start the Kafka service. The detailed procedure you could find <a href="https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-18-04">here</a>. We can use</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor <span style="color:#ae81ff">1</span> --partitions <span style="color:#ae81ff">5</span> --topic xxxx
-</code></pre></div><p>to test the installation result.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor <span style="color:#ae81ff">1</span> --partitions <span style="color:#ae81ff">5</span> --topic xxxx
+</span></span></code></pre></div><p>to test the installation result.</p>
 <h2 id="setup-kafka-producer">Setup Kafka producer</h2>
 <p>Because we did not have streaming data, we need to produce from the  Kafka Producer API. Here is a straightforward java project. The Kafka Producer API you can find <a href="https://kafka.apache.org/10/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html">here</a></p>
 <p>The main part code is here. In my code, I sent the data to different partition based on <code>fid</code>. For the completed example, you can visit <a href="https://github.com/omkreddy/kafka-examples/tree/master/producer">here</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">KafkaProducer<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> producer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> KafkaProducer<span style="color:#f92672">&lt;&gt;(</span>props<span style="color:#f92672">);</span>
-
-        JsonParser parser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JsonParser<span style="color:#f92672">();</span>
-        BufferedReader bufferedReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileReader<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;xxxxxx.log&#34;</span><span style="color:#f92672">));</span>
-        String line <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-
-        <span style="color:#66d9ef">while</span> <span style="color:#f92672">((</span>line <span style="color:#f92672">=</span> bufferedReader<span style="color:#f92672">.</span><span style="color:#a6e22e">readLine</span><span style="color:#f92672">())</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            JsonObject jsonObject <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span>line<span style="color:#f92672">).</span><span style="color:#a6e22e">getAsJsonObject</span><span style="color:#f92672">();</span>
-            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>jsonObject<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;fid&#34;</span><span style="color:#f92672">)!=</span>JsonNull<span style="color:#f92672">){</span>
-                <span style="color:#66d9ef">int</span> fid <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>jsonObject<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;fid&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">getAsString</span><span style="color:#f92672">());</span>
-                        
-                producer<span style="color:#f92672">.</span><span style="color:#a6e22e">send</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ProducerRecord<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;(</span><span style="color:#e6db74">&#34;xxxxx&#34;</span><span style="color:#f92672">,</span> fid <span style="color:#f92672">%</span> 5<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> line<span style="color:#f92672">));</span>
-            <span style="color:#f92672">}</span>
-            
-            
-        <span style="color:#f92672">}</span>
-        bufferedReader<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-        producer<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
-</code></pre></div><h2 id="set-up-spark-streaming">Set up Spark Streaming</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>KafkaProducer<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> producer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> KafkaProducer<span style="color:#f92672">&lt;&gt;(</span>props<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        JsonParser parser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JsonParser<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        BufferedReader bufferedReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileReader<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;xxxxxx.log&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>        String line <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#f92672">((</span>line <span style="color:#f92672">=</span> bufferedReader<span style="color:#f92672">.</span><span style="color:#a6e22e">readLine</span><span style="color:#f92672">())</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            JsonObject jsonObject <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span>line<span style="color:#f92672">).</span><span style="color:#a6e22e">getAsJsonObject</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>jsonObject<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;fid&#34;</span><span style="color:#f92672">)!=</span>JsonNull<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">int</span> fid <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>jsonObject<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;fid&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">getAsString</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>                        
+</span></span><span style="display:flex;"><span>                producer<span style="color:#f92672">.</span><span style="color:#a6e22e">send</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ProducerRecord<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;(</span><span style="color:#e6db74">&#34;xxxxx&#34;</span><span style="color:#f92672">,</span> fid <span style="color:#f92672">%</span> 5<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> line<span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        bufferedReader<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        producer<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</span></span></code></pre></div><h2 id="set-up-spark-streaming">Set up Spark Streaming</h2>
 <p>This part is not as easy as I thought. Here I focused on how to make pySpark Streaming work.</p>
 <p>In the Streaming app, we need to set up a StreamingContext and then create a stream to listen to the topic from Kafka.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sc <span style="color:#f92672">=</span> SparkContext(appName<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;PythonSparkStreamingKafka&#34;</span>)
-sc<span style="color:#f92672">.</span>setLogLevel(<span style="color:#e6db74">&#34;WARN&#34;</span>)
-ssc <span style="color:#f92672">=</span> StreamingContext(sc,<span style="color:#ae81ff">60</span>)
-kafkaStream <span style="color:#f92672">=</span> KafkaUtils<span style="color:#f92672">.</span>createStream(ssc, <span style="color:#e6db74">&#39;localhost:2181&#39;</span>, <span style="color:#e6db74">&#39;spark-streaming&#39;</span>, {<span style="color:#e6db74">&#39;xxx&#39;</span>:<span style="color:#ae81ff">1</span>})
-</code></pre></div><p>Next, we view each stream object as Discretized Streams, which means each object is an RDD here. More detailed information about DStream you can find <a href="https://spark.apache.org/docs/2.2.0/streaming-programming-guide.html#discretized-streams-dstreams">here</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sc <span style="color:#f92672">=</span> SparkContext(appName<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;PythonSparkStreamingKafka&#34;</span>)
+</span></span><span style="display:flex;"><span>sc<span style="color:#f92672">.</span>setLogLevel(<span style="color:#e6db74">&#34;WARN&#34;</span>)
+</span></span><span style="display:flex;"><span>ssc <span style="color:#f92672">=</span> StreamingContext(sc,<span style="color:#ae81ff">60</span>)
+</span></span><span style="display:flex;"><span>kafkaStream <span style="color:#f92672">=</span> KafkaUtils<span style="color:#f92672">.</span>createStream(ssc, <span style="color:#e6db74">&#39;localhost:2181&#39;</span>, <span style="color:#e6db74">&#39;spark-streaming&#39;</span>, {<span style="color:#e6db74">&#39;xxx&#39;</span>:<span style="color:#ae81ff">1</span>})
+</span></span></code></pre></div><p>Next, we view each stream object as Discretized Streams, which means each object is an RDD here. More detailed information about DStream you can find <a href="https://spark.apache.org/docs/2.2.0/streaming-programming-guide.html#discretized-streams-dstreams">here</a>.</p>
 <p><img src="https://spark.apache.org/docs/2.2.0/img/streaming-dstream.png" alt=""></p>
 <p>Then we can map each RDD and save them into MySQL.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getSparkSessionInstance</span>(sparkConf):
-    <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#39;sparkSessionSingletonInstance&#39;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> globals()):
-        globals()[<span style="color:#e6db74">&#39;sparkSessionSingletonInstance&#39;</span>] <span style="color:#f92672">=</span> SparkSession\
-            <span style="color:#f92672">.</span>builder\
-            <span style="color:#f92672">.</span>config(conf<span style="color:#f92672">=</span>sparkConf)\
-            <span style="color:#f92672">.</span>getOrCreate()
-    <span style="color:#66d9ef">return</span> globals()[<span style="color:#e6db74">&#39;sparkSessionSingletonInstance&#39;</span>]
-    
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">convert_json2df</span>(rdd):
-    
-    <span style="color:#66d9ef">if</span> rdd<span style="color:#f92672">.</span>isEmpty():
-        <span style="color:#66d9ef">return</span>
-    print(rdd<span style="color:#f92672">.</span>count())
-    spark <span style="color:#f92672">=</span> getSparkSessionInstance(rdd<span style="color:#f92672">.</span>context<span style="color:#f92672">.</span>getConf())
-    df <span style="color:#f92672">=</span> spark<span style="color:#f92672">.</span>createDataFrame(rdd)
-    df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>toDF(<span style="color:#e6db74">&#39;uid&#39;</span>,<span style="color:#e6db74">&#39;fid&#39;</span>,<span style="color:#e6db74">&#39;tid&#39;</span>,<span style="color:#e6db74">&#39;date&#39;</span>,<span style="color:#e6db74">&#39;ip&#39;</span>,<span style="color:#e6db74">&#39;credits&#39;</span>,<span style="color:#e6db74">&#39;groupid&#39;</span>)
-    df<span style="color:#f92672">.</span>write<span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#34;jdbc&#34;</span>)\
-   <span style="color:#f92672">.</span>option(<span style="color:#e6db74">&#34;url&#34;</span>, <span style="color:#e6db74">&#34;jdbc:mysql://localhost:3306/xxxx&#34;</span>)\  <span style="color:#75715e">#db name</span>
-   <span style="color:#f92672">.</span>option(<span style="color:#e6db74">&#34;dbtable&#34;</span>, <span style="color:#e6db74">&#34;log&#34;</span>)\                                                      <span style="color:#75715e">#table name</span>
-   <span style="color:#f92672">.</span>option(<span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#e6db74">&#34;user&#34;</span>)\
-   <span style="color:#f92672">.</span>option(<span style="color:#e6db74">&#34;password&#34;</span>, <span style="color:#e6db74">&#34;xxxx&#34;</span>)\ 
-   <span style="color:#f92672">.</span>option(<span style="color:#e6db74">&#34;driver&#34;</span>, <span style="color:#e6db74">&#39;com.mysql.jdbc.Driver&#39;</span>)\
-   <span style="color:#f92672">.</span>mode(<span style="color:#e6db74">&#39;append&#39;</span>)<span style="color:#f92672">.</span>save()
-
-lines <span style="color:#f92672">=</span> kafkaStream<span style="color:#f92672">.</span>map(<span style="color:#66d9ef">lambda</span> x: check_json(x))<span style="color:#f92672">.</span>filter(<span style="color:#66d9ef">lambda</span> x: x) \
-    <span style="color:#f92672">.</span>foreachRDD(<span style="color:#66d9ef">lambda</span> x: convert_json2df(x))
-
-</code></pre></div><p>We also need to start the streaming process.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ssc<span style="color:#f92672">.</span>start()  
-ssc<span style="color:#f92672">.</span>awaitTermination()
-</code></pre></div><p>Last but not least, we need to add several packages to start the Spark Streaming job.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">spark-2.4.0-bin-hadoop2.7/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8-assembly_2.11:2.3.1,mysql:mysql-connector-java:8.0.15 streaming.py
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getSparkSessionInstance</span>(sparkConf):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#39;sparkSessionSingletonInstance&#39;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> globals()):
+</span></span><span style="display:flex;"><span>        globals()[<span style="color:#e6db74">&#39;sparkSessionSingletonInstance&#39;</span>] <span style="color:#f92672">=</span> SparkSession\
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">.</span>builder\
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">.</span>config(conf<span style="color:#f92672">=</span>sparkConf)\
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">.</span>getOrCreate()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> globals()[<span style="color:#e6db74">&#39;sparkSessionSingletonInstance&#39;</span>]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">convert_json2df</span>(rdd):
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> rdd<span style="color:#f92672">.</span>isEmpty():
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    print(rdd<span style="color:#f92672">.</span>count())
+</span></span><span style="display:flex;"><span>    spark <span style="color:#f92672">=</span> getSparkSessionInstance(rdd<span style="color:#f92672">.</span>context<span style="color:#f92672">.</span>getConf())
+</span></span><span style="display:flex;"><span>    df <span style="color:#f92672">=</span> spark<span style="color:#f92672">.</span>createDataFrame(rdd)
+</span></span><span style="display:flex;"><span>    df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>toDF(<span style="color:#e6db74">&#39;uid&#39;</span>,<span style="color:#e6db74">&#39;fid&#39;</span>,<span style="color:#e6db74">&#39;tid&#39;</span>,<span style="color:#e6db74">&#39;date&#39;</span>,<span style="color:#e6db74">&#39;ip&#39;</span>,<span style="color:#e6db74">&#39;credits&#39;</span>,<span style="color:#e6db74">&#39;groupid&#39;</span>)
+</span></span><span style="display:flex;"><span>    df<span style="color:#f92672">.</span>write<span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#34;jdbc&#34;</span>)\
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">.</span>option(<span style="color:#e6db74">&#34;url&#34;</span>, <span style="color:#e6db74">&#34;jdbc:mysql://localhost:3306/xxxx&#34;</span>)\  <span style="color:#75715e">#db name</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">.</span>option(<span style="color:#e6db74">&#34;dbtable&#34;</span>, <span style="color:#e6db74">&#34;log&#34;</span>)\                                                      <span style="color:#75715e">#table name</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">.</span>option(<span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#e6db74">&#34;user&#34;</span>)\
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">.</span>option(<span style="color:#e6db74">&#34;password&#34;</span>, <span style="color:#e6db74">&#34;xxxx&#34;</span>)\ 
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">.</span>option(<span style="color:#e6db74">&#34;driver&#34;</span>, <span style="color:#e6db74">&#39;com.mysql.jdbc.Driver&#39;</span>)\
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">.</span>mode(<span style="color:#e6db74">&#39;append&#39;</span>)<span style="color:#f92672">.</span>save()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lines <span style="color:#f92672">=</span> kafkaStream<span style="color:#f92672">.</span>map(<span style="color:#66d9ef">lambda</span> x: check_json(x))<span style="color:#f92672">.</span>filter(<span style="color:#66d9ef">lambda</span> x: x) \
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span>foreachRDD(<span style="color:#66d9ef">lambda</span> x: convert_json2df(x))
+</span></span></code></pre></div><p>We also need to start the streaming process.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ssc<span style="color:#f92672">.</span>start()  
+</span></span><span style="display:flex;"><span>ssc<span style="color:#f92672">.</span>awaitTermination()
+</span></span></code></pre></div><p>Last but not least, we need to add several packages to start the Spark Streaming job.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>spark-2.4.0-bin-hadoop2.7/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8-assembly_2.11:2.3.1,mysql:mysql-connector-java:8.0.15 streaming.py
+</span></span></code></pre></div>
   </div>
   
 

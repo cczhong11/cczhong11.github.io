@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.106.0">
 
     
     
@@ -212,70 +212,68 @@
     <p>GCP is very cheap compared with AWS and Azure. However, it did not have enough documentation and I met some problems that did not even on StackOverflow. That&rsquo;s why I want to write this blog.</p>
 <h1 id="start-your-cluster">Start your cluster</h1>
 <p>We could use command line with GCP CLI to start cluster.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-gcloud dataproc clusters create cluster-name --project<span style="color:#f92672">=</span>project-id --bucket outputbucket --initialization-actions gs://xxx/jupyter.sh --master-machine-type<span style="color:#f92672">=</span>n1-standard-2 --worker-machine-type<span style="color:#f92672">=</span>n1-standard-1 --zone<span style="color:#f92672">=</span>xxxx
-
-</code></pre></div><h1 id="install-external-python-package-on-spark">Install external Python package on Spark</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gcloud dataproc clusters create cluster-name --project<span style="color:#f92672">=</span>project-id --bucket outputbucket --initialization-actions gs://xxx/jupyter.sh --master-machine-type<span style="color:#f92672">=</span>n1-standard-2 --worker-machine-type<span style="color:#f92672">=</span>n1-standard-1 --zone<span style="color:#f92672">=</span>xxxx
+</span></span></code></pre></div><h1 id="install-external-python-package-on-spark">Install external Python package on Spark</h1>
 <p>If we want to use your own package and Juypter NoteBook on Spark, you need to contain an initialization step for your cluster.</p>
 <p>** Please Noticed that you do not have permission to install python package after start your cluster! **</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-<span style="color:#75715e">#!/usr/bin/env bash</span>
-set -e
-
-ROLE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -f -s -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role<span style="color:#66d9ef">)</span>
-INIT_ACTIONS_REPO<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -f -s -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/INIT_ACTIONS_REPO <span style="color:#f92672">||</span> true<span style="color:#66d9ef">)</span>
-INIT_ACTIONS_REPO<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>INIT_ACTIONS_REPO<span style="color:#66d9ef">:-</span>https://github.com/GoogleCloudPlatform/dataproc-initialization-actions.git<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-INIT_ACTIONS_BRANCH<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -f -s -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/INIT_ACTIONS_BRANCH <span style="color:#f92672">||</span> true<span style="color:#66d9ef">)</span>
-INIT_ACTIONS_BRANCH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>INIT_ACTIONS_BRANCH<span style="color:#66d9ef">:-</span>master<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-
-JUPYTER_CONDA_CHANNELS<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -f -s -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/JUPYTER_CONDA_CHANNELS <span style="color:#f92672">||</span> true<span style="color:#66d9ef">)</span>
-JUPYTER_CONDA_PACKAGES<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -f -s -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/JUPYTER_CONDA_PACKAGES <span style="color:#f92672">||</span> true<span style="color:#66d9ef">)</span>
-
-echo <span style="color:#e6db74">&#34;Cloning fresh dataproc-initialization-actions from repo </span>$INIT_ACTIONS_REPO<span style="color:#e6db74"> and branch </span>$INIT_ACTIONS_BRANCH<span style="color:#e6db74">...&#34;</span>
-git clone -b <span style="color:#e6db74">&#34;</span>$INIT_ACTIONS_BRANCH<span style="color:#e6db74">&#34;</span> --single-branch $INIT_ACTIONS_REPO
-./dataproc-initialization-actions/conda/bootstrap-conda.sh
-
-source /etc/profile.d/conda.sh
-
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -n <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JUPYTER_CONDA_CHANNELS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-  echo <span style="color:#e6db74">&#34;Adding custom conda channels &#39;</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">${</span>JUPYTER_CONDA_CHANNELS<span style="color:#e6db74">}</span> | tr <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#39;&#34;</span>
-  conda config --add channels <span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">${</span>JUPYTER_CONDA_CHANNELS<span style="color:#e6db74">}</span> | tr <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#e6db74">&#39;,&#39;</span><span style="color:#66d9ef">)</span>
-<span style="color:#66d9ef">fi</span>
-
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -n <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JUPYTER_CONDA_PACKAGES<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-  echo <span style="color:#e6db74">&#34;Installing custom conda packages &#39;</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">${</span>JUPYTER_CONDA_PACKAGES<span style="color:#e6db74">}</span> | tr <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#39;&#34;</span>
-  conda install <span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">${</span>JUPYTER_CONDA_PACKAGES<span style="color:#e6db74">}</span> | tr <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#66d9ef">)</span>
-<span style="color:#66d9ef">fi</span>
-
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>ROLE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Master&#39;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
-    conda install jupyter
-    conda install xxxxx  <span style="color:#75715e"># install your package here!!</span>
-    pip install jgscm<span style="color:#f92672">==</span>0.1.7
-
-    ./dataproc-initialization-actions/jupyter/internal/setup-jupyter-kernel.sh
-    ./dataproc-initialization-actions/jupyter/internal/launch-jupyter-kernel.sh
-<span style="color:#66d9ef">fi</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>ROLE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Worker&#39;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
-    conda install xxxx <span style="color:#75715e"># install your package here!!</span>
-    pip install jgscm<span style="color:#f92672">==</span>0.1.7
-<span style="color:#66d9ef">fi</span>
-echo <span style="color:#e6db74">&#34;Completed installing Jupyter!&#34;</span>
-
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> ! -v $INSTALL_JUPYTER_EXT <span style="color:#f92672">]]</span>
-    <span style="color:#66d9ef">then</span>
-    INSTALL_JUPYTER_EXT<span style="color:#f92672">=</span>false
-<span style="color:#66d9ef">fi</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span>$INSTALL_JUPYTER_EXT<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> true <span style="color:#f92672">]]</span>
-<span style="color:#66d9ef">then</span>
-    echo <span style="color:#e6db74">&#34;Installing Jupyter Notebook extensions...&#34;</span>
-    ./dataproc-initialization-actions/jupyter/internal/bootstrap-jupyter-ext.sh
-    echo <span style="color:#e6db74">&#34;Jupyter Notebook extensions installed!&#34;</span>
-<span style="color:#66d9ef">fi</span>
-
-</code></pre></div><h1 id="begin-your-job">Begin your job</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash</span>
+</span></span><span style="display:flex;"><span>set -e
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ROLE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -f -s -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>INIT_ACTIONS_REPO<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -f -s -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/INIT_ACTIONS_REPO <span style="color:#f92672">||</span> true<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>INIT_ACTIONS_REPO<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>INIT_ACTIONS_REPO<span style="color:#66d9ef">:-</span>https://github.com/GoogleCloudPlatform/dataproc-initialization-actions.git<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>INIT_ACTIONS_BRANCH<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -f -s -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/INIT_ACTIONS_BRANCH <span style="color:#f92672">||</span> true<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>INIT_ACTIONS_BRANCH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>INIT_ACTIONS_BRANCH<span style="color:#66d9ef">:-</span>master<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>JUPYTER_CONDA_CHANNELS<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -f -s -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/JUPYTER_CONDA_CHANNELS <span style="color:#f92672">||</span> true<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>JUPYTER_CONDA_PACKAGES<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -f -s -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/JUPYTER_CONDA_PACKAGES <span style="color:#f92672">||</span> true<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Cloning fresh dataproc-initialization-actions from repo </span>$INIT_ACTIONS_REPO<span style="color:#e6db74"> and branch </span>$INIT_ACTIONS_BRANCH<span style="color:#e6db74">...&#34;</span>
+</span></span><span style="display:flex;"><span>git clone -b <span style="color:#e6db74">&#34;</span>$INIT_ACTIONS_BRANCH<span style="color:#e6db74">&#34;</span> --single-branch $INIT_ACTIONS_REPO
+</span></span><span style="display:flex;"><span>./dataproc-initialization-actions/conda/bootstrap-conda.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>source /etc/profile.d/conda.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -n <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JUPYTER_CONDA_CHANNELS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Adding custom conda channels &#39;</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">${</span>JUPYTER_CONDA_CHANNELS<span style="color:#e6db74">}</span> | tr <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>  conda config --add channels <span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">${</span>JUPYTER_CONDA_CHANNELS<span style="color:#e6db74">}</span> | tr <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#e6db74">&#39;,&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -n <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>JUPYTER_CONDA_PACKAGES<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Installing custom conda packages &#39;</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">${</span>JUPYTER_CONDA_PACKAGES<span style="color:#e6db74">}</span> | tr <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>  conda install <span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">${</span>JUPYTER_CONDA_PACKAGES<span style="color:#e6db74">}</span> | tr <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>ROLE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Master&#39;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    conda install jupyter
+</span></span><span style="display:flex;"><span>    conda install xxxxx  <span style="color:#75715e"># install your package here!!</span>
+</span></span><span style="display:flex;"><span>    pip install jgscm<span style="color:#f92672">==</span>0.1.7
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ./dataproc-initialization-actions/jupyter/internal/setup-jupyter-kernel.sh
+</span></span><span style="display:flex;"><span>    ./dataproc-initialization-actions/jupyter/internal/launch-jupyter-kernel.sh
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>ROLE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Worker&#39;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    conda install xxxx <span style="color:#75715e"># install your package here!!</span>
+</span></span><span style="display:flex;"><span>    pip install jgscm<span style="color:#f92672">==</span>0.1.7
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Completed installing Jupyter!&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> ! -v $INSTALL_JUPYTER_EXT <span style="color:#f92672">]]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    INSTALL_JUPYTER_EXT<span style="color:#f92672">=</span>false
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span>$INSTALL_JUPYTER_EXT<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> true <span style="color:#f92672">]]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Installing Jupyter Notebook extensions...&#34;</span>
+</span></span><span style="display:flex;"><span>    ./dataproc-initialization-actions/jupyter/internal/bootstrap-jupyter-ext.sh
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Jupyter Notebook extensions installed!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><h1 id="begin-your-job">Begin your job</h1>
 <p>You could submit python file from your local machine.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcloud beta dataproc jobs submit pyspark --cluster cluster-name python-file
-</code></pre></div><p>You can also use Jupyter. You need to first build a ssh tunnel. You could find more information from <a href="https://cloud.google.com/dataproc/docs/tutorials/jupyter-notebook">here</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gcloud beta dataproc jobs submit pyspark --cluster cluster-name python-file
+</span></span></code></pre></div><p>You can also use Jupyter. You need to first build a ssh tunnel. You could find more information from <a href="https://cloud.google.com/dataproc/docs/tutorials/jupyter-notebook">here</a></p>
 
   </div>
   

@@ -40,7 +40,7 @@ Hypothesis function $h_\theta (x) = UWx, \theta={U \in R^{nk},W\in R^{kn}}$. We 
 Loss function $$\ell(h_\theta(x), x)=|\mu - x|_2^2$$
 Optimization problem. $$minimize_{U,W} = \sum_{I=1}^m | UWx^{(i)}-x^{(i)}|^2_2$$
 procedure Given: normalized data matrix X, k components
- Compute singular value decomposition $USV^T = X$, where $U,V$ is orthogonal and $S$ is diagonal matrix of singular values.</description>
+Compute singular value decomposition $USV^T = X$, where $U,V$ is orthogonal and $S$ is diagonal matrix of singular values.</description>
     </item>
     
     <item>
@@ -51,7 +51,7 @@ procedure Given: normalized data matrix X, k components
       <guid>https://www.tczhong.com/posts/machinelearning/cluster/</guid>
       <description>unsupervised learning the general philosophy of unsupervised learning is that we want to discover some kind of structure in the data. Different unsupervised learning methods work in very different ways, and discover very different kinds of structure, but they all have this similar element.
 Recall from our presentations on supervised learnign that the three aspects of a supervised learning algorithm are:
- a hypothesis function;($R^n -&amp;gt; R^n$). Mapping input back to this input space.</description>
+a hypothesis function;($R^n -&amp;gt; R^n$). Mapping input back to this input space.</description>
     </item>
     
     <item>
@@ -61,7 +61,7 @@ Recall from our presentations on supervised learnign that the three aspects of a
       
       <guid>https://www.tczhong.com/posts/machinelearning/validation/</guid>
       <description>Cross-validation Hold - out validation In this method, we will have 70% training data and 30% validation data. When we do the training, we will only use the training data, then we will use the validation data to test our model and tuning the hyperparameters
- parameters:$\theta$ hypermeters: degree of polynominal, amount of regulazation&amp;hellip;  K-hold validation In this method, we will divide the data into k part, then we will use k-1 data to train the model and have the rest one validate the model.</description>
+parameters:$\theta$ hypermeters: degree of polynominal, amount of regulazation&amp;hellip; K-hold validation In this method, we will divide the data into k part, then we will use k-1 data to train the model and have the rest one validate the model.</description>
     </item>
     
     <item>

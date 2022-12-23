@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.106.0">
 
     
     
@@ -223,12 +223,12 @@ a-&gt;c
 <p><img src="pic/demo.png" alt=""></p>
 <p>In this command, you could change <code>-Tpng</code> to <code>-Tjpg</code> or <code>-Tpdf</code>, <code>-Tsvg</code>.</p>
 <p>To add them to markdown, we could use service from <code>gravizo</code>.</p>
-<pre tabindex="0"><code>&lt;img src='https://g.gravizo.com/svg?
+<pre tabindex="0"><code>&lt;img src=&#39;https://g.gravizo.com/svg?
  digraph G {
 a-&gt;b,
 a-&gt;c
  }
-'/&gt;
+&#39;/&gt;
 </code></pre><h2 id="edge-parameters">edge parameters</h2>
 <p>You could change edge parameters to get different appearance.</p>
 <table>
@@ -297,7 +297,7 @@ a-&gt;c
 <p>Here I just want to mention <code>rank</code>.</p>
 <p>Using the following code we could get multiple node in the same level.</p>
 <pre tabindex="0"><code>digraph G {
-     A [label=&quot;Teacher&quot;],
+     A [label=&#34;Teacher&#34;],
     A -&gt; B,
     A -&gt; C,
     C -&gt; D,
