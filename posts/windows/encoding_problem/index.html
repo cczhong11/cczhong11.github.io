@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.115.2">
+
+    
+    
+    
+
+<title>Windows encoding error • TC blog</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Windows encoding error"/>
+<meta name="twitter:description" content="Stuck in the encoding problem in Windows python"/>
+
+<meta property="og:title" content="Windows encoding error" />
+<meta property="og:description" content="Stuck in the encoding problem in Windows python" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tczhong.com/posts/windows/encoding_problem/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-08-20T00:00:00+00:00" /><meta property="og:site_name" content="TC blog" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://www.tczhong.com/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
+
+
+<link rel="stylesheet" href="https://www.tczhong.com/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.tczhong.com/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="https://www.tczhong.com/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://www.tczhong.com/">TC blog</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://avatars2.githubusercontent.com/u/7358252?s=460&amp;v=4" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         I am who I am. Love Cloud and Data science 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">TC blog</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="https://www.tczhong.com/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="https://www.tczhong.com/about/hello">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="https://www.tczhong.com/tianchen_zhong.pdf">
+						<span>My Resume</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="https://www.tczhong.com/posts/project/index.html">
+						<span>Project</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	<a href="https://github.com/cczhong11" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/tianchen-zhong" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/7112540" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:tczhong24@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Windows encoding error</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Aug 8, 2023
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="https://www.tczhong.com/categories/encoding">ENCODING</a>
+              •
+          
+              <a class="badge badge-category" href="https://www.tczhong.com/categories/gooey">GOOEY</a>
+              •
+          
+              <a class="badge badge-category" href="https://www.tczhong.com/categories/python">PYTHON</a>
+              •
+          
+              <a class="badge badge-category" href="https://www.tczhong.com/categories/windows">WINDOWS</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 3 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <h1 id="context">Context</h1>
+<p>I have a gradio app called <a href="https://github.com/cczhong11/text-generation-webui">text-generation-webui</a> and user need to have python to start it. For normal people, they do not have python installed in their computer, so I need to package the python environment into the app. We use conda to manage the python environment and we use <code>conda-pack</code> to package the environment.</p>
+<p>I create a GUI using gooey to start python cli in a subprocess. The code is like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> signal
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">YourClass</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>stdout <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 设置SIGTERM信号处理程序</span>
+</span></span><span style="display:flex;"><span>        signal<span style="color:#f92672">.</span>signal(signal<span style="color:#f92672">.</span>SIGTERM, self<span style="color:#f92672">.</span>save_stdout)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">save_stdout</span>(self, signum, frame):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 保存self.stdout的逻辑</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;output.txt&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>            file<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(self<span style="color:#f92672">.</span>stdout))
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Saved stdout to file&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, cmd):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>process <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>Popen(
+</span></span><span style="display:flex;"><span>            cmd,
+</span></span><span style="display:flex;"><span>            stdout<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>PIPE,
+</span></span><span style="display:flex;"><span>            stderr<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>STDOUT,
+</span></span><span style="display:flex;"><span>            shell<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>            text<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>            output <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>process<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>readline()
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> output:
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>append(output<span style="color:#f92672">.</span>strip())
+</span></span><span style="display:flex;"><span>                print(output<span style="color:#f92672">.</span>strip())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>process<span style="color:#f92672">.</span>poll() <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span> <span style="color:#f92672">and</span> <span style="color:#f92672">not</span> output:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>process<span style="color:#f92672">.</span>returncode
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 示例</span>
+</span></span><span style="display:flex;"><span>your_class_instance <span style="color:#f92672">=</span> YourClass()
+</span></span><span style="display:flex;"><span>your_class_instance<span style="color:#f92672">.</span>run(<span style="color:#e6db74">&#34;your command here&#34;</span>)
+</span></span></code></pre></div><p>This code can capture all the output from the subprocess, it worked fine in the Mac but not working in the windows and it took me a while to figure out the reason.</p>
+<h1 id="problem">Problem</h1>
+<p>When I download the new model, it would throw the following exception:</p>
+<pre tabindex="0"><code>C:\Users\tczhong\Documents\LLM\new-web-ui-one-click\text-generation-webui\download-model.py”, line 153, in get_single_file with tqdm.tqdm(total=total_size, unit=‘iB’, unit_scale=True, bar_format=‘{l_bar}{bar}| {n_fmt:6}/{total_fmt:6} {rate_fmt:6}’) as t: File “C:\Users\tczhong\Documents\LLM\new-web-ui-one-click\installer_files\env\lib\site-packages\tqdm\std.py”, line 1137, in exit self.close() File 
+“C:\Users\tczhong\Documents\LLM\new-web-ui-one-click\installer_files\env\lib\site-packages\tqdm\std.py”, line 1299, in close self.display(pos=0) File 
+“C:\Users\tczhong\Documents\LLM\new-web-ui-one-click\installer_files\env\lib\site-packages\tqdm\std.py”, line 1492, in display self.sp(self.str() if msg is None else msg) File 
+“C:\Users\tczhong\Documents\LLM\new-web-ui-one-click\installer_files\env\lib\site-packages\tqdm\std.py”, line 347, in print_status fp_write(‘\r’ + s + (’ ’ * max(last_len[0] - len_s, 0))) File 
+“C:\Users\tczhong\Documents\LLM\new-web-ui-one-click\installer_files\env\lib\site-packages\tqdm\std.py”, line 340, in fp_write fp.write(str(s)) File 
+“C:\Users\tczhong\Documents\LLM\new-web-ui-one-click\installer_files\env\lib\site-packages\tqdm\utils.py”, line 127, in inner return func(*args, **kwargs) OSError: [Errno 22] Invalid argument
+</code></pre><p>It always stuck in about 2% in the downloading and pretty strange.</p>
+<h1 id="debug">Debug</h1>
+<p>I spent a lot of time in the tqdm and I thought it is the problem since it is what exception said. However it is not the reason.</p>
+<p>The subprocess itself crashed and the real exception is:</p>
+<pre tabindex="0"><code>gbk&#39; codec can&#39;t decode byte 0x8f in position 8: illegal multibyte sequence
+</code></pre><p>It happened when reading stdout and it could not decode it.</p>
+<h1 id="solution">Solution</h1>
+<p>There are lots of places we can set up encoding.</p>
+<h2 id="popoen">Popoen</h2>
+<p>We can set the encoding in the <code>Popen</code> function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>self<span style="color:#f92672">.</span>process <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>Popen(
+</span></span><span style="display:flex;"><span>    cmd,
+</span></span><span style="display:flex;"><span>    stdout<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>PIPE,
+</span></span><span style="display:flex;"><span>    stderr<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>STDOUT,
+</span></span><span style="display:flex;"><span>    shell<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>    text<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>    encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8&#39;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="gooey">Gooey</h2>
+<p>We can set the encoding in the gooey decorator:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@Gooey</span>(
+</span></span><span style="display:flex;"><span>    program_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Text Generation&#34;</span>,
+</span></span><span style="display:flex;"><span>    default_size<span style="color:#f92672">=</span>(<span style="color:#ae81ff">800</span>, <span style="color:#ae81ff">600</span>),
+</span></span><span style="display:flex;"><span>    encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8&#39;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="python">python</h2>
+<p>When we start the python, we can force it using utf-8 encoding:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python -X utf8
+</span></span></code></pre></div><h2 id="codecs-writter">codecs writter</h2>
+<p>We can also use codecs to write the file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> codecs
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> sys<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>encoding <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;UTF-8&#39;</span>:
+</span></span><span style="display:flex;"><span>    sys<span style="color:#f92672">.</span>stdout <span style="color:#f92672">=</span> codecs<span style="color:#f92672">.</span>getwriter(<span style="color:#e6db74">&#39;utf-8&#39;</span>)(sys<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>buffer, <span style="color:#e6db74">&#39;strict&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> sys<span style="color:#f92672">.</span>stderr<span style="color:#f92672">.</span>encoding <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;UTF-8&#39;</span>:
+</span></span><span style="display:flex;"><span>    sys<span style="color:#f92672">.</span>stderr <span style="color:#f92672">=</span> codecs<span style="color:#f92672">.</span>getwriter(<span style="color:#e6db74">&#39;utf-8&#39;</span>)(sys<span style="color:#f92672">.</span>stderr<span style="color:#f92672">.</span>buffer, <span style="color:#e6db74">&#39;strict&#39;</span>)
+</span></span></code></pre></div><h1 id="conclusion">Conclusion</h1>
+<p>Using codecs writter solve the problem.</p>
+<p>It is so frustrating to debug this problem and I hope this blog can help you if you have the same problem.</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="https://www.tczhong.com/posts/windows/signal/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Windows signal handler problem</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'tczhong';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+    
+
+
+
+    </body>
+</html>

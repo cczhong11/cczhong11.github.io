@@ -6,7 +6,28 @@
     <description>Recent content on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 29 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows encoding error</title>
+      <link>https://www.tczhong.com/posts/windows/encoding_problem/</link>
+      <pubDate>Sun, 20 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/posts/windows/encoding_problem/</guid>
+      <description>Context I have a gradio app called text-generation-webui and user need to have python to start it. For normal people, they do not have python installed in their computer, so I need to package the python environment into the app. We use conda to manage the python environment and we use conda-pack to package the environment.
+I create a GUI using gooey to start python cli in a subprocess. The code is like this:</description>
+    </item>
+    
+    <item>
+      <title>Windows signal handler problem</title>
+      <link>https://www.tczhong.com/posts/windows/signal/</link>
+      <pubDate>Sun, 20 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/posts/windows/signal/</guid>
+      <description>Context I am using a gradio app inside Gooey to start python cli in a subprocess. I try to handle the signal in the subprocess, but it does not work in the Windows. It works fine in the Mac, but not in the Windows.
+Problem I use the code like this:
+class ProcessHandler: def __init__(self) -&amp;gt; None: self.stdout = [] self.process = None signal.signal(signal.SIGTERM, self.save_stdout) signal.signal(signal.SIGINT, self.save_stdout) def change_python(self, cmd): if &amp;#34;python&amp;#34; in cmd and sys.</description>
+    </item>
+    
     <item>
       <title>How to migrate your PostgreSQL database out of heroku</title>
       <link>https://www.tczhong.com/posts/db/how-to-migrate-heroku-postgres/</link>

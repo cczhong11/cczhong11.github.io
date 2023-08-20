@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.115.2">
+
+    
+    
+    
+
+<title>Windows signal handler problem • TC blog</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Windows signal handler problem"/>
+<meta name="twitter:description" content="Stuck in the signal problem in Windows python"/>
+
+<meta property="og:title" content="Windows signal handler problem" />
+<meta property="og:description" content="Stuck in the signal problem in Windows python" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tczhong.com/posts/windows/signal/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-08-20T00:00:00+00:00" /><meta property="og:site_name" content="TC blog" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://www.tczhong.com/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
+
+
+<link rel="stylesheet" href="https://www.tczhong.com/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.tczhong.com/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="https://www.tczhong.com/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://www.tczhong.com/">TC blog</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://avatars2.githubusercontent.com/u/7358252?s=460&amp;v=4" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         I am who I am. Love Cloud and Data science 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">TC blog</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="https://www.tczhong.com/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="https://www.tczhong.com/about/hello">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="https://www.tczhong.com/tianchen_zhong.pdf">
+						<span>My Resume</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="https://www.tczhong.com/posts/project/index.html">
+						<span>Project</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	<a href="https://github.com/cczhong11" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/tianchen-zhong" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/7112540" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:tczhong24@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Windows signal handler problem</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Aug 8, 2023
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="https://www.tczhong.com/categories/gooey">GOOEY</a>
+              •
+          
+              <a class="badge badge-category" href="https://www.tczhong.com/categories/python">PYTHON</a>
+              •
+          
+              <a class="badge badge-category" href="https://www.tczhong.com/categories/signal">SIGNAL</a>
+              •
+          
+              <a class="badge badge-category" href="https://www.tczhong.com/categories/windows">WINDOWS</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <h1 id="context">Context</h1>
+<p>I am using a gradio app inside Gooey to start python cli in a subprocess. I try to handle the signal in the subprocess, but it does not work in the Windows. It works fine in the Mac, but not in the Windows.</p>
+<h1 id="problem">Problem</h1>
+<p>I use the code like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProcessHandler</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>stdout <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>process <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>        signal<span style="color:#f92672">.</span>signal(signal<span style="color:#f92672">.</span>SIGTERM, self<span style="color:#f92672">.</span>save_stdout)
+</span></span><span style="display:flex;"><span>        signal<span style="color:#f92672">.</span>signal(signal<span style="color:#f92672">.</span>SIGINT, self<span style="color:#f92672">.</span>save_stdout)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">change_python</span>(self, cmd):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;python&#34;</span> <span style="color:#f92672">in</span> cmd <span style="color:#f92672">and</span> sys<span style="color:#f92672">.</span>platform<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#34;win&#34;</span>):
+</span></span><span style="display:flex;"><span>            cmd <span style="color:#f92672">=</span> cmd<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#34;python&#34;</span>, os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>INSTALL_ENV<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;python.exe&#34;</span>))
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;python&#34;</span> <span style="color:#f92672">in</span> cmd <span style="color:#f92672">and</span> sys<span style="color:#f92672">.</span>platform<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#34;darwin&#34;</span>):
+</span></span><span style="display:flex;"><span>            cmd <span style="color:#f92672">=</span> cmd<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#34;python&#34;</span>, os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>INSTALL_ENV<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;bin/python&#34;</span>))
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> cmd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">save_stdout</span>(self, signum, frame):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;log.txt&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>            f<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>join(self<span style="color:#f92672">.</span>stdout))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, cmd):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>stdout <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>process <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>Popen(
+</span></span><span style="display:flex;"><span>            cmd,
+</span></span><span style="display:flex;"><span>            stdout<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>PIPE,
+</span></span><span style="display:flex;"><span>            stderr<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>STDOUT,
+</span></span><span style="display:flex;"><span>            shell<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>            text<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>            output <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>process<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>readline()
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>process<span style="color:#f92672">.</span>poll() <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> output:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> output<span style="color:#f92672">.</span>strip() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span>:
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>append(output<span style="color:#f92672">.</span>strip())
+</span></span><span style="display:flex;"><span>                print(output, flush<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>process<span style="color:#f92672">.</span>returncode
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">kill</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>process:
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>process<span style="color:#f92672">.</span>kill()
+</span></span></code></pre></div><p>I use the <code>signal.signal</code> to handle the signal, but it does not work in the Windows. I tried to use <code>signal.SIGTERM</code> and <code>signal.SIGINT</code> to handle the signal, but it does not work.</p>
+<h1 id="solution">Solution</h1>
+<p>In windows, the signal handler for SIGTERM is <a href="https://stackoverflow.com/questions/47306805/signal-sigterm-not-received-by-subprocess-on-windows">useless</a>. Alternative solution is to send signal.CTRL_BREAK_EVENT to the process.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@Goey</span>(
+</span></span><span style="display:flex;"><span>    shutdown_signal<span style="color:#f92672">=</span>signal<span style="color:#f92672">.</span>CTRL_BREAK_EVENT,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProcessHandler</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>stdout <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>process <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>        signal<span style="color:#f92672">.</span>signal(signal<span style="color:#f92672">.</span>SIGBREAK, self<span style="color:#f92672">.</span>save_stdout)
+</span></span><span style="display:flex;"><span>        
+</span></span></code></pre></div><p>Also in the pip, gooey is only 1.0.8, so to use shutdown_signal, we need to install the gooey from the github.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>Debug this problem spent me a lot of time, I hope this blog can help you to solve the problem faster.</p>
+<h1 id="learning">Learning</h1>
+<ol>
+<li>chatgpt is a good assistant to help you to debug the problem.</li>
+<li>reading the source code is a good way to solve the problem.</li>
+<li>set up mvp to debug is much faster than the real app.</li>
+</ol>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="https://www.tczhong.com/posts/db/how-to-migrate-heroku-postgres/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">How to migrate your PostgreSQL database out of heroku</span>
+    </a>
+    
+    
+    <a href="https://www.tczhong.com/posts/windows/encoding_problem/" class="navigation-next">
+      <span class="navigation-tittle">Windows encoding error</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'tczhong';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+    
+
+
+
+    </body>
+</html>

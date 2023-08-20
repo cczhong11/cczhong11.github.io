@@ -6,7 +6,52 @@
     <description>Recent content in Categories on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 29 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>encoding</title>
+      <link>https://www.tczhong.com/categories/encoding/</link>
+      <pubDate>Sun, 20 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/encoding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gooey</title>
+      <link>https://www.tczhong.com/categories/gooey/</link>
+      <pubDate>Sun, 20 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/gooey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://www.tczhong.com/categories/python/</link>
+      <pubDate>Sun, 20 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>signal</title>
+      <link>https://www.tczhong.com/categories/signal/</link>
+      <pubDate>Sun, 20 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/signal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://www.tczhong.com/categories/windows/</link>
+      <pubDate>Sun, 20 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/windows/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>db</title>
       <link>https://www.tczhong.com/categories/db/</link>
@@ -139,15 +184,6 @@
       <pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.tczhong.com/categories/kafka/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://www.tczhong.com/categories/python/</link>
-      <pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.tczhong.com/categories/python/</guid>
       <description></description>
     </item>
     
