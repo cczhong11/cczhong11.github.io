@@ -6,7 +6,43 @@
     <description>Recent content in Categories on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 20 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>agents</title>
+      <link>https://www.tczhong.com/categories/agents/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/agents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>llamaindex</title>
+      <link>https://www.tczhong.com/categories/llamaindex/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/llamaindex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>llm</title>
+      <link>https://www.tczhong.com/categories/llm/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/llm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>llmops</title>
+      <link>https://www.tczhong.com/categories/llmops/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/llmops/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>encoding</title>
       <link>https://www.tczhong.com/categories/encoding/</link>

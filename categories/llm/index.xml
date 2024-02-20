@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>llm on TC blog</title>
+    <link>https://www.tczhong.com/categories/llm/</link>
+    <description>Recent content in llm on TC blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/llm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learn LlamaIndex: Agents and Tools</title>
+      <link>https://www.tczhong.com/posts/llm/llamaindex_learning_tool_agents/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/posts/llm/llamaindex_learning_tool_agents/</guid>
+      <description>Background LlamaIndex is an exceptional open-source project that offers a wide range of capabilities. It serves as a valuable resource for practitioners and developers seeking to enhance their Large Language Models (LLMs) with versatile tools and data. Designed to foster seamless integration between custom data sources and LLM applications, LlamaIndex represents a simple yet highly flexible data framework.Driven by the rapidly growing demand for sophisticated language processing models, LlamaIndex aims to empower users by facilitating effortless data retrieval and utilization.</description>
+    </item>
+    
+  </channel>
+</rss>

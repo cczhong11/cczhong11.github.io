@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "print.css",
-	"sourceRoot": "/Users/tianchenzhong/Dropbox/Coding/html/HugoBlog",
+	"sourceRoot": "/Users/tianchenzhong/Dropbox/L1/个人总结/个人网站/HugoBlog",
 	"sources": [
 		"themes/hyde-hyde/assets/scss/print.scss",
 		"themes/hyde-hyde/assets/scss/hyde-hyde/_variables.scss",
