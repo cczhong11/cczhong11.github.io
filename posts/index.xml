@@ -6,7 +6,17 @@
     <description>Recent content in Posts on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learn Aider: AI Coder</title>
+      <link>https://www.tczhong.com/posts/llm/aider_learning/</link>
+      <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/posts/llm/aider_learning/</guid>
+      <description>Overview This blog will document my journey of reading the source code of Aider. I will explore the basic structure of the repository and highlight key learnings. Aider has an official blog and documentation that includes insights from the author.
+Main In the main function, Aider functions as a CLI tool. It creates a coder object and initiates coder.run(). If a Git repository doesn’t already exist, it will set one up for you.</description>
+    </item>
+    
     <item>
       <title>Learn LlamaIndex: Agents and Tools</title>
       <link>https://www.tczhong.com/posts/llm/llamaindex_learning_tool_agents/</link>

@@ -6,13 +6,40 @@
     <description>Recent content in Categories on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>agents</title>
       <link>https://www.tczhong.com/categories/agents/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.tczhong.com/categories/agents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aider</title>
+      <link>https://www.tczhong.com/categories/aider/</link>
+      <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/aider/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>llm</title>
+      <link>https://www.tczhong.com/categories/llm/</link>
+      <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/llm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>llmops</title>
+      <link>https://www.tczhong.com/categories/llmops/</link>
+      <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/llmops/</guid>
       <description></description>
     </item>
     
@@ -22,24 +49,6 @@
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.tczhong.com/categories/llamaindex/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>llm</title>
-      <link>https://www.tczhong.com/categories/llm/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.tczhong.com/categories/llm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>llmops</title>
-      <link>https://www.tczhong.com/categories/llmops/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.tczhong.com/categories/llmops/</guid>
       <description></description>
     </item>
     
