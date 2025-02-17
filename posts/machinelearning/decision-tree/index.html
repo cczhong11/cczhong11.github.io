@@ -243,7 +243,7 @@ tree (i.e., minimize the loss function) one node at a time.</p>
 <p>What should we choose as the (constant) prediction $h$ at this leaf?</p>
 <p>$$minimize_h \sum \ell(h,y) = -\frac{\mathcal{X^+}}{\mathcal{X}}log h&ndash;\frac{\mathcal{X^-}}{\mathcal{X}}log (1-h)$$ Here we could know that $h = \frac{\mathcal{X^+}}{\mathcal{X}}$. Which achieves loss: $\ell = -hlogh-(1-h)log(1-h)$.</p>
 <p>Suppose we will split this left to two part $\mathcal{X_0}$ and $\mathcal{X_1}$ and we will get two prediction $h_0=\frac{\mathcal{X_0^+}}{\mathcal{X_0}}$ and $h_1=\frac{\mathcal{X_1^+}}{\mathcal{X_1}}$.</p>
-<p><img src="pic/dt.png" alt=""></p>
+<p><img src="https://www.tczhong.com/posts/machinelearning/pic/dt.png" alt=""></p>
 <p>The new leafs will each now suffer loss $$\ell_0 = -h_0logh_0-(1-h_0)log(1-h_0)$$
 $$\ell_1 = -h_1logh_1-(1-h_1)log(1-h_1)$$</p>
 <p>Thus, if we split the original leaf on feature $\ell$, we no longer suffer our original loss $\ell$, but we do suffer losses $\ell_1$ + $\ell_2$, i.e., we have decreased the overall loss function by $\ell-\ell_0-\ell_1$ (this quantity is called
@@ -304,7 +304,7 @@ entropy(examples)
 <p>But, they are also quite limited in their representation power (require axisaligned splits, don’t model probabilities very smoothly)</p>
 <p>Basic idea of tree ensemble methods is to combine multiple tree models together to form a better predictor. Two of the most popular ensemble methods: random forests and boosting.</p>
 <p>Boosting originated as an idea in theoretical machine learning, for “boosting” the performance of weak classifiers (i.e., combining many classifiers that each had modest accuracy to one that had high accuracy). We will introduce Gradient Boosted Regression Trees (GBRT) algorithm.</p>
-<p><img src="pic/GBRT.png" alt=""></p>
+<p><img src="https://www.tczhong.com/posts/machinelearning/pic/GBRT.png" alt=""></p>
 
   </div>
   
