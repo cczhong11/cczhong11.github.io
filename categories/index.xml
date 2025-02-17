@@ -6,7 +6,52 @@
     <description>Recent content in Categories on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 20 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ai</title>
+      <link>https://www.tczhong.com/categories/ai/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jobs</title>
+      <link>https://www.tczhong.com/categories/jobs/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/jobs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>llm</title>
+      <link>https://www.tczhong.com/categories/llm/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/llm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>llamaindex</title>
+      <link>https://www.tczhong.com/categories/llamaindex/</link>
+      <pubDate>Fri, 24 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/llamaindex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>llmops</title>
+      <link>https://www.tczhong.com/categories/llmops/</link>
+      <pubDate>Fri, 24 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/llmops/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>agents</title>
       <link>https://www.tczhong.com/categories/agents/</link>
@@ -22,33 +67,6 @@
       <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.tczhong.com/categories/aider/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>llm</title>
-      <link>https://www.tczhong.com/categories/llm/</link>
-      <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.tczhong.com/categories/llm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>llmops</title>
-      <link>https://www.tczhong.com/categories/llmops/</link>
-      <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.tczhong.com/categories/llmops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>llamaindex</title>
-      <link>https://www.tczhong.com/categories/llamaindex/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.tczhong.com/categories/llamaindex/</guid>
       <description></description>
     </item>
     

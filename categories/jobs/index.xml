@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jobs on TC blog</title>
+    <link>https://www.tczhong.com/categories/jobs/</link>
+    <description>Recent content in jobs on TC blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 16 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/jobs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Will AI Replace Software Engineers? A Look at the Latest Industry Trends</title>
+      <link>https://www.tczhong.com/posts/llm/ai_replace_software_engineer_job/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/posts/llm/ai_replace_software_engineer_job/</guid>
+      <description>Discussions about AI replacing software engineers have been heating up lately. In his latest blog post, OpenAI CEO Sam Altman shared his thoughts on the future of AI-driven software engineering:
+Let’s imagine the case of a software engineering agent, which is an agent that we expect to be particularly important. Imagine that this agent will eventually be capable of doing most things a software engineer at a top company with a few years of experience could do, for tasks up to a couple of days long.</description>
+    </item>
+    
+  </channel>
+</rss>

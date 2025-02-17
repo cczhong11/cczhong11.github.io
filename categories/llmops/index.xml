@@ -6,7 +6,18 @@
     <description>Recent content in llmops on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 20 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/llmops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/llmops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learn LlamaIndex: Key Components</title>
+      <link>https://www.tczhong.com/posts/llm/key_component_in_llama_index/</link>
+      <pubDate>Fri, 24 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/posts/llm/key_component_in_llama_index/</guid>
+      <description>Overview Llamaindex is a very good library to do RAG with LLM however it is very hard to learn since the function is very high-level and as a beginner it is hard to understand what each function is doing. In this post, I will discuss the key components with source code and example code.
+To do a simple RAG, the following components are the most basic one:
+Readers Indices QueryRunner The doc will use the 0.</description>
+    </item>
+    
     <item>
       <title>Learn Aider: AI Coder</title>
       <link>https://www.tczhong.com/posts/llm/aider_learning/</link>
