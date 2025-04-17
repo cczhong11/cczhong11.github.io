@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UV on TC blog</title>
+    <link>https://www.tczhong.com/categories/uv/</link>
+    <description>Recent content in UV on TC blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 16 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/uv/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UV package management</title>
+      <link>https://www.tczhong.com/posts/python/uv_package/</link>
+      <pubDate>Wed, 16 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/posts/python/uv_package/</guid>
+      <description>I learned uv recently when seeing lots of openai usage during their presentation so I begin to look into it. It is very fast and powerful.
+1. Context: Why Choose uv Over Conda? Traditional Python environment managers like conda bundle both Python distributions and packages, resulting in large downloads, heavy disk usage, and notoriously slow “Solving environment” steps that can take minutes or more uwu. Conda’s solver must consider hundreds of packages and versions, which grows the search space and drags performance down (✿◠‿◠).</description>
+    </item>
+    
+  </channel>
+</rss>

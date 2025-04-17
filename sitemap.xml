@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.tczhong.com/categories/ai/</loc>
-    <lastmod>2025-02-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.tczhong.com/categories/</loc>
+    <lastmod>2025-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.tczhong.com/posts/</loc>
+    <lastmod>2025-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.tczhong.com/categories/python/</loc>
+    <lastmod>2025-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.tczhong.com/</loc>
+    <lastmod>2025-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.tczhong.com/categories/uv/</loc>
+    <lastmod>2025-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.tczhong.com/posts/python/uv_package/</loc>
+    <lastmod>2025-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.tczhong.com/categories/ai/</loc>
     <lastmod>2025-02-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.tczhong.com/categories/jobs/</loc>
     <lastmod>2025-02-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.tczhong.com/categories/llm/</loc>
-    <lastmod>2025-02-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.tczhong.com/posts/</loc>
-    <lastmod>2025-02-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.tczhong.com/</loc>
     <lastmod>2025-02-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.tczhong.com/posts/llm/ai_replace_software_engineer_job/</loc>
@@ -48,9 +57,6 @@
     <lastmod>2023-08-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.tczhong.com/categories/gooey/</loc>
-    <lastmod>2023-08-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.tczhong.com/categories/python/</loc>
     <lastmod>2023-08-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.tczhong.com/categories/signal/</loc>

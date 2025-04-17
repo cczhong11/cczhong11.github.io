@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.115.2">
+
+    
+    
+    
+
+<title>UV package management • TC blog</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UV package management"/>
+<meta name="twitter:description" content="This blog will introduce the basic usage for uv."/>
+
+<meta property="og:title" content="UV package management" />
+<meta property="og:description" content="This blog will introduce the basic usage for uv." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tczhong.com/posts/python/uv_package/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2025-04-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-04-16T00:00:00+00:00" /><meta property="og:site_name" content="TC blog" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://www.tczhong.com/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
+
+
+<link rel="stylesheet" href="https://www.tczhong.com/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.tczhong.com/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="https://www.tczhong.com/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://www.tczhong.com/">TC blog</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://avatars2.githubusercontent.com/u/7358252?s=460&amp;v=4" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         I am who I am. Love LLM and AI Agent. 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">TC blog</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="https://www.tczhong.com/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="https://www.tczhong.com/about/hello">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="https://www.tczhong.com/tianchen_zhong.pdf">
+						<span>My Resume</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="https://www.tczhong.com/posts/project/index.html">
+						<span>Project</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	<a href="https://github.com/cczhong11" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/tianchen-zhong" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/7112540" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:tczhong24@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>UV package management</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Apr 4, 2025
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="https://www.tczhong.com/categories/python">PYTHON</a>
+              •
+          
+              <a class="badge badge-category" href="https://www.tczhong.com/categories/uv">UV</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 4 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>I learned uv recently when seeing lots of openai usage during their presentation so I begin to look into it. It is very fast and powerful.</p>
+<h2 id="1-context-why-choose-uv-over-conda">1. Context: Why Choose <strong>uv</strong> Over Conda?</h2>
+<p>Traditional Python environment managers like <strong>conda</strong> bundle both Python distributions and packages, resulting in large downloads, heavy disk usage, and notoriously slow “Solving environment” steps that can take minutes or more uwu. Conda’s solver must consider hundreds of packages and versions, which grows the search space and drags performance down (✿◠‿◠).<br>
+By contrast, <strong>uv</strong> is written in Rust and resolves and installs dependencies in milliseconds—often <strong>10–100× faster</strong> than pip! It ships as a single static binary with no Python or Rust prerequisites, so you can just curl it down and go. With <strong>uv</strong> you get:</p>
+<ul>
+<li>A unified CLI replacing <code>pip</code>, <code>pip-tools</code>, <code>pipx</code>, <code>poetry</code>, <code>pyenv</code>, <code>virtualenv</code>, and more</li>
+<li>A universal lockfile for reproducible installs across machines</li>
+<li>Cross‑platform support (macOS, Linux, Windows) with global caching to dedupe deps</li>
+<li>Blazing‑fast dependency resolution and install times 🌟</li>
+</ul>
+<hr>
+<h2 id="2-basic-usage-init-install-sync-and-python-version-management-">2. Basic Usage: Init, Install, Sync, and Python Version Management 🐍</h2>
+<h3 id="21-initializing-a-new-project">2.1 Initializing a New Project</h3>
+<p>Getting started is as simple as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ uv init myproject
+</span></span><span style="display:flex;"><span>Initialized project <span style="color:#e6db74">`</span>myproject<span style="color:#e6db74">`</span> at <span style="color:#e6db74">`</span>/path/to/myproject<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>$ cd myproject
+</span></span></code></pre></div><p>This creates a new directory with a default uv.toml and sets up project scaffolding—no separate virtualenv or pyenv steps needed uwu.</p>
+<h3 id="22-installing-dependencies">2.2 Installing Dependencies</h3>
+<p>To add a package (e.g. ruff for linting):</p>
+<pre tabindex="0"><code>$ uv add ruff
+Creating virtual environment at: .venv
+Resolved 1 package in 6ms
+Installed 1 package in 2ms
+ + ruff==0.5.4
+</code></pre><p>Under the hood, uv automatically creates or reuses a .venv folder and invokes its fast resolver; you get feedback on resolution and install times, usually under 10 ms (´ ∀ `)♡</p>
+<h3 id="23-synchronizing-environments">2.3 Synchronizing Environments</h3>
+<p>After locking your dependencies:</p>
+<pre tabindex="0"><code>$ uv lock
+Resolved 2 packages in 0.33ms
+</code></pre><p>You can replicate the exact environment elsewhere with:</p>
+<pre tabindex="0"><code>$ uv sync
+Resolved 2 packages in 0.70ms
+Audited 1 package in 0.02ms
+</code></pre><p>All packages defined in your lockfile are installed atomically, so new machines match yours perfectly—no more “it works on my machine” woes uwu.</p>
+<h3 id="24-installing-a-specific-python-version">2.4 Installing a Specific Python Version</h3>
+<p>uv also makes it easy to install and manage multiple Python interpreters:</p>
+<p>Install the latest Python</p>
+<pre tabindex="0"><code>$ uv python install
+</code></pre><p>Downloads and installs the most recent CPython build automatically.</p>
+<p>Install a specific version</p>
+<pre tabindex="0"><code>$ uv python install 3.12
+</code></pre><p>Fetches and sets up Python 3.12 in uv’s global cache in just a few seconds ✧(｡•̀ᴗ-)✧</p>
+<p>Install multiple versions at once</p>
+<pre tabindex="0"><code>$ uv python install 3.11 3.12
+</code></pre><p>List available and installed versions</p>
+<pre tabindex="0"><code>$ uv python list
+</code></pre><p>Shows both the Python versions already in your cache and those you could download, helping you verify your setup at a glance.</p>
+<p>Pin your project’s Python version</p>
+<pre tabindex="0"><code>$ uv python pin 3.12
+</code></pre><p>Generates a .python-version file in your project root, ensuring consistency across machines.</p>
+<p>Specify Python when initializing</p>
+<pre tabindex="0"><code>$ uv init myproject --python 3.12
+</code></pre><p>If 3.12 isn’t installed yet, uv will download it and create the new project with the specified interpreter.</p>
+<h3 id="25-activate-the-envirment">2.5 Activate the envirment</h3>
+<p>Before running your code, you’ll want to activate the .venv that uv created:</p>
+<p>On macOS/Linux</p>
+<pre tabindex="0"><code>$ source .venv/bin/activate
+</code></pre><p>Once activated, your prompt should show (.venv) and you can run Python or any installed tools directly:</p>
+<pre tabindex="0"><code>(.venv) $ python --version
+Python 3.12.x
+(.venv) $ uv run pytest
+</code></pre><p>Deactivating is just as easy:</p>
+<pre tabindex="0"><code>(.venv) $ deactivate
+</code></pre><p>Activation ensures you’re using the exact interpreter and dependencies defined by uv, keeping everything reproducible and isolated uwu.</p>
+<h2 id="3-summary-a-new-era-of-efficiency-">3. Summary: A New Era of Efficiency ✨</h2>
+<p>uv is the next‑generation Python package and environment manager that finally answers the call for speed and simplicity. By consolidating multiple tools into one Rust‑powered binary, it slashes setup and install times, reduces disk overhead with a global cache, and provides a familiar, pip‑compatible CLI. If you’ve been hindered by conda’s bulk and sluggish solver, give uv a spin—your workflows will thank you! uwu</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="https://www.tczhong.com/posts/llm/ai_replace_software_engineer_job/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Will AI Replace Software Engineers? A Look at the Latest Industry Trends</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'tczhong';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+    
+
+
+
+    </body>
+</html>

@@ -6,7 +6,25 @@
     <description>Recent content in Categories on TC blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 16 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tczhong.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python</title>
+      <link>https://www.tczhong.com/categories/python/</link>
+      <pubDate>Wed, 16 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UV</title>
+      <link>https://www.tczhong.com/categories/uv/</link>
+      <pubDate>Wed, 16 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tczhong.com/categories/uv/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>ai</title>
       <link>https://www.tczhong.com/categories/ai/</link>
@@ -85,15 +103,6 @@
       <pubDate>Sun, 20 Aug 2023 00:00:00 +0000</pubDate>
       
       <guid>https://www.tczhong.com/categories/gooey/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://www.tczhong.com/categories/python/</link>
-      <pubDate>Sun, 20 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.tczhong.com/categories/python/</guid>
       <description></description>
     </item>
     
